@@ -178,5 +178,5 @@ def test_internal_client_sends_descriptive_user_agent(fixture_dir: Path) -> None
     with ArxivClient(config, monotonic=clock.monotonic, sleep=clock.sleep) as client:
         client.fetch([QueryConfig(name="x", terms=["spin ice"])], window(), 1)
     assert route.calls[0].request.headers["User-Agent"] == (
-        "arxiv-digest/0.2.0 (physics@example.org)"
+        "arxiv-digest/0.3.0 (physics@example.org)"
     )

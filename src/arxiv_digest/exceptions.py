@@ -23,3 +23,11 @@ class ArxivFeedError(ArxivClientError):
 
 class HistoryError(ArxivDigestError):
     """Raised when recommendation history is invalid or cannot be persisted safely."""
+
+
+class SummaryProviderError(ArxivDigestError):
+    """Raised when a summary provider cannot return a valid grounded summary."""
+
+
+class ReportingError(ArxivDigestError):
+    """Raised when a weekly report cannot be rendered or written safely."""

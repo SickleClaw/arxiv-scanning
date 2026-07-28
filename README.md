@@ -1,13 +1,14 @@
 # Personalized Weekly arXiv Reading List
 
-`arxiv-digest` is a Python 3.12 application for collecting and ranking a traceable
-candidate pool from the official arXiv API. This repository currently implements
-Milestones 1–3: configuration, validated models, polite retrieval, normalization,
-deduplication, deterministic offline hybrid ranking, recent-history filtering, updated
-version resurfacing, MMR diversity selection, and machine-readable JSON artifacts.
+`arxiv-digest` is a Python 3.12 application for collecting, ranking, and reporting a
+traceable weekly reading list from the official arXiv API. This repository implements
+Milestones 1–4: validated configuration and models, polite retrieval, normalization,
+deduplication, deterministic hybrid ranking, history filtering, diversity selection,
+abstract-grounded summaries, and Markdown/HTML reports.
 
-No API key or paid service is needed. Summaries, reader-facing reports, feedback,
-email, and scheduling deliberately remain for later milestones.
+The default workflow is fully offline after candidate retrieval and needs no API key or
+paid service. An optional OpenAI provider is available for summaries, with strict
+structured-output validation and deterministic per-paper fallback.
 
 ## Setup
 
@@ -41,7 +42,8 @@ itself, and generated `.env` files are ignored by Git.
 ## Configuration
 
 - `config/app.yaml` controls paths, explicit HTTP timeouts, page size, bounded retries,
-  exponential backoff, the minimum three-second request interval, and overlap days.
+  exponential backoff, the minimum three-second request interval, overlap days, summary
+  provider limits, report timezone, and near-miss count.
 - `config/research_profile.yaml` contains six broad editable queries plus the research
   interests and future ranking settings. Category membership is retained as metadata
   and is not a retrieval hard filter.
@@ -104,9 +106,10 @@ negative terms apply a bounded penalty; author boosts are supported. All compone
 the final score are in `0..1`, and every score records its strongest profile matches.
 Weights are normalized from `config/research_profile.yaml`.
 
-## Diversity-aware run
+## Weekly report run
 
-Run retrieval when needed, ranking, and top-ten selection without paid APIs:
+Run retrieval when needed, ranking, top-ten selection, deterministic summaries, and
+report rendering without paid APIs:
 
 ```bash
 uv run arxiv-digest run --days 7 --limit 10 --dry-run
@@ -121,10 +124,18 @@ uv run arxiv-digest run \
   --dry-run
 ```
 
-The run writes stable ranked and selection JSON artifacts. `--dry-run` leaves history
-unchanged. Without it, selected papers are appended to `data/history.jsonl`. Repeating
-the same source/profile/limit reproduces the same selection and does not duplicate
-history.
+The run writes stable ranked and selection JSON artifacts plus:
+
+- `reports/YYYY-MM-DD-weekly-arxiv-digest.md`;
+- `reports/YYYY-MM-DD-weekly-arxiv-digest.html`;
+- `reports/latest.md`;
+- `reports/latest.html`.
+
+Every report prominently labels summaries as based only on the title, abstract, and
+metadata. `--dry-run` always forces the offline summary provider and leaves history
+unchanged. Without it, history is appended only after all reports are written
+successfully. Repeating the same source/profile/limit reproduces the same selection and
+does not duplicate history.
 
 Selection uses deterministic maximal marginal relevance over title-and-abstract term
 vectors, configurable direct/adjacent/wildcard targets, a minimum score for every
@@ -134,6 +145,32 @@ minimum wildcard threshold is never relaxed merely to fill the requested limit.
 Recent recommendations are excluded for 90 days by default. A recent paper can
 resurface only when resurfacing is enabled, its version differs, and its update
 timestamp is later than the prior recommendation timestamp.
+
+## Summary providers
+
+The default `summarization.provider: offline` uses a deterministic extractive provider.
+It never reads PDFs and works without network access. Summary validation enforces the
+35-word takeaway ceiling, concise field limits, normalized method labels, confidence in
+`0..1`, and the exact abstract-only basis statement.
+
+To enable optional OpenAI summaries, set the model at runtime and select the provider:
+
+```text
+OPENAI_API_KEY=...
+OPENAI_SUMMARY_MODEL=...
+ARXIV_DIGEST_APP__SUMMARIZATION__PROVIDER=openai
+```
+
+The provider uses the Responses API with Pydantic structured output. It sends only the
+paper title, abstract, authors, categories, submission/update dates, and relevant profile
+context—never PDF content or PDF URLs. Invalid or failed responses are retried within the
+configured bound, then replaced by the deterministic offline summary without dropping
+the paper. `OPENAI_EMBEDDING_MODEL` configures the optional embedding-provider interface;
+Milestone 4 does not replace the deterministic TF-IDF ranker with paid embeddings.
+
+Model names intentionally have no repository default. Environment variables
+`OPENAI_SUMMARY_MODEL` and `OPENAI_EMBEDDING_MODEL` override the corresponding YAML
+fields directly. Nested `ARXIV_DIGEST_...` overrides remain available for every setting.
 
 ## arXiv API behavior
 
@@ -165,15 +202,15 @@ uv run pytest -m live tests/test_live_arxiv.py
 
 ## Current limitations
 
-- Milestone 3 produces machine-readable ranked and selection JSON, not the final weekly
-  Markdown/HTML report.
 - Feedback affinity is reported as a neutral component; user feedback adaptation is
   deferred to Milestone 6 and does not affect ranking yet.
 - Recommendation history is local append-only JSONL. There is no database or hosted
   persistence.
-- No summaries, report templates, OpenAI integration, email, PDFs, frontend, or GitHub
-  Actions workflow are included yet.
+- Offline summaries are extractive and can be terse when an arXiv abstract is short.
+- OpenAI behavior is covered with injected fakes in normal tests; live paid API tests are
+  intentionally not part of the suite.
+- No email delivery, PDFs, frontend, database framework, or GitHub Actions workflow is
+  included yet.
 
-The next task should implement Milestone 4 separately: summary-provider interfaces,
-deterministic abstract-grounded fallbacks, optional OpenAI summaries, strict validation,
-and Markdown/HTML reports clearly labeled as abstract-based.
+The recommended next task is Milestone 5: optional SMTP delivery and the weekly GitHub
+Actions workflow, with an honest persistence strategy for ephemeral hosted runners.

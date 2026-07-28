@@ -1,8 +1,9 @@
-"""Typer command-line interface through deterministic offline Milestone 3."""
+"""Typer command-line interface through abstract-grounded Milestone 4 reports."""
 
 from __future__ import annotations
 
 import logging
+import os
 import tempfile
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
@@ -21,10 +22,11 @@ from arxiv_digest.pipeline import (
     load_model,
     rank_snapshot,
     retrieve_candidates,
-    run_milestone3,
+    run_milestone4,
     write_model,
 )
 from arxiv_digest.snapshot import default_snapshot_path, write_snapshot
+from arxiv_digest.summarization import DeterministicSummaryProvider, OpenAISummaryProvider
 
 app = typer.Typer(
     name="arxiv-digest",
@@ -63,6 +65,25 @@ def _writable(directory: Path) -> None:
             return
     except OSError as exc:
         raise ConfigurationError(f"Directory is not writable: {directory} ({exc})") from exc
+
+
+def _summary_provider(
+    settings: Settings, *, dry_run: bool
+) -> DeterministicSummaryProvider | OpenAISummaryProvider:
+    """Resolve the configured provider while guaranteeing that dry runs stay offline."""
+    if dry_run or settings.app.summarization.provider == "offline":
+        return DeterministicSummaryProvider()
+    model = settings.app.summarization.openai_summary_model
+    if model is None:
+        raise ConfigurationError(
+            "OPENAI_SUMMARY_MODEL is required when summarization.provider is openai"
+        )
+    if not os.environ.get("OPENAI_API_KEY"):
+        raise ConfigurationError("OPENAI_API_KEY is required when summarization.provider is openai")
+    return OpenAISummaryProvider(
+        model=model,
+        validation_retries=settings.app.summarization.validation_retries,
+    )
 
 
 def _window(
@@ -153,11 +174,19 @@ def doctor(
         _writable(settings.app.paths.data_dir)
         _writable(settings.app.paths.reports_dir)
         _writable(settings.app.paths.history_file.parent)
+        for template_name in ("weekly_report.md.j2", "weekly_report.html.j2"):
+            template_path = settings.app.paths.templates_dir / template_name
+            if not template_path.is_file():
+                raise ConfigurationError(f"Report template does not exist: {template_path}")
+        provider_status = settings.app.summarization.provider
+        if provider_status == "openai":
+            _summary_provider(settings, dry_run=False)
     except ArxivDigestError as exc:
         _fail(exc)
     typer.echo(
         "Configuration valid; data, report, and history paths are writable; "
-        "arXiv timeouts, pacing, retries, and contact User-Agent are configured."
+        "arXiv timeouts, pacing, retries, contact User-Agent, report templates, and "
+        f"{provider_status} summaries are configured."
     )
 
 
@@ -275,7 +304,7 @@ def run(
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
 ) -> None:
-    """Retrieve or load candidates, then rank and select without paid services."""
+    """Retrieve or load candidates, then rank, summarize, and write weekly reports."""
     try:
         settings = _load(app_config, profile_config)
         _configure_logging(settings)
@@ -289,10 +318,12 @@ def run(
             now=now,
         )
         history = load_history(settings.app.paths.history_file)
-        result = run_milestone3(
+        provider = _summary_provider(settings, dry_run=dry_run)
+        result = run_milestone4(
             snapshot,
             settings,
             history,
+            provider,
             now=now,
             limit=limit,
             persist_history=not dry_run,
@@ -315,8 +346,10 @@ def run(
     typer.echo(
         f"Loaded {len(snapshot.papers)} candidates from {source_path}, excluded "
         f"{result.history_excluded} by history, ranked {len(result.ranked.ranked_papers)}, "
-        f"selected {len(result.selection.selected)}, {history_status}; wrote "
-        f"{ranked_destination} and {selection_destination}."
+        f"summarized and selected {len(result.recommendations)}, used "
+        f"{result.summary_fallbacks} summary fallbacks, {history_status}; wrote "
+        f"{ranked_destination}, {selection_destination}, {result.reports.markdown}, and "
+        f"{result.reports.html} (plus latest.md/latest.html)."
     )
 
 

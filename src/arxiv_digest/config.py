@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
-from typing import Any, ClassVar
+from typing import Any, ClassVar, Literal
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import yaml
 from pydantic import Field, ValidationError, field_validator, model_validator
@@ -21,6 +22,7 @@ class PathsConfig(StrictModel):
     data_dir: Path = Path("data")
     reports_dir: Path = Path("reports")
     history_file: Path = Path("data/history.jsonl")
+    templates_dir: Path = Path("templates")
 
 
 class ArxivConfig(StrictModel):
@@ -60,12 +62,49 @@ class LoggingConfig(StrictModel):
         return normalized
 
 
+class SummarizationConfig(StrictModel):
+    """Offline-first summary provider settings with optional OpenAI model names."""
+
+    provider: Literal["offline", "openai"] = "offline"
+    max_provider_papers: int = Field(default=12, ge=1, le=50)
+    validation_retries: int = Field(default=2, ge=0, le=4)
+    openai_summary_model: str | None = None
+    openai_embedding_model: str | None = None
+
+    @field_validator("openai_summary_model", "openai_embedding_model")
+    @classmethod
+    def reject_blank_models(cls, value: str | None) -> str | None:
+        """Treat omitted model names distinctly from invalid blank names."""
+        if value is not None and not value.strip():
+            raise ValueError("OpenAI model names cannot be blank")
+        return value
+
+
+class ReportingConfig(StrictModel):
+    """Reader-facing report output settings."""
+
+    timezone: str = "UTC"
+    near_miss_limit: int = Field(default=5, ge=0, le=5)
+
+    @field_validator("timezone")
+    @classmethod
+    def validate_timezone(cls, value: str) -> str:
+        """Require a timezone available to the standard-library zoneinfo database."""
+        try:
+            ZoneInfo(value)
+        except ZoneInfoNotFoundError as exc:
+            raise ValueError(f"unknown IANA timezone: {value}") from exc
+        return value
+
+
 class AppConfig(StrictModel):
     """Operational application configuration."""
 
     paths: PathsConfig = PathsConfig()
     arxiv: ArxivConfig = ArxivConfig()
     logging: LoggingConfig = LoggingConfig()
+    summarization: SummarizationConfig = SummarizationConfig()
+    reporting: ReportingConfig = ReportingConfig()
 
 
 class RankingWeights(StrictModel):
@@ -216,6 +255,19 @@ def _environment_overrides() -> dict[str, Any]:
                 raise ConfigurationError(f"Conflicting environment override path: {name}")
             target = child
         target[path[-1]] = yaml.safe_load(raw_value)
+    model_aliases = {
+        "OPENAI_SUMMARY_MODEL": "openai_summary_model",
+        "OPENAI_EMBEDDING_MODEL": "openai_embedding_model",
+    }
+    for environment_name, field_name in model_aliases.items():
+        if value := os.environ.get(environment_name):
+            app = overrides.setdefault("app", {})
+            if not isinstance(app, dict):
+                raise ConfigurationError("Conflicting environment override path: app")
+            summarization = app.setdefault("summarization", {})
+            if not isinstance(summarization, dict):
+                raise ConfigurationError("Conflicting environment override path: app.summarization")
+            summarization[field_name] = value
     return overrides
 
 

@@ -173,8 +173,11 @@ def test_run_dry_run_writes_artifacts_but_not_history(
     ranked_path = tmp_path / "ranked.json"
     selection_path = tmp_path / "selection.json"
     history_path = tmp_path / "history.jsonl"
+    reports_path = tmp_path / "reports"
     monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__HISTORY_FILE", str(history_path))
     monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__REPORTS_DIR", str(reports_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__TEMPLATES_DIR", str(Path.cwd() / "templates"))
     result = runner.invoke(
         app,
         [
@@ -197,4 +200,28 @@ def test_run_dry_run_writes_artifacts_but_not_history(
     selection = SelectionSnapshot.model_validate_json(selection_path.read_text())
     assert 1 <= len(selection.selected) <= 4
     assert "dry-run history unchanged" in result.stdout
+    assert "summarized and selected" in result.stdout
+    assert (reports_path / "latest.md").exists()
+    assert (reports_path / "latest.html").exists()
     assert not history_path.exists()
+
+
+def test_dry_run_forces_offline_provider_when_openai_is_configured(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    paper_factory,
+) -> None:  # type: ignore[no-untyped-def]
+    snapshot_path = tmp_path / "candidates.json"
+    _write_candidate_snapshot(snapshot_path, paper_factory)
+    monkeypatch.setenv("ARXIV_DIGEST_APP__SUMMARIZATION__PROVIDER", "openai")
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_SUMMARY_MODEL", raising=False)
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__REPORTS_DIR", str(tmp_path / "reports"))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__TEMPLATES_DIR", str(Path.cwd() / "templates"))
+    result = runner.invoke(
+        app,
+        ["run", "--snapshot", str(snapshot_path), "--limit", "2", "--dry-run"],
+    )
+    assert result.exit_code == 0, result.output
+    assert "0 summary fallbacks" in result.stdout

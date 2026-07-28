@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly arXiv Digest — {{ generated_at.strftime("%Y-%m-%d") }}</title>
+  <style>
+    :root { color-scheme: light dark; font-family: Georgia, "Times New Roman", serif; }
+    body { max-width: 920px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.55; }
+    header, article, footer { border-bottom: 1px solid #8886; padding-bottom: 1.25rem; margin-bottom: 1.5rem; }
+    .notice { border-left: 4px solid #b56b00; padding: .75rem 1rem; background: #b56b0012; }
+    .metadata, .scores { font-family: system-ui, sans-serif; font-size: .9rem; }
+    .type { text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
+    dt { font-weight: 700; margin-top: .75rem; }
+    dd { margin-left: 0; }
+    a { color: #1769aa; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Weekly arXiv Digest — {{ generated_at.strftime("%Y-%m-%d") }}</h1>
+    <p class="notice"><strong>Abstract-based summaries:</strong> {{ summary_basis }}</p>
+    <ul class="metadata">
+      <li>Generated: {{ generated_at.isoformat() }} ({{ timezone }})</li>
+      <li>Retrieval window: {{ retrieval_start.isoformat() }} through {{ retrieval_end.isoformat() }}</li>
+      <li>Records: {{ records_retrieved }} retrieved; {{ records_after_deduplication }} after deduplication; {{ records_ranked }} ranked</li>
+      <li>Research profile: {{ profile_name }} version {{ profile_version }} ({{ profile_hash }})</li>
+    </ul>
+  </header>
+  <main>
+    <h2>Recommendations</h2>
+    {% for recommendation in recommendations %}
+    <article>
+      <h3>{{ recommendation.rank }}. {{ recommendation.paper.title }}</h3>
+      <p class="metadata">
+        {{ recommendation.paper.authors | join(", ") }}<br>
+        Submitted {{ recommendation.paper.published_at.date().isoformat() }};
+        updated {{ recommendation.paper.updated_at.date().isoformat() }};
+        <code>{{ recommendation.paper.primary_category }}</code>;
+        <span class="type">{{ recommendation.recommendation_type.value }}</span>
+      </p>
+      <dl>
+        <dt>Takeaway</dt><dd>{{ recommendation.summary.one_sentence_takeaway }}</dd>
+        <dt>Brief summary</dt><dd>{{ recommendation.summary.brief_summary }}</dd>
+        <dt>Why selected</dt><dd>{{ recommendation.summary.why_relevant }}</dd>
+        <dt>Methods or systems</dt><dd>{{ recommendation.summary.methods_or_systems | join(", ") }}</dd>
+        <dt>Limitations</dt><dd>{{ recommendation.summary.limitations }}</dd>
+      </dl>
+      <p class="scores"><strong>Scores:</strong>
+        semantic {{ "%.3f" | format(recommendation.score.semantic_relevance) }} ·
+        keyword {{ "%.3f" | format(recommendation.score.keyword_relevance) }} ·
+        category {{ "%.3f" | format(recommendation.score.category_relevance) }} ·
+        recency {{ "%.3f" | format(recommendation.score.recency) }} ·
+        novelty {{ "%.3f" | format(recommendation.score.novelty) }} ·
+        feedback {{ "%.3f" | format(recommendation.score.feedback_affinity) }} ·
+        <strong>final {{ "%.3f" | format(recommendation.score.final_preselection_score) }}</strong><br>
+        {{ recommendation.score.explanation }}
+      </p>
+      <p><a href="{{ recommendation.paper.abstract_url }}">arXiv abstract</a> · <a href="{{ recommendation.paper.pdf_url }}">PDF</a></p>
+    </article>
+    {% else %}
+    <p>No candidates met the configured minimum selection threshold for this window.</p>
+    {% endfor %}
+    <section>
+      <h2>Strong candidates that narrowly missed</h2>
+      {% if near_misses %}<ul>
+      {% for candidate in near_misses %}
+        <li><a href="{{ candidate.paper.abstract_url }}">{{ candidate.paper.title }}</a> — <code>{{ candidate.paper.primary_category }}</code>, final score {{ "%.3f" | format(candidate.score.final_preselection_score) }}</li>
+      {% endfor %}
+      </ul>{% else %}<p>No additional qualifying candidates were available.</p>{% endif %}
+    </section>
+  </main>
+  <footer><p>Every summary in this report is based on the title, abstract, and arXiv metadata only.</p></footer>
+</body>
+</html>

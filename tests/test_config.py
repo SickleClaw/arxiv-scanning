@@ -27,9 +27,13 @@ def test_default_configuration_loads_and_weights_sum_to_one() -> None:
 def test_environment_overrides_yaml(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("ARXIV_DIGEST_APP__ARXIV__PAGE_SIZE", "17")
     monkeypatch.setenv("ARXIV_DIGEST_PROFILE__MAX_CANDIDATE_COUNT", "123")
+    monkeypatch.setenv("OPENAI_SUMMARY_MODEL", "configured-summary-model")
+    monkeypatch.setenv("OPENAI_EMBEDDING_MODEL", "configured-embedding-model")
     settings = load_settings()
     assert settings.app.arxiv.page_size == 17
     assert settings.profile.max_candidate_count == 123
+    assert settings.app.summarization.openai_summary_model == "configured-summary-model"
+    assert settings.app.summarization.openai_embedding_model == "configured-embedding-model"
 
 
 def test_missing_or_invalid_configuration_has_actionable_error(tmp_path: Path) -> None:

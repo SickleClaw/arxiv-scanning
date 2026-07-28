@@ -1,4 +1,4 @@
-"""Milestone 3 orchestration for retrieval, ranking, selection, and history."""
+"""Pipeline orchestration through abstract-grounded Milestone 4 reports."""
 
 from __future__ import annotations
 
@@ -25,12 +25,15 @@ from arxiv_digest.models import (
     DateWindow,
     HistoryRecord,
     RankedSnapshot,
+    Recommendation,
     SelectionSnapshot,
 )
 from arxiv_digest.normalization import deduplicate_papers
 from arxiv_digest.ranking import rank_papers
+from arxiv_digest.reporting import ReportPaths, render_reports
 from arxiv_digest.selection import select_diverse
 from arxiv_digest.snapshot import create_snapshot
+from arxiv_digest.summarization import SummaryProvider, summarize_selection
 
 LOGGER = logging.getLogger(__name__)
 
@@ -43,6 +46,19 @@ class Milestone3Result:
     selection: SelectionSnapshot
     history_excluded: int
     history_appended: int
+
+
+@dataclass(frozen=True, slots=True)
+class Milestone4Result:
+    """Ranking, selection, summaries, reports, and post-report history counts."""
+
+    ranked: RankedSnapshot
+    selection: SelectionSnapshot
+    recommendations: list[Recommendation]
+    reports: ReportPaths
+    history_excluded: int
+    history_appended: int
+    summary_fallbacks: int
 
 
 def _stable_id(prefix: str, *parts: str) -> str:
@@ -211,6 +227,74 @@ def run_milestone3(
         selection=selection,
         history_excluded=excluded,
         history_appended=appended,
+    )
+
+
+def run_milestone4(
+    snapshot: CandidateSnapshot,
+    settings: Settings,
+    history: list[HistoryRecord],
+    provider: SummaryProvider,
+    *,
+    now: datetime,
+    limit: int,
+    persist_history: bool,
+) -> Milestone4Result:
+    """Rank, summarize, render, then optionally persist history after report success."""
+    started = time.perf_counter()
+    milestone3 = run_milestone3(
+        snapshot,
+        settings,
+        history,
+        now=now,
+        limit=limit,
+        persist_history=False,
+    )
+    summaries = summarize_selection(
+        milestone3.selection.selected,
+        settings.profile,
+        provider,
+        max_provider_papers=settings.app.summarization.max_provider_papers,
+    )
+    reports = render_reports(
+        snapshot=snapshot,
+        ranked=milestone3.ranked,
+        recommendations=summaries.recommendations,
+        profile=settings.profile,
+        generated_at=now,
+        timezone=settings.app.reporting.timezone,
+        templates_dir=settings.app.paths.templates_dir,
+        reports_dir=settings.app.paths.reports_dir,
+        near_miss_limit=settings.app.reporting.near_miss_limit,
+    )
+    appended = 0
+    if persist_history:
+        records = records_for_selection(
+            run_id=milestone3.selection.run_id,
+            run_timestamp=now,
+            window=milestone3.selection.retrieval_window,
+            selected=milestone3.selection.selected,
+            report_path=str(reports.markdown),
+        )
+        appended = append_history(settings.app.paths.history_file, records)
+    LOGGER.info(
+        "run_id=%s stage=report summarized=%d fallbacks=%d markdown=%s html=%s "
+        "elapsed_seconds=%.3f",
+        milestone3.selection.run_id,
+        len(summaries.recommendations),
+        summaries.fallback_count,
+        reports.markdown,
+        reports.html,
+        time.perf_counter() - started,
+    )
+    return Milestone4Result(
+        ranked=milestone3.ranked,
+        selection=milestone3.selection,
+        recommendations=summaries.recommendations,
+        reports=reports,
+        history_excluded=milestone3.history_excluded,
+        history_appended=appended,
+        summary_fallbacks=summaries.fallback_count,
     )
 
 

@@ -6,6 +6,10 @@ from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+ABSTRACT_SUMMARY_BASIS = (
+    "Based only on the title, abstract, and arXiv metadata; the full paper was not read."
+)
+
 
 class StrictModel(BaseModel):
     """Base model that rejects unknown fields and validates assignments."""
@@ -80,7 +84,7 @@ class Paper(StrictModel):
 
 
 class ScoreBreakdown(StrictModel):
-    """Future ranking components, each normalized to the inclusive range 0..1."""
+    """Ranking components, each normalized to the inclusive range 0..1."""
 
     semantic_relevance: float = Field(ge=0.0, le=1.0)
     keyword_relevance: float = Field(ge=0.0, le=1.0)
@@ -93,15 +97,97 @@ class ScoreBreakdown(StrictModel):
 
 
 class PaperSummary(StrictModel):
-    """Validated abstract-grounded summary shape for a later milestone."""
+    """Validated abstract-grounded summary with concise, explicit scope limits."""
 
-    one_sentence_takeaway: str
-    brief_summary: str
-    why_relevant: str
-    methods_or_systems: list[str]
-    limitations: str
-    summary_basis: str
+    one_sentence_takeaway: str = Field(min_length=1)
+    brief_summary: str = Field(min_length=1)
+    why_relevant: str = Field(min_length=1)
+    methods_or_systems: list[str] = Field(min_length=1)
+    limitations: str = Field(min_length=1)
+    summary_basis: str = Field(min_length=1)
     confidence: float = Field(ge=0.0, le=1.0)
+
+    @field_validator(
+        "one_sentence_takeaway",
+        "brief_summary",
+        "why_relevant",
+        "limitations",
+        "summary_basis",
+    )
+    @classmethod
+    def normalize_summary_text(cls, value: str) -> str:
+        """Collapse whitespace in provider output before applying length checks."""
+        return re.sub(r"\s+", " ", value).strip()
+
+    @field_validator("methods_or_systems")
+    @classmethod
+    def normalize_methods(cls, values: list[str]) -> list[str]:
+        """Normalize and de-duplicate the supplied metadata-grounded method labels."""
+        normalized = [re.sub(r"\s+", " ", value).strip() for value in values]
+        result = list(dict.fromkeys(value for value in normalized if value))
+        if not result:
+            raise ValueError("methods_or_systems must contain at least one nonblank value")
+        return result
+
+    @field_validator("one_sentence_takeaway")
+    @classmethod
+    def limit_takeaway(cls, value: str) -> str:
+        """Enforce the report's 35-word takeaway ceiling."""
+        if len(value.split()) > 35:
+            raise ValueError("one_sentence_takeaway must contain no more than 35 words")
+        return value
+
+    @field_validator("brief_summary")
+    @classmethod
+    def limit_brief_summary(cls, value: str) -> str:
+        """Reject verbose provider output well beyond the 80-130 word target."""
+        if len(value.split()) > 150:
+            raise ValueError("brief_summary must contain no more than 150 words")
+        return value
+
+    @field_validator("why_relevant")
+    @classmethod
+    def limit_relevance(cls, value: str) -> str:
+        """Keep the relevance explanation close to its 30-70 word target."""
+        if len(value.split()) > 80:
+            raise ValueError("why_relevant must contain no more than 80 words")
+        return value
+
+    @field_validator("limitations")
+    @classmethod
+    def limit_limitations(cls, value: str) -> str:
+        """Keep the limitations statement concise."""
+        if len(value.split()) > 45:
+            raise ValueError("limitations must contain no more than 45 words")
+        return value
+
+    @field_validator("summary_basis")
+    @classmethod
+    def require_abstract_basis(cls, value: str) -> str:
+        """Prevent a provider from implying that the full paper was inspected."""
+        if value != ABSTRACT_SUMMARY_BASIS:
+            raise ValueError(f"summary_basis must be exactly: {ABSTRACT_SUMMARY_BASIS}")
+        return value
+
+    @model_validator(mode="after")
+    def reject_inspection_claims(self) -> "PaperSummary":
+        """Reject common phrases that imply evidence outside the supplied metadata."""
+        narrative = " ".join(
+            (
+                self.one_sentence_takeaway,
+                self.brief_summary,
+                self.why_relevant,
+                self.limitations,
+            )
+        ).casefold()
+        forbidden = (
+            r"\b(?:we|i) (?:read|reviewed|examined|inspected) the (?:full )?paper\b",
+            r"\b(?:the )?(?:figures|equations|appendices) "
+            r"(?:show|demonstrate|confirm|reveal)\b",
+        )
+        if any(re.search(pattern, narrative) for pattern in forbidden):
+            raise ValueError("summary must not imply inspection beyond the abstract and metadata")
+        return self
 
 
 class RecommendationType(StrEnum):
@@ -113,7 +199,7 @@ class RecommendationType(StrEnum):
 
 
 class Recommendation(StrictModel):
-    """Future report record combining metadata, scores, and a grounded summary."""
+    """Report record combining metadata, scores, and a grounded summary."""
 
     paper: Paper
     score: ScoreBreakdown
@@ -130,7 +216,7 @@ class RankedPaper(StrictModel):
 
 
 class SelectedPaper(StrictModel):
-    """A ranked Milestone 3 selection without a not-yet-generated summary."""
+    """A ranked selection before summary generation."""
 
     paper: Paper
     score: ScoreBreakdown
