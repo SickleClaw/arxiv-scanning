@@ -1,0 +1,97 @@
+name: frustrated-magnetism-weekly
+version: "1.0"
+description: >-
+  Condensed-matter physics profile centered on frustrated magnetism, neutron
+  scattering, magnetic dynamics, spinels, and closely related methods.
+priority_topics:
+  - spin ice and frustrated magnetism
+  - magnetic monopoles and nonequilibrium dynamics
+  - neutron scattering and dynamical structure factors
+  - frustrated and disordered spinels
+  - linear spin-wave theory and exchange fitting
+exact_phrases:
+  spin ice: 3.0
+  magnetic monopole: 2.5
+  neutron diffuse scattering: 2.5
+  dynamical structure factor: 2.0
+  linear spin-wave theory: 2.0
+  spin Seebeck effect: 1.5
+  polarized neutron reflectometry: 1.5
+materials:
+  Ho2Ti2O7: 3.0
+  ZnFe2O4: 3.0
+  pyrochlore: 2.0
+  spinel: 1.5
+methods:
+  kinetic Monte Carlo: 2.0
+  loop algorithm: 1.5
+  cluster algorithm: 1.5
+  spin dynamics: 2.0
+  neutron scattering: 2.5
+  inverse problems: 1.0
+categories:
+  cond-mat.str-el: 1.0
+  cond-mat.mtrl-sci: 0.8
+  cond-mat.stat-mech: 0.8
+  cond-mat.mes-hall: 0.5
+  physics.comp-ph: 0.6
+  physics.ins-det: 0.5
+negative_terms:
+  - financial market
+  - social network
+author_boosts: {}
+ranking_weights:
+  semantic_relevance: 0.45
+  keyword_relevance: 0.25
+  category_relevance: 0.10
+  recency: 0.10
+  feedback_or_novelty: 0.10
+recommendation_mix:
+  direct: 6
+  adjacent: 3
+  wildcard: 1
+history_exclusion_days: 90
+allow_updated_resurfacing: true
+max_candidate_count: 200
+max_papers_per_topic: 3
+selection:
+  mmr_lambda: 0.75
+  direct_min_score: 0.28
+  adjacent_min_score: 0.20
+  wildcard_min_score: 0.12
+queries:
+  - name: spin-ice-dynamics
+    terms:
+      - spin ice
+      - pyrochlore magnetism
+      - magnetic monopole
+      - nonequilibrium magnetic dynamics
+  - name: neutron-scattering
+    terms:
+      - neutron diffuse scattering
+      - inelastic neutron scattering
+      - magnetic structure factor
+      - dynamical structure factor
+  - name: spin-wave-fitting
+    terms:
+      - linear spin-wave theory
+      - exchange parameter fitting
+      - magnetic excitation spectrum
+  - name: frustrated-spinels
+    terms:
+      - frustrated spinel
+      - ZnFe2O4
+      - magnetic disorder
+      - insulating spin glass
+  - name: spin-caloritronics
+    terms:
+      - spin Seebeck effect
+      - spin caloritronics
+      - polarized neutron reflectometry
+      - magnetic insulator Pt
+  - name: computational-methods
+    terms:
+      - kinetic Monte Carlo magnetism
+      - cluster algorithm magnetism
+      - scientific machine learning condensed matter
+      - inverse problems condensed matter

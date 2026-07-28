@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+      xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query: test</title>
+  <id>https://arxiv.org/api/test</id>
+  <updated>2026-07-27T12:00:00Z</updated>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>1</opensearch:startIndex>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <entry>
+    <id>https://arxiv.org/abs/cond-mat/0501234v3</id>
+    <updated>2026-07-25T13:00:00+00:00</updated>
+    <published>2005-01-20T13:00:00+00:00</published>
+    <title>Updated neutron diffuse scattering from a frustrated spinel</title>
+    <summary>An updated analysis of magnetic disorder in a spinel system.</summary>
+    <author><name>Grace Bose</name></author>
+    <arxiv:primary_category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <link href="https://arxiv.org/abs/cond-mat/0501234v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="https://arxiv.org/pdf/cond-mat/0501234v3" rel="related" type="application/pdf"/>
+  </entry>
+</feed>

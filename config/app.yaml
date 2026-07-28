@@ -1,0 +1,16 @@
+paths:
+  data_dir: data
+  reports_dir: reports
+  history_file: data/history.jsonl
+arxiv:
+  api_url: https://export.arxiv.org/api/query
+  contact_email: researcher@example.org
+  connect_timeout_seconds: 10.0
+  read_timeout_seconds: 30.0
+  page_size: 50
+  retry_count: 3
+  retry_backoff_seconds: 2.0
+  rate_limit_seconds: 3.0
+  overlap_days: 1
+logging:
+  level: INFO

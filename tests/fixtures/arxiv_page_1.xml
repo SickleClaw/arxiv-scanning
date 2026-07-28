@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+      xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query: test</title>
+  <id>https://arxiv.org/api/test</id>
+  <updated>2026-07-27T12:00:00Z</updated>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <entry>
+    <id>https://arxiv.org/abs/2607.12345v1</id>
+    <updated>2026-07-27T10:30:00Z</updated>
+    <published>2026-07-26T08:00:00Z</published>
+    <title>
+      Nonequilibrium   dynamics in Ho₂Ti₂O₇ spin ice
+    </title>
+    <summary>
+      We study field-driven magnetic monopole dynamics using kinetic
+      Monte Carlo simulations and neutron-scattering observables.
+    </summary>
+    <author><name>Ada Curie</name></author>
+    <author><name>Niels Raman</name></author>
+    <arxiv:doi>10.0000/example.1</arxiv:doi>
+    <arxiv:journal_ref>Journal of Fixture Physics 1, 1 (2026)</arxiv:journal_ref>
+    <arxiv:primary_category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.str-el" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
+    <link href="https://arxiv.org/abs/2607.12345v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="https://arxiv.org/pdf/2607.12345v1" rel="related" type="application/pdf"/>
+  </entry>
+</feed>
