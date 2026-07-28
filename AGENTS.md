@@ -37,6 +37,7 @@ The default profile should be tailored to these interests:
 - Neutron scattering, neutron diffuse scattering, time-resolved scattering, and dynamical structure factors
 - Spectral-weight and momentum-sum-rule analyses
 - ZnFe2O4 and frustrated or disordered spinels
+- Insulating spin glasses
 - Linear spin-wave theory, exchange-parameter fitting, domain averaging, and magnetic excitation spectra
 
 ### Secondary topics
