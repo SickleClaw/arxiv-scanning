@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from arxiv_digest.config import load_settings, redact_mapping
+from arxiv_digest.config import load_settings, redact_mapping, settings_as_json
 from arxiv_digest.exceptions import ConfigurationError
 
 
@@ -29,11 +29,25 @@ def test_environment_overrides_yaml(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("ARXIV_DIGEST_PROFILE__MAX_CANDIDATE_COUNT", "123")
     monkeypatch.setenv("OPENAI_SUMMARY_MODEL", "configured-summary-model")
     monkeypatch.setenv("OPENAI_EMBEDDING_MODEL", "configured-embedding-model")
+    monkeypatch.setenv("SMTP_HOST", "smtp.test.invalid")
+    monkeypatch.setenv("SMTP_PORT", "465")
+    monkeypatch.setenv("SMTP_USE_TLS", "false")
+    monkeypatch.setenv("SMTP_USE_SSL", "true")
+    monkeypatch.setenv("SMTP_USERNAME", "digest-user")
+    monkeypatch.setenv("SMTP_PASSWORD", "smtp-secret-value")
+    monkeypatch.setenv("DIGEST_FROM_EMAIL", "digest@test.invalid")
+    monkeypatch.setenv("DIGEST_TO_EMAIL", "one@test.invalid,two@test.invalid")
     settings = load_settings()
     assert settings.app.arxiv.page_size == 17
     assert settings.profile.max_candidate_count == 123
     assert settings.app.summarization.openai_summary_model == "configured-summary-model"
     assert settings.app.summarization.openai_embedding_model == "configured-embedding-model"
+    assert settings.app.delivery.smtp_port == 465
+    assert settings.app.delivery.smtp_use_ssl is True
+    assert settings.app.delivery.to_emails == ["one@test.invalid", "two@test.invalid"]
+    serialized = settings_as_json(settings)
+    assert "smtp-secret-value" not in serialized
+    assert '"smtp_password": "***REDACTED***"' in serialized
 
 
 def test_missing_or_invalid_configuration_has_actionable_error(tmp_path: Path) -> None:

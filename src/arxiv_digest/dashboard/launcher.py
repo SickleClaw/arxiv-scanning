@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import Protocol, cast
 
+from arxiv_digest.dashboard.paths import resolve_dashboard_paths
 from arxiv_digest.exceptions import ConfigurationError
 
 
@@ -22,6 +23,7 @@ class _Runner(Protocol):
 def build_dashboard_command(report: Path, reports_dir: Path) -> list[str]:
     """Build a loopback-only Streamlit command without shell interpolation."""
     app_path = Path(__file__).with_name("app.py")
+    paths = resolve_dashboard_paths(report=report, reports_dir=reports_dir)
     return [
         sys.executable,
         "-m",
@@ -33,9 +35,9 @@ def build_dashboard_command(report: Path, reports_dir: Path) -> list[str]:
         "--browser.gatherUsageStats=false",
         "--",
         "--report",
-        str(report),
+        str(paths.report),
         "--reports-dir",
-        str(reports_dir),
+        str(paths.reports_dir),
     ]
 
 

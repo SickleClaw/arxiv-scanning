@@ -31,3 +31,7 @@ class SummaryProviderError(ArxivDigestError):
 
 class ReportingError(ArxivDigestError):
     """Raised when a weekly report cannot be rendered or written safely."""
+
+
+class DeliveryError(ArxivDigestError):
+    """Raised when an optional report delivery attempt fails safely."""

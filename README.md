@@ -2,10 +2,11 @@
 
 `arxiv-digest` is a Python 3.12 application for collecting, ranking, and presenting a
 traceable weekly reading list from the official arXiv API. This repository implements
-Milestones 1–4 plus the local Milestone 4.5 dashboard: validated configuration and
+Milestones 1–5 plus the read-only Milestone 4.5 dashboard: validated configuration and
 models, polite retrieval, normalization, deduplication, deterministic hybrid ranking,
 history filtering, diversity selection, abstract-grounded summaries, canonical JSON,
-Markdown/HTML reports, and a read-only local viewer.
+Markdown/HTML reports, a cloud-deployable viewer, weekly automation, repository-backed
+recommendation history, and optional SMTP delivery.
 
 The default workflow is fully offline after candidate retrieval and needs no API key or
 paid service. An optional OpenAI provider is available for summaries, with strict
@@ -21,14 +22,9 @@ uv run arxiv-digest doctor
 uv run arxiv-digest show-config
 ```
 
-The dashboard is an optional runtime dependency. Install it when you want the local UI:
-
-```bash
-uv sync --extra dashboard
-```
-
-The normal development environment includes Streamlit so dashboard tests run with the
-standard `uv sync` command.
+Streamlit is a pinned-compatible runtime dependency in `pyproject.toml`. The checked-in
+`uv.lock` is the single resolved dependency source used locally, in CI, and by Streamlit
+Community Cloud.
 
 The default configuration uses `researcher@example.org` in the arXiv `User-Agent`.
 Before a live fetch, replace it with a monitored contact address in `config/app.yaml`
@@ -142,6 +138,7 @@ The run writes stable ranked and selection JSON artifacts plus:
 - `reports/latest.md`;
 - `reports/latest.html`;
 - `reports/latest.json`.
+- `reports/run-summary.json`.
 
 The versioned digest JSON is the canonical presentation artifact. It contains report
 metadata, the full ranked candidate pool, selections with validated summaries, and up
@@ -172,6 +169,12 @@ dashboard:
 uv run arxiv-digest dashboard
 ```
 
+The root cloud entrypoint can also be launched directly during deployment testing:
+
+```bash
+uv run streamlit run streamlit_app.py
+```
+
 Choose a different canonical report or history directory when needed:
 
 ```bash
@@ -199,6 +202,104 @@ Filter and view choices live only in Streamlit session state and are discarded w
 session ends. The dashboard does not write notes, reading status, feedback, report
 files, or history. Missing, malformed, incompatible, or individually vanished history
 files produce visible actionable messages while valid local reports remain usable.
+
+## Deploying the dashboard to Streamlit Community Cloud
+
+The hosted dashboard is intentionally a static reader. It opens committed canonical
+JSON reports and does not retrieve arXiv data, rank papers, call OpenAI, send email, or
+write history. The Milestone 5 GitHub Actions workflow performs generation separately.
+
+1. Push this repository, including `streamlit_app.py`, `.streamlit/config.toml`,
+   `uv.lock`, `reports/latest.json`, and at least one dated canonical JSON report, to
+   GitHub.
+2. Sign in at [Streamlit Community Cloud](https://share.streamlit.io/) with a GitHub
+   account that can access the repository.
+3. Choose **Create app**, then **Yup, I have an app**.
+4. Select the repository and the branch that receives scheduled report updates.
+5. Set **Main file path** to exactly `streamlit_app.py`.
+6. Open **Advanced settings** and choose Python **3.12**, matching `pyproject.toml`.
+7. Leave the Secrets field empty. The dashboard needs no API, arXiv, OpenAI, or SMTP
+   credentials and `.streamlit/secrets.toml` is intentionally ignored.
+8. Deploy. Community Cloud discovers the root `uv.lock`; `pyproject.toml` declares the
+   application and Streamlit runtime dependencies. Do not add a second dependency
+   manifest unless this deployment strategy is deliberately changed.
+9. Confirm the current digest loads, the exact read-only workflow notice is visible,
+   History lists dated JSON artifacts, and no host filesystem path appears in the UI.
+10. Use **Manage app** or the app's developer view to inspect cloud logs. Logs are
+    visible only to repository writers and should not contain abstracts or secrets.
+11. Choose app visibility in **App settings > Sharing**. Public apps are shareable by
+    URL; private apps require authorized viewers. Repository write access also grants
+    deployment administration, so keep it narrowly assigned.
+12. After a report JSON commit reaches the configured branch, Streamlit should refresh
+    from GitHub automatically. If dependency or Python settings change, review the
+    build logs and reboot or redeploy as documented by Streamlit.
+
+Cloud-safe paths are resolved from the checkout root rather than the process working
+directory, using `pathlib` on both Linux and Windows. Local CLI use remains separate:
+`arxiv-digest dashboard` binds to `127.0.0.1`, while the repository-wide Streamlit
+configuration sets headless and telemetry behavior without imposing a cloud-hostile
+address or port.
+
+## Summary modes
+
+Unattended and local runs can choose summary behavior explicitly:
+
+```bash
+uv run arxiv-digest run --days 7 --limit 10 --summary-mode offline
+uv run arxiv-digest run --days 7 --limit 10 --summary-mode auto
+uv run arxiv-digest run --days 7 --limit 10 --summary-mode openai
+```
+
+- `offline` always uses deterministic abstract-grounded summaries;
+- `openai` requires both `OPENAI_API_KEY` and `OPENAI_SUMMARY_MODEL` and fails clearly
+  if either is unavailable;
+- `auto` uses OpenAI only when both are available, otherwise it deterministically falls
+  back to offline summaries.
+
+`--dry-run` always remains offline regardless of the requested mode and never writes
+history. Model names remain runtime configuration rather than source constants.
+
+## Optional SMTP delivery
+
+Email is disabled unless the user explicitly passes `--send-email` or invokes the
+dedicated existing-report command. Configure `SMTP_HOST`, `SMTP_PORT`, optional
+`SMTP_USERNAME`/`SMTP_PASSWORD`, exactly one of `SMTP_USE_TLS` and `SMTP_USE_SSL`,
+`DIGEST_FROM_EMAIL`, and comma-separated `DIGEST_TO_EMAIL` recipients. Then either run:
+
+```bash
+uv run arxiv-digest run --days 7 --limit 10 --summary-mode offline --send-email
+uv run arxiv-digest email-report
+```
+
+The message has a stable date-based subject and multipart plain-text/HTML content.
+Connections have an explicit timeout and are closed after success or failure. Delivery
+starts only after reports are complete; a failed send returns a nonzero status but does
+not remove or invalidate reports or history. `doctor` validates enabled SMTP settings
+without connecting or sending, and output never prints passwords or recipient addresses.
+
+## Weekly automation and durable state
+
+`.github/workflows/weekly_digest.yml` runs every Monday at **13:00 UTC** and supports
+manual dispatch. Validation (locked sync, formatting, lint, mypy, tests, and production
+diagnostics) must pass before generation. The generated artifact contains dated and
+latest JSON/Markdown/HTML reports plus `run-summary.json` for 30 days.
+
+The default durable path commits only:
+
+- `reports/YYYY-MM-DD-weekly-arxiv-digest.json`;
+- `reports/latest.json`;
+- `data/history.jsonl`.
+
+This is the minimum state needed for the hosted dashboard and repeat filtering. Raw
+candidate/ranking/selection snapshots, caches, credentials, `.env` files, and temporary
+email files are excluded. Persistence stages and verifies an explicit allowlist, skips
+no-op commits, pulls with rebase before copying state, never force-pushes, and uses the
+workflow's scoped `GITHUB_TOKEN`; only that job receives `contents: write`.
+
+Required repository configuration and exact production operations are documented in
+[DEPLOYMENT.md](DEPLOYMENT.md). GitHub-hosted runners remain ephemeral: artifacts improve
+observability, while the allowlisted repository commit is what makes report/history
+state available to future runs and Streamlit Community Cloud.
 
 ## Summary providers
 
@@ -258,15 +359,17 @@ uv run pytest -m live tests/test_live_arxiv.py
 
 - Feedback affinity is reported as a neutral component; user feedback adaptation is
   deferred to Milestone 6 and does not affect ranking yet.
-- Recommendation history is local append-only JSONL. There is no database or hosted
-  persistence.
+- Recommendation history is append-only JSONL and repository-persisted by the weekly
+  workflow; concurrent external writes can still cause a safe push failure that requires
+  a later rerun.
 - Offline summaries are extractive and can be terse when an arXiv abstract is short.
 - OpenAI behavior is covered with injected fakes in normal tests; live paid API tests are
   intentionally not part of the suite.
-- The dashboard is local and read-only; there is no hosted frontend, authentication,
-  multi-user state, feedback editing, or mobile-specific design.
-- No email delivery, PDF parsing, database framework, or GitHub Actions workflow is
-  included yet.
+- The dashboard is read-only and cloud-deployable; the repository does not manage
+  Streamlit authentication, multi-user state, feedback editing, or mobile-specific
+  design.
+- No PDF parsing, database framework, feedback adaptation, reading-status system, or
+  authenticated application backend is included.
 
-The recommended next task is Milestone 5: optional SMTP delivery and the weekly GitHub
-Actions workflow, with an honest persistence strategy for ephemeral hosted runners.
+The recommended next task is Milestone 6: bounded feedback adaptation and its CLI,
+without changing the report schema or adding a database.

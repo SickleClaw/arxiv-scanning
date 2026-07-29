@@ -9,8 +9,10 @@ import pytest
 from typer.testing import CliRunner
 
 from arxiv_digest.arxiv_client import RetrievalResult
-from arxiv_digest.cli import _window, app
-from arxiv_digest.exceptions import ConfigurationError
+from arxiv_digest.cli import SummaryMode, _summary_provider, _window, app
+from arxiv_digest.config import load_settings
+from arxiv_digest.delivery import DeliveryResult
+from arxiv_digest.exceptions import ConfigurationError, DeliveryError
 from arxiv_digest.models import (
     CandidateSnapshot,
     DateWindow,
@@ -19,6 +21,7 @@ from arxiv_digest.models import (
     SelectionSnapshot,
 )
 from arxiv_digest.snapshot import create_snapshot
+from arxiv_digest.summarization import DeterministicSummaryProvider
 
 runner = CliRunner()
 
@@ -53,6 +56,12 @@ def test_doctor_and_show_config_succeed() -> None:
     shown = runner.invoke(app, ["show-config"])
     assert shown.exit_code == 0
     assert '"max_candidate_count": 200' in shown.stdout
+
+
+def test_production_doctor_rejects_placeholder_contact() -> None:
+    result = runner.invoke(app, ["doctor", "--production"])
+    assert result.exit_code == 1
+    assert "ARXIV_CONTACT_EMAIL" in result.stderr
 
 
 def test_doctor_returns_nonzero_for_missing_config(tmp_path: Path) -> None:
@@ -226,3 +235,113 @@ def test_dry_run_forces_offline_provider_when_openai_is_configured(
     )
     assert result.exit_code == 0, result.output
     assert "0 summary fallbacks" in result.stdout
+
+
+def test_summary_mode_auto_falls_back_offline_without_paid_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_SUMMARY_MODEL", raising=False)
+    provider = _summary_provider(load_settings(), dry_run=False, summary_mode=SummaryMode.AUTO)
+    assert isinstance(provider, DeterministicSummaryProvider)
+    with pytest.raises(ConfigurationError, match="OPENAI_SUMMARY_MODEL"):
+        _summary_provider(load_settings(), dry_run=False, summary_mode=SummaryMode.OPENAI)
+
+
+def test_run_send_email_uses_completed_reports_and_explicit_offline_mode(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    paper_factory,
+) -> None:  # type: ignore[no-untyped-def]
+    snapshot_path = tmp_path / "candidates.json"
+    _write_candidate_snapshot(snapshot_path, paper_factory)
+    reports_path = tmp_path / "reports"
+    history_path = tmp_path / "history.jsonl"
+    received: list[tuple[Path, Path]] = []
+
+    class FakeDelivery:
+        def __init__(self, _config: object) -> None:
+            pass
+
+        def send(self, markdown: Path, html: Path, *, report_date: date) -> DeliveryResult:
+            assert report_date.isoformat()
+            received.append((markdown, html))
+            return DeliveryResult(recipient_count=2)
+
+    monkeypatch.setattr("arxiv_digest.cli.SMTPDeliveryProvider", FakeDelivery)
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__REPORTS_DIR", str(reports_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__HISTORY_FILE", str(history_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__TEMPLATES_DIR", str(Path.cwd() / "templates"))
+    result = runner.invoke(
+        app,
+        [
+            "run",
+            "--snapshot",
+            str(snapshot_path),
+            "--limit",
+            "2",
+            "--summary-mode",
+            "offline",
+            "--send-email",
+        ],
+    )
+    assert result.exit_code == 0, result.output
+    assert "emailed 2 recipient(s)" in result.stdout
+    assert received == [
+        (
+            next(reports_path.glob("*-weekly-arxiv-digest.md")),
+            next(reports_path.glob("*-weekly-arxiv-digest.html")),
+        )
+    ]
+    assert history_path.exists()
+
+
+def test_failed_email_returns_nonzero_after_preserving_reports(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    paper_factory,
+) -> None:  # type: ignore[no-untyped-def]
+    snapshot_path = tmp_path / "candidates.json"
+    _write_candidate_snapshot(snapshot_path, paper_factory)
+    reports_path = tmp_path / "reports"
+    history_path = tmp_path / "history.jsonl"
+
+    class FailingDelivery:
+        def __init__(self, _config: object) -> None:
+            pass
+
+        def send(self, _markdown: Path, _html: Path, *, report_date: date) -> DeliveryResult:
+            assert report_date.isoformat()
+            raise DeliveryError("SMTP delivery failed; completed reports remain available.")
+
+    monkeypatch.setattr("arxiv_digest.cli.SMTPDeliveryProvider", FailingDelivery)
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__REPORTS_DIR", str(reports_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__HISTORY_FILE", str(history_path))
+    monkeypatch.setenv("ARXIV_DIGEST_APP__PATHS__TEMPLATES_DIR", str(Path.cwd() / "templates"))
+    result = runner.invoke(
+        app,
+        [
+            "run",
+            "--snapshot",
+            str(snapshot_path),
+            "--limit",
+            "2",
+            "--summary-mode",
+            "offline",
+            "--send-email",
+        ],
+    )
+    assert result.exit_code == 1
+    assert "completed reports remain available" in result.stderr
+    assert (reports_path / "latest.json").exists()
+    assert (reports_path / "latest.md").exists()
+    assert (reports_path / "latest.html").exists()
+    assert history_path.exists()
+
+
+def test_dry_run_rejects_email_before_pipeline() -> None:
+    result = runner.invoke(app, ["run", "--dry-run", "--send-email"])
+    assert result.exit_code == 1
+    assert "cannot be combined" in result.stderr

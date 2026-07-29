@@ -1,4 +1,7 @@
 .env
+.streamlit/secrets.toml
+.streamlit/cache/
+.streamlit/.cache/
 .venv/
 .tools/
 .uv-cache/
@@ -12,7 +15,13 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+*.eml
+*.email
+smtp-debug.log
 data/*.json
 data/*.jsonl
+!data/history.jsonl
 reports/*
 !reports/.gitkeep
+!reports/latest.json
+!reports/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-weekly-arxiv-digest.json

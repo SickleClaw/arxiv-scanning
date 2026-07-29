@@ -47,31 +47,34 @@ class RepeatedPaper:
 
 def load_digest(path: Path) -> DigestArtifact:
     """Load one supported canonical digest without performing network or write I/O."""
+    label = path.name or "configured digest report"
     try:
         raw = path.read_text(encoding="utf-8")
     except FileNotFoundError as exc:
         raise DashboardDataError(
-            f"Digest report not found: {path}. Run 'arxiv-digest run --dry-run' first, "
+            f"Digest report not found: {label}. Run 'arxiv-digest run --dry-run' first, "
             "or choose an existing JSON report."
         ) from exc
     except OSError as exc:
-        raise DashboardDataError(f"Cannot read digest report {path}: {exc}") from exc
+        raise DashboardDataError(
+            f"Cannot read digest report {label} ({type(exc).__name__})."
+        ) from exc
     try:
         value = json.loads(raw)
     except json.JSONDecodeError as exc:
         raise DashboardDataError(
-            f"Digest report {path} is malformed JSON (line {exc.lineno}, column {exc.colno})."
+            f"Digest report {label} is malformed JSON (line {exc.lineno}, column {exc.colno})."
         ) from exc
     if not isinstance(value, dict):
-        raise DashboardDataError(f"Digest report {path} must contain a JSON object.")
+        raise DashboardDataError(f"Digest report {label} must contain a JSON object.")
     version = value.get("schema_version")
     if version is None:
         raise DashboardDataError(
-            f"Digest report {path} has no schema_version and is not dashboard-compatible."
+            f"Digest report {label} has no schema_version and is not dashboard-compatible."
         )
     if version != DIGEST_SCHEMA_VERSION:
         raise DashboardDataError(
-            f"Digest report {path} uses unsupported schema {version!r}; "
+            f"Digest report {label} uses unsupported schema {version!r}; "
             f"this dashboard supports {DIGEST_SCHEMA_VERSION!r}."
         )
     try:
@@ -80,7 +83,7 @@ def load_digest(path: Path) -> DigestArtifact:
         problem = exc.errors(include_url=False)[0]
         location = ".".join(str(part) for part in problem["loc"])
         raise DashboardDataError(
-            f"Digest report {path} failed validation at {location or 'document'}: {problem['msg']}"
+            f"Digest report {label} failed validation at {location or 'document'}: {problem['msg']}"
         ) from exc
 
 
@@ -89,7 +92,7 @@ def discover_digest_paths(reports_dir: Path) -> list[tuple[date, Path]]:
     if not reports_dir.exists():
         return []
     if not reports_dir.is_dir():
-        raise DashboardDataError(f"Reports path is not a directory: {reports_dir}")
+        raise DashboardDataError("The configured reports path is not a directory.")
     discovered: list[tuple[date, Path]] = []
     try:
         paths = reports_dir.iterdir()
@@ -98,7 +101,9 @@ def discover_digest_paths(reports_dir: Path) -> list[tuple[date, Path]]:
             if match and path.is_file():
                 discovered.append((date.fromisoformat(match.group(1)), path))
     except OSError as exc:
-        raise DashboardDataError(f"Cannot inspect reports directory {reports_dir}: {exc}") from exc
+        raise DashboardDataError(
+            f"Cannot inspect the configured reports directory ({type(exc).__name__})."
+        ) from exc
     return sorted(discovered, key=lambda item: (item[0], item[1].name), reverse=True)
 
 

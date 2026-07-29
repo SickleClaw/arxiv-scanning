@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -33,6 +34,7 @@ class ReportPaths:
     latest_markdown: Path
     latest_html: Path
     latest_json: Path
+    run_summary: Path
 
 
 def profile_hash(profile: ResearchProfile) -> str:
@@ -149,6 +151,7 @@ def render_reports(
         latest_markdown=reports_dir / "latest.md",
         latest_html=reports_dir / "latest.html",
         latest_json=reports_dir / "latest.json",
+        run_summary=reports_dir / "run-summary.json",
     )
     json_contents = digest.model_dump_json(indent=2)
     _write_atomic(paths.markdown, markdown)
@@ -157,4 +160,23 @@ def render_reports(
     _write_atomic(paths.latest_markdown, markdown)
     _write_atomic(paths.latest_html, html)
     _write_atomic(paths.latest_json, json_contents)
+    _write_atomic(
+        paths.run_summary,
+        json.dumps(
+            {
+                "schema_version": "1.0",
+                "run_id": digest.run_id,
+                "generated_at": digest.generated_at.isoformat(),
+                "retrieval_window": digest.retrieval_window.model_dump(mode="json"),
+                "records_retrieved": digest.records_retrieved,
+                "records_after_deduplication": digest.records_after_deduplication,
+                "records_ranked": digest.records_ranked,
+                "records_selected": digest.records_selected,
+                "summary_mode": digest.summary_mode,
+                "dated_report": paths.json.name,
+            },
+            indent=2,
+            sort_keys=True,
+        ),
+    )
     return paths

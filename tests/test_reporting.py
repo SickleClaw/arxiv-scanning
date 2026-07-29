@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
@@ -119,6 +120,10 @@ def test_reports_include_required_metadata_escape_html_and_limit_near_misses(
     assert paths.latest_markdown.read_text(encoding="utf-8") == markdown
     assert paths.latest_html.read_text(encoding="utf-8") == html
     assert paths.latest_json.read_text(encoding="utf-8") == paths.json.read_text(encoding="utf-8")
+    run_summary = json.loads(paths.run_summary.read_text(encoding="utf-8"))
+    assert run_summary["run_id"] == digest.run_id
+    assert run_summary["records_selected"] == len(digest.recommendations)
+    assert run_summary["dated_report"] == paths.json.name
     loaded = DigestArtifact.model_validate_json(paths.json.read_text(encoding="utf-8"))
     assert loaded.run_id == "selection-fixture"
     assert loaded.records_ranked == 7

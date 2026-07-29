@@ -73,13 +73,9 @@ dependencies = [
     { name = "pydantic" },
     { name = "pydantic-settings" },
     { name = "pyyaml" },
+    { name = "streamlit" },
     { name = "typer" },
     { name = "tzdata" },
-]
-
-[package.optional-dependencies]
-dashboard = [
-    { name = "streamlit" },
 ]
 
 [package.dev-dependencies]
@@ -89,7 +85,6 @@ dev = [
     { name = "pytest-cov" },
     { name = "respx" },
     { name = "ruff" },
-    { name = "streamlit" },
     { name = "types-pyyaml" },
 ]
 
@@ -103,11 +98,10 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.8,<3" },
     { name = "pydantic-settings", specifier = ">=2.4,<3" },
     { name = "pyyaml", specifier = ">=6.0.2,<7" },
-    { name = "streamlit", marker = "extra == 'dashboard'", specifier = ">=1.50,<2" },
+    { name = "streamlit", specifier = ">=1.50,<2" },
     { name = "typer", specifier = ">=0.12.3,<1" },
     { name = "tzdata", specifier = ">=2025.2" },
 ]
-provides-extras = ["dashboard"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -116,7 +110,6 @@ dev = [
     { name = "pytest-cov", specifier = ">=5,<7" },
     { name = "respx", specifier = ">=0.21.1,<1" },
     { name = "ruff", specifier = ">=0.6,<1" },
-    { name = "streamlit", specifier = ">=1.50,<2" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20240808" },
 ]
 

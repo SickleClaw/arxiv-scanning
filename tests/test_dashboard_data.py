@@ -61,6 +61,14 @@ def test_load_digest_reports_missing_and_invalid_counts(tmp_path: Path, digest_f
         load_digest(path)
 
 
+def test_load_errors_do_not_expose_host_paths(tmp_path: Path) -> None:
+    missing = tmp_path / "private-parent" / "missing.json"
+    with pytest.raises(DashboardDataError) as captured:
+        load_digest(missing)
+    assert missing.name in str(captured.value)
+    assert str(tmp_path) not in str(captured.value)
+
+
 def test_history_discovery_is_newest_first_and_isolates_bad_files(
     tmp_path: Path, digest_factory
 ) -> None:  # type: ignore[no-untyped-def]

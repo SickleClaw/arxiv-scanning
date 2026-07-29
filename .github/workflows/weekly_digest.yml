@@ -1,0 +1,267 @@
+name: Weekly arXiv digest
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Complete UTC days to retrieve
+        required: true
+        default: "7"
+        type: string
+      limit:
+        description: Maximum recommendations
+        required: true
+        default: "10"
+        type: string
+      summary_mode:
+        description: Summary provider behavior
+        required: true
+        default: auto
+        type: choice
+        options:
+          - auto
+          - offline
+          - openai
+      send_email:
+        description: Send the generated report through configured SMTP
+        required: true
+        default: false
+        type: boolean
+      persist_reports:
+        description: Commit canonical JSON reports and history to this branch
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-arxiv-digest-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: "3.12"
+  UV_VERSION: "0.11.32"
+
+jobs:
+  validate:
+    name: Validate inputs and project
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      days: ${{ steps.inputs.outputs.days }}
+      limit: ${{ steps.inputs.outputs.limit }}
+      summary_mode: ${{ steps.inputs.outputs.summary_mode }}
+      send_email: ${{ steps.inputs.outputs.send_email }}
+      persist_reports: ${{ steps.inputs.outputs.persist_reports }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v8
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Validate workflow inputs and required contact
+        id: inputs
+        shell: bash
+        env:
+          DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.days || '7' }}
+          LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.limit || '10' }}
+          SUMMARY_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.summary_mode || 'auto' }}
+          SEND_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.send_email }}
+          PERSIST_REPORTS: ${{ github.event_name != 'workflow_dispatch' || inputs.persist_reports }}
+          ARXIV_CONTACT_EMAIL: ${{ vars.ARXIV_CONTACT_EMAIL }}
+        run: |
+          set -euo pipefail
+          [[ "$DAYS" =~ ^[1-9][0-9]*$ ]] || { echo "days must be a positive integer"; exit 1; }
+          [[ "$LIMIT" =~ ^[1-9][0-9]*$ ]] || { echo "limit must be a positive integer"; exit 1; }
+          (( DAYS <= 31 )) || { echo "days must not exceed 31"; exit 1; }
+          (( LIMIT <= 50 )) || { echo "limit must not exceed 50"; exit 1; }
+          [[ "$SUMMARY_MODE" =~ ^(auto|offline|openai)$ ]] || { echo "invalid summary_mode"; exit 1; }
+          [[ "$SEND_EMAIL" =~ ^(true|false)$ ]] || { echo "send_email must be boolean"; exit 1; }
+          [[ "$PERSIST_REPORTS" =~ ^(true|false)$ ]] || { echo "persist_reports must be boolean"; exit 1; }
+          if [[ -z "$ARXIV_CONTACT_EMAIL" || "$ARXIV_CONTACT_EMAIL" == *"@example.org" || "$ARXIV_CONTACT_EMAIL" == *"@example.com" || "$ARXIV_CONTACT_EMAIL" == *".invalid" ]]; then
+            echo "Repository variable ARXIV_CONTACT_EMAIL must be a monitored non-placeholder address."
+            exit 1
+          fi
+          echo "days=$DAYS" >> "$GITHUB_OUTPUT"
+          echo "limit=$LIMIT" >> "$GITHUB_OUTPUT"
+          echo "summary_mode=$SUMMARY_MODE" >> "$GITHUB_OUTPUT"
+          echo "send_email=$SEND_EMAIL" >> "$GITHUB_OUTPUT"
+          echo "persist_reports=$PERSIST_REPORTS" >> "$GITHUB_OUTPUT"
+      - name: Sync locked dependencies
+        run: uv sync --locked
+      - name: Check formatting
+        run: uv run ruff format --check .
+      - name: Lint
+        run: uv run ruff check .
+      - name: Type check
+        run: uv run mypy src
+      - name: Test
+        run: uv run pytest --cov=src/arxiv_digest --cov-report=term-missing
+      - name: Production diagnostics
+        env:
+          ARXIV_DIGEST_APP__ARXIV__CONTACT_EMAIL: ${{ vars.ARXIV_CONTACT_EMAIL }}
+        run: uv run arxiv-digest doctor --production
+
+  generate:
+    name: Generate and upload reports
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v8
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Sync locked dependencies
+        run: uv sync --locked
+      - name: Generate weekly digest
+        env:
+          ARXIV_DIGEST_APP__ARXIV__CONTACT_EMAIL: ${{ vars.ARXIV_CONTACT_EMAIL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_SUMMARY_MODEL: ${{ vars.OPENAI_SUMMARY_MODEL }}
+        run: >-
+          uv run arxiv-digest run
+          --days ${{ needs.validate.outputs.days }}
+          --limit ${{ needs.validate.outputs.limit }}
+          --summary-mode ${{ needs.validate.outputs.summary_mode }}
+      - name: Upload complete report bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-arxiv-digest-${{ github.run_id }}
+          path: |
+            reports/*-weekly-arxiv-digest.json
+            reports/*-weekly-arxiv-digest.md
+            reports/*-weekly-arxiv-digest.html
+            reports/latest.json
+            reports/latest.md
+            reports/latest.html
+            reports/run-summary.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload canonical repository state
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-arxiv-state-${{ github.run_id }}
+          path: |
+            reports/*-weekly-arxiv-digest.json
+            reports/latest.json
+            data/history.jsonl
+          if-no-files-found: error
+          retention-days: 2
+
+  persist:
+    name: Persist canonical JSON and history
+    needs:
+      - validate
+      - generate
+    if: needs.validate.outputs.persist_reports == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out current workflow branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fast-forward before copying generated state
+        shell: bash
+        run: git pull --rebase origin "$GITHUB_REF_NAME"
+      - name: Download canonical repository state
+        uses: actions/download-artifact@v4
+        with:
+          name: weekly-arxiv-state-${{ github.run_id }}
+          path: generated-state
+      - name: Copy only allowlisted durable files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t generated_files < <(find generated-state -type f -print | sort)
+          for path in "${generated_files[@]}"; do
+            relative="${path#generated-state/}"
+            if [[ "$relative" != "reports/latest.json" && "$relative" != "data/history.jsonl" && ! "$relative" =~ ^reports/[0-9]{4}-[0-9]{2}-[0-9]{2}-weekly-arxiv-digest\.json$ ]]; then
+              echo "Refusing unexpected persistence path: $relative"
+              exit 1
+            fi
+          done
+          mkdir -p reports data
+          cp generated-state/reports/latest.json reports/latest.json
+          cp generated-state/data/history.jsonl data/history.jsonl
+          find generated-state/reports -maxdepth 1 -type f -name '????-??-??-weekly-arxiv-digest.json' -exec cp {} reports/ \;
+      - name: Stage and verify the persistence allowlist
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- reports/latest.json data/history.jsonl reports/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-weekly-arxiv-digest.json
+          while IFS= read -r path; do
+            if [[ "$path" != "reports/latest.json" && "$path" != "data/history.jsonl" && ! "$path" =~ ^reports/[0-9]{4}-[0-9]{2}-[0-9]{2}-weekly-arxiv-digest\.json$ ]]; then
+              echo "Refusing unexpected staged path: $path"
+              exit 1
+            fi
+          done < <(git diff --cached --name-only)
+      - name: Commit only when state changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --cached --quiet; then
+            echo "Canonical report and history state are unchanged; no commit needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: persist weekly arXiv digest"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+  email:
+    name: Send optional report email
+    needs:
+      - validate
+      - generate
+    if: needs.validate.outputs.send_email == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v8
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Sync locked dependencies
+        run: uv sync --locked
+      - name: Download completed report bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: weekly-arxiv-digest-${{ github.run_id }}
+          path: reports
+      - name: Send multipart report
+        env:
+          SMTP_ENABLED: "true"
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USE_TLS: ${{ vars.SMTP_USE_TLS }}
+          SMTP_USE_SSL: ${{ vars.SMTP_USE_SSL }}
+          SMTP_TIMEOUT_SECONDS: ${{ vars.SMTP_TIMEOUT_SECONDS }}
+          DIGEST_FROM_EMAIL: ${{ secrets.DIGEST_FROM_EMAIL }}
+          DIGEST_TO_EMAIL: ${{ secrets.DIGEST_TO_EMAIL }}
+        run: uv run arxiv-digest email-report

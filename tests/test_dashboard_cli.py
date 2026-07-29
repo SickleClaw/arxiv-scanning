@@ -78,6 +78,7 @@ def test_cli_dashboard_passes_explicit_paths(
 def test_dashboard_modules_import_without_running_pipeline() -> None:
     assert importlib.import_module("arxiv_digest.dashboard.app") is not None
     assert importlib.import_module("arxiv_digest.dashboard.data") is not None
+    assert importlib.import_module("arxiv_digest.dashboard.paths") is not None
 
 
 def test_streamlit_renders_current_digest_and_all_views(tmp_path: Path, digest_factory) -> None:  # type: ignore[no-untyped-def]

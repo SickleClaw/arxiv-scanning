@@ -6,17 +6,21 @@ import logging
 import os
 import tempfile
 from datetime import UTC, date, datetime, time, timedelta
+from enum import StrEnum
 from pathlib import Path
 from typing import Annotated, NoReturn
+from zoneinfo import ZoneInfo
 
 import typer
 
 from arxiv_digest.arxiv_client import ArxivClient
 from arxiv_digest.config import Settings, load_settings, settings_as_json
 from arxiv_digest.dashboard.launcher import launch_dashboard
+from arxiv_digest.dashboard.paths import find_repository_root
+from arxiv_digest.delivery import SMTPDeliveryProvider, validate_delivery_ready
 from arxiv_digest.exceptions import ArxivDigestError, ConfigurationError
 from arxiv_digest.history import load_history
-from arxiv_digest.models import CandidateSnapshot, DateWindow
+from arxiv_digest.models import CandidateSnapshot, DateWindow, DigestArtifact
 from arxiv_digest.pipeline import (
     default_ranked_path,
     default_selection_path,
@@ -41,6 +45,14 @@ AppConfigOption = Annotated[
 ProfileConfigOption = Annotated[
     Path, typer.Option("--profile-config", help="Path to research profile YAML.")
 ]
+
+
+class SummaryMode(StrEnum):
+    """CLI-selectable summary behavior for unattended and local runs."""
+
+    AUTO = "auto"
+    OFFLINE = "offline"
+    OPENAI = "openai"
 
 
 def _load(app_config: Path, profile_config: Path) -> Settings:
@@ -69,18 +81,25 @@ def _writable(directory: Path) -> None:
 
 
 def _summary_provider(
-    settings: Settings, *, dry_run: bool
+    settings: Settings,
+    *,
+    dry_run: bool,
+    summary_mode: SummaryMode | None = None,
 ) -> DeterministicSummaryProvider | OpenAISummaryProvider:
     """Resolve the configured provider while guaranteeing that dry runs stay offline."""
-    if dry_run or settings.app.summarization.provider == "offline":
+    if dry_run:
+        return DeterministicSummaryProvider()
+    effective_mode = summary_mode or SummaryMode(settings.app.summarization.provider)
+    if effective_mode == SummaryMode.OFFLINE:
         return DeterministicSummaryProvider()
     model = settings.app.summarization.openai_summary_model
+    api_key_available = bool(os.environ.get("OPENAI_API_KEY"))
+    if effective_mode == SummaryMode.AUTO and (model is None or not api_key_available):
+        return DeterministicSummaryProvider()
     if model is None:
-        raise ConfigurationError(
-            "OPENAI_SUMMARY_MODEL is required when summarization.provider is openai"
-        )
-    if not os.environ.get("OPENAI_API_KEY"):
-        raise ConfigurationError("OPENAI_API_KEY is required when summarization.provider is openai")
+        raise ConfigurationError("OPENAI_SUMMARY_MODEL is required for OpenAI summaries")
+    if not api_key_available:
+        raise ConfigurationError("OPENAI_API_KEY is required for OpenAI summaries")
     return OpenAISummaryProvider(
         model=model,
         validation_retries=settings.app.summarization.validation_retries,
@@ -166,6 +185,13 @@ def _candidate_for_command(
 
 @app.command("doctor")
 def doctor(
+    production: Annotated[
+        bool,
+        typer.Option(
+            "--production",
+            help="Require production contact and cloud dashboard prerequisites.",
+        ),
+    ] = False,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
 ) -> None:
@@ -179,15 +205,35 @@ def doctor(
             template_path = settings.app.paths.templates_dir / template_name
             if not template_path.is_file():
                 raise ConfigurationError(f"Report template does not exist: {template_path}")
+        repository_root = find_repository_root(Path(__file__))
+        if not (repository_root / "streamlit_app.py").is_file():
+            raise ConfigurationError("Cloud dashboard entrypoint streamlit_app.py is missing")
+        if production and not (repository_root / "reports" / "latest.json").is_file():
+            raise ConfigurationError("Production dashboard report reports/latest.json is missing")
+        placeholder_contact = settings.app.arxiv.contact_email.lower().endswith(
+            ("@example.org", "@example.com", ".invalid")
+        )
+        if production and placeholder_contact:
+            raise ConfigurationError(
+                "ARXIV_CONTACT_EMAIL must be a monitored non-placeholder address in production"
+            )
         provider_status = settings.app.summarization.provider
         if provider_status == "openai":
             _summary_provider(settings, dry_run=False)
+        smtp_status = "disabled"
+        if settings.app.delivery.enabled:
+            validate_delivery_ready(settings.app.delivery)
+            smtp_status = "ready"
     except ArxivDigestError as exc:
         _fail(exc)
+    contact_note = (
+        " (placeholder arXiv contact; replace before production)" if placeholder_contact else ""
+    )
     typer.echo(
         "Configuration valid; data, report, and history paths are writable; "
         "arXiv timeouts, pacing, retries, contact User-Agent, report templates, and "
-        f"{provider_status} summaries are configured."
+        f"{provider_status} summaries, cloud dashboard entrypoint, and SMTP {smtp_status} are "
+        f"configured{contact_note}."
     )
 
 
@@ -223,6 +269,36 @@ def dashboard_command(
         _fail(exc)
     if exit_code != 0:
         raise typer.Exit(code=exit_code)
+
+
+@app.command("email-report")
+def email_report(
+    markdown: Annotated[
+        Path | None, typer.Option(help="Rendered Markdown report (defaults to latest.md).")
+    ] = None,
+    html: Annotated[
+        Path | None, typer.Option(help="Rendered HTML report (defaults to latest.html).")
+    ] = None,
+    digest_json: Annotated[
+        Path | None, typer.Option(help="Canonical JSON used to determine the report date.")
+    ] = None,
+    app_config: AppConfigOption = Path("config/app.yaml"),
+    profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+) -> None:
+    """Explicitly email an already-generated report without rerunning the pipeline."""
+    try:
+        settings = _load(app_config, profile_config)
+        reports_dir = settings.app.paths.reports_dir
+        markdown_path = markdown or reports_dir / "latest.md"
+        html_path = html or reports_dir / "latest.html"
+        digest_path = digest_json or reports_dir / "latest.json"
+        digest = load_model(digest_path, DigestArtifact)
+        provider = SMTPDeliveryProvider(settings.app.delivery)
+        report_date = digest.generated_at.astimezone(ZoneInfo(digest.timezone)).date()
+        result = provider.send(markdown_path, html_path, report_date=report_date)
+    except (ArxivDigestError, OSError, ValueError) as exc:
+        _fail(exc)
+    typer.echo(f"Email sent to {result.recipient_count} configured recipient(s).")
 
 
 @app.command("fetch")
@@ -316,6 +392,16 @@ def run(
         bool,
         typer.Option("--dry-run", help="Use offline ranking and do not write history."),
     ] = False,
+    summary_mode: Annotated[
+        SummaryMode | None,
+        typer.Option(
+            help="Summary provider mode: auto uses OpenAI only when key and model are available."
+        ),
+    ] = None,
+    send_email: Annotated[
+        bool,
+        typer.Option("--send-email", help="Email completed reports after successful generation."),
+    ] = False,
     snapshot_path: Annotated[
         Path | None, typer.Option("--snapshot", help="Existing candidate JSON snapshot.")
     ] = None,
@@ -328,6 +414,8 @@ def run(
 ) -> None:
     """Retrieve or load candidates, then rank, summarize, and write weekly reports."""
     try:
+        if dry_run and send_email:
+            raise ConfigurationError("--send-email cannot be combined with --dry-run")
         settings = _load(app_config, profile_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
@@ -340,7 +428,7 @@ def run(
             now=now,
         )
         history = load_history(settings.app.paths.history_file)
-        provider = _summary_provider(settings, dry_run=dry_run)
+        provider = _summary_provider(settings, dry_run=dry_run, summary_mode=summary_mode)
         result = run_milestone4(
             snapshot,
             settings,
@@ -358,12 +446,27 @@ def run(
         )
         write_model(result.ranked, ranked_destination)
         write_model(result.selection, selection_destination)
+        email_recipient_count = 0
+        if send_email:
+            email_provider = SMTPDeliveryProvider(settings.app.delivery)
+            report_date = result.digest.generated_at.astimezone(
+                ZoneInfo(result.digest.timezone)
+            ).date()
+            email_result = email_provider.send(
+                result.reports.markdown,
+                result.reports.html,
+                report_date=report_date,
+            )
+            email_recipient_count = email_result.recipient_count
     except (ArxivDigestError, OSError, ValueError) as exc:
         _fail(exc)
     history_status = (
         "dry-run history unchanged"
         if dry_run
         else f"appended {result.history_appended} history records"
+    )
+    email_status = (
+        f"emailed {email_recipient_count} recipient(s)" if send_email else "email not requested"
     )
     typer.echo(
         f"Loaded {len(snapshot.papers)} candidates from {source_path}, excluded "
@@ -372,7 +475,7 @@ def run(
         f"{result.summary_fallbacks} summary fallbacks, {history_status}; wrote "
         f"{ranked_destination}, {selection_destination}, {result.reports.markdown}, and "
         f"{result.reports.html}, and {result.reports.json} "
-        "(plus latest.md/latest.html/latest.json)."
+        f"(plus latest aliases and run-summary.json); {email_status}."
     )
 
 

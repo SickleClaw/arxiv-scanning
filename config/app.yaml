@@ -24,3 +24,14 @@ summarization:
 reporting:
   timezone: America/New_York
   near_miss_limit: 5
+delivery:
+  enabled: false
+  smtp_host: null
+  smtp_port: 587
+  smtp_username: null
+  smtp_password: null
+  smtp_use_tls: true
+  smtp_use_ssl: false
+  from_email: null
+  to_emails: []
+  timeout_seconds: 30.0

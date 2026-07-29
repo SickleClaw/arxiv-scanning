@@ -1,7 +1,6 @@
 [server]
-address = "127.0.0.1"
+headless = true
 showEmailPrompt = false
 
 [browser]
-serverAddress = "127.0.0.1"
 gatherUsageStats = false

@@ -674,11 +674,17 @@ Work through these milestones in order.
   notes, feedback editing, authentication, or multi-user infrastructure.
 - Bind the local launcher to loopback, disable telemetry, and test loading, filtering,
   history, CLI construction, imports, and rendering without live services.
+- Provide a root `streamlit_app.py` wrapper and repository-root-relative read-only paths
+  for Streamlit Community Cloud without changing the local CLI launcher.
+- Keep canonical JSON reports as the hosted dashboard's only data source and display a
+  clear notice that scheduled automation generates them.
 
 ### Milestone 5: delivery and scheduling
 
 - Add optional SMTP delivery.
 - Add the weekly GitHub Actions workflow.
+- Persist only canonical dated/latest JSON reports and append-only history with an
+  allowlisted `GITHUB_TOKEN` commit; upload all rendered formats as workflow artifacts.
 - Document persistence limitations of hosted runners honestly.
 
 ### Milestone 6: feedback adaptation

@@ -97,6 +97,69 @@ class ReportingConfig(StrictModel):
         return value
 
 
+class DeliveryConfig(StrictModel):
+    """Optional SMTP settings; sending still requires an explicit CLI request."""
+
+    enabled: bool = False
+    smtp_host: str | None = None
+    smtp_port: int = Field(default=587, ge=1, le=65535)
+    smtp_username: str | None = None
+    smtp_password: str | None = None
+    smtp_use_tls: bool = True
+    smtp_use_ssl: bool = False
+    from_email: str | None = None
+    to_emails: list[str] = Field(default_factory=list)
+    timeout_seconds: float = Field(default=30.0, gt=0, le=300)
+
+    @field_validator("to_emails", mode="before")
+    @classmethod
+    def parse_recipients(cls, value: Any) -> Any:
+        """Accept YAML lists or comma-separated environment values."""
+        if isinstance(value, str):
+            return [item.strip() for item in value.split(",") if item.strip()]
+        return value
+
+    @field_validator("smtp_host", "smtp_username", "smtp_password", "from_email")
+    @classmethod
+    def reject_blank_optional_values(cls, value: str | None) -> str | None:
+        """Reject whitespace-only SMTP values while allowing omitted settings."""
+        if value is not None and not value.strip():
+            raise ValueError("SMTP string settings cannot be blank")
+        return value
+
+    @field_validator("from_email")
+    @classmethod
+    def validate_sender(cls, value: str | None) -> str | None:
+        """Require an email-shaped sender when configured."""
+        if value is not None and not _email_shaped(value):
+            raise ValueError("from_email must be an email-shaped address")
+        return value
+
+    @field_validator("to_emails")
+    @classmethod
+    def validate_recipients(cls, values: list[str]) -> list[str]:
+        """Require every configured recipient to be email-shaped and unique."""
+        if any(not _email_shaped(value) for value in values):
+            raise ValueError("to_emails must contain only email-shaped addresses")
+        if len(values) != len(set(values)):
+            raise ValueError("to_emails cannot contain duplicates")
+        return values
+
+    @model_validator(mode="after")
+    def validate_transport_and_auth(self) -> DeliveryConfig:
+        """Prevent ambiguous transport security and half-configured authentication."""
+        if self.smtp_use_tls and self.smtp_use_ssl:
+            raise ValueError("smtp_use_tls and smtp_use_ssl cannot both be enabled")
+        if (self.smtp_username is None) != (self.smtp_password is None):
+            raise ValueError("smtp_username and smtp_password must be configured together")
+        return self
+
+
+def _email_shaped(value: str) -> bool:
+    local, separator, domain = value.strip().partition("@")
+    return bool(local and separator and domain and " " not in value)
+
+
 class AppConfig(StrictModel):
     """Operational application configuration."""
 
@@ -105,6 +168,7 @@ class AppConfig(StrictModel):
     logging: LoggingConfig = LoggingConfig()
     summarization: SummarizationConfig = SummarizationConfig()
     reporting: ReportingConfig = ReportingConfig()
+    delivery: DeliveryConfig = DeliveryConfig()
 
 
 class RankingWeights(StrictModel):
@@ -268,6 +332,27 @@ def _environment_overrides() -> dict[str, Any]:
             if not isinstance(summarization, dict):
                 raise ConfigurationError("Conflicting environment override path: app.summarization")
             summarization[field_name] = value
+    delivery_aliases = {
+        "SMTP_ENABLED": "enabled",
+        "SMTP_HOST": "smtp_host",
+        "SMTP_PORT": "smtp_port",
+        "SMTP_USERNAME": "smtp_username",
+        "SMTP_PASSWORD": "smtp_password",
+        "SMTP_USE_TLS": "smtp_use_tls",
+        "SMTP_USE_SSL": "smtp_use_ssl",
+        "SMTP_TIMEOUT_SECONDS": "timeout_seconds",
+        "DIGEST_FROM_EMAIL": "from_email",
+        "DIGEST_TO_EMAIL": "to_emails",
+    }
+    for environment_name, field_name in delivery_aliases.items():
+        if delivery_raw := os.environ.get(environment_name):
+            app = overrides.setdefault("app", {})
+            if not isinstance(app, dict):
+                raise ConfigurationError("Conflicting environment override path: app")
+            delivery = app.setdefault("delivery", {})
+            if not isinstance(delivery, dict):
+                raise ConfigurationError("Conflicting environment override path: app.delivery")
+            delivery[field_name] = yaml.safe_load(delivery_raw)
     return overrides
 
 
