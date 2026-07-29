@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "run_id": "select-9fed3fb94c4c",
   "title": "Personalized Weekly arXiv Reading List",
-  "generated_at": "2026-07-29T17:08:02.966397Z",
+  "generated_at": "2026-07-29T18:28:34.570470Z",
   "timezone": "America/New_York",
   "retrieval_window": {
     "start": "2026-07-21T00:00:00Z",
