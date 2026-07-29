@@ -3,12 +3,14 @@
 import re
 from datetime import datetime
 from enum import StrEnum
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 ABSTRACT_SUMMARY_BASIS = (
     "Based only on the title, abstract, and arXiv metadata; the full paper was not read."
 )
+DIGEST_SCHEMA_VERSION = "1.0"
 
 
 class StrictModel(BaseModel):
@@ -206,6 +208,99 @@ class Recommendation(StrictModel):
     summary: PaperSummary
     rank: int = Field(ge=1)
     recommendation_type: RecommendationType
+
+
+class DigestArtifact(StrictModel):
+    """Versioned canonical data used by reports and the local dashboard."""
+
+    schema_version: str
+    run_id: str = Field(min_length=1)
+    title: str = Field(min_length=1)
+    generated_at: datetime
+    timezone: str = Field(min_length=1)
+    retrieval_window: DateWindow
+    records_retrieved: int = Field(ge=0)
+    records_after_deduplication: int = Field(ge=0)
+    records_ranked: int = Field(ge=0)
+    records_selected: int = Field(ge=0)
+    summary_mode: str = Field(min_length=1)
+    summary_fallbacks: int = Field(ge=0)
+    summary_basis: str = Field(min_length=1)
+    profile_name: str = Field(min_length=1)
+    profile_version: str = Field(min_length=1)
+    profile_hash: str = Field(min_length=1)
+    recommendations: list[Recommendation]
+    near_misses: list["RankedPaper"] = Field(max_length=5)
+    ranked_candidates: list["RankedPaper"]
+
+    _generated_aware = field_validator("generated_at")(_require_aware)
+
+    @field_validator("timezone")
+    @classmethod
+    def require_known_timezone(cls, value: str) -> str:
+        """Ensure history and report dates can be displayed consistently."""
+        try:
+            ZoneInfo(value)
+        except ZoneInfoNotFoundError as exc:
+            raise ValueError(f"unknown IANA timezone: {value}") from exc
+        return value
+
+    @field_validator("schema_version")
+    @classmethod
+    def require_supported_schema(cls, value: str) -> str:
+        """Reject artifacts created for an incompatible dashboard schema."""
+        if value != DIGEST_SCHEMA_VERSION:
+            raise ValueError(
+                f"schema_version must be {DIGEST_SCHEMA_VERSION!r}, received {value!r}"
+            )
+        return value
+
+    @field_validator("summary_basis")
+    @classmethod
+    def require_summary_basis(cls, value: str) -> str:
+        """Keep the canonical artifact explicit about its abstract-only evidence."""
+        if value != ABSTRACT_SUMMARY_BASIS:
+            raise ValueError(f"summary_basis must be exactly: {ABSTRACT_SUMMARY_BASIS}")
+        return value
+
+    @model_validator(mode="after")
+    def validate_contents(self) -> "DigestArtifact":
+        """Validate counts and relationships between selected and ranked records."""
+        if self.records_after_deduplication > self.records_retrieved:
+            raise ValueError("deduplicated record count cannot exceed retrieved record count")
+        if self.records_ranked != len(self.ranked_candidates):
+            raise ValueError("records_ranked must equal the ranked candidate count")
+        if self.records_ranked > self.records_after_deduplication:
+            raise ValueError("ranked record count cannot exceed deduplicated record count")
+        if self.records_selected != len(self.recommendations):
+            raise ValueError("records_selected must equal the recommendation count")
+        if self.summary_fallbacks > self.records_selected:
+            raise ValueError("summary_fallbacks cannot exceed records_selected")
+        ranked_by_id = {item.paper.arxiv_id: item for item in self.ranked_candidates}
+        ranked_ids = set(ranked_by_id)
+        if len(ranked_ids) != len(self.ranked_candidates):
+            raise ValueError("ranked_candidates must contain unique canonical arXiv IDs")
+        selected_ids = [item.paper.arxiv_id for item in self.recommendations]
+        if len(selected_ids) != len(set(selected_ids)):
+            raise ValueError("recommendations must contain unique canonical arXiv IDs")
+        if not set(selected_ids).issubset(ranked_ids):
+            raise ValueError("every recommendation must be present in ranked_candidates")
+        if any(
+            item.paper != ranked_by_id[item.paper.arxiv_id].paper
+            or item.score != ranked_by_id[item.paper.arxiv_id].score
+            for item in self.recommendations
+        ):
+            raise ValueError("recommendations must match their ranked candidate records")
+        near_miss_ids = [item.paper.arxiv_id for item in self.near_misses]
+        if len(near_miss_ids) != len(set(near_miss_ids)):
+            raise ValueError("near_misses must contain unique canonical arXiv IDs")
+        if set(near_miss_ids) & set(selected_ids):
+            raise ValueError("near_misses cannot also be recommendations")
+        if not set(near_miss_ids).issubset(ranked_ids):
+            raise ValueError("every near miss must be present in ranked_candidates")
+        if any(item != ranked_by_id[item.paper.arxiv_id] for item in self.near_misses):
+            raise ValueError("near_misses must match their ranked candidate records")
+        return self
 
 
 class RankedPaper(StrictModel):

@@ -267,6 +267,15 @@ class OpenAIEmbeddingProvider:
         return vectors
 
 
+def summary_provider_name(provider: SummaryProvider) -> str:
+    """Return a stable, non-secret label for report provenance."""
+    if isinstance(provider, DeterministicSummaryProvider):
+        return "offline"
+    if isinstance(provider, OpenAISummaryProvider):
+        return "openai"
+    return type(provider).__name__
+
+
 @dataclass(frozen=True, slots=True)
 class SummaryBatch:
     """Recommendations plus observability counts from one summary batch."""

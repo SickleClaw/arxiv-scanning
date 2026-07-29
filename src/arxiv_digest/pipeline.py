@@ -23,6 +23,7 @@ from arxiv_digest.history import (
 from arxiv_digest.models import (
     CandidateSnapshot,
     DateWindow,
+    DigestArtifact,
     HistoryRecord,
     RankedSnapshot,
     Recommendation,
@@ -30,10 +31,14 @@ from arxiv_digest.models import (
 )
 from arxiv_digest.normalization import deduplicate_papers
 from arxiv_digest.ranking import rank_papers
-from arxiv_digest.reporting import ReportPaths, render_reports
+from arxiv_digest.reporting import ReportPaths, build_digest_artifact, render_reports
 from arxiv_digest.selection import select_diverse
 from arxiv_digest.snapshot import create_snapshot
-from arxiv_digest.summarization import SummaryProvider, summarize_selection
+from arxiv_digest.summarization import (
+    SummaryProvider,
+    summarize_selection,
+    summary_provider_name,
+)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -55,6 +60,7 @@ class Milestone4Result:
     ranked: RankedSnapshot
     selection: SelectionSnapshot
     recommendations: list[Recommendation]
+    digest: DigestArtifact
     reports: ReportPaths
     history_excluded: int
     history_appended: int
@@ -256,16 +262,22 @@ def run_milestone4(
         provider,
         max_provider_papers=settings.app.summarization.max_provider_papers,
     )
-    reports = render_reports(
+    digest = build_digest_artifact(
         snapshot=snapshot,
         ranked=milestone3.ranked,
         recommendations=summaries.recommendations,
         profile=settings.profile,
+        run_id=milestone3.selection.run_id,
         generated_at=now,
         timezone=settings.app.reporting.timezone,
+        summary_mode=summary_provider_name(provider),
+        summary_fallbacks=summaries.fallback_count,
+        near_miss_limit=settings.app.reporting.near_miss_limit,
+    )
+    reports = render_reports(
+        digest,
         templates_dir=settings.app.paths.templates_dir,
         reports_dir=settings.app.paths.reports_dir,
-        near_miss_limit=settings.app.reporting.near_miss_limit,
     )
     appended = 0
     if persist_history:
@@ -291,6 +303,7 @@ def run_milestone4(
         ranked=milestone3.ranked,
         selection=milestone3.selection,
         recommendations=summaries.recommendations,
+        digest=digest,
         reports=reports,
         history_excluded=milestone3.history_excluded,
         history_appended=appended,

@@ -10,13 +10,14 @@ from arxiv_digest.models import (
     ABSTRACT_SUMMARY_BASIS,
     CandidateSnapshot,
     DateWindow,
+    DigestArtifact,
     RankedPaper,
     RankedSnapshot,
     Recommendation,
     RecommendationType,
     ScoreBreakdown,
 )
-from arxiv_digest.reporting import render_reports
+from arxiv_digest.reporting import build_digest_artifact, render_reports
 from arxiv_digest.snapshot import create_snapshot
 from arxiv_digest.summarization import DeterministicSummaryProvider
 
@@ -88,16 +89,22 @@ def test_reports_include_required_metadata_escape_html_and_limit_near_misses(
         rank=1,
         recommendation_type=RecommendationType.DIRECT,
     )
-    paths = render_reports(
+    digest = build_digest_artifact(
         snapshot=snapshot,
         ranked=ranked,
         recommendations=[recommendation],
         profile=settings.profile,
+        run_id="selection-fixture",
         generated_at=NOW,
         timezone="America/New_York",
+        summary_mode="offline",
+        summary_fallbacks=0,
+        near_miss_limit=5,
+    )
+    paths = render_reports(
+        digest,
         templates_dir=Path("templates"),
         reports_dir=tmp_path,
-        near_miss_limit=5,
     )
     markdown = paths.markdown.read_text(encoding="utf-8")
     html = paths.html.read_text(encoding="utf-8")
@@ -111,3 +118,11 @@ def test_reports_include_required_metadata_escape_html_and_limit_near_misses(
     assert "Abstract-based summaries" in html
     assert paths.latest_markdown.read_text(encoding="utf-8") == markdown
     assert paths.latest_html.read_text(encoding="utf-8") == html
+    assert paths.latest_json.read_text(encoding="utf-8") == paths.json.read_text(encoding="utf-8")
+    loaded = DigestArtifact.model_validate_json(paths.json.read_text(encoding="utf-8"))
+    assert loaded.run_id == "selection-fixture"
+    assert loaded.records_ranked == 7
+    assert loaded.records_selected == 1
+    assert [item.paper.title for item in loaded.near_misses] == [
+        f"Near miss {index}" for index in range(1, 6)
+    ]

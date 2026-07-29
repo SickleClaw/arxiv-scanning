@@ -203,6 +203,7 @@ def test_run_dry_run_writes_artifacts_but_not_history(
     assert "summarized and selected" in result.stdout
     assert (reports_path / "latest.md").exists()
     assert (reports_path / "latest.html").exists()
+    assert (reports_path / "latest.json").exists()
     assert not history_path.exists()
 
 

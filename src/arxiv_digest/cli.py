@@ -13,6 +13,7 @@ import typer
 
 from arxiv_digest.arxiv_client import ArxivClient
 from arxiv_digest.config import Settings, load_settings, settings_as_json
+from arxiv_digest.dashboard.launcher import launch_dashboard
 from arxiv_digest.exceptions import ArxivDigestError, ConfigurationError
 from arxiv_digest.history import load_history
 from arxiv_digest.models import CandidateSnapshot, DateWindow
@@ -203,6 +204,27 @@ def show_config(
     typer.echo(settings_as_json(settings))
 
 
+@app.command("dashboard")
+def dashboard_command(
+    report: Annotated[
+        Path | None,
+        typer.Option(help="Canonical digest JSON to open (defaults to REPORTS_DIR/latest.json)."),
+    ] = None,
+    reports_dir: Annotated[
+        Path,
+        typer.Option(help="Directory scanned for dated digest history."),
+    ] = Path("reports"),
+) -> None:
+    """Open the read-only local dashboard without running the pipeline."""
+    resolved_report = report or reports_dir / "latest.json"
+    try:
+        exit_code = launch_dashboard(resolved_report, reports_dir)
+    except ArxivDigestError as exc:
+        _fail(exc)
+    if exit_code != 0:
+        raise typer.Exit(code=exit_code)
+
+
 @app.command("fetch")
 def fetch(
     days: Annotated[int, typer.Option(min=1, help="Complete UTC days to retrieve.")] = 7,
@@ -349,7 +371,8 @@ def run(
         f"summarized and selected {len(result.recommendations)}, used "
         f"{result.summary_fallbacks} summary fallbacks, {history_status}; wrote "
         f"{ranked_destination}, {selection_destination}, {result.reports.markdown}, and "
-        f"{result.reports.html} (plus latest.md/latest.html)."
+        f"{result.reports.html}, and {result.reports.json} "
+        "(plus latest.md/latest.html/latest.json)."
     )
 
 

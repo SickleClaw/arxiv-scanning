@@ -662,6 +662,19 @@ Work through these milestones in order.
 - Add summary-provider interfaces, deterministic fallback, OpenAI provider, validation, Markdown/HTML reports, and summary tests.
 - Ensure every report states that it is abstract-based.
 
+### Milestone 4.5: local interactive dashboard
+
+- Write a versioned, validated canonical digest JSON artifact alongside the dated and
+  latest Markdown/HTML reports.
+- Add an optional Streamlit dashboard that reads only completed local JSON artifacts and
+  never invokes retrieval, ranking, summarization, history persistence, or delivery.
+- Provide current-digest, full candidate-explorer, local history, and paper-detail views
+  with deterministic filters and clear abstract-only labeling.
+- Keep temporary UI choices in session state only. Do not add persistent reading status,
+  notes, feedback editing, authentication, or multi-user infrastructure.
+- Bind the local launcher to loopback, disable telemetry, and test loading, filtering,
+  history, CLI construction, imports, and rendering without live services.
+
 ### Milestone 5: delivery and scheduling
 
 - Add optional SMTP delivery.

@@ -159,6 +159,9 @@ def test_milestone4_writes_reports_then_history_idempotently(tmp_path: Path, pap
     assert len(first.recommendations) == 4
     assert first.reports.markdown.exists()
     assert first.reports.html.exists()
+    assert first.reports.json.exists()
+    assert first.reports.latest_json.exists()
+    assert first.digest.records_selected == len(first.recommendations)
     assert first.history_appended == 4
     assert second.history_appended == 0
     assert all(

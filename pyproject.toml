@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "arxiv-digest"
-version = "0.3.0"
+version = "0.4.0"
 description = "A configurable arXiv retriever, ranker, summarizer, and weekly report generator."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -23,6 +23,9 @@ dependencies = [
   "tzdata>=2025.2",
 ]
 
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.50,<2"]
+
 [project.scripts]
 arxiv-digest = "arxiv_digest.cli:app"
 
@@ -33,6 +36,7 @@ dev = [
   "pytest-cov>=5,<7",
   "respx>=0.21.1,<1",
   "ruff>=0.6,<1",
+  "streamlit>=1.50,<2",
   "types-pyyaml>=6.0.12.20240808",
 ]
 
