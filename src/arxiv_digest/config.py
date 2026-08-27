@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
+from collections.abc import Sequence
+from enum import StrEnum
 from pathlib import Path
 from typing import Any, ClassVar, Literal
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -172,13 +175,17 @@ class AppConfig(StrictModel):
 
 
 class RankingWeights(StrictModel):
-    """Editable future ranking weights; values are normalized when loaded."""
+    """Editable relevance weights; values are normalized when loaded.
+
+    Only relevance components appear here. Recency is a multiplier, not a
+    weighted term, and novelty is gone: as a weighted component contributing a
+    flat 0.10 to every unseen paper it guaranteed any recent paper a score floor
+    that no amount of irrelevance could fall below.
+    """
 
     semantic_relevance: float = Field(ge=0)
     keyword_relevance: float = Field(ge=0)
     category_relevance: float = Field(ge=0)
-    recency: float = Field(ge=0)
-    feedback_or_novelty: float = Field(ge=0)
 
     @model_validator(mode="after")
     def normalize(self) -> RankingWeights:
@@ -187,8 +194,6 @@ class RankingWeights(StrictModel):
             "semantic_relevance",
             "keyword_relevance",
             "category_relevance",
-            "recency",
-            "feedback_or_novelty",
         )
         total = sum(getattr(self, field) for field in fields)
         if total <= 0:
@@ -196,6 +201,63 @@ class RankingWeights(StrictModel):
         for field in fields:
             object.__setattr__(self, field, getattr(self, field) / total)
         return self
+
+
+class FacetWeights(StrictModel):
+    """Relative evidential strength of each kind of configured term.
+
+    A paper matching two techniques and no topic is usually less relevant than
+    one matching a topic plus a material, so the facets a profile already
+    declares should not be flattened together. These are proto-facets: the full
+    facet model arrives with researcher profiles in Phase 4.
+
+    PROVISIONAL: chosen by argument, not calibrated. Revisit against a labelled
+    evaluation set.
+    """
+
+    exact_phrases: float = Field(default=1.0, ge=0.0, le=1.0)
+    materials: float = Field(default=1.0, ge=0.0, le=1.0)
+    methods: float = Field(default=0.8, ge=0.0, le=1.0)
+
+
+class ScoringConfig(StrictModel):
+    """Tunables for the deterministic relevance score."""
+
+    keyword_saturation: float = Field(default=2.5, gt=0.0)
+    """Evidence needed for a mid-range keyword score.
+
+    The score is ``1 - exp(-evidence / keyword_saturation)`` where one match on
+    a top-weighted term in the title contributes 1.0 of evidence. At 2.5, three
+    such matches score about 0.70.
+
+    PROVISIONAL: revisit against a labelled evaluation set (design report 19.5).
+    """
+
+    facet_weights: FacetWeights = FacetWeights()
+
+    recency_weight: float = Field(default=0.05, ge=0.0, le=0.5)
+    """How much a paper's position in the window may modulate its score.
+
+    Applied as ``1 - recency_weight + recency_weight * recency``, so recency can
+    break a tie between comparable papers but can never manufacture a score for
+    an irrelevant one. As an additive component worth 0.10 it did exactly that.
+    """
+
+    in_field_category_floor: float = Field(default=0.4, ge=0.0, le=1.0)
+    """Category score for an in-field paper whose subcategory the profile omits.
+
+    The group profile says which categories are the field; the research profile
+    says which parts of it are most interesting. A cond-mat paper in an unlisted
+    subcategory is not off-topic, it is merely unlisted, and scoring it 0.0
+    overstates the evidence against it now that category is a third of relevance.
+    """
+
+    context_penalty: float = Field(default=0.85, gt=0.0, le=1.0)
+    """Multiplier for a paper using an ambiguous term without supporting context.
+
+    PROVISIONAL. The gate flags rather than rejects these (design report 6.3);
+    this is where the flag is paid for.
+    """
 
 
 class RecommendationMix(StrictModel):
@@ -222,6 +284,134 @@ class SelectionConfig(StrictModel):
                 "selection score thresholds must satisfy direct >= adjacent >= wildcard"
             )
         return self
+
+
+_CATEGORY_PATTERN = re.compile(r"^[A-Za-z0-9-]+(?:\.(?:[A-Za-z0-9-]+|\*))?$")
+
+
+def normalize_category(value: str) -> str:
+    """Case-fold an arXiv category or category pattern for stable comparison."""
+    return value.strip().casefold()
+
+
+def category_matches(pattern: str, category: str) -> bool:
+    """Match one arXiv category against a configured pattern.
+
+    Three shapes occur in real arXiv metadata and all three must work: exact
+    archives and subjects (``hep-ph``, ``cond-mat.str-el``), wildcards over an
+    archive (``cond-mat.*``), and the bare archive name that older cross-lists
+    still carry (``cond-mat``). A wildcard therefore also matches the bare
+    archive, otherwise legacy cross-lists would escape the domain gate.
+    """
+    normalized_pattern = normalize_category(pattern)
+    normalized_category = normalize_category(category)
+    if normalized_pattern.endswith(".*"):
+        archive = normalized_pattern[:-2]
+        return normalized_category == archive or normalized_category.startswith(f"{archive}.")
+    return normalized_category == normalized_pattern
+
+
+def matches_any(patterns: Sequence[str], categories: Sequence[str]) -> list[str]:
+    """Return the categories matched by any configured pattern, in input order."""
+    return [
+        category
+        for category in categories
+        if any(category_matches(pattern, category) for pattern in patterns)
+    ]
+
+
+class DomainClass(StrEnum):
+    """How the domain gate classifies one paper's category list."""
+
+    INCLUDE = "include"
+    SOFT = "soft"
+    EXCLUDE = "exclude"
+    UNKNOWN = "unknown"
+
+
+class DomainConfig(StrictModel):
+    """The group's stable statement of which arXiv categories are its field.
+
+    This is deliberately not derived from individual interests: one member's
+    adjacent interest must not silently widen the gate for everyone.
+    """
+
+    include_categories: list[str] = Field(min_length=1)
+    soft_categories: list[str] = Field(default_factory=list)
+    exclude_categories: list[str] = Field(default_factory=list)
+
+    @field_validator("include_categories", "soft_categories", "exclude_categories")
+    @classmethod
+    def validate_patterns(cls, values: list[str]) -> list[str]:
+        """Require well-formed, unique, non-blank category patterns.
+
+        Patterns keep their authored case. arXiv writes subject classes in mixed
+        case (``cs.LG``, ``astro-ph.CO``) and these strings are emitted verbatim
+        into ``cat:`` query clauses; comparison folds case separately.
+        """
+        stripped = [value.strip() for value in values]
+        if any(not value for value in stripped):
+            raise ValueError("category patterns cannot be blank")
+        invalid = [value for value in stripped if not _CATEGORY_PATTERN.fullmatch(value)]
+        if invalid:
+            raise ValueError(f"malformed arXiv category patterns: {', '.join(sorted(invalid))}")
+        folded = [normalize_category(value) for value in stripped]
+        if len(folded) != len(set(folded)):
+            raise ValueError("category patterns cannot repeat within one list")
+        return stripped
+
+    @model_validator(mode="after")
+    def validate_disjoint(self) -> DomainConfig:
+        """Reject a pattern configured in more than one list as ambiguous intent."""
+        seen: dict[str, str] = {}
+        for label, patterns in (
+            ("include_categories", self.include_categories),
+            ("soft_categories", self.soft_categories),
+            ("exclude_categories", self.exclude_categories),
+        ):
+            for pattern in patterns:
+                folded = normalize_category(pattern)
+                if folded in seen:
+                    raise ValueError(
+                        f"category pattern {pattern!r} appears in both {seen[folded]} and {label}"
+                    )
+                seen[folded] = label
+        return self
+
+    def included(self, categories: Sequence[str]) -> list[str]:
+        """Return the paper categories that fall inside the group's field."""
+        return matches_any(self.include_categories, categories)
+
+    def soft(self, categories: Sequence[str]) -> list[str]:
+        """Return the paper categories that are adjacent rather than in-field."""
+        return matches_any(self.soft_categories, categories)
+
+    def excluded(self, categories: Sequence[str]) -> list[str]:
+        """Return the paper categories the group considers out of field."""
+        return matches_any(self.exclude_categories, categories)
+
+    def classify(self, categories: Sequence[str]) -> DomainClass:
+        """Classify a paper by its full category list.
+
+        Inclusion wins over exclusion by design. A paper cross-listed into the
+        group's own archive is in scope no matter what else it is filed under,
+        which is what keeps genuine cross-disciplinary work reachable.
+        """
+        if self.included(categories):
+            return DomainClass.INCLUDE
+        if self.soft(categories):
+            return DomainClass.SOFT
+        if self.excluded(categories):
+            return DomainClass.EXCLUDE
+        return DomainClass.UNKNOWN
+
+
+class GroupProfile(StrictModel):
+    """Lab-level profile. Phase 1 uses only the domain gate."""
+
+    name: str = Field(min_length=1)
+    description: str = Field(min_length=1)
+    domain: DomainConfig
 
 
 class QueryConfig(StrictModel):
@@ -259,6 +449,7 @@ class ResearchProfile(StrictModel):
     max_candidate_count: int = Field(ge=1, le=1000)
     max_papers_per_topic: int = Field(ge=1)
     selection: SelectionConfig = SelectionConfig()
+    scoring: ScoringConfig = ScoringConfig()
     queries: list[QueryConfig] = Field(min_length=1)
 
 
@@ -267,6 +458,7 @@ class Settings(BaseSettings):
 
     app: AppConfig
     profile: ResearchProfile
+    group: GroupProfile
 
     model_config: ClassVar[SettingsConfigDict] = SettingsConfigDict(
         env_prefix="ARXIV_DIGEST_",
@@ -288,7 +480,8 @@ class Settings(BaseSettings):
         return (init_settings,)
 
 
-def _read_yaml(path: Path) -> dict[str, Any]:
+def read_yaml_mapping(path: Path) -> dict[str, Any]:
+    """Read one YAML file that must contain a mapping, with actionable errors."""
     try:
         raw = path.read_text(encoding="utf-8")
     except OSError as exc:
@@ -371,17 +564,20 @@ def _deep_merge(base: dict[str, Any], overrides: dict[str, Any]) -> dict[str, An
 def load_settings(
     app_path: Path = Path("config/app.yaml"),
     profile_path: Path = Path("config/research_profile.yaml"),
+    group_path: Path = Path("profiles/group.yaml"),
 ) -> Settings:
     """Load YAML files, then apply nested ``ARXIV_DIGEST_`` environment overrides."""
     try:
         combined = {
-            "app": _read_yaml(app_path),
-            "profile": _read_yaml(profile_path),
+            "app": read_yaml_mapping(app_path),
+            "profile": read_yaml_mapping(profile_path),
+            "group": read_yaml_mapping(group_path),
         }
         merged = _deep_merge(combined, _environment_overrides())
         app_config = AppConfig.model_validate(merged["app"])
         profile = ResearchProfile.model_validate(merged["profile"])
-        return Settings(app=app_config, profile=profile)
+        group = GroupProfile.model_validate(merged["group"])
+        return Settings(app=app_config, profile=profile, group=group)
     except ValidationError as exc:
         raise ConfigurationError(f"Configuration validation failed: {exc}") from exc
 

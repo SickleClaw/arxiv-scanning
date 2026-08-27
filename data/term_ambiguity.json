@@ -1,0 +1,197 @@
+{
+  "domain_signature": "cond-mat.*|mtrl-th",
+  "records": {
+    "Ho2Ti2O7": {
+      "term": "Ho2Ti2O7",
+      "total_results": 38,
+      "in_field_results": 38,
+      "measured_at": "2026-08-27T21:52:49.969862Z"
+    },
+    "ZnFe2O4": {
+      "term": "ZnFe2O4",
+      "total_results": 14,
+      "in_field_results": 13,
+      "measured_at": "2026-08-27T21:52:56.361404Z"
+    },
+    "cluster algorithm": {
+      "term": "cluster algorithm",
+      "total_results": 4148,
+      "in_field_results": 317,
+      "measured_at": "2026-08-27T21:53:02.820052Z"
+    },
+    "cluster algorithm magnetism": {
+      "term": "cluster algorithm magnetism",
+      "total_results": 0,
+      "in_field_results": 0,
+      "measured_at": "2026-08-27T21:53:09.182528Z"
+    },
+    "dynamical structure factor": {
+      "term": "dynamical structure factor",
+      "total_results": 960,
+      "in_field_results": 840,
+      "measured_at": "2026-08-27T21:53:15.609709Z"
+    },
+    "exchange parameter fitting": {
+      "term": "exchange parameter fitting",
+      "total_results": 1,
+      "in_field_results": 1,
+      "measured_at": "2026-08-27T21:53:22.062202Z"
+    },
+    "frustrated spinel": {
+      "term": "frustrated spinel",
+      "total_results": 34,
+      "in_field_results": 34,
+      "measured_at": "2026-08-27T21:53:28.520037Z"
+    },
+    "inelastic neutron scattering": {
+      "term": "inelastic neutron scattering",
+      "total_results": 2222,
+      "in_field_results": 2134,
+      "measured_at": "2026-08-27T21:53:35.045142Z"
+    },
+    "insulating spin glass": {
+      "term": "insulating spin glass",
+      "total_results": 11,
+      "in_field_results": 10,
+      "measured_at": "2026-08-27T21:53:41.545577Z"
+    },
+    "inverse problems": {
+      "term": "inverse problems",
+      "total_results": 10862,
+      "in_field_results": 412,
+      "measured_at": "2026-08-27T21:53:47.969943Z"
+    },
+    "inverse problems condensed matter": {
+      "term": "inverse problems condensed matter",
+      "total_results": 0,
+      "in_field_results": 0,
+      "measured_at": "2026-08-27T21:53:54.435472Z"
+    },
+    "kinetic Monte Carlo": {
+      "term": "kinetic Monte Carlo",
+      "total_results": 827,
+      "in_field_results": 665,
+      "measured_at": "2026-08-27T21:54:00.899568Z"
+    },
+    "kinetic Monte Carlo magnetism": {
+      "term": "kinetic Monte Carlo magnetism",
+      "total_results": 0,
+      "in_field_results": 0,
+      "measured_at": "2026-08-27T21:54:07.351954Z"
+    },
+    "linear spin-wave theory": {
+      "term": "linear spin-wave theory",
+      "total_results": 357,
+      "in_field_results": 343,
+      "measured_at": "2026-08-27T21:54:13.857332Z"
+    },
+    "loop algorithm": {
+      "term": "loop algorithm",
+      "total_results": 209,
+      "in_field_results": 78,
+      "measured_at": "2026-08-27T21:54:20.303905Z"
+    },
+    "magnetic disorder": {
+      "term": "magnetic disorder",
+      "total_results": 412,
+      "in_field_results": 399,
+      "measured_at": "2026-08-27T21:54:26.945958Z"
+    },
+    "magnetic excitation spectrum": {
+      "term": "magnetic excitation spectrum",
+      "total_results": 163,
+      "in_field_results": 161,
+      "measured_at": "2026-08-27T21:54:34.069517Z"
+    },
+    "magnetic insulator Pt": {
+      "term": "magnetic insulator Pt",
+      "total_results": 0,
+      "in_field_results": 0,
+      "measured_at": "2026-08-27T21:54:40.464756Z"
+    },
+    "magnetic monopole": {
+      "term": "magnetic monopole",
+      "total_results": 1830,
+      "in_field_results": 448,
+      "measured_at": "2026-08-27T21:54:46.526903Z"
+    },
+    "magnetic structure factor": {
+      "term": "magnetic structure factor",
+      "total_results": 79,
+      "in_field_results": 74,
+      "measured_at": "2026-08-27T21:54:54.331452Z"
+    },
+    "neutron diffuse scattering": {
+      "term": "neutron diffuse scattering",
+      "total_results": 20,
+      "in_field_results": 20,
+      "measured_at": "2026-08-27T21:55:02.681597Z"
+    },
+    "neutron scattering": {
+      "term": "neutron scattering",
+      "total_results": 5523,
+      "in_field_results": 4888,
+      "measured_at": "2026-08-27T21:55:09.192063Z"
+    },
+    "nonequilibrium magnetic dynamics": {
+      "term": "nonequilibrium magnetic dynamics",
+      "total_results": 7,
+      "in_field_results": 6,
+      "measured_at": "2026-08-27T21:55:16.455680Z"
+    },
+    "polarized neutron reflectometry": {
+      "term": "polarized neutron reflectometry",
+      "total_results": 122,
+      "in_field_results": 120,
+      "measured_at": "2026-08-27T21:55:23.481250Z"
+    },
+    "pyrochlore": {
+      "term": "pyrochlore",
+      "total_results": 1500,
+      "in_field_results": 1482,
+      "measured_at": "2026-08-27T21:55:29.985107Z"
+    },
+    "pyrochlore magnetism": {
+      "term": "pyrochlore magnetism",
+      "total_results": 133,
+      "in_field_results": 133,
+      "measured_at": "2026-08-27T21:55:36.568535Z"
+    },
+    "scientific machine learning condensed matter": {
+      "term": "scientific machine learning condensed matter",
+      "total_results": 0,
+      "in_field_results": 0,
+      "measured_at": "2026-08-27T21:55:43.111280Z"
+    },
+    "spin Seebeck effect": {
+      "term": "spin Seebeck effect",
+      "total_results": 326,
+      "in_field_results": 322,
+      "measured_at": "2026-08-27T21:55:49.523423Z"
+    },
+    "spin caloritronics": {
+      "term": "spin caloritronics",
+      "total_results": 141,
+      "in_field_results": 141,
+      "measured_at": "2026-08-27T21:55:55.954089Z"
+    },
+    "spin dynamics": {
+      "term": "spin dynamics",
+      "total_results": 3846,
+      "in_field_results": 3233,
+      "measured_at": "2026-08-27T21:56:02.556753Z"
+    },
+    "spin ice": {
+      "term": "spin ice",
+      "total_results": 931,
+      "in_field_results": 921,
+      "measured_at": "2026-08-27T21:56:08.626311Z"
+    },
+    "spinel": {
+      "term": "spinel",
+      "total_results": 883,
+      "in_field_results": 841,
+      "measured_at": "2026-08-27T21:56:15.090999Z"
+    }
+  }
+}

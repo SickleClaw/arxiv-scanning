@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+from collections import defaultdict
 from pathlib import Path
 
 import yaml
 
 from arxiv_digest.dashboard.data import load_digest, load_digest_history
 from arxiv_digest.history import load_history
+from arxiv_digest.models import HistoryRecord
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "weekly_digest.yml"
@@ -86,15 +88,35 @@ def test_persistence_is_allowlisted_idempotent_and_never_force_pushes() -> None:
         assert forbidden not in persist_text.lower()
 
 
-def test_seeded_history_matches_committed_latest_and_dashboard_history() -> None:
+def test_committed_latest_is_fully_recorded_in_history_and_dashboard_history() -> None:
+    """The newest committed digest must be recorded in history, run for run.
+
+    History is append-only and CI adds a run every week, so this asserts the
+    latest run's records agree with the latest report rather than asserting the
+    file holds exactly one run.
+    """
     reports_dir = REPOSITORY_ROOT / "reports"
     latest = load_digest(reports_dir / "latest.json")
     history = load_history(REPOSITORY_ROOT / "data" / "history.jsonl")
     dashboard_history, errors = load_digest_history(reports_dir)
     assert errors == []
-    assert len(history) == len(latest.recommendations)
-    assert {record.arxiv_id for record in history} == {
+    latest_records = [record for record in history if record.run_id == latest.run_id]
+    assert len(latest_records) == len(latest.recommendations)
+    assert {record.arxiv_id for record in latest_records} == {
         recommendation.paper.arxiv_id for recommendation in latest.recommendations
     }
-    assert {record.run_id for record in history} == {latest.run_id}
     assert dashboard_history[0][1].run_id == latest.run_id
+
+
+def test_history_runs_are_internally_consistent() -> None:
+    """Every history run must carry one record per rank, with no duplicate papers."""
+    history = load_history(REPOSITORY_ROOT / "data" / "history.jsonl")
+    assert history
+    by_run: dict[str, list[HistoryRecord]] = defaultdict(list)
+    for record in history:
+        by_run[record.run_id].append(record)
+    for run_id, records in by_run.items():
+        ranks = sorted(record.rank for record in records)
+        assert ranks == list(range(1, len(records) + 1)), run_id
+        identifiers = {record.arxiv_id for record in records}
+        assert len(identifiers) == len(records), run_id

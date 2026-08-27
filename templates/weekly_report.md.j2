@@ -32,7 +32,7 @@
 
 **Limitations:** {{ recommendation.summary.limitations }}
 
-**Score breakdown:** semantic {{ "%.3f" | format(recommendation.score.semantic_relevance) }} · keyword {{ "%.3f" | format(recommendation.score.keyword_relevance) }} · category {{ "%.3f" | format(recommendation.score.category_relevance) }} · recency {{ "%.3f" | format(recommendation.score.recency) }} · novelty {{ "%.3f" | format(recommendation.score.novelty) }} · feedback {{ "%.3f" | format(recommendation.score.feedback_affinity) }} · **final {{ "%.3f" | format(recommendation.score.final_preselection_score) }}**
+**Score breakdown:** semantic {{ "%.3f" | format(recommendation.score.semantic_relevance) }} · keyword {{ "%.3f" | format(recommendation.score.keyword_relevance) }} · category {{ "%.3f" | format(recommendation.score.category_relevance) }} · relevance {{ "%.3f" | format(recommendation.score.relevance) }} · recency {{ "%.3f" | format(recommendation.score.recency) }}{% if recommendation.score.context_penalty_applied %} · context penalty applied{% endif %} · **final {{ "%.3f" | format(recommendation.score.final_preselection_score) }}**
 
 {{ recommendation.score.explanation }}
 

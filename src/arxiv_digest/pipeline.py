@@ -13,17 +13,23 @@ from pydantic import BaseModel, ValidationError
 
 from arxiv_digest.arxiv_client import ArxivClient
 from arxiv_digest.config import Settings
+from arxiv_digest.domain_filter import (
+    DisambiguationConfig,
+    gate_papers,
+    load_disambiguation,
+)
 from arxiv_digest.exceptions import ArxivDigestError
 from arxiv_digest.history import (
     append_history,
     filter_recent_history,
-    recommended_ids,
     records_for_selection,
 )
 from arxiv_digest.models import (
     CandidateSnapshot,
     DateWindow,
     DigestArtifact,
+    GateRejection,
+    GateStage,
     HistoryRecord,
     RankedSnapshot,
     Recommendation,
@@ -97,8 +103,9 @@ def retrieve_candidates(
     *,
     now: datetime,
     client: ArxivClient | None = None,
+    disambiguation: DisambiguationConfig | None = None,
 ) -> CandidateSnapshot:
-    """Retrieve and deduplicate a candidate snapshot with injectable network I/O."""
+    """Retrieve, deduplicate, and gate a candidate snapshot with injectable I/O."""
     started = time.perf_counter()
     if client is None:
         with ArxivClient(settings.app.arxiv) as owned_client:
@@ -106,14 +113,26 @@ def retrieve_candidates(
                 settings.profile.queries,
                 window,
                 settings.profile.max_candidate_count,
+                settings.group.domain,
             )
     else:
         result = client.fetch(
             settings.profile.queries,
             window,
             settings.profile.max_candidate_count,
+            settings.group.domain,
         )
-    unique = deduplicate_papers(result.papers)[: settings.profile.max_candidate_count]
+    unique = deduplicate_papers(result.papers)
+    rules = disambiguation if disambiguation is not None else load_disambiguation()
+    gated = gate_papers(
+        unique,
+        domain=settings.group.domain,
+        disambiguation=rules,
+        negative_terms=settings.profile.negative_terms,
+    )
+    # Gate before truncating: off-domain papers must not consume the candidate
+    # budget that relevant ones are competing for.
+    kept = gated.kept[: settings.profile.max_candidate_count]
     snapshot = create_snapshot(
         window=window,
         profile_version=settings.profile.version,
@@ -121,14 +140,30 @@ def retrieve_candidates(
         query_results=result.query_results,
         raw_papers=result.papers,
         deduplicated_papers=unique,
+        kept_papers=kept,
+        rejections=gated.rejections,
+        context_flags=[
+            flag for flag in gated.context_flags if flag.arxiv_id in {p.arxiv_id for p in kept}
+        ],
     )
     LOGGER.info(
-        "run_id=%s stage=retrieve raw=%d deduplicated=%d elapsed_seconds=%.3f",
+        "run_id=%s stage=retrieve raw=%d deduplicated=%d gated_out=%d kept=%d elapsed_seconds=%.3f",
         snapshot.run_id,
         len(result.papers),
         len(unique),
+        len(gated.rejections),
+        len(kept),
         time.perf_counter() - started,
     )
+    for rejection in gated.rejections:
+        LOGGER.info(
+            "run_id=%s stage=gate rejected=%s gate=%s rule=%s reason=%s",
+            snapshot.run_id,
+            rejection.arxiv_id,
+            rejection.stage,
+            rejection.rule_id or "-",
+            rejection.reason,
+        )
     return snapshot
 
 
@@ -148,11 +183,30 @@ def rank_snapshot(
         exclusion_days=settings.profile.history_exclusion_days,
         allow_updated_resurfacing=settings.profile.allow_updated_resurfacing,
     )
+    eligible_ids = {paper.arxiv_id for paper in eligible}
+    rejections = [
+        *snapshot.rejections,
+        *(
+            GateRejection(
+                arxiv_id=paper.arxiv_id,
+                title=paper.title,
+                primary_category=paper.primary_category,
+                categories=list(paper.categories),
+                stage=GateStage.HISTORY,
+                reason=(
+                    f"recommended within the last {settings.profile.history_exclusion_days} days"
+                ),
+            )
+            for paper in snapshot.papers
+            if paper.arxiv_id not in eligible_ids
+        ),
+    ]
     ranked = rank_papers(
         eligible,
         settings.profile,
         snapshot.retrieval_window,
-        recommended_ids(history),
+        {flag.arxiv_id for flag in snapshot.context_flags},
+        settings.group.domain,
     )
     run_id = _rank_run_id(snapshot, settings)
     result = RankedSnapshot(
@@ -163,6 +217,7 @@ def rank_snapshot(
         records_before_history=len(snapshot.papers),
         records_after_history=len(eligible),
         ranked_papers=ranked,
+        rejections=rejections,
     )
     LOGGER.info(
         "run_id=%s stage=rank before_history=%d excluded=%d ranked=%d elapsed_seconds=%.3f",

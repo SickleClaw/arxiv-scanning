@@ -3,58 +3,65 @@
 from __future__ import annotations
 
 import math
-import re
 from collections import Counter
 from collections.abc import Iterable, Sequence
 
 import numpy as np
 from numpy.typing import NDArray
 
-from arxiv_digest.config import ResearchProfile
+from arxiv_digest.config import DomainConfig, ResearchProfile
 from arxiv_digest.models import DateWindow, Paper, RankedPaper, ScoreBreakdown
+from arxiv_digest.normalization import count_term, tokenize
 
-_TOKEN_PATTERN = re.compile(r"[^\W_]+", re.UNICODE)
 _TITLE_MATCH_WEIGHT = 1.0
 _ABSTRACT_MATCH_WEIGHT = 0.35
 _MAX_AUTHOR_BOOST = 0.15
-_NEGATIVE_TERM_PENALTY = 0.20
-
-
-def tokenize(value: str) -> tuple[str, ...]:
-    """Return case-folded whole-word tokens, preserving letters, numbers, and Unicode."""
-    return tuple(token.casefold() for token in _TOKEN_PATTERN.findall(value))
-
-
-def count_term(tokens: Sequence[str], term: str) -> int:
-    """Count exact token-sequence occurrences without substring false positives."""
-    needle = tokenize(term)
-    if not needle or len(needle) > len(tokens):
-        return 0
-    width = len(needle)
-    return sum(
-        tuple(tokens[index : index + width]) == needle for index in range(len(tokens) - width + 1)
-    )
 
 
 def _positive_terms(profile: ResearchProfile) -> dict[str, float]:
+    """Merge the configured facets into effective term weights.
+
+    The facet a term was configured under is evidence about how much a match on
+    it means, so it scales the term's weight rather than being discarded. A term
+    configured in more than one facet keeps its strongest reading.
+    """
+    facets = profile.scoring.facet_weights
     terms: dict[str, float] = {}
-    for configured in (profile.exact_phrases, profile.materials, profile.methods):
+    for configured, facet_weight in (
+        (profile.exact_phrases, facets.exact_phrases),
+        (profile.materials, facets.materials),
+        (profile.methods, facets.methods),
+    ):
         for term, weight in configured.items():
-            terms[term] = max(terms.get(term, 0.0), max(weight, 0.0))
+            effective = max(weight, 0.0) * facet_weight
+            terms[term] = max(terms.get(term, 0.0), effective)
     return terms
 
 
 def keyword_relevance(
     paper: Paper,
     profile: ResearchProfile,
-) -> tuple[float, list[tuple[str, float]], list[str]]:
-    """Score weighted whole-term matches in 0..1, favoring title over abstract matches."""
+) -> tuple[float, list[tuple[str, float]]]:
+    """Score whole-term matches in 0..1, favoring title over abstract matches.
+
+    Evidence accumulates relative to the profile's strongest configured term,
+    then saturates: ``1 - exp(-evidence / saturation)``. Dividing by the sum of
+    every configured weight, as this used to, meant a paper matching the single
+    highest-weighted term scored 3.0/35 = 0.086, and every term added to the
+    profile made every existing match worth less. Scaling by the strongest term
+    instead means adding interests never dilutes the ones already there.
+
+    Negative terms are not handled here. They are a gate now (see
+    ``domain_filter.gate_papers``): a paper matching one is removed with a
+    logged reason rather than penalized by an amount other components could
+    outvote.
+    """
     title_tokens = tokenize(paper.title)
     abstract_tokens = tokenize(paper.abstract)
     configured_terms = _positive_terms(profile)
-    total_weight = sum(configured_terms.values())
+    strongest_weight = max(configured_terms.values(), default=0.0)
     matched: list[tuple[str, float]] = []
-    weighted_score = 0.0
+    evidence = 0.0
     for term, weight in configured_terms.items():
         title_count = count_term(title_tokens, term)
         abstract_count = count_term(abstract_tokens, term)
@@ -63,11 +70,11 @@ def keyword_relevance(
             (_TITLE_MATCH_WEIGHT * title_count) + (_ABSTRACT_MATCH_WEIGHT * abstract_count),
         )
         if strength > 0:
-            contribution = weight * strength
-            weighted_score += contribution
+            contribution = (weight / strongest_weight) * strength
+            evidence += contribution
             matched.append((term, contribution))
 
-    base_score = weighted_score / total_weight if total_weight > 0 else 0.0
+    base_score = 1.0 - math.exp(-evidence / profile.scoring.keyword_saturation)
     normalized_authors = {" ".join(tokenize(author)) for author in paper.authors}
     author_weights = [
         weight
@@ -81,24 +88,31 @@ def keyword_relevance(
         )
         base_score += author_boost
 
-    negative_matches = [
-        term
-        for term in profile.negative_terms
-        if count_term(title_tokens, term) or count_term(abstract_tokens, term)
-    ]
     matched.sort(key=lambda item: (-item[1], item[0].casefold()))
-    return min(1.0, base_score), matched, negative_matches
+    return min(1.0, base_score), matched
 
 
-def category_relevance(paper: Paper, profile: ResearchProfile) -> float:
-    """Return the strongest configured category weight normalized to 0..1."""
+def category_relevance(
+    paper: Paper,
+    profile: ResearchProfile,
+    domain: DomainConfig | None = None,
+) -> float:
+    """Return the strongest configured category weight normalized to 0..1.
+
+    When a paper is in the group's field but its subcategory is not listed in
+    the profile, it floors at ``scoring.in_field_category_floor`` rather than
+    zero: unlisted is not the same as off-topic.
+    """
     maximum = max(profile.categories.values(), default=0.0)
     if maximum <= 0:
         return 0.0
     matched = max(
         (profile.categories.get(category, 0.0) for category in paper.categories), default=0.0
     )
-    return min(1.0, max(0.0, matched / maximum))
+    score = min(1.0, max(0.0, matched / maximum))
+    if domain is not None and domain.included(paper.categories):
+        score = max(score, profile.scoring.in_field_category_floor)
+    return score
 
 
 def recency_score(paper: Paper, window: DateWindow) -> float:
@@ -164,40 +178,52 @@ def rank_papers(
     papers: Iterable[Paper],
     profile: ResearchProfile,
     window: DateWindow,
-    previously_recommended_ids: set[str] | None = None,
+    penalized_ids: set[str] | None = None,
+    domain: DomainConfig | None = None,
 ) -> list[RankedPaper]:
-    """Rank papers with configurable hybrid weights and deterministic tie-breaking."""
+    """Rank papers on relevance alone, with deterministic tie-breaking.
+
+    The score is a weighted sum of the three relevance components, modulated by
+    recency and by any ambiguous-term context penalty. Nothing relevance-free
+    contributes.
+
+    That is the whole of Finding 2. Novelty was 1.0 for any unseen paper and
+    weighted 0.10, and recency added up to another 0.10, so a completely
+    irrelevant paper submitted late in the window scored at least 0.20 before
+    any relevance was considered — equal to the adjacent threshold and well
+    above the wildcard one. Repeat suppression is history.filter_recent_history's
+    job and it does it properly, by removing papers rather than by handing every
+    other paper a bonus.
+    """
     candidates = list(papers)
     semantic_scores = semantic_relevance_scores(candidates, profile)
-    previous_ids = previously_recommended_ids or set()
+    penalized = penalized_ids or set()
     weights = profile.ranking_weights
+    scoring = profile.scoring
     ranked: list[RankedPaper] = []
 
     for paper, semantic in zip(candidates, semantic_scores, strict=True):
-        keyword, matched, negative_matches = keyword_relevance(paper, profile)
-        category = category_relevance(paper, profile)
+        keyword, matched = keyword_relevance(paper, profile)
+        category = category_relevance(paper, profile, domain)
         recency = recency_score(paper, window)
-        novelty = 0.5 if paper.arxiv_id in previous_ids else 1.0
-        feedback_affinity = 0.5
-        raw_score = (
+        relevance = min(
+            1.0,
             (weights.semantic_relevance * semantic)
             + (weights.keyword_relevance * keyword)
-            + (weights.category_relevance * category)
-            + (weights.recency * recency)
-            + (weights.feedback_or_novelty * novelty)
+            + (weights.category_relevance * category),
         )
-        penalty = min(0.5, len(negative_matches) * _NEGATIVE_TERM_PENALTY)
-        final_score = min(1.0, max(0.0, raw_score - penalty))
+        recency_factor = 1.0 - scoring.recency_weight + (scoring.recency_weight * recency)
+        penalized_here = paper.arxiv_id in penalized
+        penalty_factor = scoring.context_penalty if penalized_here else 1.0
+        final_score = min(1.0, max(0.0, relevance * recency_factor * penalty_factor))
         strongest = [term for term, _contribution in matched[:5]]
         explanation_parts = [
             f"Strongest matched profile terms: {', '.join(strongest)}."
             if strongest
             else "No configured positive profile terms matched."
         ]
-        if negative_matches:
-            explanation_parts.append(
-                f"Negative terms reduced the score: {', '.join(sorted(negative_matches))}."
-            )
+        if penalized_here:
+            explanation_parts.append("An ambiguous term appeared without condensed-matter context.")
         ranked.append(
             RankedPaper(
                 paper=paper,
@@ -205,9 +231,9 @@ def rank_papers(
                     semantic_relevance=semantic,
                     keyword_relevance=keyword,
                     category_relevance=category,
+                    relevance=relevance,
                     recency=recency,
-                    novelty=novelty,
-                    feedback_affinity=feedback_affinity,
+                    context_penalty_applied=penalized_here,
                     final_preselection_score=final_score,
                     explanation=" ".join(explanation_parts),
                 ),

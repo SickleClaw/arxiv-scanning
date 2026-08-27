@@ -35,8 +35,7 @@ def _score(value: float) -> ScoreBreakdown:
         keyword_relevance=value,
         category_relevance=value,
         recency=value,
-        novelty=value,
-        feedback_affinity=0.5,
+        relevance=value,
         final_preselection_score=value,
         explanation="Strongest matched profile terms: spin ice.",
     )

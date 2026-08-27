@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0",
-  "run_id": "select-9fed3fb94c4c",
+  "schema_version": "2.0",
+  "run_id": "select-9475768bcd45",
   "title": "Personalized Weekly arXiv Reading List",
-  "generated_at": "2026-07-29T18:28:34.570470Z",
+  "generated_at": "2026-07-29T17:08:02.966397Z",
   "timezone": "America/New_York",
   "retrieval_window": {
     "start": "2026-07-21T00:00:00Z",
@@ -10,14 +10,14 @@
   },
   "records_retrieved": 34,
   "records_after_deduplication": 18,
-  "records_ranked": 18,
+  "records_ranked": 14,
   "records_selected": 10,
   "summary_mode": "offline",
   "summary_fallbacks": 0,
   "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
   "profile_name": "frustrated-magnetism-weekly",
   "profile_version": "1.0",
-  "profile_hash": "1ff5312fec72",
+  "profile_hash": "ca6dadce07d7",
   "recommendations": [
     {
       "paper": {
@@ -48,19 +48,19 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.1735982677192053,
-        "keyword_relevance": 0.09142857142857143,
+        "semantic_relevance": 0.16619690524320446,
+        "keyword_relevance": 0.302323673928969,
         "category_relevance": 1.0,
+        "relevance": 0.3129619073021053,
         "recency": 0.9340639467592593,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3943827580067112,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.31193013365299554,
         "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: Understanding the microscopic origin of spin-dipole coupling and high-energy excitations in correlated 4d-4f multiferroic oxides is challenging because magnetic, crystal-field, and lattice excitations frequently overlap in energy.",
         "brief_summary": "The abstract states: Understanding the microscopic origin of spin-dipole coupling and high-energy excitations in correlated 4d-4f multiferroic oxides is challenging because magnetic, crystal-field, and lattice excitations frequently overlap in energy. The hexagonal 6H perovskite Ba3HoRu2O9 provides an ideal platform to investigate this interplay owing to the coexistence of Ru2O9 molecular units and localized Ho3+ moments. To identify the contributions from these different excitations, we combine inelastic neutron scattering (INS) with linear spin-wave calculations, crystal-field analysis, Raman spectroscopy, and machine-learned force field (MLFF) phonon calculations. A dispersive magnetic excitation below 6.2 meV is accurately reproduced by linear spin-wave theory, establishing its origin as a collective spin-wave excitation of the coupled Ru-Ho magnetic network. At higher energies, broad excitations centered near 20, 39, 70, and 90 meV…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, linear spin-wave theory. Its preselection score was 0.394, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, linear spin-wave theory. Its preselection score was 0.312, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "neutron scattering",
           "linear spin-wave theory"
@@ -106,19 +106,19 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09880417463697956,
-        "keyword_relevance": 0.08714285714285713,
+        "semantic_relevance": 0.10454841897556681,
+        "keyword_relevance": 0.3341338913173695,
         "category_relevance": 1.0,
+        "relevance": 0.2882253267104343,
         "recency": 0.9447077546296296,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.360718368335318,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.2874284954361129,
         "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: We report low-temperature magnetization and magnetostriction measurements on the dipole-octupole pyrochlore $\\mathrm{Ce_2Hf_2O_7}$, revealing an unconventional field response for $\\mathbf B\\parallel[111]$.",
         "brief_summary": "The abstract states: We report low-temperature magnetization and magnetostriction measurements on the dipole-octupole pyrochlore $\\mathrm{Ce_2Hf_2O_7}$, revealing an unconventional field response for $\\mathbf B\\parallel[111]$. The magnetization shows no kagome-ice plateau; instead it evolves continuously and exhibits two rapid changes in slope near 0.35~T and 1.2~T, accompanied by magnetostriction features at the same field scales. Classical Monte Carlo simulations, exact diagonalization, and ground-state analysis of the Hamiltonian show that a representative QSI-compatible parameter set captures the data. For this parameter set, the lower-field anomaly marks a closely spaced transition sequence from a two-color kagome spin liquid (KSL) through a narrow three-color KSL into a mixed two-/three-color KSL, while the upper-field anomaly marks the transition from the mixed KSL into a nearly polarized state. These results identify $\\mathrm{Ce_2Hf_2O_7}$…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, pyrochlore. Its preselection score was 0.361, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, pyrochlore. Its preselection score was 0.287, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "spin ice",
           "pyrochlore"
@@ -128,6 +128,147 @@
         "confidence": 0.69
       },
       "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.21827",
+        "version": 1,
+        "title": "Hydrodynamic Memory and Long-Time Tails in Clean Frustrated Magnets",
+        "authors": [
+          "Yufei Pei",
+          "Claudio Castelnovo",
+          "Roderich Moessner"
+        ],
+        "abstract": "In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-23T21:30:26Z",
+        "updated_at": "2026-07-23T21:30:26Z",
+        "abstract_url": "https://arxiv.org/abs/2607.21827v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.21827v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10359522299123561,
+        "keyword_relevance": 0.13064176460119414,
+        "category_relevance": 1.0,
+        "relevance": 0.2240978643704432,
+        "recency": 0.3620167824074074,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.21694933054210902,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory.",
+        "brief_summary": "The abstract states: In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.217, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.605
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2509.08327",
+        "version": 3,
+        "title": "Trans-scale spin Seebeck effect in nanostructured bulk composites based on magnetic insulator",
+        "authors": [
+          "Sang J. Park",
+          "Keisuke Hirata",
+          "Hossein Sepehri-Amin",
+          "Fuyuki Ando",
+          "Takamasa Hirai",
+          "Ken-ichi Uchida"
+        ],
+        "abstract": "The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices. However, conventional SSE devices are confined to nanoscale thin-film architectures, with significantly restricted output power due to the intrinsic constraints of spin and magnon diffusion lengths. Here, we demonstrate a trans-scale SSE using nano-structured bulk composites composed of Pt-coated yttrium iron garnet powders fabricated via dynamic powder sputtering and low-temperature sintering. The resulting three-dimensional composites exhibit continuous Pt channels and robust mechanical integrity. Transverse thermoelectric measurements confirm isotropic SSE signals at the bulk scale. Power analysis indicates that the three-dimensional architecture enables scalable volumetric thermoelectric power generation beyond diffusion-limited thin-film SSE geometries. This work establishes a scalable platform for bulk SSE-based thermoelectrics, bridging nanoscale spin caloritronics with macroscopic device integration.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2025-09-10T07:01:56Z",
+        "updated_at": "2026-07-21T09:35:43Z",
+        "abstract_url": "https://arxiv.org/abs/2509.08327v3",
+        "pdf_url": "https://arxiv.org/pdf/2509.08327v3",
+        "doi": "10.1038/s41467-026-75232-0",
+        "journal_reference": "Nat. Commun. 17, 6389 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.10763081591886987,
+        "keyword_relevance": 0.18126924692201818,
+        "category_relevance": 0.8,
+        "relevance": 0.217188973617495,
+        "recency": 0.049975405092592594,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.2068722302835292,
+        "explanation": "Strongest matched profile terms: spin Seebeck effect."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices.",
+        "brief_summary": "The abstract states: The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices. However, conventional SSE devices are confined to nanoscale thin-film architectures, with significantly restricted output power due to the intrinsic constraints of spin and magnon diffusion lengths. Here, we demonstrate a trans-scale SSE using nano-structured bulk composites composed of Pt-coated yttrium iron garnet powders fabricated via dynamic powder sputtering and low-temperature sintering. The resulting three-dimensional composites exhibit continuous Pt channels and robust mechanical integrity. Transverse thermoelectric measurements confirm isotropic SSE signals at the bulk scale. Power analysis indicates that the three-dimensional architecture enables scalable volumetric thermoelectric power generation beyond diffusion-limited thin-film SSE geometries. This work establishes a scalable platform…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin Seebeck effect. Its preselection score was 0.207, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin Seebeck effect"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.67
+      },
+      "rank": 4,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.20424",
+        "version": 1,
+        "title": "Quantum Fisher Information in semiclassical magnon systems",
+        "authors": [
+          "Wolfgang Simeth",
+          "Pontus Laurell",
+          "Allen Scheie"
+        ],
+        "abstract": "Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with a zero-energy Goldstone mode, LSWT breaks down and QFI (and entanglement depth) diverges at the magnetic ordering wave vector. We also show examples of emergent quantum phases in frustrated spin systems that do not appear in classical phase diagrams. When these emergent phases are approached, QFI diverges across multiple wave vectors in momentum space. Taken together, QFI is not only helpful as a lower bound for entanglement depth, but serves as a momentum-resolved probe of entanglement that offers a novel perspective on quantum critical phenomena.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-22T17:59:51Z",
+        "updated_at": "2026-07-22T17:59:51Z",
+        "abstract_url": "https://arxiv.org/abs/2607.20424v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.20424v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10048489728709856,
+        "keyword_relevance": 0.08911018025438788,
+        "category_relevance": 1.0,
+        "relevance": 0.20936968605348916,
+        "recency": 0.21873697916666668,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.20119104638363539,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of…",
+        "brief_summary": "The abstract states: Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.201, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.str-el"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 5,
       "recommendation_type": "direct"
     },
     {
@@ -167,19 +308,19 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.10150035242538182,
-        "keyword_relevance": 0.025,
+        "semantic_relevance": 0.10221426704608565,
+        "keyword_relevance": 0.08911018025438788,
         "category_relevance": 1.0,
+        "relevance": 0.2103424565429194,
         "recency": 0.8888122106481482,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3408063796562366,
-        "explanation": "Strongest matched profile terms: neutron scattering."
+        "context_penalty_applied": true,
+        "final_preselection_score": 0.17779711876961307,
+        "explanation": "Strongest matched profile terms: neutron scattering. An ambiguous term appeared without condensed-matter context."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: We report profound impacts of the stacking sequence of triangular lattices of magnetic transition metal ions intercalated between the layers of the van der Waals material NbS$_2$.",
         "brief_summary": "The abstract states: We report profound impacts of the stacking sequence of triangular lattices of magnetic transition metal ions intercalated between the layers of the van der Waals material NbS$_2$. Using single crystal x-ray and neutron diffraction, and transport and magnetization measurements, we show there are two distinct polytypes of $\\rm V_{1/3}NbS_2$ with disparate easy axes of magnetization and different anomalous Hall responses. Self-consistent analysis of inelastic neutron scattering data provides evidence for oscillatory RKKY interactions that extend to 1 nm and stabilize quasi-collinear A-type altermagnetic orders in both polytypes though with perpendicular easy axes. The detailed stacking sequence of a bulk polytype crystal dramatically impact its macroscopic anomalous Hall response and magnetism, which suggests a new path to engineer the bulk properties of a…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.341, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.178, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "neutron scattering"
         ],
@@ -187,8 +328,8 @@
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.63
       },
-      "rank": 3,
-      "recommendation_type": "direct"
+      "rank": 6,
+      "recommendation_type": "adjacent"
     },
     {
       "paper": {
@@ -215,19 +356,19 @@
         "journal_reference": "Phys. Rev. Research 8, 033118 (2026)"
       },
       "score": {
-        "semantic_relevance": 0.09353348417826754,
-        "keyword_relevance": 0.029999999999999995,
+        "semantic_relevance": 0.09168817781202994,
+        "keyword_relevance": 0.13064176460119414,
         "category_relevance": 0.8,
+        "relevance": 0.19240015145714,
         "recency": 0.9481698495370371,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3244070528339241,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.19190154501718398,
         "explanation": "Strongest matched profile terms: spin ice."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: We analyse how simple local constraints in two dimensions lead a defect to exhibit robust, non-transient, and tunable, subdiffusion.",
         "brief_summary": "The abstract states: We analyse how simple local constraints in two dimensions lead a defect to exhibit robust, non-transient, and tunable, subdiffusion. We uncover a rich dynamical phenomenology realised in ice- and dimer-type models. On the microscopic scale the path of a single defect exhibits anomalously long retractions, amounting to dynamical caging in a continuous-time random-walk framework, culminating in an effective fractional diffusion equation. Mapping to a height field yields an effective random walk subject to an emergent (entropic) logarithmic potential, whose strength is tunable, related to the exponent of algebraic ground-state correlations. The defect's path, viewed as non-equilibrium growth process, yields a frontier of fractal dimension of $5/4$, the value for a loop-erased random walk, rather than $4/3$ for simple and self-avoiding random walks…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.324, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.192, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "spin ice"
         ],
@@ -235,65 +376,8 @@
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.75
       },
-      "rank": 4,
-      "recommendation_type": "direct"
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.25481",
-        "version": 1,
-        "title": "Reconciling chemical models of X-ray Thomson Scattering with the Bethe $f$-sum rule",
-        "authors": [
-          "Maximilian P. Böhme",
-          "Paul Hamann",
-          "Veronika A. Kruse",
-          "Hannah M. Bellenbaum",
-          "Armin Bergermann",
-          "David T. Bishel",
-          "Thomas Gawne",
-          "Dirk O. Gericke",
-          "Zhandos A. Moldabekov",
-          "Pontus Svensson",
-          "Jan Vorberger",
-          "Tobias Dornheim"
-        ],
-        "abstract": "X-ray Thomson scattering (XRTS) is a key diagnostic for high-energy-density plasmas, which can exhibit significant quantum effects even at elevated temperatures. XRTS experiments are commonly interpreted using the Chihara decomposition, that was derived in the chemical picture and, thus, separates contributions from bound and free electrons. Despite being the de-facto standard for analysing measurements, a well-known shortcoming is that the standard bound-state treatment in the form of the impulse approximation fails to satisfy fundamental theoretical constraints, most notably the Bethe $f$-sum rule (BFSR). The problem arises due to the usage of plane waves in the impulse approximation as well as non-negligible contributions from bound-bound transitions. In this work, we present a minimal analytical extension of the Chihara decomposition of the dynamic structure factor for matter in the ground state, using hydrogenic bound-free and bound-bound transitions. We demonstrate that compliance with the BFSR is only achieved when both bound-bound transitions are explicitly included and an exact treatment of the bound-free contribution is applied. Finally, detector ray-tracing simulations for atomic hydrogen demonstrate experimentally detectable deviations from the standard Chihara model. The model will be made available in the open source XRTS library xDAVE [Bellenbaum et al., Phys. Plasmas (in print), arxiv:2604.27237].",
-        "primary_category": "physics.plasm-ph",
-        "categories": [
-          "physics.plasm-ph",
-          "physics.atom-ph",
-          "physics.comp-ph"
-        ],
-        "published_at": "2026-07-28T09:17:41Z",
-        "updated_at": "2026-07-28T09:17:41Z",
-        "abstract_url": "https://arxiv.org/abs/2607.25481v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.25481v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.0763818984356532,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.6,
-        "recency": 0.9234100115740741,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2867128554534514,
-        "explanation": "No configured positive profile terms matched."
-      },
-      "summary": {
-        "one_sentence_takeaway": "The abstract reports: X-ray Thomson scattering (XRTS) is a key diagnostic for high-energy-density plasmas, which can exhibit significant quantum effects even at elevated temperatures.",
-        "brief_summary": "The abstract states: X-ray Thomson scattering (XRTS) is a key diagnostic for high-energy-density plasmas, which can exhibit significant quantum effects even at elevated temperatures. XRTS experiments are commonly interpreted using the Chihara decomposition, that was derived in the chemical picture and, thus, separates contributions from bound and free electrons. Despite being the de-facto standard for analysing measurements, a well-known shortcoming is that the standard bound-state treatment in the form of the impulse approximation fails to satisfy fundamental theoretical constraints, most notably the Bethe $f$-sum rule (BFSR). The problem arises due to the usage of plane waves in the impulse approximation as well as non-negligible contributions from bound-bound transitions. In this work, we present a minimal analytical extension of the Chihara decomposition of the dynamic structure…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through physics.plasm-ph. Its preselection score was 0.287, so the relevance claim reflects only the available abstract and ranking signals.",
-        "methods_or_systems": [
-          "physics.plasm-ph"
-        ],
-        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
-        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.85
-      },
-      "rank": 5,
-      "recommendation_type": "direct"
+      "rank": 7,
+      "recommendation_type": "adjacent"
     },
     {
       "paper": {
@@ -323,19 +407,19 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.060163633759143055,
-        "keyword_relevance": 0.02,
+        "semantic_relevance": 0.06199718432946856,
+        "keyword_relevance": 0.08911018025438788,
         "category_relevance": 1.0,
+        "relevance": 0.18772034751482228,
         "recency": 0.4300462962962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.27507826482124403,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.1823707521484913,
         "explanation": "Strongest matched profile terms: linear spin-wave theory."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: We study the non-reciprocal properties of the iron oxide $α$-Fe$_2$O$_3$ (hematite) in the canted easy-plane antiferromagnetic phase, specifically in the GHz to THz frequency range.",
         "brief_summary": "The abstract states: We study the non-reciprocal properties of the iron oxide $α$-Fe$_2$O$_3$ (hematite) in the canted easy-plane antiferromagnetic phase, specifically in the GHz to THz frequency range. First, using the the microscopic spin Hamiltonian, we obtain the correct classical ground state where the canting is induced by the Dzyaloshinskii-Moriya interactions (DMI). The magnon spectrum is simulated using linear spin wave theory. We then compute the polarizability and the sub-gap optical conductivities using linear response. We find that the conductivity tensor contains frequency peaks at the zero momentum magnon gaps of order $0.1~$meV which can be tuned by the DMI and on-site anisotropic spin interactions. Furthermore, we show that the canting-induced net magnetic moment $\\mathbf{m}$ represents a measure for the effective time-reversal-symmetry breaking and non-reciprocity…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.275, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.182, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "cond-mat.str-el"
         ],
@@ -343,7 +427,7 @@
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.79
       },
-      "rank": 6,
+      "rank": 8,
       "recommendation_type": "adjacent"
     },
     {
@@ -368,19 +452,19 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.16807250758980521,
+        "semantic_relevance": 0.15238501894153844,
         "keyword_relevance": 0.0,
         "category_relevance": 0.5,
+        "relevance": 0.14821657315461537,
         "recency": 0.4718822337962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.272820851795042,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.1443027828781762,
         "explanation": "No configured positive profile terms matched."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: We predict the spin thermal Hall effect in nonreciprocal magneto-optical many-body systems, in which a longitudinal radiative heat current generates a transverse accumulation of the spin angular momentum carried by thermal photons.",
         "brief_summary": "The abstract states: We predict the spin thermal Hall effect in nonreciprocal magneto-optical many-body systems, in which a longitudinal radiative heat current generates a transverse accumulation of the spin angular momentum carried by thermal photons. We show that this effect and the inverse spin thermal Hall effect constitute an Onsager-Casimir reciprocal pair, thereby establishing heat and photon spin as coupled transport channels in nonreciprocal photonic systems. The second law of thermodynamics imposes fundamental bounds on the spin-heat coupling, leading to a thermal-spin figure of merit that quantifies the efficiency of radiative spin-heat conversion. Our results establish a complete thermodynamic framework for photon spin caloritronics and lay the conceptual foundations for spin-controlled thermal radiation and nonreciprocal photonic thermal devices.",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mes-hall. Its preselection score was 0.273, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mes-hall. Its preselection score was 0.144, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "cond-mat.mes-hall"
         ],
@@ -388,144 +472,57 @@
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.575
       },
-      "rank": 7,
-      "recommendation_type": "adjacent"
+      "rank": 9,
+      "recommendation_type": "wildcard"
     },
     {
       "paper": {
-        "arxiv_id": "2607.21827",
+        "arxiv_id": "2607.18594",
         "version": 1,
-        "title": "Hydrodynamic Memory and Long-Time Tails in Clean Frustrated Magnets",
+        "title": "Data-driven Design of Metal-Organic Frameworks with Tunable Negative Thermal Expansion",
         "authors": [
-          "Yufei Pei",
-          "Claudio Castelnovo",
-          "Roderich Moessner"
+          "Prathami Divakar Kamath",
+          "Francesco Tavani",
+          "Alin Marin Elena",
+          "Théo Jaffrelot Inizan",
+          "Yen-hsu Lin",
+          "Jian Yin",
+          "Wenqian Xu",
+          "Omar M. Yaghi",
+          "Kristin A. Persson"
         ],
-        "abstract": "In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
-        "primary_category": "cond-mat.str-el",
+        "abstract": "Materials with negative thermal expansion (NTE) are essential for applications requiring precise control of thermal expansion. Owing to their exceptional chemical tunability, flexible architectures, and low-energy lattice vibrations, metal-organic frameworks (MOFs) represent a rich platform for exploring NTE. However, uncovering the structural motifs that govern NTE across the enormous MOF design space remains experimentally challenging, and large-scale first-principles phonon calculations are computationally prohibitive. Here, we comprehensively evaluate the factors influencing NTE in MOFs by utilizing a high-throughput workflow based on MACE-MP-MOF0, a machine learning interatomic potential fine-tuned for MOFs with near-ab initio accuracy, to construct PhononMOFdb, a database of phonons, inelastic neutron scattering spectra, bulk moduli, and heat capacities for over 12,000 MOFs. High-throughput screening of this database reveals that highly porous cubic topology frameworks with heavier, lower-valent metal nodes favor strong NTE, while linker functionalization provides a practical handle for tuning NTE magnitude and sign without compromising mechanical stability. Experimental validation via high-resolution temperature-dependent synchrotron powder X-ray diffraction on the Ce-UiO-66 MOF and its brominated variants confirms the design recipe and yields volumetric NTE coefficients surpassing current records. This work establishes a data-driven strategy for engineering NTE in MOFs, showing how machine learning-accelerated discovery and targeted experimental validation together unlock predictive materials design.",
+        "primary_category": "cond-mat.mtrl-sci",
         "categories": [
-          "cond-mat.str-el"
+          "cond-mat.mtrl-sci"
         ],
-        "published_at": "2026-07-23T21:30:26Z",
-        "updated_at": "2026-07-23T21:30:26Z",
-        "abstract_url": "https://arxiv.org/abs/2607.21827v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.21827v1",
+        "published_at": "2026-07-21T00:02:56Z",
+        "updated_at": "2026-07-21T00:02:56Z",
+        "abstract_url": "https://arxiv.org/abs/2607.18594v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.18594v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09317826386951564,
-        "keyword_relevance": 0.029999999999999995,
-        "category_relevance": 1.0,
-        "recency": 0.3620167824074074,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2856318969820228,
-        "explanation": "Strongest matched profile terms: spin ice."
+        "semantic_relevance": 0.047471890301757275,
+        "keyword_relevance": 0.08911018025438788,
+        "category_relevance": 0.8,
+        "relevance": 0.15454986962423467,
+        "recency": 0.0002546296296296296,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.14682434379182602,
+        "explanation": "Strongest matched profile terms: neutron scattering."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory.",
-        "brief_summary": "The abstract states: In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.286, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: Materials with negative thermal expansion (NTE) are essential for applications requiring precise control of thermal expansion.",
+        "brief_summary": "The abstract states: Materials with negative thermal expansion (NTE) are essential for applications requiring precise control of thermal expansion. Owing to their exceptional chemical tunability, flexible architectures, and low-energy lattice vibrations, metal-organic frameworks (MOFs) represent a rich platform for exploring NTE. However, uncovering the structural motifs that govern NTE across the enormous MOF design space remains experimentally challenging, and large-scale first-principles phonon calculations are computationally prohibitive. Here, we comprehensively evaluate the factors influencing NTE in MOFs by utilizing a high-throughput workflow based on MACE-MP-MOF0, a machine learning interatomic potential fine-tuned for MOFs with near-ab initio accuracy, to construct PhononMOFdb, a database of phonons, inelastic neutron scattering spectra, bulk moduli, and heat capacities for over 12,000 MOFs. High-throughput screening of this database reveals that highly porous…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.147, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "spin ice"
-        ],
-        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
-        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.605
-      },
-      "rank": 8,
-      "recommendation_type": "direct"
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.20424",
-        "version": 1,
-        "title": "Quantum Fisher Information in semiclassical magnon systems",
-        "authors": [
-          "Wolfgang Simeth",
-          "Pontus Laurell",
-          "Allen Scheie"
-        ],
-        "abstract": "Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with a zero-energy Goldstone mode, LSWT breaks down and QFI (and entanglement depth) diverges at the magnetic ordering wave vector. We also show examples of emergent quantum phases in frustrated spin systems that do not appear in classical phase diagrams. When these emergent phases are approached, QFI diverges across multiple wave vectors in momentum space. Taken together, QFI is not only helpful as a lower bound for entanglement depth, but serves as a momentum-resolved probe of entanglement that offers a novel perspective on quantum critical phenomena.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-07-22T17:59:51Z",
-        "updated_at": "2026-07-22T17:59:51Z",
-        "abstract_url": "https://arxiv.org/abs/2607.20424v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.20424v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.1022438829216157,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.21873697916666668,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.27288344523139374,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      },
-      "summary": {
-        "one_sentence_takeaway": "The abstract reports: Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of…",
-        "brief_summary": "The abstract states: Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.273, so the relevance claim reflects only the available abstract and ranking signals.",
-        "methods_or_systems": [
-          "cond-mat.str-el"
+          "neutron scattering"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.85
-      },
-      "rank": 9,
-      "recommendation_type": "adjacent"
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.20843",
-        "version": 1,
-        "title": "Dark Monopoles, Bounds on Hidden Sectors, and Cosmological Implications",
-        "authors": [
-          "Donald Liveoak",
-          "Anshuman Maharana",
-          "James D. Wells"
-        ],
-        "abstract": "Hidden sectors are a generic prediction of string theory compactifications and result in a promising landscape for dark matter model building. We consider the case of hidden sector magnetic monopoles produced via a thermal phase transition in the early Universe and subsequently diluted by pair annihilation. We show that for symmetry-breaking scales $\\gtrsim 100\\, \\text{PeV}$, the monopole abundance is unacceptably high, overclosing the Universe. Our bounds are robust against variations in the initial fraction of energy density deposited in the hidden sector, exhibiting only a weak power-law dependence on this quantity. The bound is substantially tightened in the case of multiple hidden sectors. The standard cosmology may only be recovered if one of the following is true: the hidden sector(s) are non-existent, the hidden sectors have no monopoles with symmetry-breaking scale above 100 PeV, the maximum temperature of each monopole-producing hidden sector after reheating is below its symmetry-breaking scale, or the monopole abundance is diluted during a period of early matter domination.",
-        "primary_category": "hep-ph",
-        "categories": [
-          "hep-ph",
-          "astro-ph.CO"
-        ],
-        "published_at": "2026-07-23T02:11:12Z",
-        "updated_at": "2026-07-23T02:11:12Z",
-        "abstract_url": "https://arxiv.org/abs/2607.20843v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.20843v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.038286754500044096,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "recency": 0.2613888888888889,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.14336792841390875,
-        "explanation": "No configured positive profile terms matched."
-      },
-      "summary": {
-        "one_sentence_takeaway": "The abstract reports: Hidden sectors are a generic prediction of string theory compactifications and result in a promising landscape for dark matter model building.",
-        "brief_summary": "The abstract states: Hidden sectors are a generic prediction of string theory compactifications and result in a promising landscape for dark matter model building. We consider the case of hidden sector magnetic monopoles produced via a thermal phase transition in the early Universe and subsequently diluted by pair annihilation. We show that for symmetry-breaking scales $\\gtrsim 100\\, \\text{PeV}$, the monopole abundance is unacceptably high, overclosing the Universe. Our bounds are robust against variations in the initial fraction of energy density deposited in the hidden sector, exhibiting only a weak power-law dependence on this quantity. The bound is substantially tightened in the case of multiple hidden sectors. The standard cosmology may only be recovered if one of the following is true: the hidden sector(s) are non-existent…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.143, so the relevance claim reflects only the available abstract and ranking signals.",
-        "methods_or_systems": [
-          "hep-ph"
-        ],
-        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
-        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.81
       },
       "rank": 10,
       "recommendation_type": "wildcard"
@@ -561,50 +558,58 @@
         "journal_reference": "Nature Communications 2026"
       },
       "score": {
-        "semantic_relevance": 0.07973273647707418,
+        "semantic_relevance": 0.08451126463598306,
         "keyword_relevance": 0.0,
         "category_relevance": 0.8,
+        "relevance": 0.14753758635774047,
         "recency": 0.38311631944444446,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.25419136335912784,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.14298690989310817,
         "explanation": "No configured positive profile terms matched."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2509.08327",
-        "version": 3,
-        "title": "Trans-scale spin Seebeck effect in nanostructured bulk composites based on magnetic insulator",
+        "arxiv_id": "2607.25481",
+        "version": 1,
+        "title": "Reconciling chemical models of X-ray Thomson Scattering with the Bethe $f$-sum rule",
         "authors": [
-          "Sang J. Park",
-          "Keisuke Hirata",
-          "Hossein Sepehri-Amin",
-          "Fuyuki Ando",
-          "Takamasa Hirai",
-          "Ken-ichi Uchida"
+          "Maximilian P. Böhme",
+          "Paul Hamann",
+          "Veronika A. Kruse",
+          "Hannah M. Bellenbaum",
+          "Armin Bergermann",
+          "David T. Bishel",
+          "Thomas Gawne",
+          "Dirk O. Gericke",
+          "Zhandos A. Moldabekov",
+          "Pontus Svensson",
+          "Jan Vorberger",
+          "Tobias Dornheim"
         ],
-        "abstract": "The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices. However, conventional SSE devices are confined to nanoscale thin-film architectures, with significantly restricted output power due to the intrinsic constraints of spin and magnon diffusion lengths. Here, we demonstrate a trans-scale SSE using nano-structured bulk composites composed of Pt-coated yttrium iron garnet powders fabricated via dynamic powder sputtering and low-temperature sintering. The resulting three-dimensional composites exhibit continuous Pt channels and robust mechanical integrity. Transverse thermoelectric measurements confirm isotropic SSE signals at the bulk scale. Power analysis indicates that the three-dimensional architecture enables scalable volumetric thermoelectric power generation beyond diffusion-limited thin-film SSE geometries. This work establishes a scalable platform for bulk SSE-based thermoelectrics, bridging nanoscale spin caloritronics with macroscopic device integration.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "X-ray Thomson scattering (XRTS) is a key diagnostic for high-energy-density plasmas, which can exhibit significant quantum effects even at elevated temperatures. XRTS experiments are commonly interpreted using the Chihara decomposition, that was derived in the chemical picture and, thus, separates contributions from bound and free electrons. Despite being the de-facto standard for analysing measurements, a well-known shortcoming is that the standard bound-state treatment in the form of the impulse approximation fails to satisfy fundamental theoretical constraints, most notably the Bethe $f$-sum rule (BFSR). The problem arises due to the usage of plane waves in the impulse approximation as well as non-negligible contributions from bound-bound transitions. In this work, we present a minimal analytical extension of the Chihara decomposition of the dynamic structure factor for matter in the ground state, using hydrogenic bound-free and bound-bound transitions. We demonstrate that compliance with the BFSR is only achieved when both bound-bound transitions are explicitly included and an exact treatment of the bound-free contribution is applied. Finally, detector ray-tracing simulations for atomic hydrogen demonstrate experimentally detectable deviations from the standard Chihara model. The model will be made available in the open source XRTS library xDAVE [Bellenbaum et al., Phys. Plasmas (in print), arxiv:2604.27237].",
+        "primary_category": "physics.plasm-ph",
         "categories": [
-          "cond-mat.mtrl-sci"
+          "physics.plasm-ph",
+          "physics.atom-ph",
+          "physics.comp-ph"
         ],
-        "published_at": "2025-09-10T07:01:56Z",
-        "updated_at": "2026-07-21T09:35:43Z",
-        "abstract_url": "https://arxiv.org/abs/2509.08327v3",
-        "pdf_url": "https://arxiv.org/pdf/2509.08327v3",
-        "doi": "10.1038/s41467-026-75232-0",
-        "journal_reference": "Nat. Commun. 17, 6389 (2026)"
+        "published_at": "2026-07-28T09:17:41Z",
+        "updated_at": "2026-07-28T09:17:41Z",
+        "abstract_url": "https://arxiv.org/abs/2607.25481v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.25481v1",
+        "doi": null,
+        "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.11161544217019306,
-        "keyword_relevance": 0.04285714285714286,
-        "category_relevance": 0.8,
-        "recency": 0.049975405092592594,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.24593877520013188,
-        "explanation": "Strongest matched profile terms: spin Seebeck effect."
+        "semantic_relevance": 0.07035036312257612,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.6,
+        "relevance": 0.11457207925644906,
+        "recency": 0.9234100115740741,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.11413332554523978,
+        "explanation": "No configured positive profile terms matched."
       }
     },
     {
@@ -632,14 +637,14 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.04273795333621684,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
+        "semantic_relevance": 0.05480571718028472,
+        "keyword_relevance": 0.11011822901197621,
+        "category_relevance": 0.4,
+        "relevance": 0.11524016248015272,
         "recency": 0.942740162037037,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.21975609520500128,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
+        "context_penalty_applied": true,
+        "final_preselection_score": 0.09767369620433615,
+        "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
     {
@@ -666,48 +671,14 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.04613554701177992,
+        "semantic_relevance": 0.05076776438854827,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
+        "category_relevance": 0.4,
+        "relevance": 0.0785568674685584,
         "recency": 0.8962355324074074,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.21038454939604173,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.07814929689212756,
         "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.24989",
-        "version": 1,
-        "title": "Cross-Correlations of Metric and Monopole Perturbations from Holographic Cosmology",
-        "authors": [
-          "Matheus Cravo",
-          "Juliana Z. Finotti",
-          "Horatiu Nastase"
-        ],
-        "abstract": "In this paper, we present the 1-loop calculation of the three-point function $\\langle TJJ \\rangle$ of the stress-energy tensor and two insertions of $SO(3)$ global currents, using a 3d toy model for holographic cosmology. By applying the holographic dictionary that relates these QFT $n$-point functions to cosmological correlators, together with the $Sl(2,\\mathbb{Z})$ duality that maps the electric Noether current to a magnetic vortex current dual to cosmological magnetic monopoles, we relate the $\\langle TJJ \\rangle$ correlator to the cross-correlations between metric perturbations and the bulk magnetic monopole field, specifically mapping to the non-Gaussianities $\\langle ξ\\tilde{A} \\tilde{A} \\rangle$ and $\\langle γ\\tilde{A} \\tilde{A} \\rangle$. We calculate the semi-local contact terms necessary to achieve the exact factorization of the cosmological correlators in the squeezed limit, $p_1 \\to 0$. Finally, we evaluate the effective non-linear parameters, showing that the scalar-monopole cross-correlation vanishes at leading order, $f_{NL}^{ξ\\tilde{A} \\tilde{A}} = 0$, while the tensor-monopole cross-correlation yields a non-zero $f_{NL}^{γ\\tilde A\\tilde A}$. These results respect the expected amplitude hierarchy of the non-Gaussian correlators, while pointing at new directions in which holographic cosmology can be tested experimentally.",
-        "primary_category": "hep-th",
-        "categories": [
-          "hep-th",
-          "gr-qc"
-        ],
-        "published_at": "2026-07-27T18:41:02Z",
-        "updated_at": "2026-07-27T18:41:02Z",
-        "abstract_url": "https://arxiv.org/abs/2607.24989v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.24989v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.0398233113594212,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
-        "recency": 0.8473119212962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20890168224136918,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
       }
     }
   ],
@@ -741,13 +712,13 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.1735982677192053,
-        "keyword_relevance": 0.09142857142857143,
+        "semantic_relevance": 0.16619690524320446,
+        "keyword_relevance": 0.302323673928969,
         "category_relevance": 1.0,
+        "relevance": 0.3129619073021053,
         "recency": 0.9340639467592593,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3943827580067112,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.31193013365299554,
         "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
       }
     },
@@ -785,14 +756,189 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09880417463697956,
-        "keyword_relevance": 0.08714285714285713,
+        "semantic_relevance": 0.10454841897556681,
+        "keyword_relevance": 0.3341338913173695,
         "category_relevance": 1.0,
+        "relevance": 0.2882253267104343,
         "recency": 0.9447077546296296,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.360718368335318,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.2874284954361129,
         "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.21827",
+        "version": 1,
+        "title": "Hydrodynamic Memory and Long-Time Tails in Clean Frustrated Magnets",
+        "authors": [
+          "Yufei Pei",
+          "Claudio Castelnovo",
+          "Roderich Moessner"
+        ],
+        "abstract": "In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-23T21:30:26Z",
+        "updated_at": "2026-07-23T21:30:26Z",
+        "abstract_url": "https://arxiv.org/abs/2607.21827v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.21827v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10359522299123561,
+        "keyword_relevance": 0.13064176460119414,
+        "category_relevance": 1.0,
+        "relevance": 0.2240978643704432,
+        "recency": 0.3620167824074074,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.21694933054210902,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2509.08327",
+        "version": 3,
+        "title": "Trans-scale spin Seebeck effect in nanostructured bulk composites based on magnetic insulator",
+        "authors": [
+          "Sang J. Park",
+          "Keisuke Hirata",
+          "Hossein Sepehri-Amin",
+          "Fuyuki Ando",
+          "Takamasa Hirai",
+          "Ken-ichi Uchida"
+        ],
+        "abstract": "The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices. However, conventional SSE devices are confined to nanoscale thin-film architectures, with significantly restricted output power due to the intrinsic constraints of spin and magnon diffusion lengths. Here, we demonstrate a trans-scale SSE using nano-structured bulk composites composed of Pt-coated yttrium iron garnet powders fabricated via dynamic powder sputtering and low-temperature sintering. The resulting three-dimensional composites exhibit continuous Pt channels and robust mechanical integrity. Transverse thermoelectric measurements confirm isotropic SSE signals at the bulk scale. Power analysis indicates that the three-dimensional architecture enables scalable volumetric thermoelectric power generation beyond diffusion-limited thin-film SSE geometries. This work establishes a scalable platform for bulk SSE-based thermoelectrics, bridging nanoscale spin caloritronics with macroscopic device integration.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2025-09-10T07:01:56Z",
+        "updated_at": "2026-07-21T09:35:43Z",
+        "abstract_url": "https://arxiv.org/abs/2509.08327v3",
+        "pdf_url": "https://arxiv.org/pdf/2509.08327v3",
+        "doi": "10.1038/s41467-026-75232-0",
+        "journal_reference": "Nat. Commun. 17, 6389 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.10763081591886987,
+        "keyword_relevance": 0.18126924692201818,
+        "category_relevance": 0.8,
+        "relevance": 0.217188973617495,
+        "recency": 0.049975405092592594,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.2068722302835292,
+        "explanation": "Strongest matched profile terms: spin Seebeck effect."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.20424",
+        "version": 1,
+        "title": "Quantum Fisher Information in semiclassical magnon systems",
+        "authors": [
+          "Wolfgang Simeth",
+          "Pontus Laurell",
+          "Allen Scheie"
+        ],
+        "abstract": "Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with a zero-energy Goldstone mode, LSWT breaks down and QFI (and entanglement depth) diverges at the magnetic ordering wave vector. We also show examples of emergent quantum phases in frustrated spin systems that do not appear in classical phase diagrams. When these emergent phases are approached, QFI diverges across multiple wave vectors in momentum space. Taken together, QFI is not only helpful as a lower bound for entanglement depth, but serves as a momentum-resolved probe of entanglement that offers a novel perspective on quantum critical phenomena.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-22T17:59:51Z",
+        "updated_at": "2026-07-22T17:59:51Z",
+        "abstract_url": "https://arxiv.org/abs/2607.20424v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.20424v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10048489728709856,
+        "keyword_relevance": 0.08911018025438788,
+        "category_relevance": 1.0,
+        "relevance": 0.20936968605348916,
+        "recency": 0.21873697916666668,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.20119104638363539,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2504.00074",
+        "version": 2,
+        "title": "Fractional diffusion without disorder in two dimensions",
+        "authors": [
+          "Nilotpal Chakraborty",
+          "Markus Heyl",
+          "Roderich Moessner"
+        ],
+        "abstract": "We analyse how simple local constraints in two dimensions lead a defect to exhibit robust, non-transient, and tunable, subdiffusion. We uncover a rich dynamical phenomenology realised in ice- and dimer-type models. On the microscopic scale the path of a single defect exhibits anomalously long retractions, amounting to dynamical caging in a continuous-time random-walk framework, culminating in an effective fractional diffusion equation. Mapping to a height field yields an effective random walk subject to an emergent (entropic) logarithmic potential, whose strength is tunable, related to the exponent of algebraic ground-state correlations. The defect's path, viewed as non-equilibrium growth process, yields a frontier of fractal dimension of $5/4$, the value for a loop-erased random walk, rather than $4/3$ for simple and self-avoiding random walks. Such frustration/constraint-induced subdiffusion is expected to be relevant to platforms such as artificial spin ice and quantum simulators aiming to realize discrete link models and emergent gauge theories.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.dis-nn",
+          "cond-mat.stat-mech"
+        ],
+        "published_at": "2025-03-31T18:00:00Z",
+        "updated_at": "2026-07-28T14:02:55Z",
+        "abstract_url": "https://arxiv.org/abs/2504.00074v2",
+        "pdf_url": "https://arxiv.org/pdf/2504.00074v2",
+        "doi": "10.1103/nbfk-s77d",
+        "journal_reference": "Phys. Rev. Research 8, 033118 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.09168817781202994,
+        "keyword_relevance": 0.13064176460119414,
+        "category_relevance": 0.8,
+        "relevance": 0.19240015145714,
+        "recency": 0.9481698495370371,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.19190154501718398,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.22176",
+        "version": 1,
+        "title": "GHz non-reciprocal optical conductivity in hematite ($α$-$\\text{Fe}_2\\text{O}_3$)",
+        "authors": [
+          "Peng Rao",
+          "Johannes Gröbmeyer",
+          "P. Peter Stavropoulos",
+          "Alexander Mook",
+          "Matthias Althammer",
+          "Hans Huebl",
+          "Alexander Holleitner",
+          "Johannes Knolle"
+        ],
+        "abstract": "We study the non-reciprocal properties of the iron oxide $α$-Fe$_2$O$_3$ (hematite) in the canted easy-plane antiferromagnetic phase, specifically in the GHz to THz frequency range. First, using the the microscopic spin Hamiltonian, we obtain the correct classical ground state where the canting is induced by the Dzyaloshinskii-Moriya interactions (DMI). The magnon spectrum is simulated using linear spin wave theory. We then compute the polarizability and the sub-gap optical conductivities using linear response. We find that the conductivity tensor contains frequency peaks at the zero momentum magnon gaps of order $0.1~$meV which can be tuned by the DMI and on-site anisotropic spin interactions. Furthermore, we show that the canting-induced net magnetic moment $\\mathbf{m}$ represents a measure for the effective time-reversal-symmetry breaking and non-reciprocity of the system: a finite $\\mathbf{m}$ results in a non-zero Hall conductivity. Finally, we discuss the prospective application of hematite in non-reciprocal circulator design, by computing the non-reciprocal circulator transmission amplitude using the conductivities as input.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-24T10:34:08Z",
+        "updated_at": "2026-07-24T10:34:08Z",
+        "abstract_url": "https://arxiv.org/abs/2607.22176v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.22176v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.06199718432946856,
+        "keyword_relevance": 0.08911018025438788,
+        "category_relevance": 1.0,
+        "relevance": 0.18772034751482228,
+        "recency": 0.4300462962962963,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.1823707521484913,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
       }
     },
     {
@@ -832,49 +978,124 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.10150035242538182,
-        "keyword_relevance": 0.025,
+        "semantic_relevance": 0.10221426704608565,
+        "keyword_relevance": 0.08911018025438788,
         "category_relevance": 1.0,
+        "relevance": 0.2103424565429194,
         "recency": 0.8888122106481482,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3408063796562366,
+        "context_penalty_applied": true,
+        "final_preselection_score": 0.17779711876961307,
+        "explanation": "Strongest matched profile terms: neutron scattering. An ambiguous term appeared without condensed-matter context."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.18594",
+        "version": 1,
+        "title": "Data-driven Design of Metal-Organic Frameworks with Tunable Negative Thermal Expansion",
+        "authors": [
+          "Prathami Divakar Kamath",
+          "Francesco Tavani",
+          "Alin Marin Elena",
+          "Théo Jaffrelot Inizan",
+          "Yen-hsu Lin",
+          "Jian Yin",
+          "Wenqian Xu",
+          "Omar M. Yaghi",
+          "Kristin A. Persson"
+        ],
+        "abstract": "Materials with negative thermal expansion (NTE) are essential for applications requiring precise control of thermal expansion. Owing to their exceptional chemical tunability, flexible architectures, and low-energy lattice vibrations, metal-organic frameworks (MOFs) represent a rich platform for exploring NTE. However, uncovering the structural motifs that govern NTE across the enormous MOF design space remains experimentally challenging, and large-scale first-principles phonon calculations are computationally prohibitive. Here, we comprehensively evaluate the factors influencing NTE in MOFs by utilizing a high-throughput workflow based on MACE-MP-MOF0, a machine learning interatomic potential fine-tuned for MOFs with near-ab initio accuracy, to construct PhononMOFdb, a database of phonons, inelastic neutron scattering spectra, bulk moduli, and heat capacities for over 12,000 MOFs. High-throughput screening of this database reveals that highly porous cubic topology frameworks with heavier, lower-valent metal nodes favor strong NTE, while linker functionalization provides a practical handle for tuning NTE magnitude and sign without compromising mechanical stability. Experimental validation via high-resolution temperature-dependent synchrotron powder X-ray diffraction on the Ce-UiO-66 MOF and its brominated variants confirms the design recipe and yields volumetric NTE coefficients surpassing current records. This work establishes a data-driven strategy for engineering NTE in MOFs, showing how machine learning-accelerated discovery and targeted experimental validation together unlock predictive materials design.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-07-21T00:02:56Z",
+        "updated_at": "2026-07-21T00:02:56Z",
+        "abstract_url": "https://arxiv.org/abs/2607.18594v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.18594v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.047471890301757275,
+        "keyword_relevance": 0.08911018025438788,
+        "category_relevance": 0.8,
+        "relevance": 0.15454986962423467,
+        "recency": 0.0002546296296296296,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.14682434379182602,
         "explanation": "Strongest matched profile terms: neutron scattering."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2504.00074",
-        "version": 2,
-        "title": "Fractional diffusion without disorder in two dimensions",
+        "arxiv_id": "2607.22845",
+        "version": 1,
+        "title": "Radiative Spin Caloritronics",
         "authors": [
-          "Nilotpal Chakraborty",
-          "Markus Heyl",
-          "Roderich Moessner"
+          "Philippe Ben-Abdallah"
         ],
-        "abstract": "We analyse how simple local constraints in two dimensions lead a defect to exhibit robust, non-transient, and tunable, subdiffusion. We uncover a rich dynamical phenomenology realised in ice- and dimer-type models. On the microscopic scale the path of a single defect exhibits anomalously long retractions, amounting to dynamical caging in a continuous-time random-walk framework, culminating in an effective fractional diffusion equation. Mapping to a height field yields an effective random walk subject to an emergent (entropic) logarithmic potential, whose strength is tunable, related to the exponent of algebraic ground-state correlations. The defect's path, viewed as non-equilibrium growth process, yields a frontier of fractal dimension of $5/4$, the value for a loop-erased random walk, rather than $4/3$ for simple and self-avoiding random walks. Such frustration/constraint-induced subdiffusion is expected to be relevant to platforms such as artificial spin ice and quantum simulators aiming to realize discrete link models and emergent gauge theories.",
+        "abstract": "We predict the spin thermal Hall effect in nonreciprocal magneto-optical many-body systems, in which a longitudinal radiative heat current generates a transverse accumulation of the spin angular momentum carried by thermal photons. We show that this effect and the inverse spin thermal Hall effect constitute an Onsager-Casimir reciprocal pair, thereby establishing heat and photon spin as coupled transport channels in nonreciprocal photonic systems. The second law of thermodynamics imposes fundamental bounds on the spin-heat coupling, leading to a thermal-spin figure of merit that quantifies the efficiency of radiative spin-heat conversion. Our results establish a complete thermodynamic framework for photon spin caloritronics and lay the conceptual foundations for spin-controlled thermal radiation and nonreciprocal photonic thermal devices.",
         "primary_category": "cond-mat.mes-hall",
         "categories": [
           "cond-mat.mes-hall",
-          "cond-mat.dis-nn",
-          "cond-mat.stat-mech"
+          "physics.optics"
         ],
-        "published_at": "2025-03-31T18:00:00Z",
-        "updated_at": "2026-07-28T14:02:55Z",
-        "abstract_url": "https://arxiv.org/abs/2504.00074v2",
-        "pdf_url": "https://arxiv.org/pdf/2504.00074v2",
-        "doi": "10.1103/nbfk-s77d",
-        "journal_reference": "Phys. Rev. Research 8, 033118 (2026)"
+        "published_at": "2026-07-24T18:36:05Z",
+        "updated_at": "2026-07-24T18:36:05Z",
+        "abstract_url": "https://arxiv.org/abs/2607.22845v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.22845v1",
+        "doi": null,
+        "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09353348417826754,
-        "keyword_relevance": 0.029999999999999995,
+        "semantic_relevance": 0.15238501894153844,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "relevance": 0.14821657315461537,
+        "recency": 0.4718822337962963,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.1443027828781762,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.21889",
+        "version": 1,
+        "title": "Current-induced creation and dynamics of embedded magnetic skyrmion bags",
+        "authors": [
+          "Yaodong Wu",
+          "Jialiang Jiang",
+          "Lingyao Kong",
+          "Meng Shi",
+          "Shouguo Wang",
+          "Mingliang Tian",
+          "Haifeng Du",
+          "Jin Tang"
+        ],
+        "abstract": "Magnetic skyrmion bags-vortex-like structures hosting multiple skyrmions with tunable topological charge (Q)-hold significant promise for next-generation spintronic computing. However, while their creation using magnetic fields has been demonstrated, their direct electrical generation remains an outstanding challenge. Here, we report the direct current-induced formation and manipulation of embedded skyrmion bags in a FeGe nanoplate under zero magnetic field. Using in-situ Lorentz transmission electron microscopy, we capture the transformation of a distorted helical ground state into embedded skyrmion bags with diverse configurations, driven by nanosecond current pulses. Theoretical analysis indicates that this process is driven by the spin-transfer-torque-induced fracture of the helical state. Furthermore, we demonstrate electrically-induced transitions between skyrmion bags of different Q, leading to the stabilization of complex three-dimensional topological structures, including experimental signatures of magnetic monopoles and bobbers. Our work establishes a foundation for all-electrical control of high-Q topological spin textures and topological defects, paving the way for their application in functional spintronic devices.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-07-24T01:33:30Z",
+        "updated_at": "2026-07-24T01:33:30Z",
+        "abstract_url": "https://arxiv.org/abs/2607.21889v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.21889v1",
+        "doi": "10.1038/s41467-026-74046-4",
+        "journal_reference": "Nature Communications 2026"
+      },
+      "score": {
+        "semantic_relevance": 0.08451126463598306,
+        "keyword_relevance": 0.0,
         "category_relevance": 0.8,
-        "recency": 0.9481698495370371,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3244070528339241,
-        "explanation": "Strongest matched profile terms: spin ice."
+        "relevance": 0.14753758635774047,
+        "recency": 0.38311631944444446,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.14298690989310817,
+        "explanation": "No configured positive profile terms matched."
       }
     },
     {
@@ -911,225 +1132,14 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.0763818984356532,
+        "semantic_relevance": 0.07035036312257612,
         "keyword_relevance": 0.0,
         "category_relevance": 0.6,
+        "relevance": 0.11457207925644906,
         "recency": 0.9234100115740741,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2867128554534514,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.11413332554523978,
         "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.21827",
-        "version": 1,
-        "title": "Hydrodynamic Memory and Long-Time Tails in Clean Frustrated Magnets",
-        "authors": [
-          "Yufei Pei",
-          "Claudio Castelnovo",
-          "Roderich Moessner"
-        ],
-        "abstract": "In a simple, clean but constrained magnet, we identify a self-interacting random walk with memory. For the motion of a single monopole -- a fractionalized quasiparticle in spin ice -- this produces a subtle and unusually slow relaxation toward diffusive motion. This is manifested as an algebraic long-time tail in the velocity autocorrelation function, decaying as $t^{-3/2}$. At finite monopole density, the interactions between the trails of different monopoles introduce an additional timescale, corresponding to the disruption of a monopole's memory by other monopoles, and leading to an exponential cutoff of the long-time tail. Our results identify clean frustrated magnets as microscopic platforms for studying self-interacting stochastic processes, hydrodynamic memory, and the emergence of non-Markovian quasiparticle transport from local Markovian dynamics.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-07-23T21:30:26Z",
-        "updated_at": "2026-07-23T21:30:26Z",
-        "abstract_url": "https://arxiv.org/abs/2607.21827v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.21827v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.09317826386951564,
-        "keyword_relevance": 0.029999999999999995,
-        "category_relevance": 1.0,
-        "recency": 0.3620167824074074,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2856318969820228,
-        "explanation": "Strongest matched profile terms: spin ice."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.22176",
-        "version": 1,
-        "title": "GHz non-reciprocal optical conductivity in hematite ($α$-$\\text{Fe}_2\\text{O}_3$)",
-        "authors": [
-          "Peng Rao",
-          "Johannes Gröbmeyer",
-          "P. Peter Stavropoulos",
-          "Alexander Mook",
-          "Matthias Althammer",
-          "Hans Huebl",
-          "Alexander Holleitner",
-          "Johannes Knolle"
-        ],
-        "abstract": "We study the non-reciprocal properties of the iron oxide $α$-Fe$_2$O$_3$ (hematite) in the canted easy-plane antiferromagnetic phase, specifically in the GHz to THz frequency range. First, using the the microscopic spin Hamiltonian, we obtain the correct classical ground state where the canting is induced by the Dzyaloshinskii-Moriya interactions (DMI). The magnon spectrum is simulated using linear spin wave theory. We then compute the polarizability and the sub-gap optical conductivities using linear response. We find that the conductivity tensor contains frequency peaks at the zero momentum magnon gaps of order $0.1~$meV which can be tuned by the DMI and on-site anisotropic spin interactions. Furthermore, we show that the canting-induced net magnetic moment $\\mathbf{m}$ represents a measure for the effective time-reversal-symmetry breaking and non-reciprocity of the system: a finite $\\mathbf{m}$ results in a non-zero Hall conductivity. Finally, we discuss the prospective application of hematite in non-reciprocal circulator design, by computing the non-reciprocal circulator transmission amplitude using the conductivities as input.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-07-24T10:34:08Z",
-        "updated_at": "2026-07-24T10:34:08Z",
-        "abstract_url": "https://arxiv.org/abs/2607.22176v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.22176v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.060163633759143055,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.4300462962962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.27507826482124403,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.20424",
-        "version": 1,
-        "title": "Quantum Fisher Information in semiclassical magnon systems",
-        "authors": [
-          "Wolfgang Simeth",
-          "Pontus Laurell",
-          "Allen Scheie"
-        ],
-        "abstract": "Quantum Fisher Information (QFI) is a powerful spectroscopic tool to witness many-body quantum entanglement in solid state materials, but it is not always obvious how to relate it to other characteristics of condensed matter systems. In this study we elaborate on the meaning and interpretation of QFI in condensed matter by examining simple theoretical spin systems. We use finite sized spin systems to illustrate that QFI quantifies the momentum- dependent degree of quantum entanglement (that is the entanglement depth at a given wave vector) within a wave function. We subsequently use semiclassical frustrated spin models to show that, in the context of linear spin wave theory (LSWT), QFI quantifies the momentum-dependent degree of magnon squeezing in the ground state. In antiferromagnets with a zero-energy Goldstone mode, LSWT breaks down and QFI (and entanglement depth) diverges at the magnetic ordering wave vector. We also show examples of emergent quantum phases in frustrated spin systems that do not appear in classical phase diagrams. When these emergent phases are approached, QFI diverges across multiple wave vectors in momentum space. Taken together, QFI is not only helpful as a lower bound for entanglement depth, but serves as a momentum-resolved probe of entanglement that offers a novel perspective on quantum critical phenomena.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-07-22T17:59:51Z",
-        "updated_at": "2026-07-22T17:59:51Z",
-        "abstract_url": "https://arxiv.org/abs/2607.20424v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.20424v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.1022438829216157,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.21873697916666668,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.27288344523139374,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.22845",
-        "version": 1,
-        "title": "Radiative Spin Caloritronics",
-        "authors": [
-          "Philippe Ben-Abdallah"
-        ],
-        "abstract": "We predict the spin thermal Hall effect in nonreciprocal magneto-optical many-body systems, in which a longitudinal radiative heat current generates a transverse accumulation of the spin angular momentum carried by thermal photons. We show that this effect and the inverse spin thermal Hall effect constitute an Onsager-Casimir reciprocal pair, thereby establishing heat and photon spin as coupled transport channels in nonreciprocal photonic systems. The second law of thermodynamics imposes fundamental bounds on the spin-heat coupling, leading to a thermal-spin figure of merit that quantifies the efficiency of radiative spin-heat conversion. Our results establish a complete thermodynamic framework for photon spin caloritronics and lay the conceptual foundations for spin-controlled thermal radiation and nonreciprocal photonic thermal devices.",
-        "primary_category": "cond-mat.mes-hall",
-        "categories": [
-          "cond-mat.mes-hall",
-          "physics.optics"
-        ],
-        "published_at": "2026-07-24T18:36:05Z",
-        "updated_at": "2026-07-24T18:36:05Z",
-        "abstract_url": "https://arxiv.org/abs/2607.22845v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.22845v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.16807250758980521,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.5,
-        "recency": 0.4718822337962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.272820851795042,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.21889",
-        "version": 1,
-        "title": "Current-induced creation and dynamics of embedded magnetic skyrmion bags",
-        "authors": [
-          "Yaodong Wu",
-          "Jialiang Jiang",
-          "Lingyao Kong",
-          "Meng Shi",
-          "Shouguo Wang",
-          "Mingliang Tian",
-          "Haifeng Du",
-          "Jin Tang"
-        ],
-        "abstract": "Magnetic skyrmion bags-vortex-like structures hosting multiple skyrmions with tunable topological charge (Q)-hold significant promise for next-generation spintronic computing. However, while their creation using magnetic fields has been demonstrated, their direct electrical generation remains an outstanding challenge. Here, we report the direct current-induced formation and manipulation of embedded skyrmion bags in a FeGe nanoplate under zero magnetic field. Using in-situ Lorentz transmission electron microscopy, we capture the transformation of a distorted helical ground state into embedded skyrmion bags with diverse configurations, driven by nanosecond current pulses. Theoretical analysis indicates that this process is driven by the spin-transfer-torque-induced fracture of the helical state. Furthermore, we demonstrate electrically-induced transitions between skyrmion bags of different Q, leading to the stabilization of complex three-dimensional topological structures, including experimental signatures of magnetic monopoles and bobbers. Our work establishes a foundation for all-electrical control of high-Q topological spin textures and topological defects, paving the way for their application in functional spintronic devices.",
-        "primary_category": "cond-mat.mes-hall",
-        "categories": [
-          "cond-mat.mes-hall",
-          "cond-mat.mtrl-sci"
-        ],
-        "published_at": "2026-07-24T01:33:30Z",
-        "updated_at": "2026-07-24T01:33:30Z",
-        "abstract_url": "https://arxiv.org/abs/2607.21889v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.21889v1",
-        "doi": "10.1038/s41467-026-74046-4",
-        "journal_reference": "Nature Communications 2026"
-      },
-      "score": {
-        "semantic_relevance": 0.07973273647707418,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.8,
-        "recency": 0.38311631944444446,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.25419136335912784,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2509.08327",
-        "version": 3,
-        "title": "Trans-scale spin Seebeck effect in nanostructured bulk composites based on magnetic insulator",
-        "authors": [
-          "Sang J. Park",
-          "Keisuke Hirata",
-          "Hossein Sepehri-Amin",
-          "Fuyuki Ando",
-          "Takamasa Hirai",
-          "Ken-ichi Uchida"
-        ],
-        "abstract": "The spin Seebeck effect (SSE) enables thermoelectric conversion through thermally generated spin currents in magnetic materials, offering a promising transverse geometry for scalable devices. However, conventional SSE devices are confined to nanoscale thin-film architectures, with significantly restricted output power due to the intrinsic constraints of spin and magnon diffusion lengths. Here, we demonstrate a trans-scale SSE using nano-structured bulk composites composed of Pt-coated yttrium iron garnet powders fabricated via dynamic powder sputtering and low-temperature sintering. The resulting three-dimensional composites exhibit continuous Pt channels and robust mechanical integrity. Transverse thermoelectric measurements confirm isotropic SSE signals at the bulk scale. Power analysis indicates that the three-dimensional architecture enables scalable volumetric thermoelectric power generation beyond diffusion-limited thin-film SSE geometries. This work establishes a scalable platform for bulk SSE-based thermoelectrics, bridging nanoscale spin caloritronics with macroscopic device integration.",
-        "primary_category": "cond-mat.mtrl-sci",
-        "categories": [
-          "cond-mat.mtrl-sci"
-        ],
-        "published_at": "2025-09-10T07:01:56Z",
-        "updated_at": "2026-07-21T09:35:43Z",
-        "abstract_url": "https://arxiv.org/abs/2509.08327v3",
-        "pdf_url": "https://arxiv.org/pdf/2509.08327v3",
-        "doi": "10.1038/s41467-026-75232-0",
-        "journal_reference": "Nat. Commun. 17, 6389 (2026)"
-      },
-      "score": {
-        "semantic_relevance": 0.11161544217019306,
-        "keyword_relevance": 0.04285714285714286,
-        "category_relevance": 0.8,
-        "recency": 0.049975405092592594,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.24593877520013188,
-        "explanation": "Strongest matched profile terms: spin Seebeck effect."
       }
     },
     {
@@ -1157,14 +1167,14 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.04273795333621684,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
+        "semantic_relevance": 0.05480571718028472,
+        "keyword_relevance": 0.11011822901197621,
+        "category_relevance": 0.4,
+        "relevance": 0.11524016248015272,
         "recency": 0.942740162037037,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.21975609520500128,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
+        "context_penalty_applied": true,
+        "final_preselection_score": 0.09767369620433615,
+        "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
     {
@@ -1191,192 +1201,14 @@
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.04613554701177992,
+        "semantic_relevance": 0.05076776438854827,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
+        "category_relevance": 0.4,
+        "relevance": 0.0785568674685584,
         "recency": 0.8962355324074074,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.21038454939604173,
+        "context_penalty_applied": false,
+        "final_preselection_score": 0.07814929689212756,
         "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.24989",
-        "version": 1,
-        "title": "Cross-Correlations of Metric and Monopole Perturbations from Holographic Cosmology",
-        "authors": [
-          "Matheus Cravo",
-          "Juliana Z. Finotti",
-          "Horatiu Nastase"
-        ],
-        "abstract": "In this paper, we present the 1-loop calculation of the three-point function $\\langle TJJ \\rangle$ of the stress-energy tensor and two insertions of $SO(3)$ global currents, using a 3d toy model for holographic cosmology. By applying the holographic dictionary that relates these QFT $n$-point functions to cosmological correlators, together with the $Sl(2,\\mathbb{Z})$ duality that maps the electric Noether current to a magnetic vortex current dual to cosmological magnetic monopoles, we relate the $\\langle TJJ \\rangle$ correlator to the cross-correlations between metric perturbations and the bulk magnetic monopole field, specifically mapping to the non-Gaussianities $\\langle ξ\\tilde{A} \\tilde{A} \\rangle$ and $\\langle γ\\tilde{A} \\tilde{A} \\rangle$. We calculate the semi-local contact terms necessary to achieve the exact factorization of the cosmological correlators in the squeezed limit, $p_1 \\to 0$. Finally, we evaluate the effective non-linear parameters, showing that the scalar-monopole cross-correlation vanishes at leading order, $f_{NL}^{ξ\\tilde{A} \\tilde{A}} = 0$, while the tensor-monopole cross-correlation yields a non-zero $f_{NL}^{γ\\tilde A\\tilde A}$. These results respect the expected amplitude hierarchy of the non-Gaussian correlators, while pointing at new directions in which holographic cosmology can be tested experimentally.",
-        "primary_category": "hep-th",
-        "categories": [
-          "hep-th",
-          "gr-qc"
-        ],
-        "published_at": "2026-07-27T18:41:02Z",
-        "updated_at": "2026-07-27T18:41:02Z",
-        "abstract_url": "https://arxiv.org/abs/2607.24989v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.24989v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.0398233113594212,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
-        "recency": 0.8473119212962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20890168224136918,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.18594",
-        "version": 1,
-        "title": "Data-driven Design of Metal-Organic Frameworks with Tunable Negative Thermal Expansion",
-        "authors": [
-          "Prathami Divakar Kamath",
-          "Francesco Tavani",
-          "Alin Marin Elena",
-          "Théo Jaffrelot Inizan",
-          "Yen-hsu Lin",
-          "Jian Yin",
-          "Wenqian Xu",
-          "Omar M. Yaghi",
-          "Kristin A. Persson"
-        ],
-        "abstract": "Materials with negative thermal expansion (NTE) are essential for applications requiring precise control of thermal expansion. Owing to their exceptional chemical tunability, flexible architectures, and low-energy lattice vibrations, metal-organic frameworks (MOFs) represent a rich platform for exploring NTE. However, uncovering the structural motifs that govern NTE across the enormous MOF design space remains experimentally challenging, and large-scale first-principles phonon calculations are computationally prohibitive. Here, we comprehensively evaluate the factors influencing NTE in MOFs by utilizing a high-throughput workflow based on MACE-MP-MOF0, a machine learning interatomic potential fine-tuned for MOFs with near-ab initio accuracy, to construct PhononMOFdb, a database of phonons, inelastic neutron scattering spectra, bulk moduli, and heat capacities for over 12,000 MOFs. High-throughput screening of this database reveals that highly porous cubic topology frameworks with heavier, lower-valent metal nodes favor strong NTE, while linker functionalization provides a practical handle for tuning NTE magnitude and sign without compromising mechanical stability. Experimental validation via high-resolution temperature-dependent synchrotron powder X-ray diffraction on the Ce-UiO-66 MOF and its brominated variants confirms the design recipe and yields volumetric NTE coefficients surpassing current records. This work establishes a data-driven strategy for engineering NTE in MOFs, showing how machine learning-accelerated discovery and targeted experimental validation together unlock predictive materials design.",
-        "primary_category": "cond-mat.mtrl-sci",
-        "categories": [
-          "cond-mat.mtrl-sci"
-        ],
-        "published_at": "2026-07-21T00:02:56Z",
-        "updated_at": "2026-07-21T00:02:56Z",
-        "abstract_url": "https://arxiv.org/abs/2607.18594v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.18594v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.049792969049539726,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.8,
-        "recency": 0.0002546296296296296,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20868229903525587,
-        "explanation": "Strongest matched profile terms: neutron scattering."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.21281",
-        "version": 2,
-        "title": "Self-Consistent Parker Bound on Magnetic Monopoles",
-        "authors": [
-          "Chen Zhang",
-          "Chun-Yan Jiang",
-          "Nayun Jia",
-          "Xin Zhang"
-        ],
-        "abstract": "Magnetic monopoles arise generically in unified theories and offer a natural explanation of charge quantization. Beyond collider searches and cosmic-ray experiments, their flux is constrained by Parker-type bounds requiring galactic magnetic fields to survive monopole energy extraction. We formulate a self-consistent Parker bound anchored in the lowest eigenmode of the galactic mean-field dynamo and convert the resulting limit to the present-day flux. Small-scale turbulent fields both seed this eigenmode and set the monopole velocity via stochastic acceleration before energy extraction from the coherent field. These unavoidable effects substantially modify the standard extended Parker bound at low and intermediate masses, yielding flux limits robust to primordial magnetic fields (PMFs); PMFs strong enough to alter these limits lie in regimes constrained by Ly$α$ data or testable by 21-cm observations and other cosmological probes.",
-        "primary_category": "hep-ph",
-        "categories": [
-          "hep-ph",
-          "astro-ph.CO",
-          "astro-ph.GA",
-          "gr-qc"
-        ],
-        "published_at": "2026-05-20T15:12:21Z",
-        "updated_at": "2026-07-27T12:18:20Z",
-        "abstract_url": "https://arxiv.org/abs/2605.21281v2",
-        "pdf_url": "https://arxiv.org/pdf/2605.21281v2",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.05507930440550693,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "recency": 0.8140914351851852,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20619483050099663,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.20843",
-        "version": 1,
-        "title": "Dark Monopoles, Bounds on Hidden Sectors, and Cosmological Implications",
-        "authors": [
-          "Donald Liveoak",
-          "Anshuman Maharana",
-          "James D. Wells"
-        ],
-        "abstract": "Hidden sectors are a generic prediction of string theory compactifications and result in a promising landscape for dark matter model building. We consider the case of hidden sector magnetic monopoles produced via a thermal phase transition in the early Universe and subsequently diluted by pair annihilation. We show that for symmetry-breaking scales $\\gtrsim 100\\, \\text{PeV}$, the monopole abundance is unacceptably high, overclosing the Universe. Our bounds are robust against variations in the initial fraction of energy density deposited in the hidden sector, exhibiting only a weak power-law dependence on this quantity. The bound is substantially tightened in the case of multiple hidden sectors. The standard cosmology may only be recovered if one of the following is true: the hidden sector(s) are non-existent, the hidden sectors have no monopoles with symmetry-breaking scale above 100 PeV, the maximum temperature of each monopole-producing hidden sector after reheating is below its symmetry-breaking scale, or the monopole abundance is diluted during a period of early matter domination.",
-        "primary_category": "hep-ph",
-        "categories": [
-          "hep-ph",
-          "astro-ph.CO"
-        ],
-        "published_at": "2026-07-23T02:11:12Z",
-        "updated_at": "2026-07-23T02:11:12Z",
-        "abstract_url": "https://arxiv.org/abs/2607.20843v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.20843v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.038286754500044096,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "recency": 0.2613888888888889,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.14336792841390875,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.18851",
-        "version": 1,
-        "title": "Defrosting the Born-Infeld dyonic frozen star with tachyon matter: spectrum of oscillations",
-        "authors": [
-          "Ram Brustein",
-          "A. J. M. Medved",
-          "Tamar Simhon"
-        ],
-        "abstract": "The frozen star is a model for the interior of an astrophysical black hole that is externally indistinguishable from the singular geometry of a Schwarzschild black hole, even though it contains no singularities nor trapped surfaces. The frozen star corresponds to a macroscopic ``BIon'', a solution of a certain type of Born-Infeld Lagrangian coupled to Einstein gravity, which consists of rigid flux tubes sourced by an electric charge localized at its center and a uniform distribution of opposite charge along its outer surface. This configuration is a solution of the effective action that describes the end point of tachyon condensation in string. The rigidity of the flux tubes implies that the star is ultrastable under linear perturbations of the geometry and matter. The star can be effectively deformed, or ``defrosted'', allowing internal pulsations, as expected from regular, horizonless astrophysical black holes. To describe the defrosted star, we need to include a perturbative amount of magnetic-monopole charge and tachyon kinetic energy. This recasts the star as a macroscopic ``DIon'', whose flux tubes can stretch and contract, having both electric and magnetic charges localized at its center and distributed uniformly along its outer surface. Previously, the non-radial oscillations of the defrosted star were analyzed to leading order in a perturbative ``defrosting'' parameter $γ$, by describing the energy-momentum tensor as that of a fluid. Here, we derive the same spectrum in a much simpler way, using the Born-Infeld Lagrangian. Thus, we verify that the sound velocities scale as $γ$ and the parametrically long lifetimes scale as $1/γ^2$. Because the perturbation equations are derived from a Lagrangian, their consistency is guaranteed for arbitrary deviations away from spherical symmetry, facilitating numerical studies on frozen stars away from equilibrium.",
-        "primary_category": "gr-qc",
-        "categories": [
-          "gr-qc",
-          "hep-th"
-        ],
-        "published_at": "2026-07-21T08:38:21Z",
-        "updated_at": "2026-07-21T08:38:21Z",
-        "abstract_url": "https://arxiv.org/abs/2607.18851v1",
-        "pdf_url": "https://arxiv.org/pdf/2607.18851v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.027712915723799993,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
-        "recency": 0.04499565972222222,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.12322037804793223,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
       }
     }
   ]

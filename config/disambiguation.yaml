@@ -1,0 +1,86 @@
+# Deterministic disambiguation rules. Every rejection made here is logged with
+# its rule id and reason, and `arxiv-digest explain <arxiv_id>` replays it.
+#
+# SAFETY CATCH: a paper carrying one of the group's in-field categories is never
+# hard-rejected, whatever words it contains. That guard lives in the engine
+# (domain_filter.evaluate_hard_exclusions), not in these rules, so it cannot be
+# edited away here by accident. It is what keeps "magnetic monopole excitations
+# in spin ice" while dropping "primordial magnetic monopoles in cosmology".
+#
+# Keep this list short. Hard rules are the layer most likely to cause silent
+# recall loss; the scoring layers should do the nuanced work.
+
+hard_exclusions:
+  - id: cosmological-monopole
+    reason: Cosmological topological defects, not condensed-matter excitations
+    when_all:
+      - field: text
+        any_of: [primordial, cosmological, cosmology, early universe, inflation, relic abundance]
+      - field: text
+        any_of: [monopole, monopoles, defect, defects, domain wall, domain walls]
+
+  - id: collider-physics
+    reason: High-energy collider physics
+    when_all:
+      - field: text
+        any_of: [LHC, ATLAS, CMS, collider, luminosity, GeV, TeV, parton, hadron collider]
+
+  - id: pure-astro
+    reason: Astrophysics with no condensed-matter cross-listing
+    when_all:
+      - field: primary_category
+        any_of: [astro-ph.CO, astro-ph.GA, astro-ph.SR, astro-ph.HE, astro-ph.EP, astro-ph.IM]
+
+# Terms whose condensed-matter sense differs from their usual sense elsewhere.
+# Absence of positive context is weak evidence, not a verdict — abstracts are
+# short and an author may simply not use the expected vocabulary — so the
+# default is to flag for penalty and let scoring decide.
+ambiguous_terms:
+  monopole:
+    requires_any_of:
+      [spin ice, pyrochlore, emergent, frustrated, magnetic moment, Dirac string,
+       spinon, Coulomb phase, dumbbell model, neutron scattering, condensed matter,
+       lattice, magnetic monopole excitations]
+    blocked_by_any_of:
+      [primordial, cosmological, inflation, early universe, GUT, Hooft-Polyakov,
+       collider, dark matter, cosmic ray, relic abundance]
+    default_when_neither: penalize
+
+  frustration:
+    requires_any_of: [magnetic, lattice, spin, antiferromagnet, geometrical, geometric]
+    blocked_by_any_of: [protein folding, optimization landscape]
+    default_when_neither: penalize
+
+  transport:
+    requires_any_of:
+      [electrical, thermal, charge, spin, conductivity, resistivity, Seebeck, carrier]
+    blocked_by_any_of: [public transport, supply chain, neutrino]
+    default_when_neither: penalize
+
+  phase transition:
+    requires_any_of:
+      [order parameter, critical exponent, magnetic, structural, quantum critical, lattice]
+    blocked_by_any_of: [electroweak, QCD, cosmological, deconfinement]
+    default_when_neither: penalize
+
+  # The three below were not anticipated; `arxiv-digest measure-ambiguity`
+  # found them in this profile's own method terms. Measured 2026-08-27:
+  # 'inverse problems' 4% in field, 'cluster algorithm' 8%, 'loop algorithm' 37%.
+  inverse problems:
+    requires_any_of:
+      [scattering, neutron, spin, magnetic, materials, lattice, condensed matter,
+       structure factor, diffraction, Hamiltonian]
+    blocked_by_any_of: [medical imaging, seismic, geophysical, tomography, financial]
+    default_when_neither: penalize
+
+  cluster algorithm:
+    requires_any_of:
+      [Monte Carlo, spin, magnetic, lattice, Ising, Potts, Wolff, Swendsen-Wang,
+       simulation, critical]
+    blocked_by_any_of: [data mining, k-means, unsupervised, document clustering]
+    default_when_neither: penalize
+
+  loop algorithm:
+    requires_any_of: [Monte Carlo, quantum, spin, worm, lattice, path integral, sampling]
+    blocked_by_any_of: [compiler, graph traversal, program optimization]
+    default_when_neither: penalize

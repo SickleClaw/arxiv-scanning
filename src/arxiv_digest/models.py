@@ -10,7 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 ABSTRACT_SUMMARY_BASIS = (
     "Based only on the title, abstract, and arXiv metadata; the full paper was not read."
 )
-DIGEST_SCHEMA_VERSION = "1.0"
+DIGEST_SCHEMA_VERSION = "2.0"
 
 
 class StrictModel(BaseModel):
@@ -86,14 +86,20 @@ class Paper(StrictModel):
 
 
 class ScoreBreakdown(StrictModel):
-    """Ranking components, each normalized to the inclusive range 0..1."""
+    """Ranking components, each normalized to the inclusive range 0..1.
+
+    Only the three relevance components contribute additively. ``recency`` is
+    recorded but applied as a small multiplier, and there is no novelty or
+    feedback component: both were relevance-free terms that let an irrelevant
+    paper clear a selection threshold on nothing but its submission date.
+    """
 
     semantic_relevance: float = Field(ge=0.0, le=1.0)
     keyword_relevance: float = Field(ge=0.0, le=1.0)
     category_relevance: float = Field(ge=0.0, le=1.0)
+    relevance: float = Field(ge=0.0, le=1.0)
     recency: float = Field(ge=0.0, le=1.0)
-    novelty: float = Field(ge=0.0, le=1.0)
-    feedback_affinity: float = Field(ge=0.0, le=1.0)
+    context_penalty_applied: bool = False
     final_preselection_score: float = Field(ge=0.0, le=1.0)
     explanation: str
 
@@ -190,6 +196,41 @@ class PaperSummary(StrictModel):
         if any(re.search(pattern, narrative) for pattern in forbidden):
             raise ValueError("summary must not imply inspection beyond the abstract and metadata")
         return self
+
+
+class GateStage(StrEnum):
+    """Which deterministic gate removed a paper."""
+
+    CATEGORY = "category"
+    HARD_RULE = "hard_rule"
+    CONTEXT = "context"
+    NEGATIVE_TERM = "negative_term"
+    HISTORY = "history"
+
+
+class GateRejection(StrictModel):
+    """One paper removed before scoring, with the evidence that removed it.
+
+    No paper leaves the pipeline silently. Over-filtering is the mirror image of
+    the bug this phase fixes and it is far harder to notice, so the record of
+    what was discarded is the only thing that makes it visible.
+    """
+
+    arxiv_id: str = Field(min_length=1)
+    title: str = Field(min_length=1)
+    primary_category: str = Field(min_length=1)
+    categories: list[str] = Field(min_length=1)
+    stage: GateStage
+    reason: str = Field(min_length=1)
+    rule_id: str | None = None
+
+
+class ContextFlag(StrictModel):
+    """An ambiguous term a kept paper used without supporting context."""
+
+    arxiv_id: str = Field(min_length=1)
+    term: str = Field(min_length=1)
+    detail: str = Field(min_length=1)
 
 
 class RecommendationType(StrEnum):
@@ -330,6 +371,7 @@ class RankedSnapshot(StrictModel):
     records_before_history: int = Field(ge=0)
     records_after_history: int = Field(ge=0)
     ranked_papers: list[RankedPaper]
+    rejections: list[GateRejection] = Field(default_factory=list)
 
     _generated_aware = field_validator("generated_at")(_require_aware)
 
@@ -373,7 +415,12 @@ class QueryResult(StrictModel):
 
 
 class CandidateSnapshot(StrictModel):
-    """Machine-readable output of a Milestone 2 fetch."""
+    """Machine-readable output of a fetch, after deduplication and gating.
+
+    ``papers`` holds what survived the gates; ``records_after_deduplication``
+    still reports the pre-gate count, so the two together say how much the gates
+    removed. Everything they removed is in ``rejections``.
+    """
 
     run_id: str
     generated_at: datetime
@@ -382,5 +429,7 @@ class CandidateSnapshot(StrictModel):
     records_retrieved: int = Field(ge=0)
     records_after_deduplication: int = Field(ge=0)
     papers: list[Paper]
+    rejections: list[GateRejection] = Field(default_factory=list)
+    context_flags: list[ContextFlag] = Field(default_factory=list)
 
     _generated_aware = field_validator("generated_at")(_require_aware)

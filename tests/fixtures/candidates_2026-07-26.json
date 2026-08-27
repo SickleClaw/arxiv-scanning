@@ -1,0 +1,172 @@
+{
+  "run_id": "fetch-20260726-20260803-0e3e3f82e5",
+  "generated_at": "2026-08-03T00:00:00Z",
+  "retrieval_window": {
+    "start": "2026-07-26T00:00:00Z",
+    "end": "2026-08-03T00:00:00Z"
+  },
+  "queries": [],
+  "records_retrieved": 22,
+  "records_after_deduplication": 12,
+  "papers": [
+    {
+      "arxiv_id": "2607.29647",
+      "version": 1,
+      "title": "Revealing the Spin Hydrodynamics of a Spin-Imbalanced Unitary Fermi Gas",
+      "authors": [
+        "DeChao Zhang",
+        "Johannes Lang",
+        "J. E. Thomas"
+      ],
+      "abstract": "Hydrodynamics governs diverse collective phenomena in nature, from the expansion of a quarkgluon plasma to viscous electron flow in quantum materials. In strongly interacting hydrodynamic fluids, the transport of spin remains poorly understood. Here, we investigate spin transport in the hydrodynamic regime of a spin-imbalanced unitary Fermi gas confined in a uniform optical box. By quenching a spatially periodic optical potential that modulates both the density and spin polarization, we observe the relaxation of the many-body system, which determines both the spin diffusivity and the spin Seebeck/Peltier coefficients in a homogeneous quantum gas. Our measurements provide parameter-free benchmarks for microscopic theories and establish an ultracold atom platform for studying spin caloritronics in strongly correlated matter.",
+      "primary_category": "cond-mat.quant-gas",
+      "categories": [
+        "cond-mat.quant-gas"
+      ],
+      "published_at": "2026-07-31T17:25:03Z",
+      "updated_at": "2026-07-31T17:25:03Z",
+      "abstract_url": "https://arxiv.org/abs/2607.29647v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.29647v1",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2607.15093",
+      "version": 2,
+      "title": "A magnetic monopole in a superfluid bubble",
+      "authors": [
+        "Marianna Sorba",
+        "Andrea Richaud"
+      ],
+      "abstract": "Magnetic monopoles lie at the crossroads of gauge fields, topology, geometric phases, and charge quantization, yet they remain elusive as fundamental particles. Here we show that an emergent Dirac-monopole framework arises naturally from the dynamics of massive quantum vortices in a spherical superfluid shell. Their dynamics is formally equivalent to that of interacting charged particles constrained to a sphere in the field of a magnetic monopole. The monopole charge is fixed by the superfluid density and automatically satisfies Dirac's quantization condition. The emergent monopole description predicts cyclotron-like vortex motion, in quantitative agreement with Gross--Pitaevskii simulations. We further show that topological frustration induced by two like-charged polar vortices gives rise to the formation of an equatorial vortex necklace, a configuration reminiscent of the polygonal cyclone clusters observed around Jupiter's poles, before its subsequent breakup through a Kelvin--Helmholtz-like instability. Within this framework, the equatorial vortex necklace emerges as the quantized realization of the effective electrostatic line charge that restores global charge neutrality on the sphere. Our results establish spherical superfluids as a versatile platform for realizing and exploring fundamental aspects of Dirac-monopole physics.",
+      "primary_category": "cond-mat.quant-gas",
+      "categories": [
+        "cond-mat.quant-gas",
+        "quant-ph"
+      ],
+      "published_at": "2026-07-16T15:03:34Z",
+      "updated_at": "2026-07-30T13:42:14Z",
+      "abstract_url": "https://arxiv.org/abs/2607.15093v2",
+      "pdf_url": "https://arxiv.org/pdf/2607.15093v2",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2607.27158",
+      "version": 1,
+      "title": "Outcomes of Grand Unified Symmetry Breaking",
+      "authors": [
+        "Harish Hemming",
+        "Tanmay Vachaspati",
+        "Anja Wachowitz"
+      ],
+      "abstract": "We numerically study the outcome of symmetry breaking motivated by Grand Unified models. Our results show the formation of biased domain walls for a range of parameters together with magnetic monopoles. The interactions of walls and monopoles leads to novel processes such as the absorption of monopoles on walls, production of monopoles when domain walls annihilate, collapse of walls with magnetic charge that can, with gravity taken into account, produce magnetically charged black holes, and production of a stochastic gravitational wave background from biased domain walls. Our findings open new avenues for probing the grand unification epoch by cosmological observables.",
+      "primary_category": "hep-ph",
+      "categories": [
+        "hep-ph",
+        "astro-ph.CO",
+        "hep-th"
+      ],
+      "published_at": "2026-07-29T17:35:53Z",
+      "updated_at": "2026-07-29T17:35:53Z",
+      "abstract_url": "https://arxiv.org/abs/2607.27158v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.27158v1",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2607.25684",
+      "version": 1,
+      "title": "Landau Levels on the Surface of a Cube",
+      "authors": [
+        "Almila Kura",
+        "Bayram Tekin",
+        "Mehmet Özgür Oktel"
+      ],
+      "abstract": "We study the quantum mechanics of a charged particle confined to the surface of a cube enclosing a magnetic monopole. The magnetic field is chosen to have a constant magnitude on each face and to point along the outward normal, preserving the rotational symmetry of the cube. We formulate the continuum problem using two gauge patches on the cube surface and show that consistency of the wavefunction gives the Dirac quantization condition. Since an explicit vector potential does not remain invariant under ordinary rotations, we construct gauge-modified rotation operators and use them to classify the eigenstates. Even monopole charges are described by the irreducible representations of the cubic rotation group O, while odd monopole charges require the spinorial representations of the binary octahedral group 2O. We compute the spectrum with a gauge-covariant finite-difference discretization and find Landau-level-like manifolds whose degeneracies are split by the discrete cubic symmetry. We also study the corresponding tight-binding Hofstadter problem on the discretized cube. The resulting spectrum contains the usual magnetic subband structure together with additional gap states localized near the cube corners.",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cond-mat.quant-gas",
+        "hep-th"
+      ],
+      "published_at": "2026-07-28T13:00:22Z",
+      "updated_at": "2026-07-28T13:00:22Z",
+      "abstract_url": "https://arxiv.org/abs/2607.25684v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.25684v1",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2607.25263",
+      "version": 1,
+      "title": "Low-Temperature Magnetoresistance Hysteresis in Granular Cr1-xFexO2: Slow Relaxation of Transport-Active Magnetic Configurations",
+      "authors": [
+        "E. Yu. Beliayev",
+        "V. A. Horielyi",
+        "I. G. Mirzoiev",
+        "V. V. Andrievskii"
+      ],
+      "abstract": "Low-temperature magnetoresistance loops of compacted CrO2 powders become strongly nonmonotonic when electrical transport is dominated by a small number of spin-dependent intergranular tunnelling paths. We reanalyse previously reported data for undoped CrO2 and Fe-containing Cr1-xFexO2, focusing on additional branch crossings beyond the conventional low-field hysteresis. In the Fe-containing specimen, the resistance decreases, passes through a minimum, rises over an extended field interval, and then decreases again at higher field. This nonmonotonic hysteretic feature is strongly reduced when the magnetic-field sweep is slowed. Digitization of the three fastest sweeps shows that the field at which the resistance starts to recover shifts approximately linearly with sweep rate, corresponding to an effective magnetotransport relaxation time of about 3 s. This scale is attributed not to microscopic spin flips but to the slow evolution of local moment and domain configurations at the intergranular contacts dominating the current. The observations are consistent with conventional negative tunnelling magnetoresistance superimposed on a slower resistance-increasing contribution associated with transient local magnetic disorder. Fe increases coercivity and interfacial magnetic heterogeneity while reducing the overall negative magnetoresistance. The results support a transport-weighted magnetic-reconfiguration mechanism for the unusual hysteresis shape.",
+      "primary_category": "cond-mat.dis-nn",
+      "categories": [
+        "cond-mat.dis-nn"
+      ],
+      "published_at": "2026-07-28T04:04:38Z",
+      "updated_at": "2026-07-28T04:04:38Z",
+      "abstract_url": "https://arxiv.org/abs/2607.25263v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.25263v1",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2607.24989",
+      "version": 1,
+      "title": "Cross-Correlations of Metric and Monopole Perturbations from Holographic Cosmology",
+      "authors": [
+        "Matheus Cravo",
+        "Juliana Z. Finotti",
+        "Horatiu Nastase"
+      ],
+      "abstract": "In this paper, we present the 1-loop calculation of the three-point function $\\langle TJJ \\rangle$ of the stress-energy tensor and two insertions of $SO(3)$ global currents, using a 3d toy model for holographic cosmology. By applying the holographic dictionary that relates these QFT $n$-point functions to cosmological correlators, together with the $Sl(2,\\mathbb{Z})$ duality that maps the electric Noether current to a magnetic vortex current dual to cosmological magnetic monopoles, we relate the $\\langle TJJ \\rangle$ correlator to the cross-correlations between metric perturbations and the bulk magnetic monopole field, specifically mapping to the non-Gaussianities $\\langle ξ\\tilde{A} \\tilde{A} \\rangle$ and $\\langle γ\\tilde{A} \\tilde{A} \\rangle$. We calculate the semi-local contact terms necessary to achieve the exact factorization of the cosmological correlators in the squeezed limit, $p_1 \\to 0$. Finally, we evaluate the effective non-linear parameters, showing that the scalar-monopole cross-correlation vanishes at leading order, $f_{NL}^{ξ\\tilde{A} \\tilde{A}} = 0$, while the tensor-monopole cross-correlation yields a non-zero $f_{NL}^{γ\\tilde A\\tilde A}$. These results respect the expected amplitude hierarchy of the non-Gaussian correlators, while pointing at new directions in which holographic cosmology can be tested experimentally.",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th",
+        "gr-qc"
+      ],
+      "published_at": "2026-07-27T18:41:02Z",
+      "updated_at": "2026-07-27T18:41:02Z",
+      "abstract_url": "https://arxiv.org/abs/2607.24989v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.24989v1",
+      "doi": null,
+      "journal_reference": null
+    },
+    {
+      "arxiv_id": "2605.21281",
+      "version": 2,
+      "title": "Self-Consistent Parker Bound on Magnetic Monopoles",
+      "authors": [
+        "Chen Zhang",
+        "Chun-Yan Jiang",
+        "Nayun Jia",
+        "Xin Zhang"
+      ],
+      "abstract": "Magnetic monopoles arise generically in unified theories and offer a natural explanation of charge quantization. Beyond collider searches and cosmic-ray experiments, their flux is constrained by Parker-type bounds requiring galactic magnetic fields to survive monopole energy extraction. We formulate a self-consistent Parker bound anchored in the lowest eigenmode of the galactic mean-field dynamo and convert the resulting limit to the present-day flux. Small-scale turbulent fields both seed this eigenmode and set the monopole velocity via stochastic acceleration before energy extraction from the coherent field. These unavoidable effects substantially modify the standard extended Parker bound at low and intermediate masses, yielding flux limits robust to primordial magnetic fields (PMFs); PMFs strong enough to alter these limits lie in regimes constrained by Ly$α$ data or testable by 21-cm observations and other cosmological probes.",
+      "primary_category": "hep-ph",
+      "categories": [
+        "hep-ph",
+        "astro-ph.CO",
+        "astro-ph.GA",
+        "gr-qc"
+      ],
+      "published_at": "2026-05-20T15:12:21Z",
+      "updated_at": "2026-07-27T12:18:20Z",
+      "abstract_url": "https://arxiv.org/abs/2605.21281v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.21281v2",
+      "doi": null,
+      "journal_reference": null
+    }
+  ],
+  "rejections": [],
+  "context_flags": []
+}

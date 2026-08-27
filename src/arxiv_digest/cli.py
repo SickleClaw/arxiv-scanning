@@ -18,7 +18,16 @@ from arxiv_digest.config import Settings, load_settings, settings_as_json
 from arxiv_digest.dashboard.launcher import launch_dashboard
 from arxiv_digest.dashboard.paths import find_repository_root
 from arxiv_digest.delivery import SMTPDeliveryProvider, validate_delivery_ready
+from arxiv_digest.disambiguation import (
+    DEFAULT_TABLE_PATH,
+    load_table,
+    measure_terms,
+    save_table,
+    unguarded_risky_terms,
+)
+from arxiv_digest.domain_filter import load_disambiguation
 from arxiv_digest.exceptions import ArxivDigestError, ConfigurationError
+from arxiv_digest.explain import explain_paper
 from arxiv_digest.history import load_history
 from arxiv_digest.models import CandidateSnapshot, DateWindow, DigestArtifact
 from arxiv_digest.pipeline import (
@@ -45,6 +54,9 @@ AppConfigOption = Annotated[
 ProfileConfigOption = Annotated[
     Path, typer.Option("--profile-config", help="Path to research profile YAML.")
 ]
+GroupConfigOption = Annotated[
+    Path, typer.Option("--group-config", help="Path to the lab group profile YAML.")
+]
 
 
 class SummaryMode(StrEnum):
@@ -55,8 +67,8 @@ class SummaryMode(StrEnum):
     OPENAI = "openai"
 
 
-def _load(app_config: Path, profile_config: Path) -> Settings:
-    return load_settings(app_config, profile_config)
+def _load(app_config: Path, profile_config: Path, group_config: Path) -> Settings:
+    return load_settings(app_config, profile_config, group_config)
 
 
 def _configure_logging(settings: Settings) -> None:
@@ -194,10 +206,11 @@ def doctor(
     ] = False,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Validate configuration, writable paths, and arXiv connection settings."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _writable(settings.app.paths.data_dir)
         _writable(settings.app.paths.reports_dir)
         _writable(settings.app.paths.history_file.parent)
@@ -241,10 +254,11 @@ def doctor(
 def show_config(
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Print the effective validated configuration with secret-like values redacted."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
     except ArxivDigestError as exc:
         _fail(exc)
     typer.echo(settings_as_json(settings))
@@ -284,10 +298,11 @@ def email_report(
     ] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Explicitly email an already-generated report without rerunning the pipeline."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         reports_dir = settings.app.paths.reports_dir
         markdown_path = markdown or reports_dir / "latest.md"
         html_path = html or reports_dir / "latest.html"
@@ -301,6 +316,124 @@ def email_report(
     typer.echo(f"Email sent to {result.recipient_count} configured recipient(s).")
 
 
+@app.command("explain")
+def explain(
+    arxiv_id: Annotated[str, typer.Argument(help="Canonical arXiv identifier, e.g. 2607.20843.")],
+    days: Annotated[int, typer.Option(min=1, max=31, help="Retrieval window length in days.")] = 7,
+    start: Annotated[
+        str | None, typer.Option(help="First UTC date, YYYY-MM-DD (inclusive).")
+    ] = None,
+    end: Annotated[str | None, typer.Option(help="Last UTC date, YYYY-MM-DD (inclusive).")] = None,
+    snapshot_path: Annotated[
+        Path | None, typer.Option("--snapshot", help="Existing candidate JSON snapshot.")
+    ] = None,
+    disambiguation_config: Annotated[
+        Path,
+        typer.Option("--disambiguation-config", help="Path to disambiguation rules YAML."),
+    ] = Path("config/disambiguation.yaml"),
+    app_config: AppConfigOption = Path("config/app.yaml"),
+    profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
+) -> None:
+    """Show every gate verdict and score component for one paper in one run."""
+    try:
+        settings = _load(app_config, profile_config, group_config)
+        now = datetime.now(UTC)
+        window = _requested_window(settings, days=days, start=start, end=end, now=now)
+        snapshot, source_path = _candidate_for_command(
+            settings,
+            window=window,
+            snapshot_path=snapshot_path,
+            fetch_missing=False,
+            now=now,
+        )
+        lines = explain_paper(
+            arxiv_id,
+            snapshot,
+            settings,
+            load_disambiguation(disambiguation_config),
+        )
+    except LookupError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except ArxivDigestError as exc:
+        _fail(exc)
+    typer.echo(f"source {source_path}")
+    for line in lines:
+        typer.echo(line)
+
+
+@app.command("measure-ambiguity")
+def measure_ambiguity(
+    refresh: Annotated[
+        bool, typer.Option("--refresh", help="Re-measure every term instead of reusing the cache.")
+    ] = False,
+    table_path: Annotated[
+        Path, typer.Option("--table", help="Cached measurement table path.")
+    ] = DEFAULT_TABLE_PATH,
+    disambiguation_config: Annotated[
+        Path,
+        typer.Option("--disambiguation-config", help="Path to disambiguation rules YAML."),
+    ] = Path("config/disambiguation.yaml"),
+    app_config: AppConfigOption = Path("config/app.yaml"),
+    profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
+) -> None:
+    """Measure how ambiguous each profile term is, and flag the ones that need a guard."""
+    try:
+        settings = _load(app_config, profile_config, group_config)
+        _configure_logging(settings)
+        terms = sorted(
+            {
+                *settings.profile.exact_phrases,
+                *settings.profile.materials,
+                *settings.profile.methods,
+                *(term for query in settings.profile.queries for term in query.terms),
+            }
+        )
+        cached = load_table(table_path)
+        known = (
+            set(cached.records) if cached and not cached.stale_for(settings.group.domain) else set()
+        )
+        pending = [term for term in terms if term not in known]
+        if refresh:
+            pending = terms
+        typer.echo(
+            f"Measuring {len(pending)} term(s) with 2 paced requests each; "
+            f"{len(terms) - len(pending)} reused from cache."
+            if pending
+            else f"All {len(terms)} term(s) already measured; no requests needed."
+        )
+        # Nothing is fetched when every term is cached, so this is safe to rerun.
+        with ArxivClient(settings.app.arxiv) as client:
+            table = measure_terms(
+                client,
+                terms,
+                settings.group.domain,
+                cached=cached,
+                refresh=refresh,
+            )
+        destination = save_table(table, table_path)
+    except ArxivDigestError as exc:
+        _fail(exc)
+
+    for record in sorted(table.records.values(), key=lambda item: -item.ambiguity):
+        marker = "!" if record.needs_context_guard else " "
+        typer.echo(
+            f" {marker} {record.ambiguity:.2f}  {record.term} "
+            f"({record.in_field_results}/{record.total_results} in field)"
+        )
+    guards = load_disambiguation(disambiguation_config).ambiguous_terms
+    unguarded = unguarded_risky_terms(table, list(guards))
+    if unguarded:
+        typer.echo("")
+        typer.echo("These terms are ambiguous and have no context requirement configured:")
+        for record in unguarded:
+            typer.echo(f"  - {record.describe()}")
+        typer.echo(f"Add a context requirement in {disambiguation_config} for each.")
+    typer.echo(f"Wrote {destination}.")
+
+
 @app.command("fetch")
 def fetch(
     days: Annotated[int, typer.Option(min=1, help="Complete UTC days to retrieve.")] = 7,
@@ -311,10 +444,11 @@ def fetch(
     output: Annotated[Path | None, typer.Option(help="Candidate JSON output path.")] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Fetch, normalize, deduplicate, and write an arXiv candidate snapshot."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(
@@ -331,7 +465,8 @@ def fetch(
         _fail(exc)
     typer.echo(
         f"Retrieved {snapshot.records_retrieved} records, deduplicated to "
-        f"{snapshot.records_after_deduplication}, wrote {destination}."
+        f"{snapshot.records_after_deduplication}, gated out {len(snapshot.rejections)}, "
+        f"kept {len(snapshot.papers)}, wrote {destination}."
     )
 
 
@@ -352,10 +487,11 @@ def rank(
     ] = False,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Rank an existing snapshot, retrieving only when explicitly requested."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(settings, days=days, start=start, end=end, now=now)
@@ -411,12 +547,13 @@ def run(
     ] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Retrieve or load candidates, then rank, summarize, and write weekly reports."""
     try:
         if dry_run and send_email:
             raise ConfigurationError("--send-email cannot be combined with --dry-run")
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(settings, days=days, start=start, end=end, now=now)
