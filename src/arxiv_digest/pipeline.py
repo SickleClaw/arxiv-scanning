@@ -206,6 +206,7 @@ def rank_snapshot(
         settings.profile,
         snapshot.retrieval_window,
         {flag.arxiv_id for flag in snapshot.context_flags},
+        settings.group.domain,
     )
     run_id = _rank_run_id(snapshot, settings)
     result = RankedSnapshot(

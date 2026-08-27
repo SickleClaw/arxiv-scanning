@@ -1,23 +1,23 @@
 {
   "schema_version": "2.0",
-  "run_id": "select-439fcb5ecbcf",
+  "run_id": "select-1265be03f3d0",
   "title": "Personalized Weekly arXiv Reading List",
-  "generated_at": "2026-08-03T15:38:06.082507Z",
+  "generated_at": "2026-08-03T13:07:41.884123Z",
   "timezone": "America/New_York",
   "retrieval_window": {
     "start": "2026-07-26T00:00:00Z",
     "end": "2026-08-03T00:00:00Z"
   },
-  "records_retrieved": 7,
+  "records_retrieved": 22,
   "records_after_deduplication": 7,
   "records_ranked": 4,
-  "records_selected": 1,
+  "records_selected": 2,
   "summary_mode": "offline",
   "summary_fallbacks": 0,
   "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
   "profile_name": "frustrated-magnetism-weekly",
   "profile_version": "1.0",
-  "profile_hash": "e22be9b06b86",
+  "profile_hash": "ca6dadce07d7",
   "recommendations": [
     {
       "paper": {
@@ -44,17 +44,17 @@
       "score": {
         "semantic_relevance": 0.07903716176421371,
         "keyword_relevance": 0.28346868942621073,
-        "category_relevance": 0.0,
-        "relevance": 0.13304236893806107,
+        "category_relevance": 0.4,
+        "relevance": 0.18304236893806108,
         "recency": 0.5713744212962963,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.13019110081915167,
+        "final_preselection_score": 0.1791195368723924,
         "explanation": "Strongest matched profile terms: magnetic monopole."
       },
       "summary": {
         "one_sentence_takeaway": "The abstract reports: Magnetic monopoles lie at the crossroads of gauge fields, topology, geometric phases, and charge quantization, yet they remain elusive as fundamental particles.",
         "brief_summary": "The abstract states: Magnetic monopoles lie at the crossroads of gauge fields, topology, geometric phases, and charge quantization, yet they remain elusive as fundamental particles. Here we show that an emergent Dirac-monopole framework arises naturally from the dynamics of massive quantum vortices in a spherical superfluid shell. Their dynamics is formally equivalent to that of interacting charged particles constrained to a sphere in the field of a magnetic monopole. The monopole charge is fixed by the superfluid density and automatically satisfies Dirac's quantization condition. The emergent monopole description predicts cyclotron-like vortex motion, in quantitative agreement with Gross--Pitaevskii simulations. We further show that topological frustration induced by two like-charged polar vortices gives rise to the formation of an equatorial vortex necklace, a configuration reminiscent of the…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.130, so the relevance claim reflects only the available abstract and ranking signals.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.179, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "magnetic monopole"
         ],
@@ -63,10 +63,8 @@
         "confidence": 0.85
       },
       "rank": 1,
-      "recommendation_type": "wildcard"
-    }
-  ],
-  "near_misses": [
+      "recommendation_type": "adjacent"
+    },
     {
       "paper": {
         "arxiv_id": "2607.29647",
@@ -92,14 +90,29 @@
       "score": {
         "semantic_relevance": 0.18600676195917953,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.1046288036020385,
+        "category_relevance": 0.4,
+        "relevance": 0.1546288036020385,
         "recency": 0.7157161458333333,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.10314158962479676,
+        "final_preselection_score": 0.1524308799893801,
         "explanation": "No configured positive profile terms matched."
-      }
-    },
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Hydrodynamics governs diverse collective phenomena in nature, from the expansion of a quarkgluon plasma to viscous electron flow in quantum materials.",
+        "brief_summary": "The abstract states: Hydrodynamics governs diverse collective phenomena in nature, from the expansion of a quarkgluon plasma to viscous electron flow in quantum materials. In strongly interacting hydrodynamic fluids, the transport of spin remains poorly understood. Here, we investigate spin transport in the hydrodynamic regime of a spin-imbalanced unitary Fermi gas confined in a uniform optical box. By quenching a spatially periodic optical potential that modulates both the density and spin polarization, we observe the relaxation of the many-body system, which determines both the spin diffusivity and the spin Seebeck/Peltier coefficients in a homogeneous quantum gas. Our measurements provide parameter-free benchmarks for microscopic theories and establish an ultracold atom platform for studying spin caloritronics in strongly correlated matter.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.quant-gas. Its preselection score was 0.152, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.quant-gas"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.575
+      },
+      "rank": 2,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [
     {
       "paper": {
         "arxiv_id": "2607.25684",
@@ -127,11 +140,11 @@
       "score": {
         "semantic_relevance": 0.04539546736416121,
         "keyword_relevance": 0.11011822901197621,
-        "category_relevance": 0.0,
-        "relevance": 0.05994689695858325,
+        "category_relevance": 0.4,
+        "relevance": 0.10994689695858326,
         "recency": 0.31774016203703703,
         "context_penalty_applied": true,
-        "final_preselection_score": 0.04921663960606858,
+        "final_preselection_score": 0.09026683745039728,
         "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
@@ -161,11 +174,11 @@
       "score": {
         "semantic_relevance": 0.06474967642235199,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.036421692987572994,
+        "category_relevance": 0.4,
+        "relevance": 0.08642169298757299,
         "recency": 0.2712355324074074,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.03509455120262752,
+        "final_preselection_score": 0.08327264003364603,
         "explanation": "No configured positive profile terms matched."
       }
     }
@@ -196,11 +209,11 @@
       "score": {
         "semantic_relevance": 0.07903716176421371,
         "keyword_relevance": 0.28346868942621073,
-        "category_relevance": 0.0,
-        "relevance": 0.13304236893806107,
+        "category_relevance": 0.4,
+        "relevance": 0.18304236893806108,
         "recency": 0.5713744212962963,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.13019110081915167,
+        "final_preselection_score": 0.1791195368723924,
         "explanation": "Strongest matched profile terms: magnetic monopole."
       }
     },
@@ -229,11 +242,11 @@
       "score": {
         "semantic_relevance": 0.18600676195917953,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.1046288036020385,
+        "category_relevance": 0.4,
+        "relevance": 0.1546288036020385,
         "recency": 0.7157161458333333,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.10314158962479676,
+        "final_preselection_score": 0.1524308799893801,
         "explanation": "No configured positive profile terms matched."
       }
     },
@@ -264,11 +277,11 @@
       "score": {
         "semantic_relevance": 0.04539546736416121,
         "keyword_relevance": 0.11011822901197621,
-        "category_relevance": 0.0,
-        "relevance": 0.05994689695858325,
+        "category_relevance": 0.4,
+        "relevance": 0.10994689695858326,
         "recency": 0.31774016203703703,
         "context_penalty_applied": true,
-        "final_preselection_score": 0.04921663960606858,
+        "final_preselection_score": 0.09026683745039728,
         "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
@@ -298,11 +311,11 @@
       "score": {
         "semantic_relevance": 0.06474967642235199,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.036421692987572994,
+        "category_relevance": 0.4,
+        "relevance": 0.08642169298757299,
         "recency": 0.2712355324074074,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.03509455120262752,
+        "final_preselection_score": 0.08327264003364603,
         "explanation": "No configured positive profile terms matched."
       }
     }

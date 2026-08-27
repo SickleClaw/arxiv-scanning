@@ -1,8 +1,8 @@
 {
   "schema_version": "2.0",
-  "run_id": "select-1b585a4ea120",
+  "run_id": "select-9475768bcd45",
   "title": "Personalized Weekly arXiv Reading List",
-  "generated_at": "2026-07-29T18:28:34.570470Z",
+  "generated_at": "2026-07-29T17:08:02.966397Z",
   "timezone": "America/New_York",
   "retrieval_window": {
     "start": "2026-07-21T00:00:00Z",
@@ -17,7 +17,7 @@
   "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
   "profile_name": "frustrated-magnetism-weekly",
   "profile_version": "1.0",
-  "profile_hash": "e22be9b06b86",
+  "profile_hash": "ca6dadce07d7",
   "recommendations": [
     {
       "paper": {
@@ -174,7 +174,7 @@
         "confidence": 0.605
       },
       "rank": 3,
-      "recommendation_type": "adjacent"
+      "recommendation_type": "direct"
     },
     {
       "paper": {
@@ -223,7 +223,7 @@
         "confidence": 0.67
       },
       "rank": 4,
-      "recommendation_type": "adjacent"
+      "recommendation_type": "direct"
     },
     {
       "paper": {
@@ -269,7 +269,7 @@
         "confidence": 0.85
       },
       "rank": 5,
-      "recommendation_type": "adjacent"
+      "recommendation_type": "direct"
     },
     {
       "paper": {
@@ -329,7 +329,7 @@
         "confidence": 0.63
       },
       "rank": 6,
-      "recommendation_type": "wildcard"
+      "recommendation_type": "adjacent"
     },
     {
       "paper": {
@@ -377,7 +377,7 @@
         "confidence": 0.75
       },
       "rank": 7,
-      "recommendation_type": "wildcard"
+      "recommendation_type": "adjacent"
     },
     {
       "paper": {
@@ -428,7 +428,7 @@
         "confidence": 0.79
       },
       "rank": 8,
-      "recommendation_type": "wildcard"
+      "recommendation_type": "adjacent"
     },
     {
       "paper": {
@@ -639,11 +639,11 @@
       "score": {
         "semantic_relevance": 0.05480571718028472,
         "keyword_relevance": 0.11011822901197621,
-        "category_relevance": 0.0,
-        "relevance": 0.06524016248015271,
+        "category_relevance": 0.4,
+        "relevance": 0.11524016248015272,
         "recency": 0.942740162037037,
         "context_penalty_applied": true,
-        "final_preselection_score": 0.05529537336000744,
+        "final_preselection_score": 0.09767369620433615,
         "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
@@ -673,11 +673,11 @@
       "score": {
         "semantic_relevance": 0.05076776438854827,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.0285568674685584,
+        "category_relevance": 0.4,
+        "relevance": 0.0785568674685584,
         "recency": 0.8962355324074074,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.02840870806110904,
+        "final_preselection_score": 0.07814929689212756,
         "explanation": "No configured positive profile terms matched."
       }
     }
@@ -1169,11 +1169,11 @@
       "score": {
         "semantic_relevance": 0.05480571718028472,
         "keyword_relevance": 0.11011822901197621,
-        "category_relevance": 0.0,
-        "relevance": 0.06524016248015271,
+        "category_relevance": 0.4,
+        "relevance": 0.11524016248015272,
         "recency": 0.942740162037037,
         "context_penalty_applied": true,
-        "final_preselection_score": 0.05529537336000744,
+        "final_preselection_score": 0.09767369620433615,
         "explanation": "Strongest matched profile terms: magnetic monopole. An ambiguous term appeared without condensed-matter context."
       }
     },
@@ -1203,11 +1203,11 @@
       "score": {
         "semantic_relevance": 0.05076776438854827,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "relevance": 0.0285568674685584,
+        "category_relevance": 0.4,
+        "relevance": 0.0785568674685584,
         "recency": 0.8962355324074074,
         "context_penalty_applied": false,
-        "final_preselection_score": 0.02840870806110904,
+        "final_preselection_score": 0.07814929689212756,
         "explanation": "No configured positive profile terms matched."
       }
     }

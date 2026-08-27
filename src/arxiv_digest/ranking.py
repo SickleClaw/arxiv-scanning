@@ -9,7 +9,7 @@ from collections.abc import Iterable, Sequence
 import numpy as np
 from numpy.typing import NDArray
 
-from arxiv_digest.config import ResearchProfile
+from arxiv_digest.config import DomainConfig, ResearchProfile
 from arxiv_digest.models import DateWindow, Paper, RankedPaper, ScoreBreakdown
 from arxiv_digest.normalization import count_term, tokenize
 
@@ -92,15 +92,27 @@ def keyword_relevance(
     return min(1.0, base_score), matched
 
 
-def category_relevance(paper: Paper, profile: ResearchProfile) -> float:
-    """Return the strongest configured category weight normalized to 0..1."""
+def category_relevance(
+    paper: Paper,
+    profile: ResearchProfile,
+    domain: DomainConfig | None = None,
+) -> float:
+    """Return the strongest configured category weight normalized to 0..1.
+
+    When a paper is in the group's field but its subcategory is not listed in
+    the profile, it floors at ``scoring.in_field_category_floor`` rather than
+    zero: unlisted is not the same as off-topic.
+    """
     maximum = max(profile.categories.values(), default=0.0)
     if maximum <= 0:
         return 0.0
     matched = max(
         (profile.categories.get(category, 0.0) for category in paper.categories), default=0.0
     )
-    return min(1.0, max(0.0, matched / maximum))
+    score = min(1.0, max(0.0, matched / maximum))
+    if domain is not None and domain.included(paper.categories):
+        score = max(score, profile.scoring.in_field_category_floor)
+    return score
 
 
 def recency_score(paper: Paper, window: DateWindow) -> float:
@@ -167,6 +179,7 @@ def rank_papers(
     profile: ResearchProfile,
     window: DateWindow,
     penalized_ids: set[str] | None = None,
+    domain: DomainConfig | None = None,
 ) -> list[RankedPaper]:
     """Rank papers on relevance alone, with deterministic tie-breaking.
 
@@ -191,7 +204,7 @@ def rank_papers(
 
     for paper, semantic in zip(candidates, semantic_scores, strict=True):
         keyword, matched = keyword_relevance(paper, profile)
-        category = category_relevance(paper, profile)
+        category = category_relevance(paper, profile, domain)
         recency = recency_score(paper, window)
         relevance = min(
             1.0,

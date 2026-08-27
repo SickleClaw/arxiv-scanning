@@ -32,6 +32,17 @@ def recommendation_type(
     return None
 
 
+UNMATCHED_TOPIC = "unmatched"
+"""One shared bucket for papers matching no configured query topic.
+
+Falling back to ``category:{primary}`` gave every unmatched paper a private
+bucket, which the max_papers_per_topic cap then *protected* from being crowded
+out by better ones — the diversity mechanism was amplifying the filtering bug.
+A single shared bucket makes unmatched papers compete for one quota slot instead
+of each holding their own. Real research-area assignment arrives in Phase 4.
+"""
+
+
 def topic_key(candidate: RankedPaper, profile: ResearchProfile) -> str:
     """Assign the strongest configured broad-query topic for deterministic topic caps."""
     title_tokens = tokenize(candidate.paper.title)
@@ -44,7 +55,7 @@ def topic_key(candidate: RankedPaper, profile: ResearchProfile) -> str:
         )
         scored_topics.append((strength, query.name))
     strongest = min(scored_topics, key=lambda item: (-item[0], item[1]))
-    return strongest[1] if strongest[0] > 0 else f"category:{candidate.paper.primary_category}"
+    return strongest[1] if strongest[0] > 0 else UNMATCHED_TOPIC
 
 
 def _normalized_binary_vectors(candidates: Sequence[RankedPaper]) -> NDArray[np.float64]:

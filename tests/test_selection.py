@@ -2,7 +2,7 @@
 
 from arxiv_digest.config import RecommendationMix, SelectionConfig, load_settings
 from arxiv_digest.models import RankedPaper, RecommendationType, ScoreBreakdown
-from arxiv_digest.selection import select_diverse
+from arxiv_digest.selection import UNMATCHED_TOPIC, select_diverse, topic_key
 
 
 def ranked(paper, score: float) -> RankedPaper:  # type: ignore[no-untyped-def]
@@ -160,3 +160,53 @@ def test_selects_ten_when_ten_viable_diverse_candidates_exist(paper_factory) -> 
         )
         <= profile.max_papers_per_topic
     )
+
+
+def test_unmatched_papers_share_one_topic_bucket(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """The diversity cap must not shelter papers that match no configured topic.
+
+    The old fallback gave each unmatched paper a private ``category:{primary}``
+    bucket, so max_papers_per_topic protected it from being crowded out by
+    better ones — the diversity mechanism was amplifying the filtering bug.
+    """
+    profile = load_settings().profile
+    first = ranked(
+        paper_factory(
+            arxiv_id="2607.30001",
+            title="An unrelated result",
+            abstract="Nothing configured appears here.",
+            primary_category="cond-mat.dis-nn",
+            categories=["cond-mat.dis-nn"],
+        ),
+        0.5,
+    )
+    second = ranked(
+        paper_factory(
+            arxiv_id="2607.30002",
+            title="Another unrelated result",
+            abstract="Also nothing configured.",
+            primary_category="cond-mat.soft",
+            categories=["cond-mat.soft"],
+        ),
+        0.5,
+    )
+    assert topic_key(first, profile) == topic_key(second, profile) == UNMATCHED_TOPIC
+
+
+def test_unmatched_papers_compete_for_a_single_quota_slot(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    profile = load_settings().profile.model_copy(update={"max_papers_per_topic": 1})
+    candidates = [
+        ranked(
+            paper_factory(
+                arxiv_id=f"2607.3010{index}",
+                title=f"Unrelated result {index}",
+                abstract="Nothing configured appears here.",
+                primary_category=f"cond-mat.other{index}",
+                categories=[f"cond-mat.other{index}"],
+            ),
+            0.5 - (index * 0.01),
+        )
+        for index in range(4)
+    ]
+    selected = select_diverse(candidates, profile, limit=10)
+    assert len(selected) == 1

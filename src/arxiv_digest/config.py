@@ -243,6 +243,15 @@ class ScoringConfig(StrictModel):
     an irrelevant one. As an additive component worth 0.10 it did exactly that.
     """
 
+    in_field_category_floor: float = Field(default=0.4, ge=0.0, le=1.0)
+    """Category score for an in-field paper whose subcategory the profile omits.
+
+    The group profile says which categories are the field; the research profile
+    says which parts of it are most interesting. A cond-mat paper in an unlisted
+    subcategory is not off-topic, it is merely unlisted, and scoring it 0.0
+    overstates the evidence against it now that category is a third of relevance.
+    """
+
     context_penalty: float = Field(default=0.85, gt=0.0, le=1.0)
     """Multiplier for a paper using an ambiguous term without supporting context.
 

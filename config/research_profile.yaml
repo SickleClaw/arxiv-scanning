@@ -78,11 +78,21 @@ scoring:
   # Paid when an ambiguous term appears without supporting context.
   context_penalty: 0.85
 
+# PROVISIONAL. Refitted by hand against the two committed runs after the
+# relevance-free floor was removed; the old 0.28/0.20/0.12 were fitted against a
+# formula that guaranteed every recent paper at least 0.20, so they now reject
+# almost everything. Recalibrate against a labelled evaluation set - design
+# report section 19.5 - which is what will make these defensible rather than
+# merely reasonable.
+#
+# The fit: on 2026-07-21 these give 5 direct / 3 adjacent / 3 wildcard, and they
+# reject the X-ray Thomson scattering plasma paper at 0.114. That margin above
+# the wildcard floor is thin, which is the main reason these are provisional.
 selection:
   mmr_lambda: 0.75
-  direct_min_score: 0.28
-  adjacent_min_score: 0.20
-  wildcard_min_score: 0.12
+  direct_min_score: 0.20
+  adjacent_min_score: 0.16
+  wildcard_min_score: 0.13
 queries:
   - name: spin-ice-dynamics
     terms:

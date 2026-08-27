@@ -263,3 +263,90 @@ def test_keyword_scores_span_a_real_range_on_the_committed_window() -> None:
     profile = load_settings().profile
     scores = [keyword_relevance(item, profile)[0] for item in snapshot.papers]
     assert max(scores) > 0.25
+
+
+def test_an_irrelevant_paper_scores_near_zero_whenever_it_was_submitted(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """Finding 2, asserted directly.
+
+    Under the old formula a paper matching nothing scored at least 0.20 from
+    novelty and recency alone — equal to the adjacent threshold. Submission date
+    must no longer be able to manufacture a score.
+    """
+    profile = load_settings().profile
+    window = ranking_window()
+    early = paper_factory(
+        arxiv_id="2607.40001",
+        title="An entirely unrelated result",
+        abstract="This concerns something with no bearing on the profile at all.",
+        primary_category="physics.flu-dyn",
+        categories=["physics.flu-dyn"],
+        published_at=datetime(2026, 7, 20, 1, tzinfo=UTC),
+        updated_at=datetime(2026, 7, 20, 1, tzinfo=UTC),
+    )
+    late = early.model_copy(
+        update={
+            "arxiv_id": "2607.40002",
+            "published_at": datetime(2026, 7, 27, 23, tzinfo=UTC),
+            "updated_at": datetime(2026, 7, 27, 23, tzinfo=UTC),
+        }
+    )
+    scores = {
+        item.paper.arxiv_id: item.score.final_preselection_score
+        for item in rank_papers([early, late], profile, window)
+    }
+    assert max(scores.values()) < profile.selection.wildcard_min_score
+    # Recency may separate them, but only marginally.
+    assert abs(scores["2607.40002"] - scores["2607.40001"]) < 0.02
+
+
+def test_recency_modulates_but_cannot_manufacture_a_score(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    profile = load_settings().profile
+    window = ranking_window()
+    relevant = paper_factory(
+        arxiv_id="2607.41001",
+        title="Spin ice and pyrochlore neutron scattering",
+        abstract="Magnetic monopole dynamics in spin ice.",
+        published_at=datetime(2026, 7, 21, tzinfo=UTC),
+        updated_at=datetime(2026, 7, 21, tzinfo=UTC),
+    )
+    irrelevant_but_newer = paper_factory(
+        arxiv_id="2607.41002",
+        title="An entirely unrelated result",
+        abstract="Nothing in the profile appears here.",
+        primary_category="physics.flu-dyn",
+        categories=["physics.flu-dyn"],
+        published_at=datetime(2026, 7, 27, 23, tzinfo=UTC),
+        updated_at=datetime(2026, 7, 27, 23, tzinfo=UTC),
+    )
+    ordered = rank_papers([irrelevant_but_newer, relevant], profile, window)
+    assert ordered[0].paper.arxiv_id == "2607.41001"
+
+
+def test_an_in_field_paper_is_not_scored_zero_on_an_unlisted_subcategory(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """Unlisted is not the same as off-topic."""
+    settings = load_settings()
+    unlisted = paper_factory(
+        primary_category="cond-mat.dis-nn",
+        categories=["cond-mat.dis-nn"],
+    )
+    assert category_relevance(unlisted, settings.profile) == 0.0
+    floored = category_relevance(unlisted, settings.profile, settings.group.domain)
+    assert floored == pytest.approx(settings.profile.scoring.in_field_category_floor)
+    # An out-of-field paper gets no floor.
+    off_domain = paper_factory(primary_category="hep-ph", categories=["hep-ph"])
+    assert category_relevance(off_domain, settings.profile, settings.group.domain) == 0.0
+
+
+def test_committed_thresholds_reject_the_reported_plasma_paper() -> None:
+    """The second paper the audit named, removed by score rather than by gate."""
+    settings = load_settings()
+    snapshot = CandidateSnapshot.model_validate_json(CANDIDATES_PATH.read_text(encoding="utf-8"))
+    ranked = rank_papers(
+        snapshot.papers,
+        settings.profile,
+        snapshot.retrieval_window,
+        None,
+        settings.group.domain,
+    )
+    plasma = next(item for item in ranked if item.paper.arxiv_id == "2607.25481")
+    assert plasma.score.final_preselection_score < settings.profile.selection.wildcard_min_score
