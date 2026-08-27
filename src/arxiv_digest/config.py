@@ -284,16 +284,22 @@ class DomainConfig(StrictModel):
     @field_validator("include_categories", "soft_categories", "exclude_categories")
     @classmethod
     def validate_patterns(cls, values: list[str]) -> list[str]:
-        """Require well-formed, unique, non-blank category patterns."""
-        normalized = [normalize_category(value) for value in values]
-        if any(not value for value in normalized):
+        """Require well-formed, unique, non-blank category patterns.
+
+        Patterns keep their authored case. arXiv writes subject classes in mixed
+        case (``cs.LG``, ``astro-ph.CO``) and these strings are emitted verbatim
+        into ``cat:`` query clauses; comparison folds case separately.
+        """
+        stripped = [value.strip() for value in values]
+        if any(not value for value in stripped):
             raise ValueError("category patterns cannot be blank")
-        invalid = [value for value in normalized if not _CATEGORY_PATTERN.fullmatch(value)]
+        invalid = [value for value in stripped if not _CATEGORY_PATTERN.fullmatch(value)]
         if invalid:
             raise ValueError(f"malformed arXiv category patterns: {', '.join(sorted(invalid))}")
-        if len(normalized) != len(set(normalized)):
+        folded = [normalize_category(value) for value in stripped]
+        if len(folded) != len(set(folded)):
             raise ValueError("category patterns cannot repeat within one list")
-        return normalized
+        return stripped
 
     @model_validator(mode="after")
     def validate_disjoint(self) -> DomainConfig:
@@ -305,11 +311,12 @@ class DomainConfig(StrictModel):
             ("exclude_categories", self.exclude_categories),
         ):
             for pattern in patterns:
-                if pattern in seen:
+                folded = normalize_category(pattern)
+                if folded in seen:
                     raise ValueError(
-                        f"category pattern {pattern!r} appears in both {seen[pattern]} and {label}"
+                        f"category pattern {pattern!r} appears in both {seen[folded]} and {label}"
                     )
-                seen[pattern] = label
+                seen[folded] = label
         return self
 
     def included(self, categories: Sequence[str]) -> list[str]:

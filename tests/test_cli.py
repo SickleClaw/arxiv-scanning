@@ -87,7 +87,9 @@ def test_fetch_writes_snapshot_without_network(
         def __exit__(self, *_args: object) -> None:
             return None
 
-        def fetch(self, _queries: object, _window: object, _maximum: int) -> RetrievalResult:
+        def fetch(
+            self, _queries: object, _window: object, _maximum: int, _domain: object
+        ) -> RetrievalResult:
             return RetrievalResult(
                 papers=[paper, paper],
                 query_results=[QueryResult(name="fixture", records_received=2)],

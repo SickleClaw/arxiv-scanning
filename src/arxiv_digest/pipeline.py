@@ -106,12 +106,14 @@ def retrieve_candidates(
                 settings.profile.queries,
                 window,
                 settings.profile.max_candidate_count,
+                settings.group.domain,
             )
     else:
         result = client.fetch(
             settings.profile.queries,
             window,
             settings.profile.max_candidate_count,
+            settings.group.domain,
         )
     unique = deduplicate_papers(result.papers)[: settings.profile.max_candidate_count]
     snapshot = create_snapshot(

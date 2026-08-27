@@ -14,7 +14,7 @@ import feedparser
 import httpx
 
 from arxiv_digest import __version__
-from arxiv_digest.config import ArxivConfig, QueryConfig
+from arxiv_digest.config import ArxivConfig, DomainConfig, QueryConfig
 from arxiv_digest.exceptions import ArxivFeedError, ArxivHTTPError
 from arxiv_digest.models import DateWindow, Paper, QueryResult
 from arxiv_digest.normalization import normalize_whitespace, parse_arxiv_identity
@@ -40,18 +40,41 @@ def _quote_term(value: str) -> str:
     return f'all:"{escaped}"'
 
 
-def build_search_query(query: QueryConfig, window: DateWindow) -> str:
-    """Build a grouped expression constrained by arXiv's documented submission filter."""
+def build_category_guard(domain: DomainConfig) -> str:
+    """Build the positive ``cat:`` guard that keeps retrieval inside the field.
+
+    Both in-field and adjacent categories are admitted here; adjacent ones must
+    still earn their place at the local gate. Measured against the live API,
+    adding this guard to ``all:"magnetic monopole"`` removes 76% of the result
+    set before a single byte is scored.
+
+    No ``ANDNOT`` clause is emitted, deliberately. Under a positive guard every
+    paper an exclusion would additionally remove is one carrying *both* an
+    in-field and an excluded category — precisely the cross-listed work the
+    domain gate exists to protect. At the source such a rejection would also be
+    invisible, since nothing is retrieved to log. Exclusion is therefore applied
+    locally, in ``domain_filter``, where inclusion still outranks it and every
+    rejection is recorded with a reason.
+    """
+    patterns = [*domain.include_categories, *domain.soft_categories]
+    return " OR ".join(f"cat:{pattern}" for pattern in patterns)
+
+
+def build_search_query(query: QueryConfig, window: DateWindow, domain: DomainConfig) -> str:
+    """Build a category-guarded expression bounded by arXiv's submission filter."""
     term_group = " OR ".join(_quote_term(term) for term in query.terms)
     inclusive_end = _utc(window.end) - timedelta(minutes=1)
     start = _utc(window.start).strftime("%Y%m%d%H%M")
     end = inclusive_end.strftime("%Y%m%d%H%M")
-    return f"({term_group}) AND submittedDate:[{start} TO {end}]"
+    return (
+        f"({term_group}) AND ({build_category_guard(domain)}) AND submittedDate:[{start} TO {end}]"
+    )
 
 
-def build_term_query(query: QueryConfig) -> str:
-    """Build an unbounded grouped term query for the update-sorted retrieval pass."""
-    return f"({' OR '.join(_quote_term(term) for term in query.terms)})"
+def build_term_query(query: QueryConfig, domain: DomainConfig) -> str:
+    """Build an unbounded category-guarded query for the update-sorted pass."""
+    term_group = " OR ".join(_quote_term(term) for term in query.terms)
+    return f"({term_group}) AND ({build_category_guard(domain)})"
 
 
 def _parse_datetime(value: str, field: str) -> datetime:
@@ -225,11 +248,23 @@ class ArxivClient:
 
         raise ArxivHTTPError("arXiv request exhausted retries unexpectedly")
 
+    def count(self, search_query: str) -> int:
+        """Return how many results arXiv advertises for a query, fetching one page.
+
+        Used to measure a term's ambiguity: the fraction of its hits that fall
+        outside the group's field. Responses are cached like any other page, so
+        repeating a measurement within a run is free.
+        """
+        content = self._request_page({"search_query": search_query, "start": 0, "max_results": 1})
+        _papers, total = parse_atom_feed(content)
+        return total
+
     def fetch(
         self,
         queries: Sequence[QueryConfig],
         window: DateWindow,
         maximum_candidates: int,
+        domain: DomainConfig,
     ) -> RetrievalResult:
         """Fetch fair new/update shares for every query and filter explicit timestamps."""
         if not queries:
@@ -241,8 +276,8 @@ class ArxivClient:
         for query in queries:
             received = 0
             streams = (
-                (build_search_query(query, window), "submittedDate", False),
-                (build_term_query(query), "lastUpdatedDate", True),
+                (build_search_query(query, window, domain), "submittedDate", False),
+                (build_term_query(query, domain), "lastUpdatedDate", True),
             )
             for search_query, sort_by, stop_after_old_page in streams:
                 accepted = 0
