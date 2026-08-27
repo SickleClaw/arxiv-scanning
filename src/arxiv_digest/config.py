@@ -175,13 +175,17 @@ class AppConfig(StrictModel):
 
 
 class RankingWeights(StrictModel):
-    """Editable future ranking weights; values are normalized when loaded."""
+    """Editable relevance weights; values are normalized when loaded.
+
+    Only relevance components appear here. Recency is a multiplier, not a
+    weighted term, and novelty is gone: as a weighted component contributing a
+    flat 0.10 to every unseen paper it guaranteed any recent paper a score floor
+    that no amount of irrelevance could fall below.
+    """
 
     semantic_relevance: float = Field(ge=0)
     keyword_relevance: float = Field(ge=0)
     category_relevance: float = Field(ge=0)
-    recency: float = Field(ge=0)
-    feedback_or_novelty: float = Field(ge=0)
 
     @model_validator(mode="after")
     def normalize(self) -> RankingWeights:
@@ -190,8 +194,6 @@ class RankingWeights(StrictModel):
             "semantic_relevance",
             "keyword_relevance",
             "category_relevance",
-            "recency",
-            "feedback_or_novelty",
         )
         total = sum(getattr(self, field) for field in fields)
         if total <= 0:
@@ -232,6 +234,21 @@ class ScoringConfig(StrictModel):
     """
 
     facet_weights: FacetWeights = FacetWeights()
+
+    recency_weight: float = Field(default=0.05, ge=0.0, le=0.5)
+    """How much a paper's position in the window may modulate its score.
+
+    Applied as ``1 - recency_weight + recency_weight * recency``, so recency can
+    break a tie between comparable papers but can never manufacture a score for
+    an irrelevant one. As an additive component worth 0.10 it did exactly that.
+    """
+
+    context_penalty: float = Field(default=0.85, gt=0.0, le=1.0)
+    """Multiplier for a paper using an ambiguous term without supporting context.
+
+    PROVISIONAL. The gate flags rather than rejects these (design report 6.3);
+    this is where the flag is paid for.
+    """
 
 
 class RecommendationMix(StrictModel):

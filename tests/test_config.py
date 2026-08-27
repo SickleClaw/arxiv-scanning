@@ -11,14 +11,16 @@ from arxiv_digest.exceptions import ConfigurationError
 def test_default_configuration_loads_and_weights_sum_to_one() -> None:
     settings = load_settings()
     weights = settings.profile.ranking_weights
-    assert weights.semantic_relevance == pytest.approx(0.45)
+    # Authored as 0.45/0.25/0.10 and renormalized over the three relevance
+    # components, since recency and novelty are no longer weighted terms.
+    assert weights.semantic_relevance == pytest.approx(0.45 / 0.80)
+    assert weights.keyword_relevance == pytest.approx(0.25 / 0.80)
+    assert weights.category_relevance == pytest.approx(0.10 / 0.80)
     assert sum(
         (
             weights.semantic_relevance,
             weights.keyword_relevance,
             weights.category_relevance,
-            weights.recency,
-            weights.feedback_or_novelty,
         )
     ) == pytest.approx(1.0)
     assert len(settings.profile.queries) == 6

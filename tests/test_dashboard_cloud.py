@@ -11,6 +11,7 @@ from streamlit.testing.v1 import AppTest
 
 from arxiv_digest.dashboard.data import DashboardDataError, load_digest, load_digest_history
 from arxiv_digest.dashboard.paths import find_repository_root, resolve_dashboard_paths
+from arxiv_digest.models import DIGEST_SCHEMA_VERSION
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
@@ -71,7 +72,7 @@ def test_committed_reports_load_latest_and_history_without_writes() -> None:
     digest = load_digest(latest)
     history, errors = load_digest_history(reports_dir)
     after = {path: (_sha256(path), path.stat().st_mtime_ns) for path in (latest, dated)}
-    assert digest.schema_version == "1.0"
+    assert digest.schema_version == DIGEST_SCHEMA_VERSION
     assert any(entry.path == dated for entry, _digest in history)
     assert errors == []
     assert after == before

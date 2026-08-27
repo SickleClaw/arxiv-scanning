@@ -94,8 +94,6 @@ def test_changing_weights_changes_ranking_predictably(paper_factory) -> None:  #
                 semantic_relevance=0,
                 keyword_relevance=1,
                 category_relevance=0,
-                recency=0,
-                feedback_or_novelty=0,
             )
         }
     )
@@ -105,8 +103,6 @@ def test_changing_weights_changes_ranking_predictably(paper_factory) -> None:  #
                 semantic_relevance=0,
                 keyword_relevance=0,
                 category_relevance=1,
-                recency=0,
-                feedback_or_novelty=0,
             )
         }
     )
@@ -163,7 +159,9 @@ def test_ranking_no_longer_penalizes_negative_terms(paper_factory) -> None:  # t
         item.paper.arxiv_id: item.score.final_preselection_score
         for item in rank_papers([clean, formerly_penalized], profile, ranking_window())
     }
-    assert scores["2607.13002"] == pytest.approx(scores["2607.13001"], abs=0.02)
+    # The old penalty was a flat 0.20. What remains is only the incidental
+    # TF-IDF difference between two slightly different abstracts.
+    assert abs(scores["2607.13002"] - scores["2607.13001"]) < 0.05
 
 
 def test_frozen_baseline_matches_current_ranking() -> None:

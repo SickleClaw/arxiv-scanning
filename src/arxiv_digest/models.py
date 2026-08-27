@@ -10,7 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 ABSTRACT_SUMMARY_BASIS = (
     "Based only on the title, abstract, and arXiv metadata; the full paper was not read."
 )
-DIGEST_SCHEMA_VERSION = "1.0"
+DIGEST_SCHEMA_VERSION = "2.0"
 
 
 class StrictModel(BaseModel):
@@ -86,14 +86,20 @@ class Paper(StrictModel):
 
 
 class ScoreBreakdown(StrictModel):
-    """Ranking components, each normalized to the inclusive range 0..1."""
+    """Ranking components, each normalized to the inclusive range 0..1.
+
+    Only the three relevance components contribute additively. ``recency`` is
+    recorded but applied as a small multiplier, and there is no novelty or
+    feedback component: both were relevance-free terms that let an irrelevant
+    paper clear a selection threshold on nothing but its submission date.
+    """
 
     semantic_relevance: float = Field(ge=0.0, le=1.0)
     keyword_relevance: float = Field(ge=0.0, le=1.0)
     category_relevance: float = Field(ge=0.0, le=1.0)
+    relevance: float = Field(ge=0.0, le=1.0)
     recency: float = Field(ge=0.0, le=1.0)
-    novelty: float = Field(ge=0.0, le=1.0)
-    feedback_affinity: float = Field(ge=0.0, le=1.0)
+    context_penalty_applied: bool = False
     final_preselection_score: float = Field(ge=0.0, le=1.0)
     explanation: str
 

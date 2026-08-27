@@ -40,12 +40,15 @@ negative_terms:
   - financial market
   - social network
 author_boosts: {}
+# Relevance weights only, normalized on load. Recency is a small multiplier
+# (scoring.recency_weight) rather than a weighted term, and there is no novelty
+# component: as a flat 0.10 for every unseen paper it guaranteed any recent
+# paper a score floor regardless of relevance. Repeat suppression is history
+# filtering's job.
 ranking_weights:
   semantic_relevance: 0.45
   keyword_relevance: 0.25
   category_relevance: 0.10
-  recency: 0.10
-  feedback_or_novelty: 0.10
 recommendation_mix:
   direct: 6
   adjacent: 3
@@ -69,6 +72,11 @@ scoring:
     exact_phrases: 1.0
     materials: 1.0
     methods: 0.8
+  # Recency can break a tie between comparable papers; it can never
+  # manufacture a score for an irrelevant one.
+  recency_weight: 0.05
+  # Paid when an ambiguous term appears without supporting context.
+  context_penalty: 0.85
 
 selection:
   mmr_lambda: 0.75

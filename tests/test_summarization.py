@@ -30,8 +30,7 @@ def score() -> ScoreBreakdown:
         keyword_relevance=0.7,
         category_relevance=1.0,
         recency=0.9,
-        novelty=1.0,
-        feedback_affinity=0.5,
+        relevance=0.79,
         final_preselection_score=0.79,
         explanation="Strongest matched profile terms: spin ice, magnetic monopole.",
     )

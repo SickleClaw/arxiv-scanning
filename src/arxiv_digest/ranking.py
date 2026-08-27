@@ -166,35 +166,51 @@ def rank_papers(
     papers: Iterable[Paper],
     profile: ResearchProfile,
     window: DateWindow,
-    previously_recommended_ids: set[str] | None = None,
+    penalized_ids: set[str] | None = None,
 ) -> list[RankedPaper]:
-    """Rank papers with configurable hybrid weights and deterministic tie-breaking."""
+    """Rank papers on relevance alone, with deterministic tie-breaking.
+
+    The score is a weighted sum of the three relevance components, modulated by
+    recency and by any ambiguous-term context penalty. Nothing relevance-free
+    contributes.
+
+    That is the whole of Finding 2. Novelty was 1.0 for any unseen paper and
+    weighted 0.10, and recency added up to another 0.10, so a completely
+    irrelevant paper submitted late in the window scored at least 0.20 before
+    any relevance was considered — equal to the adjacent threshold and well
+    above the wildcard one. Repeat suppression is history.filter_recent_history's
+    job and it does it properly, by removing papers rather than by handing every
+    other paper a bonus.
+    """
     candidates = list(papers)
     semantic_scores = semantic_relevance_scores(candidates, profile)
-    previous_ids = previously_recommended_ids or set()
+    penalized = penalized_ids or set()
     weights = profile.ranking_weights
+    scoring = profile.scoring
     ranked: list[RankedPaper] = []
 
     for paper, semantic in zip(candidates, semantic_scores, strict=True):
         keyword, matched = keyword_relevance(paper, profile)
         category = category_relevance(paper, profile)
         recency = recency_score(paper, window)
-        novelty = 0.5 if paper.arxiv_id in previous_ids else 1.0
-        feedback_affinity = 0.5
-        raw_score = (
+        relevance = min(
+            1.0,
             (weights.semantic_relevance * semantic)
             + (weights.keyword_relevance * keyword)
-            + (weights.category_relevance * category)
-            + (weights.recency * recency)
-            + (weights.feedback_or_novelty * novelty)
+            + (weights.category_relevance * category),
         )
-        final_score = min(1.0, max(0.0, raw_score))
+        recency_factor = 1.0 - scoring.recency_weight + (scoring.recency_weight * recency)
+        penalized_here = paper.arxiv_id in penalized
+        penalty_factor = scoring.context_penalty if penalized_here else 1.0
+        final_score = min(1.0, max(0.0, relevance * recency_factor * penalty_factor))
         strongest = [term for term, _contribution in matched[:5]]
         explanation_parts = [
             f"Strongest matched profile terms: {', '.join(strongest)}."
             if strongest
             else "No configured positive profile terms matched."
         ]
+        if penalized_here:
+            explanation_parts.append("An ambiguous term appeared without condensed-matter context.")
         ranked.append(
             RankedPaper(
                 paper=paper,
@@ -202,9 +218,9 @@ def rank_papers(
                     semantic_relevance=semantic,
                     keyword_relevance=keyword,
                     category_relevance=category,
+                    relevance=relevance,
                     recency=recency,
-                    novelty=novelty,
-                    feedback_affinity=feedback_affinity,
+                    context_penalty_applied=penalized_here,
                     final_preselection_score=final_score,
                     explanation=" ".join(explanation_parts),
                 ),

@@ -60,9 +60,8 @@ def digest_factory(paper_factory):  # type: ignore[no-untyped-def]
             semantic_relevance=value,
             keyword_relevance=value,
             category_relevance=value,
+            relevance=value,
             recency=value,
-            novelty=value,
-            feedback_affinity=0.5,
             final_preselection_score=value,
             explanation=f"Strongest matched profile terms: {term}. Category overlap.",
         )

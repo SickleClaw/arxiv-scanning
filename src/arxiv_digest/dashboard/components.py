@@ -23,24 +23,24 @@ def render_score_breakdown(score: ScoreBreakdown) -> None:
                 "Semantic / TF-IDF",
                 "Keywords",
                 "Category",
-                "Recency",
-                "Novelty",
-                "Feedback affinity",
+                "Relevance (weighted)",
+                "Recency (multiplier)",
                 "Final score",
             ],
             "Value": [
                 score.semantic_relevance,
                 score.keyword_relevance,
                 score.category_relevance,
+                score.relevance,
                 score.recency,
-                score.novelty,
-                score.feedback_affinity,
                 score.final_preselection_score,
             ],
         },
         hide_index=True,
         width="stretch",
     )
+    if score.context_penalty_applied:
+        st.caption("An ambiguous term appeared without condensed-matter context.")
     terms = strongest_profile_terms(score.explanation)
     st.caption(f"Strongest profile terms: {', '.join(terms)}" if terms else score.explanation)
 

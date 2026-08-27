@@ -22,7 +22,6 @@ from arxiv_digest.exceptions import ArxivDigestError
 from arxiv_digest.history import (
     append_history,
     filter_recent_history,
-    recommended_ids,
     records_for_selection,
 )
 from arxiv_digest.models import (
@@ -206,7 +205,7 @@ def rank_snapshot(
         eligible,
         settings.profile,
         snapshot.retrieval_window,
-        recommended_ids(history),
+        {flag.arxiv_id for flag in snapshot.context_flags},
     )
     run_id = _rank_run_id(snapshot, settings)
     result = RankedSnapshot(
