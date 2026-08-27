@@ -18,7 +18,9 @@ from arxiv_digest.config import Settings, load_settings, settings_as_json
 from arxiv_digest.dashboard.launcher import launch_dashboard
 from arxiv_digest.dashboard.paths import find_repository_root
 from arxiv_digest.delivery import SMTPDeliveryProvider, validate_delivery_ready
+from arxiv_digest.domain_filter import load_disambiguation
 from arxiv_digest.exceptions import ArxivDigestError, ConfigurationError
+from arxiv_digest.explain import explain_paper
 from arxiv_digest.history import load_history
 from arxiv_digest.models import CandidateSnapshot, DateWindow, DigestArtifact
 from arxiv_digest.pipeline import (
@@ -305,6 +307,53 @@ def email_report(
     except (ArxivDigestError, OSError, ValueError) as exc:
         _fail(exc)
     typer.echo(f"Email sent to {result.recipient_count} configured recipient(s).")
+
+
+@app.command("explain")
+def explain(
+    arxiv_id: Annotated[str, typer.Argument(help="Canonical arXiv identifier, e.g. 2607.20843.")],
+    days: Annotated[int, typer.Option(min=1, max=31, help="Retrieval window length in days.")] = 7,
+    start: Annotated[
+        str | None, typer.Option(help="First UTC date, YYYY-MM-DD (inclusive).")
+    ] = None,
+    end: Annotated[str | None, typer.Option(help="Last UTC date, YYYY-MM-DD (inclusive).")] = None,
+    snapshot_path: Annotated[
+        Path | None, typer.Option("--snapshot", help="Existing candidate JSON snapshot.")
+    ] = None,
+    disambiguation_config: Annotated[
+        Path,
+        typer.Option("--disambiguation-config", help="Path to disambiguation rules YAML."),
+    ] = Path("config/disambiguation.yaml"),
+    app_config: AppConfigOption = Path("config/app.yaml"),
+    profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
+) -> None:
+    """Show every gate verdict and score component for one paper in one run."""
+    try:
+        settings = _load(app_config, profile_config, group_config)
+        now = datetime.now(UTC)
+        window = _requested_window(settings, days=days, start=start, end=end, now=now)
+        snapshot, source_path = _candidate_for_command(
+            settings,
+            window=window,
+            snapshot_path=snapshot_path,
+            fetch_missing=False,
+            now=now,
+        )
+        lines = explain_paper(
+            arxiv_id,
+            snapshot,
+            settings,
+            load_disambiguation(disambiguation_config),
+        )
+    except LookupError as exc:
+        typer.echo(f"Error: {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except ArxivDigestError as exc:
+        _fail(exc)
+    typer.echo(f"source {source_path}")
+    for line in lines:
+        typer.echo(line)
 
 
 @app.command("fetch")
