@@ -11,9 +11,14 @@ from pydantic import ValidationError
 
 from arxiv_digest.config import DomainConfig, load_settings
 from arxiv_digest.domain_filter import (
+    AmbiguousTerm,
+    ContextDefault,
+    ContextOutcome,
     DisambiguationConfig,
     HardExclusionRule,
     RuleCondition,
+    blocking_finding,
+    evaluate_context_requirements,
     evaluate_hard_exclusions,
     load_disambiguation,
 )
@@ -228,3 +233,90 @@ def test_committed_rules_reject_the_reported_hep_ph_paper() -> None:
     for item in snapshot.papers:
         if live_domain.included(item.categories):
             assert verdicts[item.arxiv_id] is None, item.arxiv_id
+
+
+def ambiguous() -> dict[str, AmbiguousTerm]:
+    return load_disambiguation(CONFIG_PATH).ambiguous_terms
+
+
+@pytest.mark.parametrize("term", ["monopole", "frustration", "transport", "phase transition"])
+def test_every_configured_ambiguous_term_has_a_passing_case(term: str) -> None:
+    """Each configured term must be satisfiable by its own context list."""
+    configured = ambiguous()[term]
+    context = configured.requires_any_of[0]
+    supported = paper(
+        f"A study of {term}", f"We examine {term} in a {context} setting.", ["hep-ph"]
+    )
+    findings = evaluate_context_requirements(supported, ambiguous(), domain())
+    match = next(finding for finding in findings if finding.term == term)
+    assert match.outcome is ContextOutcome.SATISFIED
+    assert context in match.matched_context
+
+
+@pytest.mark.parametrize("term", ["monopole", "frustration", "transport", "phase transition"])
+def test_every_configured_ambiguous_term_has_a_blocked_case(term: str) -> None:
+    configured = ambiguous()[term]
+    blocker = configured.blocked_by_any_of[0]
+    blocked = paper(f"A study of {term}", f"We examine {term} in the {blocker} regime.", ["hep-ph"])
+    findings = evaluate_context_requirements(blocked, ambiguous(), domain())
+    match = next(finding for finding in findings if finding.term == term)
+    assert match.outcome is ContextOutcome.BLOCKED
+    assert blocker in match.matched_blockers
+    assert blocking_finding(findings) is not None
+
+
+def test_absent_context_penalizes_rather_than_rejecting() -> None:
+    """Short abstracts lack vocabulary; absence of context is weak evidence."""
+    bare = paper("On the monopole", "A monopole is discussed at length.", ["hep-ph"])
+    findings = evaluate_context_requirements(bare, ambiguous(), domain())
+    assert [finding.outcome for finding in findings] == [ContextOutcome.PENALIZED]
+    assert blocking_finding(findings) is None
+
+
+def test_in_field_papers_are_flagged_but_never_blocked() -> None:
+    """The same guard as the hard rules: cross-listed work is flagged, not removed."""
+    in_field = paper(
+        "Monopoles in spin ice",
+        "We discuss monopole dynamics and compare with a cosmological analogue.",
+        ["cond-mat.str-el"],
+    )
+    findings = evaluate_context_requirements(in_field, ambiguous(), domain())
+    assert blocking_finding(findings) is None
+
+
+def test_terms_that_do_not_appear_produce_no_finding() -> None:
+    unrelated = paper("A quiet paper", "Nothing ambiguous appears here.", ["cond-mat.str-el"])
+    assert evaluate_context_requirements(unrelated, ambiguous(), domain()) == ()
+
+
+def test_accept_default_records_no_penalty() -> None:
+    terms = {
+        "monopole": AmbiguousTerm(
+            requires_any_of=["spin ice"], default_when_neither=ContextDefault.ACCEPT
+        )
+    }
+    bare = paper("On the monopole", "A monopole appears.", ["hep-ph"])
+    findings = evaluate_context_requirements(bare, terms, domain())
+    assert [finding.outcome for finding in findings] == [ContextOutcome.ACCEPTED]
+
+
+def test_reject_default_blocks_off_domain_papers_only() -> None:
+    terms = {
+        "monopole": AmbiguousTerm(
+            requires_any_of=["spin ice"], default_when_neither=ContextDefault.REJECT
+        )
+    }
+    off_domain = paper("On the monopole", "A monopole appears.", ["hep-ph"])
+    assert blocking_finding(evaluate_context_requirements(off_domain, terms, domain())) is not None
+    in_field = paper("On the monopole", "A monopole appears.", ["cond-mat.str-el"])
+    assert blocking_finding(evaluate_context_requirements(in_field, terms, domain())) is None
+
+
+def test_findings_describe_themselves_for_the_rejection_log() -> None:
+    blocked = paper(
+        "Monopole cosmology",
+        "Primordial monopoles from inflation.",
+        ["hep-ph"],
+    )
+    findings = evaluate_context_requirements(blocked, ambiguous(), domain())
+    assert "primordial" in findings[0].describe()

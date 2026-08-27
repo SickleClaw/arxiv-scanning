@@ -167,3 +167,96 @@ def evaluate_hard_exclusions(
         if rule.holds(paper, tokens):
             return HardExclusion(rule_id=rule.id, reason=rule.reason)
     return None
+
+
+class ContextOutcome(StrEnum):
+    """The verdict on one ambiguous term found in a paper."""
+
+    SATISFIED = "satisfied"
+    """Required condensed-matter context was present."""
+
+    PENALIZED = "penalized"
+    """Neither context nor blocker appeared; flagged for scoring to weigh."""
+
+    ACCEPTED = "accepted"
+    """Neither appeared, and the term is configured to accept that."""
+
+    BLOCKED = "blocked"
+    """A blocking term appeared, and the paper is not in-field."""
+
+    @property
+    def rejects(self) -> bool:
+        """Whether this outcome removes the paper rather than flagging it."""
+        return self is ContextOutcome.BLOCKED
+
+
+@dataclass(frozen=True, slots=True)
+class ContextFinding:
+    """One ambiguous term found in a paper, with the evidence for its verdict."""
+
+    term: str
+    outcome: ContextOutcome
+    matched_context: tuple[str, ...] = ()
+    matched_blockers: tuple[str, ...] = ()
+
+    def describe(self) -> str:
+        """Render the finding for a rejection log or an explain listing."""
+        if self.outcome is ContextOutcome.BLOCKED:
+            return f"{self.term!r} appears with {', '.join(self.matched_blockers)}"
+        if self.outcome is ContextOutcome.SATISFIED:
+            return f"{self.term!r} supported by {', '.join(self.matched_context)}"
+        return f"{self.term!r} appears without condensed-matter context"
+
+
+def evaluate_context_requirements(
+    paper: Paper,
+    ambiguous_terms: dict[str, AmbiguousTerm],
+    domain: DomainConfig,
+) -> tuple[ContextFinding, ...]:
+    """Judge every configured ambiguous term that actually appears in the paper.
+
+    Absence of positive context is weak evidence, not a verdict: abstracts are
+    short and an author may simply not use the expected vocabulary. The default
+    is therefore to flag for penalty and let scoring decide.
+
+    Blocking is subject to the same in-field guard as the hard rules. A paper
+    cross-listed into the group's field is flagged, never removed, no matter
+    which blocking words it happens to contain.
+    """
+    tokens = paper_tokens(paper)
+    in_field = bool(domain.included(paper.categories))
+    findings: list[ContextFinding] = []
+    for term, configured in ambiguous_terms.items():
+        if not count_term(tokens, term):
+            continue
+        blockers = tuple(
+            value for value in configured.blocked_by_any_of if count_term(tokens, value)
+        )
+        context = tuple(value for value in configured.requires_any_of if count_term(tokens, value))
+        if blockers and not in_field:
+            outcome = ContextOutcome.BLOCKED
+        elif context:
+            outcome = ContextOutcome.SATISFIED
+        elif blockers:
+            # In-field work is never removed here; the conflict is still recorded.
+            outcome = ContextOutcome.PENALIZED
+        elif configured.default_when_neither is ContextDefault.ACCEPT:
+            outcome = ContextOutcome.ACCEPTED
+        elif configured.default_when_neither is ContextDefault.REJECT and not in_field:
+            outcome = ContextOutcome.BLOCKED
+        else:
+            outcome = ContextOutcome.PENALIZED
+        findings.append(
+            ContextFinding(
+                term=term,
+                outcome=outcome,
+                matched_context=context,
+                matched_blockers=blockers,
+            )
+        )
+    return tuple(findings)
+
+
+def blocking_finding(findings: Sequence[ContextFinding]) -> ContextFinding | None:
+    """Return the first finding that removes the paper, if any."""
+    return next((finding for finding in findings if finding.outcome.rejects), None)
