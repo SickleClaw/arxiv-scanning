@@ -1,0 +1,52 @@
+# Lab-level profile. Committed: it holds no personal data.
+#
+# Phase 1 uses only the `domain` block below. `research_areas` and
+# `group_interests` are deliberately absent until the member responses are in
+# (Phase 4) — deriving them from real answers beats drafting them speculatively.
+#
+# REVIEW THIS BLOCK. These category lists decide what the system is capable of
+# ever seeing. A category missing from `include` and `soft` can still reach the
+# digest, but only by being cross-listed into one that is present.
+name: Condensed Matter Group
+description: >-
+  Experimental and computational condensed-matter physics: quantum materials,
+  magnetism and frustrated magnetism, neutron and X-ray scattering, transport,
+  crystal growth, thin films, spintronics, correlated electrons, and
+  machine-learning methods applied to materials.
+
+domain:
+  # In-field. A paper carrying any of these is in scope, full stop — including
+  # when it also carries an excluded category. That precedence is what keeps
+  # "magnetic monopole excitations in spin ice" while dropping the cosmological
+  # kind, and it is asserted by test_domain_config.py.
+  include_categories:
+    - cond-mat.*        # also matches the bare legacy `cond-mat` cross-list
+    - physics.ins-det
+    - physics.comp-ph
+    - physics.app-ph
+    - mtrl-th
+
+  # Adjacent. Admitted to gating, but must earn their place on the evidence
+  # rather than being accepted on category alone. This is the list that keeps
+  # ML-for-materials and superconducting-qubit-materials work reachable.
+  soft_categories:
+    - quant-ph
+    - physics.optics
+    - physics.chem-ph
+    - cs.LG
+    - stat.ML
+
+  # Out of field. Only decisive when nothing above matched.
+  exclude_categories:
+    - astro-ph.*
+    - hep-ph
+    - hep-th
+    - hep-ex
+    - hep-lat
+    - gr-qc
+    - nucl-th
+    - nucl-ex
+    - math.*
+    - q-bio.*
+    - q-fin.*
+    - econ.*

@@ -45,6 +45,9 @@ AppConfigOption = Annotated[
 ProfileConfigOption = Annotated[
     Path, typer.Option("--profile-config", help="Path to research profile YAML.")
 ]
+GroupConfigOption = Annotated[
+    Path, typer.Option("--group-config", help="Path to the lab group profile YAML.")
+]
 
 
 class SummaryMode(StrEnum):
@@ -55,8 +58,8 @@ class SummaryMode(StrEnum):
     OPENAI = "openai"
 
 
-def _load(app_config: Path, profile_config: Path) -> Settings:
-    return load_settings(app_config, profile_config)
+def _load(app_config: Path, profile_config: Path, group_config: Path) -> Settings:
+    return load_settings(app_config, profile_config, group_config)
 
 
 def _configure_logging(settings: Settings) -> None:
@@ -194,10 +197,11 @@ def doctor(
     ] = False,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Validate configuration, writable paths, and arXiv connection settings."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _writable(settings.app.paths.data_dir)
         _writable(settings.app.paths.reports_dir)
         _writable(settings.app.paths.history_file.parent)
@@ -241,10 +245,11 @@ def doctor(
 def show_config(
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Print the effective validated configuration with secret-like values redacted."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
     except ArxivDigestError as exc:
         _fail(exc)
     typer.echo(settings_as_json(settings))
@@ -284,10 +289,11 @@ def email_report(
     ] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Explicitly email an already-generated report without rerunning the pipeline."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         reports_dir = settings.app.paths.reports_dir
         markdown_path = markdown or reports_dir / "latest.md"
         html_path = html or reports_dir / "latest.html"
@@ -311,10 +317,11 @@ def fetch(
     output: Annotated[Path | None, typer.Option(help="Candidate JSON output path.")] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Fetch, normalize, deduplicate, and write an arXiv candidate snapshot."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(
@@ -352,10 +359,11 @@ def rank(
     ] = False,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Rank an existing snapshot, retrieving only when explicitly requested."""
     try:
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(settings, days=days, start=start, end=end, now=now)
@@ -411,12 +419,13 @@ def run(
     ] = None,
     app_config: AppConfigOption = Path("config/app.yaml"),
     profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
 ) -> None:
     """Retrieve or load candidates, then rank, summarize, and write weekly reports."""
     try:
         if dry_run and send_email:
             raise ConfigurationError("--send-email cannot be combined with --dry-run")
-        settings = _load(app_config, profile_config)
+        settings = _load(app_config, profile_config, group_config)
         _configure_logging(settings)
         now = datetime.now(UTC)
         window = _requested_window(settings, days=days, start=start, end=end, now=now)
