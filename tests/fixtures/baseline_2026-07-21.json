@@ -11,9 +11,9 @@
       "rank": 1,
       "arxiv_id": "2607.23490",
       "primary_category": "cond-mat.str-el",
-      "final_preselection_score": 0.394383,
+      "final_preselection_score": 0.394369,
       "components": {
-        "semantic_relevance": 0.173598,
+        "semantic_relevance": 0.173567,
         "keyword_relevance": 0.091429,
         "category_relevance": 1.0,
         "recency": 0.934064
@@ -23,9 +23,9 @@
       "rank": 2,
       "arxiv_id": "2509.09189",
       "primary_category": "cond-mat.str-el",
-      "final_preselection_score": 0.360718,
+      "final_preselection_score": 0.36544,
       "components": {
-        "semantic_relevance": 0.098804,
+        "semantic_relevance": 0.109297,
         "keyword_relevance": 0.087143,
         "category_relevance": 1.0,
         "recency": 0.944708
@@ -35,9 +35,9 @@
       "rank": 3,
       "arxiv_id": "2607.25213",
       "primary_category": "cond-mat.str-el",
-      "final_preselection_score": 0.340806,
+      "final_preselection_score": 0.344158,
       "components": {
-        "semantic_relevance": 0.1015,
+        "semantic_relevance": 0.108949,
         "keyword_relevance": 0.025,
         "category_relevance": 1.0,
         "recency": 0.888812
@@ -47,9 +47,9 @@
       "rank": 4,
       "arxiv_id": "2504.00074",
       "primary_category": "cond-mat.mes-hall",
-      "final_preselection_score": 0.324407,
+      "final_preselection_score": 0.324392,
       "components": {
-        "semantic_relevance": 0.093533,
+        "semantic_relevance": 0.093501,
         "keyword_relevance": 0.03,
         "category_relevance": 0.8,
         "recency": 0.94817
@@ -59,9 +59,9 @@
       "rank": 5,
       "arxiv_id": "2607.25481",
       "primary_category": "physics.plasm-ph",
-      "final_preselection_score": 0.286713,
+      "final_preselection_score": 0.286615,
       "components": {
-        "semantic_relevance": 0.076382,
+        "semantic_relevance": 0.076164,
         "keyword_relevance": 0.0,
         "category_relevance": 0.6,
         "recency": 0.92341
@@ -71,9 +71,9 @@
       "rank": 6,
       "arxiv_id": "2607.21827",
       "primary_category": "cond-mat.str-el",
-      "final_preselection_score": 0.285632,
+      "final_preselection_score": 0.285594,
       "components": {
-        "semantic_relevance": 0.093178,
+        "semantic_relevance": 0.093094,
         "keyword_relevance": 0.03,
         "category_relevance": 1.0,
         "recency": 0.362017
@@ -83,9 +83,9 @@
       "rank": 7,
       "arxiv_id": "2607.22176",
       "primary_category": "cond-mat.str-el",
-      "final_preselection_score": 0.275078,
+      "final_preselection_score": 0.276344,
       "components": {
-        "semantic_relevance": 0.060164,
+        "semantic_relevance": 0.062977,
         "keyword_relevance": 0.02,
         "category_relevance": 1.0,
         "recency": 0.430046
@@ -143,9 +143,9 @@
       "rank": 12,
       "arxiv_id": "2607.25684",
       "primary_category": "quant-ph",
-      "final_preselection_score": 0.219756,
+      "final_preselection_score": 0.21974,
       "components": {
-        "semantic_relevance": 0.042738,
+        "semantic_relevance": 0.042703,
         "keyword_relevance": 0.025,
         "category_relevance": 0.0,
         "recency": 0.94274
@@ -153,35 +153,35 @@
     },
     {
       "rank": 13,
-      "arxiv_id": "2607.25263",
-      "primary_category": "cond-mat.dis-nn",
-      "final_preselection_score": 0.210385,
-      "components": {
-        "semantic_relevance": 0.046136,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.0,
-        "recency": 0.896236
-      }
-    },
-    {
-      "rank": 14,
       "arxiv_id": "2607.24989",
       "primary_category": "hep-th",
-      "final_preselection_score": 0.208902,
+      "final_preselection_score": 0.212437,
       "components": {
-        "semantic_relevance": 0.039823,
+        "semantic_relevance": 0.04768,
         "keyword_relevance": 0.025,
         "category_relevance": 0.0,
         "recency": 0.847312
       }
     },
     {
+      "rank": 14,
+      "arxiv_id": "2607.25263",
+      "primary_category": "cond-mat.dis-nn",
+      "final_preselection_score": 0.210308,
+      "components": {
+        "semantic_relevance": 0.045964,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.896236
+      }
+    },
+    {
       "rank": 15,
       "arxiv_id": "2607.18594",
       "primary_category": "cond-mat.mtrl-sci",
-      "final_preselection_score": 0.208682,
+      "final_preselection_score": 0.208675,
       "components": {
-        "semantic_relevance": 0.049793,
+        "semantic_relevance": 0.049777,
         "keyword_relevance": 0.025,
         "category_relevance": 0.8,
         "recency": 0.000255
@@ -191,9 +191,9 @@
       "rank": 16,
       "arxiv_id": "2605.21281",
       "primary_category": "hep-ph",
-      "final_preselection_score": 0.206195,
+      "final_preselection_score": 0.206249,
       "components": {
-        "semantic_relevance": 0.055079,
+        "semantic_relevance": 0.0552,
         "keyword_relevance": 0.0,
         "category_relevance": 0.0,
         "recency": 0.814091
@@ -203,9 +203,9 @@
       "rank": 17,
       "arxiv_id": "2607.20843",
       "primary_category": "hep-ph",
-      "final_preselection_score": 0.143368,
+      "final_preselection_score": 0.143419,
       "components": {
-        "semantic_relevance": 0.038287,
+        "semantic_relevance": 0.0384,
         "keyword_relevance": 0.0,
         "category_relevance": 0.0,
         "recency": 0.261389
@@ -215,9 +215,9 @@
       "rank": 18,
       "arxiv_id": "2607.18851",
       "primary_category": "gr-qc",
-      "final_preselection_score": 0.12322,
+      "final_preselection_score": 0.123247,
       "components": {
-        "semantic_relevance": 0.027713,
+        "semantic_relevance": 0.027773,
         "keyword_relevance": 0.025,
         "category_relevance": 0.0,
         "recency": 0.044996
