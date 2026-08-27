@@ -73,11 +73,6 @@ def filter_recent_history(
     return included, excluded
 
 
-def recommended_ids(history: Sequence[HistoryRecord]) -> set[str]:
-    """Return canonical identifiers seen at any point in history for novelty scoring."""
-    return {record.arxiv_id for record in history}
-
-
 def records_for_selection(
     *,
     run_id: str,

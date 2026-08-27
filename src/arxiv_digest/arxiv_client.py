@@ -35,7 +35,8 @@ def _utc(value: datetime) -> datetime:
     return value.astimezone(UTC)
 
 
-def _quote_term(value: str) -> str:
+def quote_term(value: str) -> str:
+    """Quote and escape one search term for an arXiv ``all:`` clause."""
     escaped = normalize_whitespace(value).replace("\\", "\\\\").replace('"', '\\"')
     return f'all:"{escaped}"'
 
@@ -62,7 +63,7 @@ def build_category_guard(domain: DomainConfig) -> str:
 
 def build_search_query(query: QueryConfig, window: DateWindow, domain: DomainConfig) -> str:
     """Build a category-guarded expression bounded by arXiv's submission filter."""
-    term_group = " OR ".join(_quote_term(term) for term in query.terms)
+    term_group = " OR ".join(quote_term(term) for term in query.terms)
     inclusive_end = _utc(window.end) - timedelta(minutes=1)
     start = _utc(window.start).strftime("%Y%m%d%H%M")
     end = inclusive_end.strftime("%Y%m%d%H%M")
@@ -73,7 +74,7 @@ def build_search_query(query: QueryConfig, window: DateWindow, domain: DomainCon
 
 def build_term_query(query: QueryConfig, domain: DomainConfig) -> str:
     """Build an unbounded category-guarded query for the update-sorted pass."""
-    term_group = " OR ".join(_quote_term(term) for term in query.terms)
+    term_group = " OR ".join(quote_term(term) for term in query.terms)
     return f"({term_group}) AND ({build_category_guard(domain)})"
 
 

@@ -21,6 +21,8 @@ smtp-debug.log
 data/*.json
 data/*.jsonl
 !data/history.jsonl
+# Measured once and cached indefinitely; committed so CI never needs the network.
+!data/term_ambiguity.json
 reports/*
 !reports/.gitkeep
 !reports/latest.json

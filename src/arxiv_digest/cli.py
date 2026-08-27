@@ -18,6 +18,13 @@ from arxiv_digest.config import Settings, load_settings, settings_as_json
 from arxiv_digest.dashboard.launcher import launch_dashboard
 from arxiv_digest.dashboard.paths import find_repository_root
 from arxiv_digest.delivery import SMTPDeliveryProvider, validate_delivery_ready
+from arxiv_digest.disambiguation import (
+    DEFAULT_TABLE_PATH,
+    load_table,
+    measure_terms,
+    save_table,
+    unguarded_risky_terms,
+)
 from arxiv_digest.domain_filter import load_disambiguation
 from arxiv_digest.exceptions import ArxivDigestError, ConfigurationError
 from arxiv_digest.explain import explain_paper
@@ -354,6 +361,77 @@ def explain(
     typer.echo(f"source {source_path}")
     for line in lines:
         typer.echo(line)
+
+
+@app.command("measure-ambiguity")
+def measure_ambiguity(
+    refresh: Annotated[
+        bool, typer.Option("--refresh", help="Re-measure every term instead of reusing the cache.")
+    ] = False,
+    table_path: Annotated[
+        Path, typer.Option("--table", help="Cached measurement table path.")
+    ] = DEFAULT_TABLE_PATH,
+    disambiguation_config: Annotated[
+        Path,
+        typer.Option("--disambiguation-config", help="Path to disambiguation rules YAML."),
+    ] = Path("config/disambiguation.yaml"),
+    app_config: AppConfigOption = Path("config/app.yaml"),
+    profile_config: ProfileConfigOption = Path("config/research_profile.yaml"),
+    group_config: GroupConfigOption = Path("profiles/group.yaml"),
+) -> None:
+    """Measure how ambiguous each profile term is, and flag the ones that need a guard."""
+    try:
+        settings = _load(app_config, profile_config, group_config)
+        _configure_logging(settings)
+        terms = sorted(
+            {
+                *settings.profile.exact_phrases,
+                *settings.profile.materials,
+                *settings.profile.methods,
+                *(term for query in settings.profile.queries for term in query.terms),
+            }
+        )
+        cached = load_table(table_path)
+        known = (
+            set(cached.records) if cached and not cached.stale_for(settings.group.domain) else set()
+        )
+        pending = [term for term in terms if term not in known]
+        if refresh:
+            pending = terms
+        typer.echo(
+            f"Measuring {len(pending)} term(s) with 2 paced requests each; "
+            f"{len(terms) - len(pending)} reused from cache."
+            if pending
+            else f"All {len(terms)} term(s) already measured; no requests needed."
+        )
+        # Nothing is fetched when every term is cached, so this is safe to rerun.
+        with ArxivClient(settings.app.arxiv) as client:
+            table = measure_terms(
+                client,
+                terms,
+                settings.group.domain,
+                cached=cached,
+                refresh=refresh,
+            )
+        destination = save_table(table, table_path)
+    except ArxivDigestError as exc:
+        _fail(exc)
+
+    for record in sorted(table.records.values(), key=lambda item: -item.ambiguity):
+        marker = "!" if record.needs_context_guard else " "
+        typer.echo(
+            f" {marker} {record.ambiguity:.2f}  {record.term} "
+            f"({record.in_field_results}/{record.total_results} in field)"
+        )
+    guards = load_disambiguation(disambiguation_config).ambiguous_terms
+    unguarded = unguarded_risky_terms(table, list(guards))
+    if unguarded:
+        typer.echo("")
+        typer.echo("These terms are ambiguous and have no context requirement configured:")
+        for record in unguarded:
+            typer.echo(f"  - {record.describe()}")
+        typer.echo(f"Add a context requirement in {disambiguation_config} for each.")
+    typer.echo(f"Wrote {destination}.")
 
 
 @app.command("fetch")

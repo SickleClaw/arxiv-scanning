@@ -62,3 +62,25 @@ ambiguous_terms:
       [order parameter, critical exponent, magnetic, structural, quantum critical, lattice]
     blocked_by_any_of: [electroweak, QCD, cosmological, deconfinement]
     default_when_neither: penalize
+
+  # The three below were not anticipated; `arxiv-digest measure-ambiguity`
+  # found them in this profile's own method terms. Measured 2026-08-27:
+  # 'inverse problems' 4% in field, 'cluster algorithm' 8%, 'loop algorithm' 37%.
+  inverse problems:
+    requires_any_of:
+      [scattering, neutron, spin, magnetic, materials, lattice, condensed matter,
+       structure factor, diffraction, Hamiltonian]
+    blocked_by_any_of: [medical imaging, seismic, geophysical, tomography, financial]
+    default_when_neither: penalize
+
+  cluster algorithm:
+    requires_any_of:
+      [Monte Carlo, spin, magnetic, lattice, Ising, Potts, Wolff, Swendsen-Wang,
+       simulation, critical]
+    blocked_by_any_of: [data mining, k-means, unsupervised, document clustering]
+    default_when_neither: penalize
+
+  loop algorithm:
+    requires_any_of: [Monte Carlo, quantum, spin, worm, lattice, path integral, sampling]
+    blocked_by_any_of: [compiler, graph traversal, program optimization]
+    default_when_neither: penalize
