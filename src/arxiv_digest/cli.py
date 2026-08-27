@@ -338,7 +338,8 @@ def fetch(
         _fail(exc)
     typer.echo(
         f"Retrieved {snapshot.records_retrieved} records, deduplicated to "
-        f"{snapshot.records_after_deduplication}, wrote {destination}."
+        f"{snapshot.records_after_deduplication}, gated out {len(snapshot.rejections)}, "
+        f"kept {len(snapshot.papers)}, wrote {destination}."
     )
 
 

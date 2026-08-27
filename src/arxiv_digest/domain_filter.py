@@ -15,9 +15,20 @@ from typing import Literal
 
 from pydantic import Field, ValidationError, field_validator, model_validator
 
-from arxiv_digest.config import DomainConfig, category_matches, read_yaml_mapping
+from arxiv_digest.config import (
+    DomainClass,
+    DomainConfig,
+    category_matches,
+    read_yaml_mapping,
+)
 from arxiv_digest.exceptions import ConfigurationError
-from arxiv_digest.models import Paper, StrictModel
+from arxiv_digest.models import (
+    ContextFlag,
+    GateRejection,
+    GateStage,
+    Paper,
+    StrictModel,
+)
 from arxiv_digest.normalization import count_term, tokenize
 
 ConditionField = Literal["text", "categories", "primary_category"]
@@ -260,3 +271,113 @@ def evaluate_context_requirements(
 def blocking_finding(findings: Sequence[ContextFinding]) -> ContextFinding | None:
     """Return the first finding that removes the paper, if any."""
     return next((finding for finding in findings if finding.outcome.rejects), None)
+
+
+@dataclass(frozen=True, slots=True)
+class GateResult:
+    """What the deterministic gates kept, removed, and flagged."""
+
+    kept: list[Paper]
+    rejections: list[GateRejection]
+    context_flags: list[ContextFlag]
+
+
+def _rejection(
+    paper: Paper, stage: GateStage, reason: str, rule_id: str | None = None
+) -> GateRejection:
+    return GateRejection(
+        arxiv_id=paper.arxiv_id,
+        title=paper.title,
+        primary_category=paper.primary_category,
+        categories=list(paper.categories),
+        stage=stage,
+        reason=reason,
+        rule_id=rule_id,
+    )
+
+
+def gate_papers(
+    papers: Sequence[Paper],
+    *,
+    domain: DomainConfig,
+    disambiguation: DisambiguationConfig,
+    negative_terms: Sequence[str] = (),
+) -> GateResult:
+    """Run the deterministic gates in cost order, recording every rejection.
+
+    Category first because it is free and removes the most, then the hard rules,
+    then the ambiguous-term context requirements, then the profile's own
+    negative terms. Gating happens before scoring, not as part of it: a soft
+    penalty inside a weighted sum can always be outvoted, and that is precisely
+    how off-domain papers reached the digest before.
+
+    History exclusion is deliberately not here. It depends on when the run
+    happens and on a file that grows every week, and keeping it out leaves the
+    retrieval snapshot reproducible.
+    """
+    kept: list[Paper] = []
+    rejections: list[GateRejection] = []
+    flags: list[ContextFlag] = []
+
+    for paper in papers:
+        classification = domain.classify(paper.categories)
+        if classification is DomainClass.EXCLUDE:
+            rejections.append(
+                _rejection(
+                    paper,
+                    GateStage.CATEGORY,
+                    f"categories {', '.join(domain.excluded(paper.categories))} are out of field, "
+                    "with no in-field cross-list",
+                )
+            )
+            continue
+        if classification is DomainClass.UNKNOWN:
+            rejections.append(
+                _rejection(
+                    paper,
+                    GateStage.CATEGORY,
+                    f"categories {', '.join(paper.categories)} are neither in-field nor adjacent",
+                )
+            )
+            continue
+
+        exclusion = evaluate_hard_exclusions(paper, disambiguation.hard_exclusions, domain)
+        if exclusion is not None:
+            rejections.append(
+                _rejection(paper, GateStage.HARD_RULE, exclusion.reason, exclusion.rule_id)
+            )
+            continue
+
+        findings = evaluate_context_requirements(paper, disambiguation.ambiguous_terms, domain)
+        blocked = blocking_finding(findings)
+        if blocked is not None:
+            rejections.append(
+                _rejection(
+                    paper,
+                    GateStage.CONTEXT,
+                    f"ambiguous term {blocked.describe()}",
+                    blocked.term,
+                )
+            )
+            continue
+
+        tokens = paper_tokens(paper)
+        matched_negative = [term for term in negative_terms if count_term(tokens, term)]
+        if matched_negative:
+            rejections.append(
+                _rejection(
+                    paper,
+                    GateStage.NEGATIVE_TERM,
+                    f"matched negative profile terms: {', '.join(matched_negative)}",
+                )
+            )
+            continue
+
+        kept.append(paper)
+        flags.extend(
+            ContextFlag(arxiv_id=paper.arxiv_id, term=finding.term, detail=finding.describe())
+            for finding in findings
+            if finding.outcome is ContextOutcome.PENALIZED
+        )
+
+    return GateResult(kept=kept, rejections=rejections, context_flags=flags)

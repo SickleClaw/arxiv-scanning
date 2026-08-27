@@ -6,7 +6,14 @@ import hashlib
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
-from arxiv_digest.models import CandidateSnapshot, DateWindow, Paper, QueryResult
+from arxiv_digest.models import (
+    CandidateSnapshot,
+    ContextFlag,
+    DateWindow,
+    GateRejection,
+    Paper,
+    QueryResult,
+)
 
 
 def make_run_id(window: DateWindow, profile_version: str) -> str:
@@ -24,8 +31,15 @@ def create_snapshot(
     query_results: list[QueryResult],
     raw_papers: list[Paper],
     deduplicated_papers: list[Paper],
+    kept_papers: list[Paper] | None = None,
+    rejections: list[GateRejection] | None = None,
+    context_flags: list[ContextFlag] | None = None,
 ) -> CandidateSnapshot:
-    """Build a validated machine-readable snapshot."""
+    """Build a validated machine-readable snapshot.
+
+    ``kept_papers`` is what survived gating; when omitted the deduplicated set
+    is kept whole, which is what an ungated fetch produces.
+    """
     return CandidateSnapshot(
         run_id=make_run_id(window, profile_version),
         generated_at=generated_at.astimezone(UTC),
@@ -33,7 +47,9 @@ def create_snapshot(
         queries=query_results,
         records_retrieved=len(raw_papers),
         records_after_deduplication=len(deduplicated_papers),
-        papers=deduplicated_papers,
+        papers=deduplicated_papers if kept_papers is None else kept_papers,
+        rejections=rejections or [],
+        context_flags=context_flags or [],
     )
 
 

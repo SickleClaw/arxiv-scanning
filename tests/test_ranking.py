@@ -38,8 +38,8 @@ def test_title_match_outweighs_abstract_match(paper_factory) -> None:  # type: i
         title="A general magnetic study",
         abstract="We investigate spin ice dynamics.",
     )
-    title_score, title_terms, _negative = keyword_relevance(title_match, profile)
-    abstract_score, abstract_terms, _negative = keyword_relevance(abstract_match, profile)
+    title_score, title_terms = keyword_relevance(title_match, profile)
+    abstract_score, abstract_terms = keyword_relevance(abstract_match, profile)
     assert title_score > abstract_score
     assert title_terms[0][0] == abstract_terms[0][0] == "spin ice"
 
@@ -50,10 +50,9 @@ def test_whole_term_matching_avoids_substring_false_positive(paper_factory) -> N
         title="Spineless optimization",
         abstract="A spineless model for a social network.",
     )
-    score, matched, negative = keyword_relevance(paper, profile)
+    score, matched = keyword_relevance(paper, profile)
     assert score == 0.0
     assert all(term != "spinel" for term, _contribution in matched)
-    assert "social network" in negative
 
 
 def test_category_weight_is_normalized(paper_factory) -> None:  # type: ignore[no-untyped-def]
@@ -138,35 +137,33 @@ def test_ranking_is_deterministic_and_explains_strongest_terms(paper_factory) ->
     assert all(0.0 <= item.score.final_preselection_score <= 1.0 for item in first)
 
 
-def test_author_boost_and_negative_penalty_are_bounded(paper_factory) -> None:  # type: ignore[no-untyped-def]
+def test_author_boost_is_bounded(paper_factory) -> None:  # type: ignore[no-untyped-def]
     base = load_settings().profile
     boosted_profile = base.model_copy(update={"author_boosts": {"Ada Curie": 2.0}})
     paper = paper_factory(title="A general magnetic study")
-    base_score, _matched, _negative = keyword_relevance(paper, base)
-    boosted_score, _matched, _negative = keyword_relevance(paper, boosted_profile)
+    base_score, _matched = keyword_relevance(paper, base)
+    boosted_score, _matched = keyword_relevance(paper, boosted_profile)
     assert base_score < boosted_score <= base_score + 0.15
 
-    novelty_profile = base.model_copy(
-        update={
-            "ranking_weights": RankingWeights(
-                semantic_relevance=0,
-                keyword_relevance=0,
-                category_relevance=0,
-                recency=0,
-                feedback_or_novelty=1,
-            )
-        }
-    )
+
+def test_ranking_no_longer_penalizes_negative_terms(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """Negative terms are a gate, not a penalty a strong score could outvote.
+
+    A paper matching one never reaches ranking; domain_filter.gate_papers
+    removes it with a logged reason. Scoring must therefore treat the two
+    papers below identically.
+    """
+    profile = load_settings().profile
     clean = paper_factory(arxiv_id="2607.13001", abstract="A general magnetic study.")
-    penalized = paper_factory(
+    formerly_penalized = paper_factory(
         arxiv_id="2607.13002",
         abstract="A general magnetic study of a financial market.",
     )
     scores = {
         item.paper.arxiv_id: item.score.final_preselection_score
-        for item in rank_papers([clean, penalized], novelty_profile, ranking_window())
+        for item in rank_papers([clean, formerly_penalized], profile, ranking_window())
     }
-    assert scores["2607.13002"] == pytest.approx(scores["2607.13001"] - 0.20)
+    assert scores["2607.13002"] == pytest.approx(scores["2607.13001"], abs=0.02)
 
 
 def test_frozen_baseline_matches_current_ranking() -> None:

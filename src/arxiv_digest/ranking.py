@@ -16,7 +16,6 @@ from arxiv_digest.normalization import count_term, tokenize
 _TITLE_MATCH_WEIGHT = 1.0
 _ABSTRACT_MATCH_WEIGHT = 0.35
 _MAX_AUTHOR_BOOST = 0.15
-_NEGATIVE_TERM_PENALTY = 0.20
 
 
 def _positive_terms(profile: ResearchProfile) -> dict[str, float]:
@@ -30,8 +29,14 @@ def _positive_terms(profile: ResearchProfile) -> dict[str, float]:
 def keyword_relevance(
     paper: Paper,
     profile: ResearchProfile,
-) -> tuple[float, list[tuple[str, float]], list[str]]:
-    """Score weighted whole-term matches in 0..1, favoring title over abstract matches."""
+) -> tuple[float, list[tuple[str, float]]]:
+    """Score weighted whole-term matches in 0..1, favoring title over abstract matches.
+
+    Negative terms are not handled here. They are a gate now (see
+    ``domain_filter.gate_papers``): a paper matching one is removed with a
+    logged reason rather than penalized by an amount other components could
+    outvote.
+    """
     title_tokens = tokenize(paper.title)
     abstract_tokens = tokenize(paper.abstract)
     configured_terms = _positive_terms(profile)
@@ -64,13 +69,8 @@ def keyword_relevance(
         )
         base_score += author_boost
 
-    negative_matches = [
-        term
-        for term in profile.negative_terms
-        if count_term(title_tokens, term) or count_term(abstract_tokens, term)
-    ]
     matched.sort(key=lambda item: (-item[1], item[0].casefold()))
-    return min(1.0, base_score), matched, negative_matches
+    return min(1.0, base_score), matched
 
 
 def category_relevance(paper: Paper, profile: ResearchProfile) -> float:
@@ -157,7 +157,7 @@ def rank_papers(
     ranked: list[RankedPaper] = []
 
     for paper, semantic in zip(candidates, semantic_scores, strict=True):
-        keyword, matched, negative_matches = keyword_relevance(paper, profile)
+        keyword, matched = keyword_relevance(paper, profile)
         category = category_relevance(paper, profile)
         recency = recency_score(paper, window)
         novelty = 0.5 if paper.arxiv_id in previous_ids else 1.0
@@ -169,18 +169,13 @@ def rank_papers(
             + (weights.recency * recency)
             + (weights.feedback_or_novelty * novelty)
         )
-        penalty = min(0.5, len(negative_matches) * _NEGATIVE_TERM_PENALTY)
-        final_score = min(1.0, max(0.0, raw_score - penalty))
+        final_score = min(1.0, max(0.0, raw_score))
         strongest = [term for term, _contribution in matched[:5]]
         explanation_parts = [
             f"Strongest matched profile terms: {', '.join(strongest)}."
             if strongest
             else "No configured positive profile terms matched."
         ]
-        if negative_matches:
-            explanation_parts.append(
-                f"Negative terms reduced the score: {', '.join(sorted(negative_matches))}."
-            )
         ranked.append(
             RankedPaper(
                 paper=paper,

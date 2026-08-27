@@ -21,15 +21,22 @@ domain:
   # kind, and it is asserted by test_domain_config.py.
   include_categories:
     - cond-mat.*        # also matches the bare legacy `cond-mat` cross-list
-    - physics.ins-det
-    - physics.comp-ph
-    - physics.app-ph
     - mtrl-th
 
   # Adjacent. Admitted to gating, but must earn their place on the evidence
-  # rather than being accepted on category alone. This is the list that keeps
+  # rather than being accepted on category alone, and without the hard-rule
+  # protection that in-field work gets. This is the list that keeps
   # ML-for-materials and superconducting-qubit-materials work reachable.
+  #
+  # The supporting physics archives sit here rather than above on purpose. They
+  # are where condensed-matter work is often cross-listed, but a paper whose
+  # only connection is `physics.comp-ph` is computational physics, not
+  # necessarily ours — the X-ray Thomson scattering plasma paper from the
+  # 2026-07-21 window is exactly that case.
   soft_categories:
+    - physics.ins-det
+    - physics.comp-ph
+    - physics.app-ph
     - quant-ph
     - physics.optics
     - physics.chem-ph
