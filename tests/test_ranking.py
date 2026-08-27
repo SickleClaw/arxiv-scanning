@@ -197,3 +197,71 @@ def test_frozen_baseline_matches_current_ranking() -> None:
             components["category_relevance"], abs=1e-6
         )
         assert actual.score.recency == pytest.approx(components["recency"], abs=1e-6)
+
+
+def test_keyword_evidence_saturates_instead_of_dividing_by_every_weight(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """Three strong title matches should score around 0.70, not 0.09."""
+    profile = load_settings().profile
+    strong = paper_factory(
+        title="Spin ice, pyrochlore, and neutron scattering",
+        abstract="A study.",
+    )
+    score, matched = keyword_relevance(strong, profile)
+    assert len(matched) >= 3
+    assert 0.55 < score < 0.85
+
+
+def test_adding_interests_does_not_dilute_existing_matches(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """The old denominator was the sum of every configured weight.
+
+    Under it, adding an unrelated interest lowered the score of every paper
+    matching the interests already there.
+    """
+    profile = load_settings().profile
+    paper = paper_factory(title="A spin ice study", abstract="Spin ice dynamics.")
+    before, _matched = keyword_relevance(paper, profile)
+    widened = profile.model_copy(
+        update={
+            "exact_phrases": {
+                **profile.exact_phrases,
+                **{f"unrelated topic {index}": 2.0 for index in range(20)},
+            }
+        }
+    )
+    after, _matched = keyword_relevance(paper, widened)
+    assert after == pytest.approx(before)
+
+
+def test_keyword_score_is_monotone_in_evidence(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    profile = load_settings().profile
+    one = paper_factory(title="Spin ice", abstract="A study.")
+    two = paper_factory(title="Spin ice and pyrochlore", abstract="A study.")
+    three = paper_factory(title="Spin ice, pyrochlore, neutron scattering", abstract="A study.")
+    scores = [keyword_relevance(item, profile)[0] for item in (one, two, three)]
+    assert scores == sorted(scores)
+    assert all(0.0 <= score <= 1.0 for score in scores)
+
+
+def test_facet_weighting_makes_a_method_match_weaker_than_a_topic_match(paper_factory) -> None:  # type: ignore[no-untyped-def]
+    """A technique match alone is weaker evidence than a topic or material."""
+    profile = load_settings().profile
+    equal_weights = profile.model_copy(
+        update={
+            "exact_phrases": {"spin ice": 2.0},
+            "materials": {},
+            "methods": {"spin dynamics": 2.0},
+        }
+    )
+    topic = paper_factory(title="A spin ice paper", abstract="A study.")
+    method = paper_factory(title="A spin dynamics paper", abstract="A study.")
+    topic_score, _matched = keyword_relevance(topic, equal_weights)
+    method_score, _matched = keyword_relevance(method, equal_weights)
+    assert method_score < topic_score
+
+
+def test_keyword_scores_span_a_real_range_on_the_committed_window() -> None:
+    """Observed range was 0.00-0.09; the signal was too weak to matter."""
+    snapshot = CandidateSnapshot.model_validate_json(CANDIDATES_PATH.read_text(encoding="utf-8"))
+    profile = load_settings().profile
+    scores = [keyword_relevance(item, profile)[0] for item in snapshot.papers]
+    assert max(scores) > 0.25

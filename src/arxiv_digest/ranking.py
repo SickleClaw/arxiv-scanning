@@ -19,10 +19,22 @@ _MAX_AUTHOR_BOOST = 0.15
 
 
 def _positive_terms(profile: ResearchProfile) -> dict[str, float]:
+    """Merge the configured facets into effective term weights.
+
+    The facet a term was configured under is evidence about how much a match on
+    it means, so it scales the term's weight rather than being discarded. A term
+    configured in more than one facet keeps its strongest reading.
+    """
+    facets = profile.scoring.facet_weights
     terms: dict[str, float] = {}
-    for configured in (profile.exact_phrases, profile.materials, profile.methods):
+    for configured, facet_weight in (
+        (profile.exact_phrases, facets.exact_phrases),
+        (profile.materials, facets.materials),
+        (profile.methods, facets.methods),
+    ):
         for term, weight in configured.items():
-            terms[term] = max(terms.get(term, 0.0), max(weight, 0.0))
+            effective = max(weight, 0.0) * facet_weight
+            terms[term] = max(terms.get(term, 0.0), effective)
     return terms
 
 
@@ -30,7 +42,14 @@ def keyword_relevance(
     paper: Paper,
     profile: ResearchProfile,
 ) -> tuple[float, list[tuple[str, float]]]:
-    """Score weighted whole-term matches in 0..1, favoring title over abstract matches.
+    """Score whole-term matches in 0..1, favoring title over abstract matches.
+
+    Evidence accumulates relative to the profile's strongest configured term,
+    then saturates: ``1 - exp(-evidence / saturation)``. Dividing by the sum of
+    every configured weight, as this used to, meant a paper matching the single
+    highest-weighted term scored 3.0/35 = 0.086, and every term added to the
+    profile made every existing match worth less. Scaling by the strongest term
+    instead means adding interests never dilutes the ones already there.
 
     Negative terms are not handled here. They are a gate now (see
     ``domain_filter.gate_papers``): a paper matching one is removed with a
@@ -40,9 +59,9 @@ def keyword_relevance(
     title_tokens = tokenize(paper.title)
     abstract_tokens = tokenize(paper.abstract)
     configured_terms = _positive_terms(profile)
-    total_weight = sum(configured_terms.values())
+    strongest_weight = max(configured_terms.values(), default=0.0)
     matched: list[tuple[str, float]] = []
-    weighted_score = 0.0
+    evidence = 0.0
     for term, weight in configured_terms.items():
         title_count = count_term(title_tokens, term)
         abstract_count = count_term(abstract_tokens, term)
@@ -51,11 +70,11 @@ def keyword_relevance(
             (_TITLE_MATCH_WEIGHT * title_count) + (_ABSTRACT_MATCH_WEIGHT * abstract_count),
         )
         if strength > 0:
-            contribution = weight * strength
-            weighted_score += contribution
+            contribution = (weight / strongest_weight) * strength
+            evidence += contribution
             matched.append((term, contribution))
 
-    base_score = weighted_score / total_weight if total_weight > 0 else 0.0
+    base_score = 1.0 - math.exp(-evidence / profile.scoring.keyword_saturation)
     normalized_authors = {" ".join(tokenize(author)) for author in paper.authors}
     author_weights = [
         weight

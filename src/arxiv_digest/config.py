@@ -201,6 +201,39 @@ class RankingWeights(StrictModel):
         return self
 
 
+class FacetWeights(StrictModel):
+    """Relative evidential strength of each kind of configured term.
+
+    A paper matching two techniques and no topic is usually less relevant than
+    one matching a topic plus a material, so the facets a profile already
+    declares should not be flattened together. These are proto-facets: the full
+    facet model arrives with researcher profiles in Phase 4.
+
+    PROVISIONAL: chosen by argument, not calibrated. Revisit against a labelled
+    evaluation set.
+    """
+
+    exact_phrases: float = Field(default=1.0, ge=0.0, le=1.0)
+    materials: float = Field(default=1.0, ge=0.0, le=1.0)
+    methods: float = Field(default=0.8, ge=0.0, le=1.0)
+
+
+class ScoringConfig(StrictModel):
+    """Tunables for the deterministic relevance score."""
+
+    keyword_saturation: float = Field(default=2.5, gt=0.0)
+    """Evidence needed for a mid-range keyword score.
+
+    The score is ``1 - exp(-evidence / keyword_saturation)`` where one match on
+    a top-weighted term in the title contributes 1.0 of evidence. At 2.5, three
+    such matches score about 0.70.
+
+    PROVISIONAL: revisit against a labelled evaluation set (design report 19.5).
+    """
+
+    facet_weights: FacetWeights = FacetWeights()
+
+
 class RecommendationMix(StrictModel):
     """Target counts for a later diversity-aware selection stage."""
 
@@ -390,6 +423,7 @@ class ResearchProfile(StrictModel):
     max_candidate_count: int = Field(ge=1, le=1000)
     max_papers_per_topic: int = Field(ge=1)
     selection: SelectionConfig = SelectionConfig()
+    scoring: ScoringConfig = ScoringConfig()
     queries: list[QueryConfig] = Field(min_length=1)
 
 

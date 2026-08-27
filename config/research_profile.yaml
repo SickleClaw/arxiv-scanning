@@ -54,6 +54,22 @@ history_exclusion_days: 90
 allow_updated_resurfacing: true
 max_candidate_count: 200
 max_papers_per_topic: 3
+# PROVISIONAL. Both blocks below were chosen by argument, not calibrated
+# against a labelled evaluation set. See the design report, section 19.5.
+scoring:
+  # Keyword evidence saturates rather than dividing by the sum of every
+  # configured weight. One match on a top-weighted term in the title is 1.0 of
+  # evidence; at 2.5, three such matches score about 0.70. Adding interests to
+  # the profile no longer dilutes the matches already there.
+  keyword_saturation: 2.5
+  # How much a match means, by the facet it was configured under. A paper
+  # matching two techniques and no topic is usually less relevant than one
+  # matching a topic plus a material.
+  facet_weights:
+    exact_phrases: 1.0
+    materials: 1.0
+    methods: 0.8
+
 selection:
   mmr_lambda: 0.75
   direct_min_score: 0.28
