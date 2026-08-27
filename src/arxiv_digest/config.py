@@ -420,7 +420,8 @@ class Settings(BaseSettings):
         return (init_settings,)
 
 
-def _read_yaml(path: Path) -> dict[str, Any]:
+def read_yaml_mapping(path: Path) -> dict[str, Any]:
+    """Read one YAML file that must contain a mapping, with actionable errors."""
     try:
         raw = path.read_text(encoding="utf-8")
     except OSError as exc:
@@ -508,9 +509,9 @@ def load_settings(
     """Load YAML files, then apply nested ``ARXIV_DIGEST_`` environment overrides."""
     try:
         combined = {
-            "app": _read_yaml(app_path),
-            "profile": _read_yaml(profile_path),
-            "group": _read_yaml(group_path),
+            "app": read_yaml_mapping(app_path),
+            "profile": read_yaml_mapping(profile_path),
+            "group": read_yaml_mapping(group_path),
         }
         merged = _deep_merge(combined, _environment_overrides())
         app_config = AppConfig.model_validate(merged["app"])

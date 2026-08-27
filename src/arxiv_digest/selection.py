@@ -14,7 +14,7 @@ from arxiv_digest.models import (
     RecommendationType,
     SelectedPaper,
 )
-from arxiv_digest.ranking import count_term, tokenize
+from arxiv_digest.normalization import count_term, tokenize
 
 
 def recommendation_type(

@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import math
-import re
 from collections import Counter
 from collections.abc import Iterable, Sequence
 
@@ -12,28 +11,12 @@ from numpy.typing import NDArray
 
 from arxiv_digest.config import ResearchProfile
 from arxiv_digest.models import DateWindow, Paper, RankedPaper, ScoreBreakdown
+from arxiv_digest.normalization import count_term, tokenize
 
-_TOKEN_PATTERN = re.compile(r"[^\W_]+", re.UNICODE)
 _TITLE_MATCH_WEIGHT = 1.0
 _ABSTRACT_MATCH_WEIGHT = 0.35
 _MAX_AUTHOR_BOOST = 0.15
 _NEGATIVE_TERM_PENALTY = 0.20
-
-
-def tokenize(value: str) -> tuple[str, ...]:
-    """Return case-folded whole-word tokens, preserving letters, numbers, and Unicode."""
-    return tuple(token.casefold() for token in _TOKEN_PATTERN.findall(value))
-
-
-def count_term(tokens: Sequence[str], term: str) -> int:
-    """Count exact token-sequence occurrences without substring false positives."""
-    needle = tokenize(term)
-    if not needle or len(needle) > len(tokens):
-        return 0
-    width = len(needle)
-    return sum(
-        tuple(tokens[index : index + width]) == needle for index in range(len(tokens) - width + 1)
-    )
 
 
 def _positive_terms(profile: ResearchProfile) -> dict[str, float]:

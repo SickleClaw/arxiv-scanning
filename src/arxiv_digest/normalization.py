@@ -1,10 +1,10 @@
-"""Pure normalization and deterministic de-duplication helpers."""
+"""Pure normalization, tokenization, and deterministic de-duplication helpers."""
 
 from __future__ import annotations
 
 import re
 import unicodedata
-from collections.abc import Iterable
+from collections.abc import Iterable, Sequence
 from urllib.parse import unquote, urlparse
 
 from arxiv_digest.models import Paper
@@ -13,6 +13,25 @@ _ARXIV_ID_PATTERN = re.compile(
     r"^(?P<identifier>(?:\d{4}\.\d{4,5}|[a-z0-9.-]+/\d{7}))v(?P<version>\d+)$",
     re.IGNORECASE,
 )
+
+
+_TOKEN_PATTERN = re.compile(r"[^\W_]+", re.UNICODE)
+
+
+def tokenize(value: str) -> tuple[str, ...]:
+    """Return case-folded whole-word tokens, preserving letters, numbers, and Unicode."""
+    return tuple(token.casefold() for token in _TOKEN_PATTERN.findall(value))
+
+
+def count_term(tokens: Sequence[str], term: str) -> int:
+    """Count exact token-sequence occurrences without substring false positives."""
+    needle = tokenize(term)
+    if not needle or len(needle) > len(tokens):
+        return 0
+    width = len(needle)
+    return sum(
+        tuple(tokens[index : index + width]) == needle for index in range(len(tokens) - width + 1)
+    )
 
 
 def normalize_whitespace(value: str) -> str:
