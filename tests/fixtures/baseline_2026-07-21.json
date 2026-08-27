@@ -1,0 +1,227 @@
+{
+  "_note": "Frozen output of rank_papers() over tests/fixtures/candidates_2026-07-21.json using config/research_profile.yaml, with no history exclusions. Regenerate with 'python tests/tools/regenerate_baseline.py' after an intentional scoring change.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "window": {
+    "start": "2026-07-21T00:00:00+00:00",
+    "end": "2026-07-29T00:00:00+00:00"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "arxiv_id": "2607.23490",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.394383,
+      "components": {
+        "semantic_relevance": 0.173598,
+        "keyword_relevance": 0.091429,
+        "category_relevance": 1.0,
+        "recency": 0.934064
+      }
+    },
+    {
+      "rank": 2,
+      "arxiv_id": "2509.09189",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.360718,
+      "components": {
+        "semantic_relevance": 0.098804,
+        "keyword_relevance": 0.087143,
+        "category_relevance": 1.0,
+        "recency": 0.944708
+      }
+    },
+    {
+      "rank": 3,
+      "arxiv_id": "2607.25213",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.340806,
+      "components": {
+        "semantic_relevance": 0.1015,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.888812
+      }
+    },
+    {
+      "rank": 4,
+      "arxiv_id": "2504.00074",
+      "primary_category": "cond-mat.mes-hall",
+      "final_preselection_score": 0.324407,
+      "components": {
+        "semantic_relevance": 0.093533,
+        "keyword_relevance": 0.03,
+        "category_relevance": 0.8,
+        "recency": 0.94817
+      }
+    },
+    {
+      "rank": 5,
+      "arxiv_id": "2607.25481",
+      "primary_category": "physics.plasm-ph",
+      "final_preselection_score": 0.286713,
+      "components": {
+        "semantic_relevance": 0.076382,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.6,
+        "recency": 0.92341
+      }
+    },
+    {
+      "rank": 6,
+      "arxiv_id": "2607.21827",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.285632,
+      "components": {
+        "semantic_relevance": 0.093178,
+        "keyword_relevance": 0.03,
+        "category_relevance": 1.0,
+        "recency": 0.362017
+      }
+    },
+    {
+      "rank": 7,
+      "arxiv_id": "2607.22176",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.275078,
+      "components": {
+        "semantic_relevance": 0.060164,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.430046
+      }
+    },
+    {
+      "rank": 8,
+      "arxiv_id": "2607.20424",
+      "primary_category": "cond-mat.str-el",
+      "final_preselection_score": 0.272883,
+      "components": {
+        "semantic_relevance": 0.102244,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.218737
+      }
+    },
+    {
+      "rank": 9,
+      "arxiv_id": "2607.22845",
+      "primary_category": "cond-mat.mes-hall",
+      "final_preselection_score": 0.272821,
+      "components": {
+        "semantic_relevance": 0.168073,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.471882
+      }
+    },
+    {
+      "rank": 10,
+      "arxiv_id": "2607.21889",
+      "primary_category": "cond-mat.mes-hall",
+      "final_preselection_score": 0.254191,
+      "components": {
+        "semantic_relevance": 0.079733,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.383116
+      }
+    },
+    {
+      "rank": 11,
+      "arxiv_id": "2509.08327",
+      "primary_category": "cond-mat.mtrl-sci",
+      "final_preselection_score": 0.245939,
+      "components": {
+        "semantic_relevance": 0.111615,
+        "keyword_relevance": 0.042857,
+        "category_relevance": 0.8,
+        "recency": 0.049975
+      }
+    },
+    {
+      "rank": 12,
+      "arxiv_id": "2607.25684",
+      "primary_category": "quant-ph",
+      "final_preselection_score": 0.219756,
+      "components": {
+        "semantic_relevance": 0.042738,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.94274
+      }
+    },
+    {
+      "rank": 13,
+      "arxiv_id": "2607.25263",
+      "primary_category": "cond-mat.dis-nn",
+      "final_preselection_score": 0.210385,
+      "components": {
+        "semantic_relevance": 0.046136,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.896236
+      }
+    },
+    {
+      "rank": 14,
+      "arxiv_id": "2607.24989",
+      "primary_category": "hep-th",
+      "final_preselection_score": 0.208902,
+      "components": {
+        "semantic_relevance": 0.039823,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.847312
+      }
+    },
+    {
+      "rank": 15,
+      "arxiv_id": "2607.18594",
+      "primary_category": "cond-mat.mtrl-sci",
+      "final_preselection_score": 0.208682,
+      "components": {
+        "semantic_relevance": 0.049793,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.8,
+        "recency": 0.000255
+      }
+    },
+    {
+      "rank": 16,
+      "arxiv_id": "2605.21281",
+      "primary_category": "hep-ph",
+      "final_preselection_score": 0.206195,
+      "components": {
+        "semantic_relevance": 0.055079,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.814091
+      }
+    },
+    {
+      "rank": 17,
+      "arxiv_id": "2607.20843",
+      "primary_category": "hep-ph",
+      "final_preselection_score": 0.143368,
+      "components": {
+        "semantic_relevance": 0.038287,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.261389
+      }
+    },
+    {
+      "rank": 18,
+      "arxiv_id": "2607.18851",
+      "primary_category": "gr-qc",
+      "final_preselection_score": 0.12322,
+      "components": {
+        "semantic_relevance": 0.027713,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.044996
+      }
+    }
+  ]
+}

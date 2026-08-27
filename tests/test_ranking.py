@@ -1,16 +1,22 @@
 """Tests for deterministic offline hybrid ranking."""
 
+import json
 from datetime import UTC, datetime
+from pathlib import Path
 
 import pytest
 
 from arxiv_digest.config import RankingWeights, load_settings
-from arxiv_digest.models import DateWindow
+from arxiv_digest.models import CandidateSnapshot, DateWindow
 from arxiv_digest.ranking import (
     category_relevance,
     keyword_relevance,
     rank_papers,
 )
+
+FIXTURES = Path(__file__).parent / "fixtures"
+CANDIDATES_PATH = FIXTURES / "candidates_2026-07-21.json"
+BASELINE_PATH = FIXTURES / "baseline_2026-07-21.json"
 
 
 def ranking_window() -> DateWindow:
@@ -161,3 +167,36 @@ def test_author_boost_and_negative_penalty_are_bounded(paper_factory) -> None:  
         for item in rank_papers([clean, penalized], novelty_profile, ranking_window())
     }
     assert scores["2607.13002"] == pytest.approx(scores["2607.13001"] - 0.20)
+
+
+def test_frozen_baseline_matches_current_ranking() -> None:
+    """Guard the whole scoring chain against unintended drift.
+
+    Any change to retrieval-independent scoring shows up here as an explicit
+    diff. When a change is intentional, regenerate with
+    ``python tests/tools/regenerate_baseline.py`` and review the result.
+    """
+    baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
+    settings = load_settings()
+    assert baseline["profile_name"] == settings.profile.name
+    assert baseline["profile_version"] == settings.profile.version
+
+    snapshot = CandidateSnapshot.model_validate_json(CANDIDATES_PATH.read_text(encoding="utf-8"))
+    ranked = rank_papers(snapshot.papers, settings.profile, snapshot.retrieval_window, set())
+    assert len(ranked) == len(baseline["ranking"])
+    for expected, actual in zip(baseline["ranking"], ranked, strict=True):
+        assert actual.paper.arxiv_id == expected["arxiv_id"]
+        assert actual.score.final_preselection_score == pytest.approx(
+            expected["final_preselection_score"], abs=1e-6
+        )
+        components = expected["components"]
+        assert actual.score.semantic_relevance == pytest.approx(
+            components["semantic_relevance"], abs=1e-6
+        )
+        assert actual.score.keyword_relevance == pytest.approx(
+            components["keyword_relevance"], abs=1e-6
+        )
+        assert actual.score.category_relevance == pytest.approx(
+            components["category_relevance"], abs=1e-6
+        )
+        assert actual.score.recency == pytest.approx(components["recency"], abs=1e-6)
