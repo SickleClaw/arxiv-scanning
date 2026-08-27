@@ -1,12 +1,16 @@
 # Personalized Weekly arXiv Reading List
 
 `arxiv-digest` is a Python 3.12 application for collecting, ranking, and presenting a
-traceable weekly reading list from the official arXiv API. This repository implements
-Milestones 1–5 plus the read-only Milestone 4.5 dashboard: validated configuration and
-models, polite retrieval, normalization, deduplication, deterministic hybrid ranking,
-history filtering, diversity selection, abstract-grounded summaries, canonical JSON,
-Markdown/HTML reports, a cloud-deployable viewer, weekly automation, repository-backed
-recommendation history, and optional SMTP delivery.
+traceable weekly reading list from the official arXiv API: validated configuration and
+models, polite retrieval, normalization, deduplication, layered domain gating,
+deterministic relevance ranking, history filtering, diversity selection,
+abstract-grounded summaries, canonical JSON, Markdown/HTML reports, a cloud-deployable
+viewer, weekly automation, repository-backed recommendation history, and optional SMTP
+delivery.
+
+Domain and relevance are answered by separate machinery. Gates decide whether a paper is
+in the group's field, scoring decides how interesting an in-field paper is, and a gate's
+verdict cannot be outvoted by a strong score. Every rejection is recorded with a reason.
 
 The default workflow is fully offline after candidate retrieval and needs no API key or
 paid service. An optional OpenAI provider is available for summaries, with strict
@@ -156,11 +160,41 @@ uv run arxiv-digest rank --snapshot data/candidates.json --output data/ranked.js
 uv run arxiv-digest rank --days 7 --fetch-missing
 ```
 
-Ranking combines corpus TF-IDF cosine similarity, weighted whole-token profile terms,
-category preference, UTC recency, and novelty. Title matches outweigh abstract matches;
-negative terms apply a bounded penalty; author boosts are supported. All components and
-the final score are in `0..1`, and every score records its strongest profile matches.
-Weights are normalized from `config/research_profile.yaml`.
+Ranking scores relevance and nothing else:
+
+```
+relevance = 0.5625·semantic + 0.3125·keyword + 0.1250·category
+final     = relevance × (0.95 + 0.05·recency) × context_penalty
+```
+
+- **semantic** is corpus TF-IDF cosine similarity. It is lexical overlap, not meaning;
+  embeddings replace it in Phase 3.
+- **keyword** is weighted whole-term matching that saturates as
+  `1 − exp(−evidence / 2.5)`, where one match on a top-weighted term in the title is 1.0
+  of evidence. Title matches outweigh abstract matches, chemical formulae match however
+  arXiv writes them, and the facet a term was configured under scales what a match on it
+  is worth. Because evidence is measured against the strongest configured term rather
+  than the sum of all of them, adding interests to the profile never dilutes the matches
+  already there.
+- **category** is the profile's preference among categories. An in-field paper whose
+  subcategory the profile omits floors at 0.4 rather than 0.0 — unlisted is not the same
+  as off-topic.
+- **recency** only modulates, by at most 5%. It can break a tie between comparable
+  papers; it cannot manufacture a score for an irrelevant one.
+- **context_penalty** applies when an ambiguous term appeared without supporting context.
+
+There is no novelty or feedback component. Both were relevance-free terms, and together
+they guaranteed every recent paper a score of at least 0.20 — enough to clear the
+adjacent threshold on submission date alone, which is how the off-domain papers were
+getting in. Repeat suppression is history filtering's job, and it does it by removing
+papers rather than by giving every other paper a bonus.
+
+To see all of this for one paper, including which gates it passed:
+
+```bash
+uv run arxiv-digest explain 2607.20843 --days 7
+```
+
 
 ## Weekly report run
 
@@ -209,6 +243,28 @@ minimum wildcard threshold is never relaxed merely to fill the requested limit.
 Recent recommendations are excluded for 90 days by default. A recent paper can
 resurface only when resurfacing is enabled, its version differs, and its update
 timestamp is later than the prior recommendation timestamp.
+
+## Measuring term ambiguity
+
+Whether a term is ambiguous is a measurable property of the literature, not a matter of
+opinion. Two counting queries per term give it directly:
+
+```bash
+uv run arxiv-digest measure-ambiguity
+```
+
+`spin ice` comes back at 0.01 — 921 of its 931 arXiv hits are in the group's field.
+`magnetic monopole` comes back at 0.76. Results are cached in
+`data/term_ambiguity.json`, which is committed, so a normal run makes no requests and
+CI never needs the network. Pass `--refresh` to re-measure.
+
+Terms above 0.40 are reported as needing a context requirement in
+`config/disambiguation.yaml`, and a test fails if one lacks it — so the config polices
+itself as interests change. Run against this repository's own profile the command found
+three risky terms nobody had anticipated: `inverse problems` (4% in field),
+`cluster algorithm` (8%), and `loop algorithm` (37%). That is the point of measuring
+rather than curating a list: when someone adds `skyrmion` or `Majorana`, the risk gets
+flagged without anyone having had to think of that word first.
 
 ## Local dashboard
 
@@ -434,7 +490,7 @@ system, following [docs/lab_wide_research_discovery_design.md](docs/lab_wide_res
 
 | Phase | Scope | Status |
 |---|---|---|
-| 1 | Fix discovery quality: gates, scoring, `explain` | In progress |
+| 1 | Fix discovery quality: gates, scoring, `explain` | **Complete** |
 | 2 | SQLite storage and full cond-mat firehose ingestion | Not started |
 | 3 | Embeddings and genuine semantic ranking | Not started |
 | 4 | Researcher and group profiles | Not started |
@@ -442,3 +498,18 @@ system, following [docs/lab_wide_research_discovery_design.md](docs/lab_wide_res
 | 6 | Local LLM summaries and borderline adjudication | Not started |
 
 Phases 7 (email delivery) and 8 (feedback and RAG) are deferred by design.
+
+**Phase 1 outcome.** Re-running the 2026-07-21 -> 2026-07-28 window that prompted the
+work: the `hep-ph` dark-monopole paper is rejected at the category gate with a named
+reason, and the `physics.plasm-ph` X-ray Thomson scattering paper passes every gate but
+scores 0.114, below the wildcard floor. All ten recommendations are condensed matter,
+and the frustrated-magnetism and neutron-scattering work is still there. Seven papers
+were rejected across the two committed windows, all of them high-energy, cosmology, or
+gravity monopole work; every one was caught by the category gate alone, which is the
+cheapest layer.
+
+The artifact schema moved to `2.0` with this phase. `ScoreBreakdown` lost `novelty` and
+`feedback_affinity` and gained `relevance` and `context_penalty_applied`; the version
+validator raises rather than degrading, so stored reports from `1.0` cannot be read.
+Both committed runs were regenerated by
+`python tests/tools/regenerate_committed_reports.py`.
