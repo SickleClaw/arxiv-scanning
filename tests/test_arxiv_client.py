@@ -10,6 +10,7 @@ import httpx
 import pytest
 import respx
 
+from arxiv_digest import __version__
 from arxiv_digest.arxiv_client import (
     ArxivClient,
     build_category_guard,
@@ -231,5 +232,5 @@ def test_internal_client_sends_descriptive_user_agent(fixture_dir: Path) -> None
     with ArxivClient(config, monotonic=clock.monotonic, sleep=clock.sleep) as client:
         client.fetch([QueryConfig(name="x", terms=["spin ice"])], window(), 1, domain())
     assert route.calls[0].request.headers["User-Agent"] == (
-        "arxiv-digest/0.4.0 (physics@example.org)"
+        f"arxiv-digest/{__version__} (physics@example.org)"
     )
