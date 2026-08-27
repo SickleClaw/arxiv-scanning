@@ -51,8 +51,15 @@ itself, and generated `.env` files are ignored by Git.
   exponential backoff, the minimum three-second request interval, overlap days, summary
   provider limits, report timezone, and near-miss count.
 - `config/research_profile.yaml` contains six broad editable queries plus the research
-  interests and future ranking settings. Category membership is retained as metadata
-  and is not a retrieval hard filter.
+  interests and ranking settings.
+- `profiles/group.yaml` is the lab-level profile. Its `domain` block — in-field,
+  adjacent, and out-of-field arXiv categories — decides what the system is capable of
+  ever seeing, and is the first thing to review when something expected does not appear.
+- `config/disambiguation.yaml` holds the hard exclusion rules and the context
+  requirements for terms whose condensed-matter sense differs from their usual one.
+
+Category membership is no longer merely metadata: it constrains retrieval at the source
+and gates candidates locally. See [Discovery gates](#discovery-gates).
 
 The default query groups cover spin ice and pyrochlores, neutron scattering, spin-wave
 fitting, frustrated spinels, spin caloritronics, and relevant computational methods.
@@ -90,6 +97,49 @@ arXiv identities are stored without the version suffix; the retrieved version re
 a separate integer. Results are filtered by explicit published/updated timestamps,
 then deduplicated across overlapping queries, versions, and punctuation-only title
 variants. The newest version wins and category metadata is merged.
+
+## Discovery gates
+
+Relevance and domain are separate questions, and the system answers them with separate
+machinery. **Gates** decide whether a paper is in the group's field at all; **scoring**
+decides how interesting an in-field paper is. Gates run first, and their verdict cannot
+be outvoted by a strong score — which is exactly how off-domain papers used to reach the
+digest.
+
+Four gates run in cost order, before ranking and before the candidate list is truncated:
+
+| Gate | Removes | Configured in |
+|---|---|---|
+| Category | Papers whose categories are out of field, or neither in-field nor adjacent | `profiles/group.yaml` |
+| Hard rules | Cosmological monopoles, collider physics, pure astrophysics | `config/disambiguation.yaml` |
+| Ambiguous-term context | Ambiguous terms used in an off-domain sense | `config/disambiguation.yaml` |
+| Negative terms | Topics the profile explicitly does not want | `config/research_profile.yaml` |
+
+Retrieval is also constrained at the source: every query carries a positive `cat:` guard
+built from the group's in-field and adjacent categories. Measured against the live API,
+adding it to `all:"magnetic monopole"` cuts 1,830 results to 448.
+
+**Inclusion beats exclusion.** A paper cross-listed into one of the group's in-field
+categories is never removed by a hard rule or a context blocker, whatever words it
+contains. That is what keeps *magnetic monopole excitations in spin ice* while dropping
+*primordial magnetic monopoles in cosmology*. The guard is implemented in the engine
+rather than repeated in each rule, so no edit to the rule file can remove it.
+
+Adjacent (`soft_categories`) papers are admitted but get no such protection: they must
+earn their place on the evidence. That is how ML-for-materials work stays reachable
+without admitting all of machine learning.
+
+**Nothing is discarded silently.** Every rejection is recorded with its stage, its rule
+id where it has one, and a reason, into the candidate and ranked snapshots:
+
+```bash
+uv run arxiv-digest fetch --days 7
+```
+
+Over-filtering is the mirror image of the bug these gates fix, and it is much harder to
+notice: a relevant paper that never appears is missed by nobody, because nobody knows it
+existed. Reading the rejection list is currently the only check on that, so it is worth
+doing weekly until a labelled evaluation set exists.
 
 ## Ranking an existing snapshot
 
@@ -357,8 +407,14 @@ uv run pytest -m live tests/test_live_arxiv.py
 
 ## Current limitations
 
-- Feedback affinity is reported as a neutral component; user feedback adaptation is
-  deferred to Milestone 6 and does not affect ranking yet.
+- Selection thresholds and the gate configuration are provisional. They are hand-fitted
+  against two committed runs, not calibrated against a labelled evaluation set, so both
+  should be revisited once one exists.
+- Relevance matching is lexical. The component named `semantic_relevance` is corpus-local
+  TF-IDF, which cannot tell *emergent magnetic monopoles* from *primordial* ones on
+  meaning alone — the category gates carry that distinction for now. Embeddings arrive in
+  Phase 3.
+- One research profile, one recipient list. Multi-researcher support arrives in Phase 4.
 - Recommendation history is append-only JSONL and repository-persisted by the weekly
   workflow; concurrent external writes can still cause a safe push failure that requires
   a later rerun.
@@ -371,5 +427,18 @@ uv run pytest -m live tests/test_live_arxiv.py
 - No PDF parsing, database framework, feedback adaptation, reading-status system, or
   authenticated application backend is included.
 
-The recommended next task is Milestone 6: bounded feedback adaptation and its CLI,
-without changing the report schema or adding a database.
+## Buildout status
+
+The system is being extended from a single-researcher tool into a lab-wide discovery
+system, following [docs/lab_wide_research_discovery_design.md](docs/lab_wide_research_discovery_design.md).
+
+| Phase | Scope | Status |
+|---|---|---|
+| 1 | Fix discovery quality: gates, scoring, `explain` | In progress |
+| 2 | SQLite storage and full cond-mat firehose ingestion | Not started |
+| 3 | Embeddings and genuine semantic ranking | Not started |
+| 4 | Researcher and group profiles | Not started |
+| 5 | Weekly group digest | Not started |
+| 6 | Local LLM summaries and borderline adjudication | Not started |
+
+Phases 7 (email delivery) and 8 (feedback and RAG) are deferred by design.
