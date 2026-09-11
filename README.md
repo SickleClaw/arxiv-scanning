@@ -114,6 +114,12 @@ Weights are normalized from `config/research_profile.yaml`.
 
 ## Weekly report run
 
+Email and rendered Markdown/HTML reports currently show the takeaway, brief summary,
+and methods or systems alongside paper metadata and links. Selection explanations,
+per-paper limitations, and numeric scores are hidden until local LLM integration is
+ready. Those fields remain in the canonical JSON for auditability and later restoration;
+the report-wide abstract-based summary notice remains visible.
+
 Run retrieval when needed, ranking, top-ten selection, deterministic summaries, and
 report rendering without paid APIs:
 

@@ -117,6 +117,21 @@ def test_reports_include_required_metadata_escape_html_and_limit_near_misses(
     assert "<script>alert(1)</script>" in markdown
     assert "&lt;script&gt;alert(1)&lt;/script&gt;" in html
     assert "Abstract-based summaries" in html
+    for rendered in (markdown, html):
+        for retained in (
+            "Takeaway",
+            "Brief summary",
+            "Methods or systems",
+            "arXiv abstract",
+            "PDF",
+        ):
+            assert retained in rendered
+        for omitted in ("Why selected", "Limitations", "Score breakdown", "Scores:", "final score"):
+            assert omitted not in rendered
+        assert summary.why_relevant not in rendered
+        assert summary.limitations not in rendered
+        assert ranked_items[0].score.explanation not in rendered
+        assert ", ".join(summary.methods_or_systems) in rendered
     assert paths.latest_markdown.read_text(encoding="utf-8") == markdown
     assert paths.latest_html.read_text(encoding="utf-8") == html
     assert paths.latest_json.read_text(encoding="utf-8") == paths.json.read_text(encoding="utf-8")
@@ -128,6 +143,8 @@ def test_reports_include_required_metadata_escape_html_and_limit_near_misses(
     assert loaded.run_id == "selection-fixture"
     assert loaded.records_ranked == 7
     assert loaded.records_selected == 1
+    assert loaded.recommendations[0].summary == summary
+    assert loaded.recommendations[0].score == ranked_items[0].score
     assert [item.paper.title for item in loaded.near_misses] == [
         f"Near miss {index}" for index in range(1, 6)
     ]
