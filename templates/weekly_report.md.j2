@@ -26,15 +26,7 @@
 
 **Brief summary:** {{ recommendation.summary.brief_summary }}
 
-**Why selected:** {{ recommendation.summary.why_relevant }}
-
 **Methods or systems:** {{ recommendation.summary.methods_or_systems | join(", ") }}
-
-**Limitations:** {{ recommendation.summary.limitations }}
-
-**Score breakdown:** semantic {{ "%.3f" | format(recommendation.score.semantic_relevance) }} · keyword {{ "%.3f" | format(recommendation.score.keyword_relevance) }} · category {{ "%.3f" | format(recommendation.score.category_relevance) }} · recency {{ "%.3f" | format(recommendation.score.recency) }} · novelty {{ "%.3f" | format(recommendation.score.novelty) }} · feedback {{ "%.3f" | format(recommendation.score.feedback_affinity) }} · **final {{ "%.3f" | format(recommendation.score.final_preselection_score) }}**
-
-{{ recommendation.score.explanation }}
 
 [arXiv abstract]({{ recommendation.paper.abstract_url }}) · [PDF]({{ recommendation.paper.pdf_url }})
 
@@ -49,7 +41,7 @@ No candidates met the configured minimum selection threshold for this window.
 
 {% if near_misses %}
 {% for candidate in near_misses %}
-- [{{ candidate.paper.title }}]({{ candidate.paper.abstract_url }}) — `{{ candidate.paper.primary_category }}`, final score {{ "%.3f" | format(candidate.score.final_preselection_score) }}
+- [{{ candidate.paper.title }}]({{ candidate.paper.abstract_url }}) — `{{ candidate.paper.primary_category }}`
 {% endfor %}
 {% else %}
 No additional qualifying candidates were available.
