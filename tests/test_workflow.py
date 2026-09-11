@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
+import pytest
 import yaml
 
 from arxiv_digest.dashboard.data import load_digest, load_digest_history
 from arxiv_digest.history import load_history
+from arxiv_digest.models import DigestArtifact, HistoryRecord
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "weekly_digest.yml"
@@ -86,15 +89,80 @@ def test_persistence_is_allowlisted_idempotent_and_never_force_pushes() -> None:
         assert forbidden not in persist_text.lower()
 
 
-def test_seeded_history_matches_committed_latest_and_dashboard_history() -> None:
+def _assert_latest_history(latest: DigestArtifact, history: list[HistoryRecord]) -> None:
+    """Allow older runs while checking every persisted field of the latest run."""
+    records = [record for record in history if record.run_id == latest.run_id]
+    assert len(records) == len(latest.recommendations)
+    assert {record.arxiv_id for record in records} == {
+        item.paper.arxiv_id for item in latest.recommendations
+    }
+    by_id = {record.arxiv_id: record for record in records}
+    for item in latest.recommendations:
+        record = by_id[item.paper.arxiv_id]
+        assert record.run_timestamp == latest.generated_at
+        assert record.retrieval_window == latest.retrieval_window
+        assert record.version == item.paper.version
+        assert record.paper_updated_at == item.paper.updated_at
+        assert record.rank == item.rank
+        assert record.recommendation_type == item.recommendation_type
+        assert record.final_score == item.score.final_preselection_score
+        assert record.report_path
+        report_date = latest.generated_at.astimezone(ZoneInfo(latest.timezone)).date()
+        assert Path(record.report_path).name == f"{report_date}-weekly-arxiv-digest.md"
+
+
+def test_committed_latest_matches_its_history_and_dashboard_history() -> None:
     reports_dir = REPOSITORY_ROOT / "reports"
     latest = load_digest(reports_dir / "latest.json")
     history = load_history(REPOSITORY_ROOT / "data" / "history.jsonl")
     dashboard_history, errors = load_digest_history(reports_dir)
     assert errors == []
-    assert len(history) == len(latest.recommendations)
-    assert {record.arxiv_id for record in history} == {
-        recommendation.paper.arxiv_id for recommendation in latest.recommendations
-    }
-    assert {record.run_id for record in history} == {latest.run_id}
+    _assert_latest_history(latest, history)
     assert dashboard_history[0][1].run_id == latest.run_id
+
+
+def test_latest_history_accepts_multiple_runs() -> None:
+    latest = load_digest(REPOSITORY_ROOT / "reports" / "latest.json")
+    records = [
+        record
+        for record in load_history(REPOSITORY_ROOT / "data" / "history.jsonl")
+        if record.run_id == latest.run_id
+    ]
+    older = [record.model_copy(update={"run_id": "older-run"}) for record in records]
+    _assert_latest_history(latest, older + records)
+
+
+@pytest.mark.parametrize(
+    "corruption",
+    ["missing", "duplicate", "identity", "version", "rank", "score", "window", "timestamp", "path"],
+)
+def test_latest_history_rejects_inconsistent_records(corruption: str) -> None:
+    latest = load_digest(REPOSITORY_ROOT / "reports" / "latest.json")
+    records = [
+        record
+        for record in load_history(REPOSITORY_ROOT / "data" / "history.jsonl")
+        if record.run_id == latest.run_id
+    ]
+    assert records
+    first = records[0]
+    changes: dict[str, dict[str, object]] = {
+        "identity": {"arxiv_id": "0000.00000"},
+        "version": {"version": first.version + 1},
+        "rank": {"rank": first.rank + 1},
+        "score": {"final_score": 1.0 if first.final_score != 1.0 else 0.0},
+        "window": {
+            "retrieval_window": latest.retrieval_window.model_copy(
+                update={"start": latest.retrieval_window.end}
+            )
+        },
+        "timestamp": {"run_timestamp": latest.retrieval_window.start},
+        "path": {"report_path": "reports/wrong-report.md"},
+    }
+    if corruption == "missing":
+        records.pop()
+    elif corruption == "duplicate":
+        records.append(first)
+    else:
+        records[0] = first.model_copy(update=changes[corruption])
+    with pytest.raises(AssertionError):
+        _assert_latest_history(latest, records)
