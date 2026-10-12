@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "run_id": "select-202d74690b3f",
+  "run_id": "select-a622fa9bf3fc",
   "title": "Personalized Weekly arXiv Reading List",
-  "generated_at": "2026-10-05T21:03:34.886987Z",
+  "generated_at": "2026-10-12T21:28:40.513727Z",
   "timezone": "America/New_York",
   "retrieval_window": {
-    "start": "2026-09-27T00:00:00Z",
-    "end": "2026-10-05T00:00:00Z"
+    "start": "2026-10-04T00:00:00Z",
+    "end": "2026-10-12T00:00:00Z"
   },
-  "records_retrieved": 25,
-  "records_after_deduplication": 13,
-  "records_ranked": 13,
-  "records_selected": 10,
+  "records_retrieved": 14,
+  "records_after_deduplication": 9,
+  "records_ranked": 9,
+  "records_selected": 9,
   "summary_mode": "offline",
   "summary_fallbacks": 0,
   "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
@@ -21,41 +21,48 @@
   "recommendations": [
     {
       "paper": {
-        "arxiv_id": "2610.02409",
+        "arxiv_id": "2610.12294",
         "version": 1,
-        "title": "Projective symmetry group classification of fermionic $Z_2$ spin liquids on the dipolar-octupolar pyrochlore magnets",
+        "title": "Transducing quantum-spin-ice correlations into Weyl Fermi-arc transport at a synthetic Kondo lattice interface",
         "authors": [
-          "Rohit Deb",
-          "Sambuddha Sanyal"
+          "Tsung-Chi Wu",
+          "Michael Terilli",
+          "Christian Zaprianov",
+          "Eun Sang Choi",
+          "David Graf",
+          "Qinghua Zhang",
+          "Lin Gu",
+          "Mikhail Kareev"
         ],
-        "abstract": "We construct and classify $Z_2$ quantum spin liquids (QSLs) of fermionic partons on the dipolar-octupolar (DO) pyrochlore lattice. The DO pseudospin shares the space-group and time-reversal algebra of the effective spin-1/2 Kramers doublet, its projective symmetry group (PSG) yields the same 48 symmetric $Z_2$ classes as the generic fermionic classification. We show, the distinct DO symmetry action, encoded in a set of sublattice-independent operators, selects a physically different set of symmetry-allowed mean-field channels, so that the resulting ansatze, spinon spectra, and observables differ from both the effective spin-1/2 case and the bosonic DO classification. Decomposing the anisotropic XYZ exchange model into all symmetric singlet and triplet hopping and pairing channels and minimizing the mean-field energy self-consistently, we obtain phase diagrams in the ($\\tilde{J_x}, \\tilde{J_z}$) plane in which only a few $Z_2$ states, several supporting gapless or flat-band spinon spectra, are stabilized. For these states we compute the spinon band structures, the low-temperature specific heat, and the dynamical spin structure factor, and we argue that the power-law specific-heat exponent is a diagnostic of the spinon nodal structure. A near-linear-in-temperature specific heat together with broad continua in the structure factor gives a fermionic-parton account of the gapless, fractionalized thermodynamics reported in DO materials such as $Nd_2ScNbO_7$, complementing the bosonic quantum-spin-ice picture of the Ce-based compounds. The work extends the fermionic-parton classification of DO pyrochlore QSLs beyond the $U(1)$ sector, where $Z_2$ topological order is realized equally naturally by fermionic and bosonic spinons.",
+        "abstract": "Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical contrast shows that the same itinerant electronic channel acquires qualitatively different symmetry information when interacting with the quantum-fluctuating Tb moments, consistent with an interfacial coupling between the Weyl surface states and the transverse, multipolar degrees of freedom, in addition to the longitudinal, dipolar contribution. Our work establishes synthetic Kondo lattice interfaces as a route for transducing frustrated quantum magnetism with multipole correlations into distinct Weyl Fermi-arc transport responses.",
         "primary_category": "cond-mat.str-el",
         "categories": [
-          "cond-mat.str-el"
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
         ],
-        "published_at": "2026-10-01T19:35:26Z",
-        "updated_at": "2026-10-01T19:35:26Z",
-        "abstract_url": "https://arxiv.org/abs/2610.02409v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.02409v1",
+        "published_at": "2026-10-08T16:47:50Z",
+        "updated_at": "2026-10-08T16:47:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12294v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12294v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09755182470862395,
-        "keyword_relevance": 0.08714285714285713,
+        "semantic_relevance": 0.12688994147699909,
+        "keyword_relevance": 0.08571428571428572,
         "category_relevance": 1.0,
-        "recency": 0.6020341435185185,
+        "recency": 0.5874855324074074,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3258874497564469,
-        "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
+        "final_preselection_score": 0.33727759833396176,
+        "explanation": "Strongest matched profile terms: spin ice."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: We construct and classify $Z_2$ quantum spin liquids (QSLs) of fermionic partons on the dipolar-octupolar (DO) pyrochlore lattice.",
-        "brief_summary": "The abstract states: We construct and classify $Z_2$ quantum spin liquids (QSLs) of fermionic partons on the dipolar-octupolar (DO) pyrochlore lattice. The DO pseudospin shares the space-group and time-reversal algebra of the effective spin-1/2 Kramers doublet, its projective symmetry group (PSG) yields the same 48 symmetric $Z_2$ classes as the generic fermionic classification. We show, the distinct DO symmetry action, encoded in a set of sublattice-independent operators, selects a physically different set of symmetry-allowed mean-field channels, so that the resulting ansatze, spinon spectra, and observables differ from both the effective spin-1/2 case and the bosonic DO classification. Decomposing the anisotropic XYZ exchange model into all symmetric singlet and triplet hopping and pairing channels and minimizing the mean-field energy self-consistently, we obtain phase diagrams in the…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through pyrochlore. Its preselection score was 0.326, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating.",
+        "brief_summary": "The abstract states: Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.337, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "pyrochlore"
+          "spin ice"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
@@ -66,1048 +73,681 @@
     },
     {
       "paper": {
-        "arxiv_id": "2610.00479",
+        "arxiv_id": "2610.08957",
         "version": 1,
-        "title": "Stacking-Controlled Altermagnetism and Topological Magnons in Bilayer CrI$_3$",
+        "title": "Probing magnetic interactions in real space via magnetic pair distribution function analysis",
         "authors": [
-          "Lu Xiao",
-          "Meng-Han Zhang",
-          "Dao-Xin Yao"
+          "Edison P. Carlisle",
+          "Benjamin A. Frandsen"
         ],
-        "abstract": "Stacked van der Waals magnets provide a tunable route to altermagnetism, a compensated magnetic order characterized by momentum-dependent spin splitting, and to the topological magnetic excitations that such order can host. In bilayer CrI$_3$, first-principles calculations and linear spin-wave theory reveal stacking-controlled altermagnetic order and associated magnon band topology. Combining band-representation analysis with calculations of the dynamic structure factor relevant to inelastic neutron scattering, we further characterize the chirally split topological magnons and quantify their energy corrections and lifetimes using a many-body Green's-function approach. The interlayer magnetic ground state is highly sensitive to the stacking geometry, thereby controlling the magnon band topology and transport responses. We further show that magnon--magnon interactions renormalize the magnon dispersion and dynamic structure factor, with a particular focus on magnon decay. Using van der Waals bilayer CrI$_3$ as a representative platform, our results establish stacking engineering as a structural route for tuning altermagnetism and associated topological magnon excitations, opening avenues toward stacking-controlled spintronic and magnonic devices.",
+        "abstract": "Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real space, is expected to be well suited for extracting exchange parameters from correlated paramagnets. Here, we demonstrate a robust mean-field theory approach incorporating the Onsager reaction field for determination of exchange parameters from the results of mPDF analysis. We successfully apply this approach to several relevant materials to recover exchange interaction values comparable to literature values.",
         "primary_category": "cond-mat.mtrl-sci",
         "categories": [
           "cond-mat.mtrl-sci"
         ],
-        "published_at": "2026-09-30T18:00:11Z",
-        "updated_at": "2026-09-30T18:00:11Z",
-        "abstract_url": "https://arxiv.org/abs/2610.00479v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.00479v1",
+        "published_at": "2026-10-06T18:23:53Z",
+        "updated_at": "2026-10-06T18:23:53Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08957v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08957v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.11480049890103781,
-        "keyword_relevance": 0.045,
+        "semantic_relevance": 0.18172677395662615,
+        "keyword_relevance": 0.05,
         "category_relevance": 0.8,
-        "recency": 0.46876591435185183,
+        "recency": 0.3458232060185185,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.28978681594065225,
-        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
+        "final_preselection_score": 0.3088593688823337,
+        "explanation": "Strongest matched profile terms: neutron scattering."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: Stacked van der Waals magnets provide a tunable route to altermagnetism, a compensated magnetic order characterized by momentum-dependent spin splitting, and to the topological magnetic excitations that such order can host.",
-        "brief_summary": "The abstract states: Stacked van der Waals magnets provide a tunable route to altermagnetism, a compensated magnetic order characterized by momentum-dependent spin splitting, and to the topological magnetic excitations that such order can host. In bilayer CrI$_3$, first-principles calculations and linear spin-wave theory reveal stacking-controlled altermagnetic order and associated magnon band topology. Combining band-representation analysis with calculations of the dynamic structure factor relevant to inelastic neutron scattering, we further characterize the chirally split topological magnons and quantify their energy corrections and lifetimes using a many-body Green's-function approach. The interlayer magnetic ground state is highly sensitive to the stacking geometry, thereby controlling the magnon band topology and transport responses. We further show that magnon--magnon interactions renormalize the magnon dispersion and dynamic structure factor, with a particular…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, linear spin-wave theory. Its preselection score was 0.290, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials.",
+        "brief_summary": "The abstract states: Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.309, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "neutron scattering",
-          "linear spin-wave theory"
+          "neutron scattering"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.805
+        "confidence": 0.85
       },
       "rank": 2,
       "recommendation_type": "direct"
     },
     {
       "paper": {
-        "arxiv_id": "2610.03416",
-        "version": 1,
-        "title": "Floquet density response in laser-assisted fast-electron scattering from solids",
+        "arxiv_id": "2503.13831",
+        "version": 3,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
         "authors": [
-          "Ferdinand Evers",
-          "Sascha Schäfer",
-          "Richard Korytár"
+          "Josef Willsher",
+          "Johannes Knolle"
         ],
-        "abstract": "We extend the Bethe--Floquet formalism of Joachain and coworkers, originally developed for laser-assisted electron--atom collisions, to inelastic scattering of fast electrons from a many-body condensed-matter target in a time-periodic light field. At first order in the projectile--target interaction, the general Floquet--Fourier cross section separates into exact laser-dressed projectile kernels and a matrix-valued Floquet density response of the target. For spatially structured or translationally non-invariant systems, the latter is the bi-momentum Floquet structure factor; its momentum diagonal defines the Floquet generalization of the dynamic structure factor, constrained by Hermiticity, positivity, and sum rules. As a controlled realization of the general projectile kernel, an eikonal--Volkov approximation for slowly varying inhomogeneous fields yields a finite-momentum-resolution convolution of the target response. In the homogeneous-field dipole limit, the projectile kernel reduces to Bessel-function sidebands and the cross section takes the familiar Bethe--Floquet form. The Floquet density correlator separates exactly into the outer product of the pump-induced coherent mean density and connected fluctuations. In the straight-trajectory nonrecoil limit, the coherent, target-elastic sector defines the weak-coupling PINEM amplitude; repeated coherent insertions generate the PINEM Bessel ladder, with an explicit no-double-counting prescription for combining this channel with connected losses. As worked examples, we evaluate the connected, target-changing cross section analytically for a metal in the Drude and diffusive limits, recovering Bessel-weighted plasmon-loss and diffusive combs, and for a driven two-level model that exhibits off-diagonal Floquet coherences through Bessel-channel interference.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
         "categories": [
-          "cond-mat.mtrl-sci",
-          "physics.atom-ph"
+          "cond-mat.str-el"
         ],
-        "published_at": "2026-10-02T15:02:08Z",
-        "updated_at": "2026-10-02T15:02:08Z",
-        "abstract_url": "https://arxiv.org/abs/2610.03416v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.03416v1",
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-10-05T10:08:25Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v3",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v3",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.062397352682969344,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.8,
-        "recency": 0.7033101851851852,
+        "semantic_relevance": 0.1564483005413837,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.17781394675925927,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2784098272258547,
-        "explanation": "No configured positive profile terms matched."
+        "final_preselection_score": 0.2944331299195486,
+        "explanation": "Strongest matched profile terms: neutron scattering."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: We extend the Bethe--Floquet formalism of Joachain and coworkers, originally developed for laser-assisted electron--atom collisions, to inelastic scattering of fast electrons from a many-body condensed-matter target in a time-periodic light field.",
-        "brief_summary": "The abstract states: We extend the Bethe--Floquet formalism of Joachain and coworkers, originally developed for laser-assisted electron--atom collisions, to inelastic scattering of fast electrons from a many-body condensed-matter target in a time-periodic light field. At first order in the projectile--target interaction, the general Floquet--Fourier cross section separates into exact laser-dressed projectile kernels and a matrix-valued Floquet density response of the target. For spatially structured or translationally non-invariant systems, the latter is the bi-momentum Floquet structure factor; its momentum diagonal defines the Floquet generalization of the dynamic structure factor, constrained by Hermiticity, positivity, and sum rules. As a controlled realization of the general projectile kernel, an eikonal--Volkov approximation for slowly varying inhomogeneous fields yields a finite-momentum-resolution convolution of the target response. In the homogeneous-field dipole limit…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mtrl-sci. Its preselection score was 0.278, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations.",
+        "brief_summary": "The abstract states: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.294, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "cond-mat.mtrl-sci"
+          "neutron scattering"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.85
+        "confidence": 0.815
       },
       "rank": 3,
-      "recommendation_type": "adjacent"
+      "recommendation_type": "direct"
     },
     {
       "paper": {
-        "arxiv_id": "2609.39947",
-        "version": 1,
-        "title": "Thermal magnon transport in FM/AFM bilayers",
+        "arxiv_id": "2603.08650",
+        "version": 3,
+        "title": "Revisiting the $J_1$-$J_2$ Heisenberg Model on a Triangular Lattice: Quasidegenerate Ground States and Phase Competition",
         "authors": [
-          "Moumita Kundu",
-          "Ulrich Nowak"
+          "Oleksandra Kovalska",
+          "Ester Pagès Fontanella",
+          "Benedikt Schneider",
+          "Hong-Hao Tu",
+          "Jan von Delft"
         ],
-        "abstract": "Progress in information processing relies on spintronics, where magnetic states serve as efficient carriers for data storage and transfer. In this work, we theoretically study magnon propagation in a bilayer composed of a ferro-magnet and an antiferromagnet. For this purpose, we probe the spin Seebeck effect by introducing a spatially varying temperature profile. This generates a local magnon excitation and a continuous magnon flux from hot to cold regions which we quantify through the resulting non-equilibrium magnon accumulation. Based on the chirality of these modes, we identify specific constraints for magnon modes traveling either from the ferromagnet into the antiferromagnet or vice versa. A key finding is the observation of a thermally triggered spin current in the antiferromagnet, a phenomenon typically absent in bulk antiferromagnets that obey time-reversal symmetry. These results provide important insights into the design of heterostructures for magnonic chirality-selective spin transport.",
-        "primary_category": "cond-mat.mes-hall",
+        "abstract": "It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "primary_category": "cond-mat.str-el",
         "categories": [
-          "cond-mat.mes-hall",
-          "cond-mat.mtrl-sci"
+          "cond-mat.str-el"
         ],
-        "published_at": "2026-09-30T15:23:43Z",
-        "updated_at": "2026-09-30T15:23:43Z",
-        "abstract_url": "https://arxiv.org/abs/2609.39947v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.39947v1",
-        "doi": null,
+        "published_at": "2026-03-09T17:28:21Z",
+        "updated_at": "2026-10-07T07:47:38Z",
+        "abstract_url": "https://arxiv.org/abs/2603.08650v3",
+        "pdf_url": "https://arxiv.org/pdf/2603.08650v3",
+        "doi": "10.1103/cljk-jcq3",
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.07810547845486826,
-        "keyword_relevance": 0.014999999999999998,
-        "category_relevance": 0.8,
-        "recency": 0.4551837384259259,
+        "semantic_relevance": 0.07360856742322662,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.4155931712962963,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2644158391472833,
-        "explanation": "Strongest matched profile terms: spin Seebeck effect."
+        "final_preselection_score": 0.2746831724700816,
+        "explanation": "No configured positive profile terms matched."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: Progress in information processing relies on spintronics, where magnetic states serve as efficient carriers for data storage and transfer.",
-        "brief_summary": "The abstract states: Progress in information processing relies on spintronics, where magnetic states serve as efficient carriers for data storage and transfer. In this work, we theoretically study magnon propagation in a bilayer composed of a ferro-magnet and an antiferromagnet. For this purpose, we probe the spin Seebeck effect by introducing a spatially varying temperature profile. This generates a local magnon excitation and a continuous magnon flux from hot to cold regions which we quantify through the resulting non-equilibrium magnon accumulation. Based on the chirality of these modes, we identify specific constraints for magnon modes traveling either from the ferromagnet into the antiferromagnet or vice versa. A key finding is the observation of a thermally triggered spin current in the antiferromagnet, a phenomenon typically absent…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin Seebeck effect. Its preselection score was 0.264, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases.",
+        "brief_summary": "The abstract states: It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.275, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "spin Seebeck effect"
+          "cond-mat.str-el"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.72
+        "confidence": 0.555
       },
       "rank": 4,
       "recommendation_type": "adjacent"
     },
     {
       "paper": {
-        "arxiv_id": "2609.36140",
+        "arxiv_id": "2610.12557",
         "version": 1,
-        "title": "Magnetic excitations of the strongly-anisotropic triangular XXZ model: a projected spin-product state approach",
+        "title": "Frustrated Topological Orbital Magnetism",
         "authors": [
-          "Achille Mauri",
-          "Frédéric Mila"
+          "Sergio Garrido Bourkhaeva",
+          "Claudio Castelnovo",
+          "Wojciech J. Jankowski"
         ],
-        "abstract": "Recent experiments have sparked interest on the ground-state properties and on the excitation spectrum of the spin-$1/2$ triangular XXZ model with strong Ising-like anisotropy. In this work, we introduce and analyze a ``projected'' coherent-state approximation to the model, constructed by projecting spin-product states onto the low-energy configurations of the triangular Ising antiferromagnet. Within this approximation, we discuss the structure of the ground-state ordering and the magnetization curve under a longitudinal field. We then discuss the excitation spectrum by linearizing equations of motion deriving from a time-dependent variational principle. This leads to a natural description of spin-wave-like excitations within the strongly constrained Hilbert space. At zero field, the variational approximation leads to a very flat landscape of quasi-degenerate states, which results in a low-energy pseudo-Goldstone mode in the excitation spectrum. We compare our results to experimental measurements on the cobaltite K$_{2}$Co(SeO$_{3}$)$_{2}$ (KCSO). Our approximation leads to a dramatic improvement as compared to linear spin-wave theory. However, there remain deviations in the value of the pseudo-Goldstone gap and in the dispersion near $M$ points at low field.",
-        "primary_category": "cond-mat.str-el",
+        "abstract": "By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
+        "primary_category": "cond-mat.mes-hall",
         "categories": [
-          "cond-mat.str-el"
+          "cond-mat.mes-hall",
+          "quant-ph"
         ],
-        "published_at": "2026-09-28T19:15:29Z",
-        "updated_at": "2026-09-28T19:15:29Z",
-        "abstract_url": "https://arxiv.org/abs/2609.36140v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.36140v1",
+        "published_at": "2026-10-08T18:00:01Z",
+        "updated_at": "2026-10-08T18:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12557v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12557v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.08452906657054379,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.2253023726851852,
+        "semantic_relevance": 0.12226892660218298,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.5937514467592593,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.26556831722526325,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+        "final_preselection_score": 0.26439616164690827,
+        "explanation": "No configured positive profile terms matched."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: Recent experiments have sparked interest on the ground-state properties and on the excitation spectrum of the spin-$1/2$ triangular XXZ model with strong Ising-like anisotropy.",
-        "brief_summary": "The abstract states: Recent experiments have sparked interest on the ground-state properties and on the excitation spectrum of the spin-$1/2$ triangular XXZ model with strong Ising-like anisotropy. In this work, we introduce and analyze a ``projected'' coherent-state approximation to the model, constructed by projecting spin-product states onto the low-energy configurations of the triangular Ising antiferromagnet. Within this approximation, we discuss the structure of the ground-state ordering and the magnetization curve under a longitudinal field. We then discuss the excitation spectrum by linearizing equations of motion deriving from a time-dependent variational principle. This leads to a natural description of spin-wave-like excitations within the strongly constrained Hilbert space. At zero field, the variational approximation leads to a very flat landscape of quasi-degenerate states, which results in a…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.266, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin…",
+        "brief_summary": "The abstract states: By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mes-hall. Its preselection score was 0.264, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "linear spin-wave theory"
+          "cond-mat.mes-hall"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.85
+        "confidence": 0.56
       },
       "rank": 5,
       "recommendation_type": "adjacent"
     },
     {
       "paper": {
-        "arxiv_id": "2609.36128",
+        "arxiv_id": "2609.07634",
         "version": 2,
-        "title": "Altermagnetism produces pair emission and absorption from dark excitons and magnons in La$_2$O$_3$Mn$_2$Se$_2$",
+        "title": "Benchmarking dynamical-structure-factor protocols in programmable neutral-atom geometries",
         "authors": [
-          "Birender Singh",
-          "Xian Xu",
-          "Sabrina R. Hatt",
-          "Suvodeep Paul",
-          "Yu-Mi Wu",
-          "Chao-Chun Wei",
-          "Violet Williams",
-          "Kyung-Mo Kim",
-          "Yihao Zhang",
-          "Mohamed Shehabeldin",
-          "Cameron Grant",
-          "April Li",
-          "Michael Geiwitz",
-          "Xiaoyin Li",
-          "Garrett E. Granroth",
-          "Feng Liu",
-          "Qiong Ma",
-          "Benedetta Flebus",
-          "Judy J. Cha",
-          "Vinod M. Menon",
-          "Benjamin A. Frandsen",
-          "Diana Y. Qiu",
-          "Huiwen Ji",
-          "Kenneth S. Burch"
+          "Matteo Grotti",
+          "Sergi Julià-Farré",
+          "Elisa Ercolessi",
+          "Alexandre Dauphin"
         ],
-        "abstract": "Altermagnets' (AMs) non-relativistic spin splitting enables novel states, spintronic and magneto-optical devices, though their optical signatures remain elusive. Here, we report exciton-magnon emission and absorption: optical sidebands from a spin-forbidden dark exciton, a direct consequence of altermagnetic symmetry. Combined optical spectroscopy and first-principles calculations reveal that La$_2$O$_3$Mn$_2$Se$_2$ is an altermagnetic insulator, hosting a strongly bound, spin-forbidden dark exciton and a higher-energy bright exciton. Photoluminescence (PL) and absorption reveal mirror-image sidebands, Stokes-shifted in emission and anti-Stokes-shifted in absorption, symmetric about the dark exciton, whose energy shifts and spectral shapes match the magnon energy scale and density of states measured independently by inelastic neutron scattering. The PL intensity tracks the full equal-time spin-spin correlator, combining static and dynamical contributions, and rules out alternative processes. This directly couples PL to magnetism, with potential for magneto-optical devices. These results establish exciton-magnon spectroscopy as a new route for optically identifying and exploiting AMs.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral properties are difficult to access with classical numerical methods at large scales. We further analyze the robustness of the protocol under realistic experimental conditions, including finite simulation times, pulse modulation, positional disorder, and laser noise. Our results show that neutral-atom quantum simulators can provide a practical route to probing dynamical response functions in regimes where classical simulations become increasingly demanding, paving the way toward experimental implementation.",
+        "primary_category": "quant-ph",
         "categories": [
-          "cond-mat.mtrl-sci"
+          "quant-ph"
         ],
-        "published_at": "2026-09-28T19:00:26Z",
-        "updated_at": "2026-09-30T23:17:37Z",
-        "abstract_url": "https://arxiv.org/abs/2609.36128v2",
-        "pdf_url": "https://arxiv.org/pdf/2609.36128v2",
+        "published_at": "2026-09-07T15:28:35Z",
+        "updated_at": "2026-10-09T13:13:36Z",
+        "abstract_url": "https://arxiv.org/abs/2609.07634v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.07634v2",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.10252280610636626,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.8,
-        "recency": 0.4963208912037037,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2820173518682352,
-        "explanation": "Strongest matched profile terms: neutron scattering."
-      },
-      "summary": {
-        "one_sentence_takeaway": "The abstract reports: Altermagnets' (AMs) non-relativistic spin splitting enables novel states, spintronic and magneto-optical devices, though their optical signatures remain elusive.",
-        "brief_summary": "The abstract states: Altermagnets' (AMs) non-relativistic spin splitting enables novel states, spintronic and magneto-optical devices, though their optical signatures remain elusive. Here, we report exciton-magnon emission and absorption: optical sidebands from a spin-forbidden dark exciton, a direct consequence of altermagnetic symmetry. Combined optical spectroscopy and first-principles calculations reveal that La$_2$O$_3$Mn$_2$Se$_2$ is an altermagnetic insulator, hosting a strongly bound, spin-forbidden dark exciton and a higher-energy bright exciton. Photoluminescence (PL) and absorption reveal mirror-image sidebands, Stokes-shifted in emission and anti-Stokes-shifted in absorption, symmetric about the dark exciton, whose energy shifts and spectral shapes match the magnon energy scale and density of states measured independently by inelastic neutron scattering. The PL intensity tracks the full equal-time spin-spin correlator, combining static and dynamical contributions, and rules out alternative processes…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.282, so the relevance claim reflects only the available abstract and ranking signals.",
-        "methods_or_systems": [
-          "neutron scattering"
-        ],
-        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
-        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.74
-      },
-      "rank": 6,
-      "recommendation_type": "direct"
-    },
-    {
-      "paper": {
-        "arxiv_id": "2610.01011",
-        "version": 1,
-        "title": "Highly anisotropic collective modes of altermagnetic superconductors with Bogoliubov Fermi surfaces",
-        "authors": [
-          "Huaisong Zhao",
-          "Peng Zou",
-          "Xia-Ji Liu",
-          "Hui Hu"
-        ],
-        "abstract": "We investigate collective modes in charge-neutral altermagnetic superconductors with $d$-wave spin-split bands, focusing on the impact of emergent Bogoliubov Fermi surfaces. In the absence of a magnetic field, the BCS state supports collective modes that inherit the underlying $d$-wave symmetry, resulting in pronounced momentum-space anisotropy. The broken time-reversal symmetry further couples these modes to spin-density fluctuations, allowing their signatures to emerge in the spin dynamical structure factor. Upon applying a magnetic field, Bogoliubov Fermi surfaces emerge and qualitatively reshape the collective-mode dynamics through gapless particle-hole excitations and strongly anisotropic Landau damping. The damping is strongest along the momentum-space diagonal, where it can suppress the low-energy phonon mode at small momenta. Remarkably, the suppressed phonon is accompanied by the emergence of an in-gap structure in the Higgs mode and an associated pronounced enhancement of the spin response. These results establish Bogoliubov Fermi surfaces as a mechanism for generating highly anisotropic collective-mode dynamics and identify spin response as a sensitive probe of in-gap Higgs excitations in altermagnetic superconductors.",
-        "primary_category": "cond-mat.supr-con",
-        "categories": [
-          "cond-mat.supr-con",
-          "cond-mat.quant-gas"
-        ],
-        "published_at": "2026-10-01T03:56:38Z",
-        "updated_at": "2026-10-01T03:56:38Z",
-        "abstract_url": "https://arxiv.org/abs/2610.01011v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.01011v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.08875409612035651,
-        "keyword_relevance": 0.02,
+        "semantic_relevance": 0.11922252771652309,
+        "keyword_relevance": 0.08214285714285714,
         "category_relevance": 0.0,
-        "recency": 0.520541087962963,
+        "recency": 0.6938888888888889,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.19699345205045674,
-        "explanation": "Strongest matched profile terms: dynamical structure factor."
+        "final_preselection_score": 0.24357474064703857,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: We investigate collective modes in charge-neutral altermagnetic superconductors with $d$-wave spin-split bands, focusing on the impact of emergent Bogoliubov Fermi surfaces.",
-        "brief_summary": "The abstract states: We investigate collective modes in charge-neutral altermagnetic superconductors with $d$-wave spin-split bands, focusing on the impact of emergent Bogoliubov Fermi surfaces. In the absence of a magnetic field, the BCS state supports collective modes that inherit the underlying $d$-wave symmetry, resulting in pronounced momentum-space anisotropy. The broken time-reversal symmetry further couples these modes to spin-density fluctuations, allowing their signatures to emerge in the spin dynamical structure factor. Upon applying a magnetic field, Bogoliubov Fermi surfaces emerge and qualitatively reshape the collective-mode dynamics through gapless particle-hole excitations and strongly anisotropic Landau damping. The damping is strongest along the momentum-space diagonal, where it can suppress the low-energy phonon mode at small momenta. Remarkably, the suppressed phonon is accompanied by the emergence of an in-gap…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through dynamical structure factor. Its preselection score was 0.197, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials.",
+        "brief_summary": "The abstract states: The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, dynamical structure factor. Its preselection score was 0.244, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
+          "neutron scattering",
           "dynamical structure factor"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.83
+        "confidence": 0.85
+      },
+      "rank": 6,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.07150",
+        "version": 1,
+        "title": "Monopole Catalysis from Standard Model Anomalies",
+        "authors": [
+          "Nathaniel Craig",
+          "Dan Sehayek"
+        ],
+        "abstract": "We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "hep-th"
+        ],
+        "published_at": "2026-10-05T18:00:02Z",
+        "updated_at": "2026-10-05T18:00:02Z",
+        "abstract_url": "https://arxiv.org/abs/2610.07150v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.07150v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08941805780879286,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.2187528935185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16211341536580864,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles.",
+        "brief_summary": "The abstract states: We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.162, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.45
       },
       "rank": 7,
       "recommendation_type": "wildcard"
     },
     {
       "paper": {
-        "arxiv_id": "2609.33454",
+        "arxiv_id": "2610.08224",
         "version": 1,
-        "title": "Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice",
+        "title": "Radiating Bardeen Black-Hole as a dark matter candidate",
         "authors": [
-          "Saeed Barari",
-          "Yasir Iqbal",
-          "Ganapathy Baskaran",
-          "Saeed S. Jahromi",
-          "Chunxiao Liu",
-          "Julien Vidal"
+          "Alan Sebastián Morales",
+          "Juan Ignacio Musmarra",
+          "Maurico Bellini"
         ],
-        "abstract": "We study the spin-$1/2$ Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice with a symmetry-preserving tri-coloring of the Kitaev exchanges. We focus on two cases: (i) the pure Kitaev model with anisotropic exchanges and (ii) the Kitaev-Heisenberg model with isotropic Kitaev exchange. In the absence of Heisenberg interactions, we use the standard mapping of the Kitaev model onto a quadratic Majorana-fermion problem in a $\\mathbb{Z}_2$ gauge field. We find a gapped energy spectrum throughout the positive-coupling phase diagram, except at a single point where the twofold-degenerate energy bands form a Dirac cone. This unique gapped region corresponds to a toric code phase. However, depending on the couplings, vortex excitations on square, hexagonal, and dodecagonal plaquettes realize three distinct relative assignments to the $e$ and $m$ anyons. We determine these relative assignments from the physical fermion parity of the vortex sectors and locate their boundaries by tracking zero crossings of vortex-bound Majorana levels. For the isotropic Kitaev-Heisenberg model, we combine graph-based projected entangled-pair-state calculations, exact diagonalizations, and linear spin-wave theory to study the entire phase diagram. Apart from the toric code topological phases that are robust around the Kitaev limits, we obtain four collinear magnetically ordered phases that can be characterized by their local and relative orderings of hexagonal plaquettes. We also identify a special point at which the ground state is a product state.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-09-27T11:07:56Z",
-        "updated_at": "2026-09-27T11:07:56Z",
-        "abstract_url": "https://arxiv.org/abs/2609.33454v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.33454v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.04344798852637136,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.05798032407407407,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.23034962724427452,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      },
-      "summary": {
-        "one_sentence_takeaway": "The abstract reports: We study the spin-$1/2$ Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice with a symmetry-preserving tri-coloring of the Kitaev exchanges.",
-        "brief_summary": "The abstract states: We study the spin-$1/2$ Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice with a symmetry-preserving tri-coloring of the Kitaev exchanges. We focus on two cases: (i) the pure Kitaev model with anisotropic exchanges and (ii) the Kitaev-Heisenberg model with isotropic Kitaev exchange. In the absence of Heisenberg interactions, we use the standard mapping of the Kitaev model onto a quadratic Majorana-fermion problem in a $\\mathbb{Z}_2$ gauge field. We find a gapped energy spectrum throughout the positive-coupling phase diagram, except at a single point where the twofold-degenerate energy bands form a Dirac cone. This unique gapped region corresponds to a toric code phase. However, depending on the couplings, vortex excitations on square, hexagonal, and dodecagonal plaquettes realize three distinct relative assignments to the $e$ and…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.230, so the relevance claim reflects only the available abstract and ranking signals.",
-        "methods_or_systems": [
-          "linear spin-wave theory"
-        ],
-        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
-        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.85
-      },
-      "rank": 8,
-      "recommendation_type": "adjacent"
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.12486",
-        "version": 2,
-        "title": "Magnetically charged spinning particles around a regular black hole: constraints on the monopole charge from quasi-periodic oscillations",
-        "authors": [
-          "Shokhzod Jumaniyozov",
-          "Javlon Rayimbaev",
-          "Chengxun Yuan",
-          "Ahmadjon Abdujabbarov",
-          "Faisal Javed",
-          "Satimbay Palvanov"
-        ],
-        "abstract": "We investigate the dynamics of magnetically charged spinning test particles in the spacetime of the Bardeen regular black hole, sourced by nonlinear electrodynamics and featuring a magnetic monopole charge parameter g. Using the Mathisson-Papapetrou-Dixon equations with the Tulczyjew spin condition, extended by the Coulomb-like force between the particle's magnetic charge and the monopole, we derive the effective potential for equatorial motion and analyze circular orbits, the innermost stable circular orbit (ISCO), superluminality constraints and high-energy collisions. Solving the ISCO conditions perturbatively around Schwarzschild, we obtain exact coefficients, r_{\\rm ISCO}, and show that the magnetic coupling λg shifts r_{\\rm ISCO} only at higher order while it changes the ISCO energy and angular momentum at first order. We compute radiative efficiencies (up to \\simeq 8\\% in the explored range, against 5.72\\% for Schwarzschild) and the orbital and radial epicyclic frequencies, including the ISCO and the 3:2 resonance, whose frequency at fixed mass is shifted by 5--11\\% for g/M=0.5--0.7.",
+        "abstract": "We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances $r<\\sqrt{3/λ_0}$, which are restricted by the vacuum energy density. The field $\\hat{A}^μ$ describes massive photons found in the vicinity of a BBH, forming a gravito-electromagnetic structure analogous to that of an atom, which could be a candidate for dark matter in the early universe.",
         "primary_category": "gr-qc",
         "categories": [
           "gr-qc"
         ],
-        "published_at": "2026-07-14T08:20:38Z",
-        "updated_at": "2026-10-02T16:41:10Z",
-        "abstract_url": "https://arxiv.org/abs/2607.12486v2",
-        "pdf_url": "https://arxiv.org/pdf/2607.12486v2",
+        "published_at": "2026-10-06T12:12:24Z",
+        "updated_at": "2026-10-06T12:12:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08224v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08224v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.06487964874714976,
+        "semantic_relevance": 0.045987797253758164,
         "keyword_relevance": 0.025,
         "category_relevance": 0.0,
-        "recency": 0.7119068287037037,
+        "recency": 0.3135763888888889,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20663652480658778,
+        "final_preselection_score": 0.15830214765308007,
         "explanation": "Strongest matched profile terms: magnetic monopole."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: We investigate the dynamics of magnetically charged spinning test particles in the spacetime of the Bardeen regular black hole, sourced by nonlinear electrodynamics and featuring a magnetic monopole charge parameter g.",
-        "brief_summary": "The abstract states: We investigate the dynamics of magnetically charged spinning test particles in the spacetime of the Bardeen regular black hole, sourced by nonlinear electrodynamics and featuring a magnetic monopole charge parameter g. Using the Mathisson-Papapetrou-Dixon equations with the Tulczyjew spin condition, extended by the Coulomb-like force between the particle's magnetic charge and the monopole, we derive the effective potential for equatorial motion and analyze circular orbits, the innermost stable circular orbit (ISCO), superluminality constraints and high-energy collisions. Solving the ISCO conditions perturbatively around Schwarzschild, we obtain exact coefficients, r_{\\rm ISCO}, and show that the magnetic coupling λg shifts r_{\\rm ISCO} only at higher order while it changes the ISCO energy and angular momentum at first order. We compute radiative efficiencies (up to \\simeq…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.207, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action…",
+        "brief_summary": "The abstract states: We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.158, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
           "magnetic monopole"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
-        "confidence": 0.78
+        "confidence": 0.83
       },
-      "rank": 9,
-      "recommendation_type": "adjacent"
+      "rank": 8,
+      "recommendation_type": "wildcard"
     },
     {
       "paper": {
-        "arxiv_id": "2609.33046",
-        "version": 1,
-        "title": "Unifying Magnetic, Electrical, and Thermoelectric Responses in a Non-Collinear Antiferromagnet",
+        "arxiv_id": "2606.12874",
+        "version": 2,
+        "title": "A simple solution to the monopole problem: SU(5) GUT with symmetry breaking into special subgroup",
         "authors": [
-          "André José",
-          "Adrielson Dias",
-          "Carlos Eduardo",
-          "Giovanna Celly",
-          "Luiza Paffer",
-          "José Araújo",
-          "José Laurentino",
-          "Monalisa Cavalcante",
-          "José Holanda"
+          "Yu Hamada",
+          "Naoki Yamatsu"
         ],
-        "abstract": "Non-collinear antiferromagnets offer unconventional routes for controlling magnetic, electrical, and thermoelectric responses through their complex spin configurations and interfacial symmetry. Here, we detect exceptional interfacial properties arising from a non-collinear antiferromagnet by demonstrating a robust and quantitatively consistent exchange-bias response in an IrMn$_3$/Py heterostructure. The system consists of a 10 nm IrMn$_3$ layer coupled to a 5 nm permalloy (Py) film. Longitudinal magneto-optical Kerr effect (MOKE), anisotropic magnetoresistance (AMR), and anomalous Nernst effect (ANE) measurements independently reveal the same unidirectional field shift of approximately 50 Oe, together with a consistent cosine angular dependence. The simultaneous observation of these signatures establishes a direct correspondence between the interfacial magnetic symmetry imposed by the non-collinear antiferromagnet and the responses of the adjacent ferromagnet. This symmetry is manifested consistently in magnetization reversal, charge transport, and thermally driven voltage generation, demonstrating that the exchange-bias imprint is not restricted to a single experimental observable. Our results reveal a coherent multifunctional response of IrMn$_3$/Py and extend the conventional understanding of exchange bias beyond collinear antiferromagnetic systems. More broadly, they demonstrate the potential of non-collinear antiferromagnets as platforms for coupling magnetic, electrical, and thermoelectric functionalities in spintronic and spin-caloritronic devices.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and multiple singlet fermions. During this intermediate phase, the monopoles become connected to antimonopoles by cosmic strings, which enhances their pair annihilation and reduces their abundance. Subsequently, the symmetry is restored to the SM gauge group. The restoration transition can be either first-order or second-order, depending on the model parameters. In the case of a first-order phase transition, a stochastic gravitational-wave (GW) signal is generated. For a certain region of the parameter space, the resulting signal can lie within the sensitivity of future GW experiments.",
+        "primary_category": "hep-ph",
         "categories": [
-          "cond-mat.mtrl-sci",
-          "cond-mat.mes-hall",
-          "cond-mat.soft",
-          "physics.app-ph",
-          "physics.optics"
+          "hep-ph",
+          "astro-ph.CO"
         ],
-        "published_at": "2026-09-27T00:21:04Z",
-        "updated_at": "2026-09-27T00:21:04Z",
-        "abstract_url": "https://arxiv.org/abs/2609.33046v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.33046v1",
+        "published_at": "2026-06-11T04:02:17Z",
+        "updated_at": "2026-10-07T05:50:51Z",
+        "abstract_url": "https://arxiv.org/abs/2606.12874v2",
+        "pdf_url": "https://arxiv.org/pdf/2606.12874v2",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09561408010346041,
+        "semantic_relevance": 0.033606045038895846,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.8,
-        "recency": 0.0018287037037037037,
+        "category_relevance": 0.0,
+        "recency": 0.40545572916666667,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2232092064169276,
+        "final_preselection_score": 0.1556682931841698,
         "explanation": "No configured positive profile terms matched."
       },
       "summary": {
-        "one_sentence_takeaway": "The abstract reports: Non-collinear antiferromagnets offer unconventional routes for controlling magnetic, electrical, and thermoelectric responses through their complex spin configurations and interfacial symmetry.",
-        "brief_summary": "The abstract states: Non-collinear antiferromagnets offer unconventional routes for controlling magnetic, electrical, and thermoelectric responses through their complex spin configurations and interfacial symmetry. Here, we detect exceptional interfacial properties arising from a non-collinear antiferromagnet by demonstrating a robust and quantitatively consistent exchange-bias response in an IrMn$_3$/Py heterostructure. The system consists of a 10 nm IrMn$_3$ layer coupled to a 5 nm permalloy (Py) film. Longitudinal magneto-optical Kerr effect (MOKE), anisotropic magnetoresistance (AMR), and anomalous Nernst effect (ANE) measurements independently reveal the same unidirectional field shift of approximately 50 Oe, together with a consistent cosine angular dependence. The simultaneous observation of these signatures establishes a direct correspondence between the interfacial magnetic symmetry imposed by the non-collinear antiferromagnet and the responses of the adjacent ferromagnet. This symmetry…",
-        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mtrl-sci. Its preselection score was 0.223, so the relevance claim reflects only the available abstract and ranking signals.",
+        "one_sentence_takeaway": "The abstract reports: Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance.",
+        "brief_summary": "The abstract states: Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.156, so the relevance claim reflects only the available abstract and ranking signals.",
         "methods_or_systems": [
-          "cond-mat.mtrl-sci"
+          "hep-ph"
         ],
         "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
         "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
         "confidence": 0.85
       },
-      "rank": 10,
-      "recommendation_type": "adjacent"
+      "rank": 9,
+      "recommendation_type": "wildcard"
     }
   ],
-  "near_misses": [
-    {
-      "paper": {
-        "arxiv_id": "2610.03671",
-        "version": 1,
-        "title": "Quantum simulation of field-tunable spin spectroscopy of the quantum magnet Cs2CoCl4 on a trapped-ion quantum computer",
-        "authors": [
-          "Elias Kokkas",
-          "Nora Bauer",
-          "Justin Provazza",
-          "Mark E. Nowakowski",
-          "Kathleen Hamilton",
-          "Gilles Buchs",
-          "Andrew Sornborger",
-          "Travis S. Humble",
-          "Ananth Kaushik",
-          "Martin Roetteler"
-        ],
-        "abstract": "The collective excitation spectra of quantum magnets provide a direct test of quantum computers as tools for studying strongly correlated matter. Hardware noise limits the circuit depths available for these calculations, leaving the question of how much magnetic information can survive circuit compression. Using IonQ's 36 qubit Forte Enterprise processor, we simulate the magnetic excitation spectra and spin dynamics of a 36 site Heisenberg XXZ chain describing the quantum magnet Cs2CoCl4 in a transverse field using quantum circuits containing just 420 two qubit gates. The workflow combines an ancilla free local kick protocol with classical tensor network compression, encoding both ground state preparation and time evolution. The reconstructed dynamical structure factors capture the evolution from a broad two spinon continuum toward a dispersive branch with magnon character near the expected critical field. We observe an interesting field driven sign reversal of the nearest neighbor spin correlations which shows a complementary signature of this magnetic evolution. Our error mitigation methods bring the reconstructed total spectra into close agreement with density matrix renormalization group calculations, with Pearson correlation and structural similarity above 0.9 and normalized mean squared error below 0.15. We also perform comparisons with experimental inelastic neutron scattering measurements to connect the recovered excitations to the material's magnetic response. Our results demonstrate that circuit compression and error mitigation allow noisy quantum processors to recover both collective excitations and local magnetic correlations providing a quantitative benchmark for quantum spectroscopy and a basis for extending these methods to more complex magnetic systems.",
-        "primary_category": "quant-ph",
-        "categories": [
-          "quant-ph"
-        ],
-        "published_at": "2026-10-02T17:41:29Z",
-        "updated_at": "2026-10-02T17:41:29Z",
-        "abstract_url": "https://arxiv.org/abs/2610.03671v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.03671v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.09712077164838376,
-        "keyword_relevance": 0.045,
-        "category_relevance": 0.0,
-        "recency": 0.717142650462963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.22666861228806898,
-        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2507.11983",
-        "version": 3,
-        "title": "Chiral edge-state signatures of Berry monopole merging and splitting in a bilayer photonic crystal slab with synthetic momentum",
-        "authors": [
-          "Ngoc Duc Le",
-          "D. -H. -Minh Nguyen",
-          "Dung Xuan Nguyen",
-          "Hai Son Nguyen",
-          "Dario Bercioux"
-        ],
-        "abstract": "Berry monopoles are point degeneracies in parameter space where the Berry curvature emanates radially, analogous to magnetic monopoles. Here, we report the adiabatic merging and splitting of Berry monopoles in a bilayer photonic crystal slab combining one genuine and one synthetic momentum. Two monopoles approach, merge, and split within this hybrid parameter space. The process is described by an effective coupled-mode model and confirmed by full-wave simulations. We further propose a scheme to experimentally probe the Berry monopole merging and splitting by monitoring the evolution of chiral edge states localized at the interface between two topological phases with inverted band structures.",
-        "primary_category": "physics.optics",
-        "categories": [
-          "physics.optics",
-          "cond-mat.mes-hall"
-        ],
-        "published_at": "2025-07-16T07:29:18Z",
-        "updated_at": "2026-09-29T04:16:27Z",
-        "abstract_url": "https://arxiv.org/abs/2507.11983v3",
-        "pdf_url": "https://arxiv.org/pdf/2507.11983v3",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.07120755704271206,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.5,
-        "recency": 0.2722612847222222,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20926952914144265,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.24989",
-        "version": 2,
-        "title": "Cross-Correlations of Metric and Monopole Perturbations from Holographic Cosmology",
-        "authors": [
-          "Matheus Cravo",
-          "Juliana Z. Finotti",
-          "Horatiu Nastase"
-        ],
-        "abstract": "In this paper, we present the 1-loop calculation of the three-point function $\\langle TJJ \\rangle$ of the stress-energy tensor and two insertions of $SO(3)$ global currents, using a 3d toy model for holographic cosmology. By applying the holographic dictionary that relates these QFT $n$-point functions to cosmological correlators, together with the $Sl(2,\\mathbb{Z})$ duality that maps the electric Noether current to a magnetic vortex current dual to cosmological magnetic monopoles, we relate the $\\langle TJJ \\rangle$ correlator to the cross-correlations between metric perturbations and the bulk magnetic monopole field, specifically mapping to the non-Gaussianities $\\langle ξ\\tilde{A} \\tilde{A} \\rangle$ and $\\langle γ\\tilde{A} \\tilde{A} \\rangle$. We calculate the semi-local contact terms necessary to achieve the exact factorization of the cosmological correlators in the squeezed limit, $p_1 \\to 0$. Finally, we evaluate the effective non-linear parameters, showing that the scalar-monopole cross-correlation vanishes at leading order, $f_{NL}^{ξ\\tilde{A} \\tilde{A}} = 0$, while the tensor-monopole cross-correlation yields a non-zero $f_{NL}^{γ\\tilde A\\tilde A}$. These results respect the expected amplitude hierarchy of the non-Gaussian correlators, while pointing at new directions in which holographic cosmology can be tested experimentally.",
-        "primary_category": "hep-th",
-        "categories": [
-          "hep-th",
-          "gr-qc"
-        ],
-        "published_at": "2026-07-27T18:41:02Z",
-        "updated_at": "2026-09-28T16:09:28Z",
-        "abstract_url": "https://arxiv.org/abs/2607.24989v2",
-        "pdf_url": "https://arxiv.org/pdf/2607.24989v2",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.050181576571950666,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.0,
-        "recency": 0.2091550925925926,
-        "novelty": 0.5,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.09974721871663707,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
-      }
-    }
-  ],
+  "near_misses": [],
   "ranked_candidates": [
     {
       "paper": {
-        "arxiv_id": "2610.02409",
+        "arxiv_id": "2610.12294",
         "version": 1,
-        "title": "Projective symmetry group classification of fermionic $Z_2$ spin liquids on the dipolar-octupolar pyrochlore magnets",
+        "title": "Transducing quantum-spin-ice correlations into Weyl Fermi-arc transport at a synthetic Kondo lattice interface",
         "authors": [
-          "Rohit Deb",
-          "Sambuddha Sanyal"
+          "Tsung-Chi Wu",
+          "Michael Terilli",
+          "Christian Zaprianov",
+          "Eun Sang Choi",
+          "David Graf",
+          "Qinghua Zhang",
+          "Lin Gu",
+          "Mikhail Kareev"
         ],
-        "abstract": "We construct and classify $Z_2$ quantum spin liquids (QSLs) of fermionic partons on the dipolar-octupolar (DO) pyrochlore lattice. The DO pseudospin shares the space-group and time-reversal algebra of the effective spin-1/2 Kramers doublet, its projective symmetry group (PSG) yields the same 48 symmetric $Z_2$ classes as the generic fermionic classification. We show, the distinct DO symmetry action, encoded in a set of sublattice-independent operators, selects a physically different set of symmetry-allowed mean-field channels, so that the resulting ansatze, spinon spectra, and observables differ from both the effective spin-1/2 case and the bosonic DO classification. Decomposing the anisotropic XYZ exchange model into all symmetric singlet and triplet hopping and pairing channels and minimizing the mean-field energy self-consistently, we obtain phase diagrams in the ($\\tilde{J_x}, \\tilde{J_z}$) plane in which only a few $Z_2$ states, several supporting gapless or flat-band spinon spectra, are stabilized. For these states we compute the spinon band structures, the low-temperature specific heat, and the dynamical spin structure factor, and we argue that the power-law specific-heat exponent is a diagnostic of the spinon nodal structure. A near-linear-in-temperature specific heat together with broad continua in the structure factor gives a fermionic-parton account of the gapless, fractionalized thermodynamics reported in DO materials such as $Nd_2ScNbO_7$, complementing the bosonic quantum-spin-ice picture of the Ce-based compounds. The work extends the fermionic-parton classification of DO pyrochlore QSLs beyond the $U(1)$ sector, where $Z_2$ topological order is realized equally naturally by fermionic and bosonic spinons.",
+        "abstract": "Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical contrast shows that the same itinerant electronic channel acquires qualitatively different symmetry information when interacting with the quantum-fluctuating Tb moments, consistent with an interfacial coupling between the Weyl surface states and the transverse, multipolar degrees of freedom, in addition to the longitudinal, dipolar contribution. Our work establishes synthetic Kondo lattice interfaces as a route for transducing frustrated quantum magnetism with multipole correlations into distinct Weyl Fermi-arc transport responses.",
         "primary_category": "cond-mat.str-el",
         "categories": [
-          "cond-mat.str-el"
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
         ],
-        "published_at": "2026-10-01T19:35:26Z",
-        "updated_at": "2026-10-01T19:35:26Z",
-        "abstract_url": "https://arxiv.org/abs/2610.02409v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.02409v1",
+        "published_at": "2026-10-08T16:47:50Z",
+        "updated_at": "2026-10-08T16:47:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12294v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12294v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09755182470862395,
-        "keyword_relevance": 0.08714285714285713,
+        "semantic_relevance": 0.12688994147699909,
+        "keyword_relevance": 0.08571428571428572,
         "category_relevance": 1.0,
-        "recency": 0.6020341435185185,
+        "recency": 0.5874855324074074,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.3258874497564469,
-        "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
+        "final_preselection_score": 0.33727759833396176,
+        "explanation": "Strongest matched profile terms: spin ice."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2610.00479",
+        "arxiv_id": "2610.08957",
         "version": 1,
-        "title": "Stacking-Controlled Altermagnetism and Topological Magnons in Bilayer CrI$_3$",
+        "title": "Probing magnetic interactions in real space via magnetic pair distribution function analysis",
         "authors": [
-          "Lu Xiao",
-          "Meng-Han Zhang",
-          "Dao-Xin Yao"
+          "Edison P. Carlisle",
+          "Benjamin A. Frandsen"
         ],
-        "abstract": "Stacked van der Waals magnets provide a tunable route to altermagnetism, a compensated magnetic order characterized by momentum-dependent spin splitting, and to the topological magnetic excitations that such order can host. In bilayer CrI$_3$, first-principles calculations and linear spin-wave theory reveal stacking-controlled altermagnetic order and associated magnon band topology. Combining band-representation analysis with calculations of the dynamic structure factor relevant to inelastic neutron scattering, we further characterize the chirally split topological magnons and quantify their energy corrections and lifetimes using a many-body Green's-function approach. The interlayer magnetic ground state is highly sensitive to the stacking geometry, thereby controlling the magnon band topology and transport responses. We further show that magnon--magnon interactions renormalize the magnon dispersion and dynamic structure factor, with a particular focus on magnon decay. Using van der Waals bilayer CrI$_3$ as a representative platform, our results establish stacking engineering as a structural route for tuning altermagnetism and associated topological magnon excitations, opening avenues toward stacking-controlled spintronic and magnonic devices.",
+        "abstract": "Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real space, is expected to be well suited for extracting exchange parameters from correlated paramagnets. Here, we demonstrate a robust mean-field theory approach incorporating the Onsager reaction field for determination of exchange parameters from the results of mPDF analysis. We successfully apply this approach to several relevant materials to recover exchange interaction values comparable to literature values.",
         "primary_category": "cond-mat.mtrl-sci",
         "categories": [
           "cond-mat.mtrl-sci"
         ],
-        "published_at": "2026-09-30T18:00:11Z",
-        "updated_at": "2026-09-30T18:00:11Z",
-        "abstract_url": "https://arxiv.org/abs/2610.00479v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.00479v1",
+        "published_at": "2026-10-06T18:23:53Z",
+        "updated_at": "2026-10-06T18:23:53Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08957v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08957v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.11480049890103781,
-        "keyword_relevance": 0.045,
+        "semantic_relevance": 0.18172677395662615,
+        "keyword_relevance": 0.05,
         "category_relevance": 0.8,
-        "recency": 0.46876591435185183,
+        "recency": 0.3458232060185185,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.28978681594065225,
-        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2609.36128",
-        "version": 2,
-        "title": "Altermagnetism produces pair emission and absorption from dark excitons and magnons in La$_2$O$_3$Mn$_2$Se$_2$",
-        "authors": [
-          "Birender Singh",
-          "Xian Xu",
-          "Sabrina R. Hatt",
-          "Suvodeep Paul",
-          "Yu-Mi Wu",
-          "Chao-Chun Wei",
-          "Violet Williams",
-          "Kyung-Mo Kim",
-          "Yihao Zhang",
-          "Mohamed Shehabeldin",
-          "Cameron Grant",
-          "April Li",
-          "Michael Geiwitz",
-          "Xiaoyin Li",
-          "Garrett E. Granroth",
-          "Feng Liu",
-          "Qiong Ma",
-          "Benedetta Flebus",
-          "Judy J. Cha",
-          "Vinod M. Menon",
-          "Benjamin A. Frandsen",
-          "Diana Y. Qiu",
-          "Huiwen Ji",
-          "Kenneth S. Burch"
-        ],
-        "abstract": "Altermagnets' (AMs) non-relativistic spin splitting enables novel states, spintronic and magneto-optical devices, though their optical signatures remain elusive. Here, we report exciton-magnon emission and absorption: optical sidebands from a spin-forbidden dark exciton, a direct consequence of altermagnetic symmetry. Combined optical spectroscopy and first-principles calculations reveal that La$_2$O$_3$Mn$_2$Se$_2$ is an altermagnetic insulator, hosting a strongly bound, spin-forbidden dark exciton and a higher-energy bright exciton. Photoluminescence (PL) and absorption reveal mirror-image sidebands, Stokes-shifted in emission and anti-Stokes-shifted in absorption, symmetric about the dark exciton, whose energy shifts and spectral shapes match the magnon energy scale and density of states measured independently by inelastic neutron scattering. The PL intensity tracks the full equal-time spin-spin correlator, combining static and dynamical contributions, and rules out alternative processes. This directly couples PL to magnetism, with potential for magneto-optical devices. These results establish exciton-magnon spectroscopy as a new route for optically identifying and exploiting AMs.",
-        "primary_category": "cond-mat.mtrl-sci",
-        "categories": [
-          "cond-mat.mtrl-sci"
-        ],
-        "published_at": "2026-09-28T19:00:26Z",
-        "updated_at": "2026-09-30T23:17:37Z",
-        "abstract_url": "https://arxiv.org/abs/2609.36128v2",
-        "pdf_url": "https://arxiv.org/pdf/2609.36128v2",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.10252280610636626,
-        "keyword_relevance": 0.025,
-        "category_relevance": 0.8,
-        "recency": 0.4963208912037037,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2820173518682352,
+        "final_preselection_score": 0.3088593688823337,
         "explanation": "Strongest matched profile terms: neutron scattering."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2610.03416",
-        "version": 1,
-        "title": "Floquet density response in laser-assisted fast-electron scattering from solids",
+        "arxiv_id": "2503.13831",
+        "version": 3,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
         "authors": [
-          "Ferdinand Evers",
-          "Sascha Schäfer",
-          "Richard Korytár"
+          "Josef Willsher",
+          "Johannes Knolle"
         ],
-        "abstract": "We extend the Bethe--Floquet formalism of Joachain and coworkers, originally developed for laser-assisted electron--atom collisions, to inelastic scattering of fast electrons from a many-body condensed-matter target in a time-periodic light field. At first order in the projectile--target interaction, the general Floquet--Fourier cross section separates into exact laser-dressed projectile kernels and a matrix-valued Floquet density response of the target. For spatially structured or translationally non-invariant systems, the latter is the bi-momentum Floquet structure factor; its momentum diagonal defines the Floquet generalization of the dynamic structure factor, constrained by Hermiticity, positivity, and sum rules. As a controlled realization of the general projectile kernel, an eikonal--Volkov approximation for slowly varying inhomogeneous fields yields a finite-momentum-resolution convolution of the target response. In the homogeneous-field dipole limit, the projectile kernel reduces to Bessel-function sidebands and the cross section takes the familiar Bethe--Floquet form. The Floquet density correlator separates exactly into the outer product of the pump-induced coherent mean density and connected fluctuations. In the straight-trajectory nonrecoil limit, the coherent, target-elastic sector defines the weak-coupling PINEM amplitude; repeated coherent insertions generate the PINEM Bessel ladder, with an explicit no-double-counting prescription for combining this channel with connected losses. As worked examples, we evaluate the connected, target-changing cross section analytically for a metal in the Drude and diffusive limits, recovering Bessel-weighted plasmon-loss and diffusive combs, and for a driven two-level model that exhibits off-diagonal Floquet coherences through Bessel-channel interference.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
         "categories": [
-          "cond-mat.mtrl-sci",
-          "physics.atom-ph"
+          "cond-mat.str-el"
         ],
-        "published_at": "2026-10-02T15:02:08Z",
-        "updated_at": "2026-10-02T15:02:08Z",
-        "abstract_url": "https://arxiv.org/abs/2610.03416v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.03416v1",
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-10-05T10:08:25Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v3",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v3",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.062397352682969344,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.8,
-        "recency": 0.7033101851851852,
+        "semantic_relevance": 0.1564483005413837,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.17781394675925927,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2784098272258547,
+        "final_preselection_score": 0.2944331299195486,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2603.08650",
+        "version": 3,
+        "title": "Revisiting the $J_1$-$J_2$ Heisenberg Model on a Triangular Lattice: Quasidegenerate Ground States and Phase Competition",
+        "authors": [
+          "Oleksandra Kovalska",
+          "Ester Pagès Fontanella",
+          "Benedikt Schneider",
+          "Hong-Hao Tu",
+          "Jan von Delft"
+        ],
+        "abstract": "It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-03-09T17:28:21Z",
+        "updated_at": "2026-10-07T07:47:38Z",
+        "abstract_url": "https://arxiv.org/abs/2603.08650v3",
+        "pdf_url": "https://arxiv.org/pdf/2603.08650v3",
+        "doi": "10.1103/cljk-jcq3",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07360856742322662,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.4155931712962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2746831724700816,
         "explanation": "No configured positive profile terms matched."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2609.36140",
+        "arxiv_id": "2610.12557",
         "version": 1,
-        "title": "Magnetic excitations of the strongly-anisotropic triangular XXZ model: a projected spin-product state approach",
+        "title": "Frustrated Topological Orbital Magnetism",
         "authors": [
-          "Achille Mauri",
-          "Frédéric Mila"
+          "Sergio Garrido Bourkhaeva",
+          "Claudio Castelnovo",
+          "Wojciech J. Jankowski"
         ],
-        "abstract": "Recent experiments have sparked interest on the ground-state properties and on the excitation spectrum of the spin-$1/2$ triangular XXZ model with strong Ising-like anisotropy. In this work, we introduce and analyze a ``projected'' coherent-state approximation to the model, constructed by projecting spin-product states onto the low-energy configurations of the triangular Ising antiferromagnet. Within this approximation, we discuss the structure of the ground-state ordering and the magnetization curve under a longitudinal field. We then discuss the excitation spectrum by linearizing equations of motion deriving from a time-dependent variational principle. This leads to a natural description of spin-wave-like excitations within the strongly constrained Hilbert space. At zero field, the variational approximation leads to a very flat landscape of quasi-degenerate states, which results in a low-energy pseudo-Goldstone mode in the excitation spectrum. We compare our results to experimental measurements on the cobaltite K$_{2}$Co(SeO$_{3}$)$_{2}$ (KCSO). Our approximation leads to a dramatic improvement as compared to linear spin-wave theory. However, there remain deviations in the value of the pseudo-Goldstone gap and in the dispersion near $M$ points at low field.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-09-28T19:15:29Z",
-        "updated_at": "2026-09-28T19:15:29Z",
-        "abstract_url": "https://arxiv.org/abs/2609.36140v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.36140v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.08452906657054379,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.2253023726851852,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.26556831722526325,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2609.39947",
-        "version": 1,
-        "title": "Thermal magnon transport in FM/AFM bilayers",
-        "authors": [
-          "Moumita Kundu",
-          "Ulrich Nowak"
-        ],
-        "abstract": "Progress in information processing relies on spintronics, where magnetic states serve as efficient carriers for data storage and transfer. In this work, we theoretically study magnon propagation in a bilayer composed of a ferro-magnet and an antiferromagnet. For this purpose, we probe the spin Seebeck effect by introducing a spatially varying temperature profile. This generates a local magnon excitation and a continuous magnon flux from hot to cold regions which we quantify through the resulting non-equilibrium magnon accumulation. Based on the chirality of these modes, we identify specific constraints for magnon modes traveling either from the ferromagnet into the antiferromagnet or vice versa. A key finding is the observation of a thermally triggered spin current in the antiferromagnet, a phenomenon typically absent in bulk antiferromagnets that obey time-reversal symmetry. These results provide important insights into the design of heterostructures for magnonic chirality-selective spin transport.",
+        "abstract": "By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
         "primary_category": "cond-mat.mes-hall",
         "categories": [
           "cond-mat.mes-hall",
-          "cond-mat.mtrl-sci"
+          "quant-ph"
         ],
-        "published_at": "2026-09-30T15:23:43Z",
-        "updated_at": "2026-09-30T15:23:43Z",
-        "abstract_url": "https://arxiv.org/abs/2609.39947v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.39947v1",
+        "published_at": "2026-10-08T18:00:01Z",
+        "updated_at": "2026-10-08T18:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12557v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12557v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.07810547845486826,
-        "keyword_relevance": 0.014999999999999998,
-        "category_relevance": 0.8,
-        "recency": 0.4551837384259259,
+        "semantic_relevance": 0.12226892660218298,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.5937514467592593,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2644158391472833,
-        "explanation": "Strongest matched profile terms: spin Seebeck effect."
+        "final_preselection_score": 0.26439616164690827,
+        "explanation": "No configured positive profile terms matched."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2609.33454",
-        "version": 1,
-        "title": "Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice",
+        "arxiv_id": "2609.07634",
+        "version": 2,
+        "title": "Benchmarking dynamical-structure-factor protocols in programmable neutral-atom geometries",
         "authors": [
-          "Saeed Barari",
-          "Yasir Iqbal",
-          "Ganapathy Baskaran",
-          "Saeed S. Jahromi",
-          "Chunxiao Liu",
-          "Julien Vidal"
+          "Matteo Grotti",
+          "Sergi Julià-Farré",
+          "Elisa Ercolessi",
+          "Alexandre Dauphin"
         ],
-        "abstract": "We study the spin-$1/2$ Kitaev-Heisenberg model on the square-hexagon-dodecagon lattice with a symmetry-preserving tri-coloring of the Kitaev exchanges. We focus on two cases: (i) the pure Kitaev model with anisotropic exchanges and (ii) the Kitaev-Heisenberg model with isotropic Kitaev exchange. In the absence of Heisenberg interactions, we use the standard mapping of the Kitaev model onto a quadratic Majorana-fermion problem in a $\\mathbb{Z}_2$ gauge field. We find a gapped energy spectrum throughout the positive-coupling phase diagram, except at a single point where the twofold-degenerate energy bands form a Dirac cone. This unique gapped region corresponds to a toric code phase. However, depending on the couplings, vortex excitations on square, hexagonal, and dodecagonal plaquettes realize three distinct relative assignments to the $e$ and $m$ anyons. We determine these relative assignments from the physical fermion parity of the vortex sectors and locate their boundaries by tracking zero crossings of vortex-bound Majorana levels. For the isotropic Kitaev-Heisenberg model, we combine graph-based projected entangled-pair-state calculations, exact diagonalizations, and linear spin-wave theory to study the entire phase diagram. Apart from the toric code topological phases that are robust around the Kitaev limits, we obtain four collinear magnetically ordered phases that can be characterized by their local and relative orderings of hexagonal plaquettes. We also identify a special point at which the ground state is a product state.",
-        "primary_category": "cond-mat.str-el",
-        "categories": [
-          "cond-mat.str-el"
-        ],
-        "published_at": "2026-09-27T11:07:56Z",
-        "updated_at": "2026-09-27T11:07:56Z",
-        "abstract_url": "https://arxiv.org/abs/2609.33454v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.33454v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.04344798852637136,
-        "keyword_relevance": 0.02,
-        "category_relevance": 1.0,
-        "recency": 0.05798032407407407,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.23034962724427452,
-        "explanation": "Strongest matched profile terms: linear spin-wave theory."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2610.03671",
-        "version": 1,
-        "title": "Quantum simulation of field-tunable spin spectroscopy of the quantum magnet Cs2CoCl4 on a trapped-ion quantum computer",
-        "authors": [
-          "Elias Kokkas",
-          "Nora Bauer",
-          "Justin Provazza",
-          "Mark E. Nowakowski",
-          "Kathleen Hamilton",
-          "Gilles Buchs",
-          "Andrew Sornborger",
-          "Travis S. Humble",
-          "Ananth Kaushik",
-          "Martin Roetteler"
-        ],
-        "abstract": "The collective excitation spectra of quantum magnets provide a direct test of quantum computers as tools for studying strongly correlated matter. Hardware noise limits the circuit depths available for these calculations, leaving the question of how much magnetic information can survive circuit compression. Using IonQ's 36 qubit Forte Enterprise processor, we simulate the magnetic excitation spectra and spin dynamics of a 36 site Heisenberg XXZ chain describing the quantum magnet Cs2CoCl4 in a transverse field using quantum circuits containing just 420 two qubit gates. The workflow combines an ancilla free local kick protocol with classical tensor network compression, encoding both ground state preparation and time evolution. The reconstructed dynamical structure factors capture the evolution from a broad two spinon continuum toward a dispersive branch with magnon character near the expected critical field. We observe an interesting field driven sign reversal of the nearest neighbor spin correlations which shows a complementary signature of this magnetic evolution. Our error mitigation methods bring the reconstructed total spectra into close agreement with density matrix renormalization group calculations, with Pearson correlation and structural similarity above 0.9 and normalized mean squared error below 0.15. We also perform comparisons with experimental inelastic neutron scattering measurements to connect the recovered excitations to the material's magnetic response. Our results demonstrate that circuit compression and error mitigation allow noisy quantum processors to recover both collective excitations and local magnetic correlations providing a quantitative benchmark for quantum spectroscopy and a basis for extending these methods to more complex magnetic systems.",
+        "abstract": "The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral properties are difficult to access with classical numerical methods at large scales. We further analyze the robustness of the protocol under realistic experimental conditions, including finite simulation times, pulse modulation, positional disorder, and laser noise. Our results show that neutral-atom quantum simulators can provide a practical route to probing dynamical response functions in regimes where classical simulations become increasingly demanding, paving the way toward experimental implementation.",
         "primary_category": "quant-ph",
         "categories": [
           "quant-ph"
         ],
-        "published_at": "2026-10-02T17:41:29Z",
-        "updated_at": "2026-10-02T17:41:29Z",
-        "abstract_url": "https://arxiv.org/abs/2610.03671v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.03671v1",
+        "published_at": "2026-09-07T15:28:35Z",
+        "updated_at": "2026-10-09T13:13:36Z",
+        "abstract_url": "https://arxiv.org/abs/2609.07634v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.07634v2",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09712077164838376,
-        "keyword_relevance": 0.045,
+        "semantic_relevance": 0.11922252771652309,
+        "keyword_relevance": 0.08214285714285714,
         "category_relevance": 0.0,
-        "recency": 0.717142650462963,
+        "recency": 0.6938888888888889,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.22666861228806898,
-        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+        "final_preselection_score": 0.24357474064703857,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2609.33046",
+        "arxiv_id": "2610.07150",
         "version": 1,
-        "title": "Unifying Magnetic, Electrical, and Thermoelectric Responses in a Non-Collinear Antiferromagnet",
+        "title": "Monopole Catalysis from Standard Model Anomalies",
         "authors": [
-          "André José",
-          "Adrielson Dias",
-          "Carlos Eduardo",
-          "Giovanna Celly",
-          "Luiza Paffer",
-          "José Araújo",
-          "José Laurentino",
-          "Monalisa Cavalcante",
-          "José Holanda"
+          "Nathaniel Craig",
+          "Dan Sehayek"
         ],
-        "abstract": "Non-collinear antiferromagnets offer unconventional routes for controlling magnetic, electrical, and thermoelectric responses through their complex spin configurations and interfacial symmetry. Here, we detect exceptional interfacial properties arising from a non-collinear antiferromagnet by demonstrating a robust and quantitatively consistent exchange-bias response in an IrMn$_3$/Py heterostructure. The system consists of a 10 nm IrMn$_3$ layer coupled to a 5 nm permalloy (Py) film. Longitudinal magneto-optical Kerr effect (MOKE), anisotropic magnetoresistance (AMR), and anomalous Nernst effect (ANE) measurements independently reveal the same unidirectional field shift of approximately 50 Oe, together with a consistent cosine angular dependence. The simultaneous observation of these signatures establishes a direct correspondence between the interfacial magnetic symmetry imposed by the non-collinear antiferromagnet and the responses of the adjacent ferromagnet. This symmetry is manifested consistently in magnetization reversal, charge transport, and thermally driven voltage generation, demonstrating that the exchange-bias imprint is not restricted to a single experimental observable. Our results reveal a coherent multifunctional response of IrMn$_3$/Py and extend the conventional understanding of exchange bias beyond collinear antiferromagnetic systems. More broadly, they demonstrate the potential of non-collinear antiferromagnets as platforms for coupling magnetic, electrical, and thermoelectric functionalities in spintronic and spin-caloritronic devices.",
-        "primary_category": "cond-mat.mtrl-sci",
+        "abstract": "We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "primary_category": "hep-ph",
         "categories": [
-          "cond-mat.mtrl-sci",
-          "cond-mat.mes-hall",
-          "cond-mat.soft",
-          "physics.app-ph",
-          "physics.optics"
+          "hep-ph",
+          "hep-th"
         ],
-        "published_at": "2026-09-27T00:21:04Z",
-        "updated_at": "2026-09-27T00:21:04Z",
-        "abstract_url": "https://arxiv.org/abs/2609.33046v1",
-        "pdf_url": "https://arxiv.org/pdf/2609.33046v1",
+        "published_at": "2026-10-05T18:00:02Z",
+        "updated_at": "2026-10-05T18:00:02Z",
+        "abstract_url": "https://arxiv.org/abs/2610.07150v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.07150v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.09561408010346041,
+        "semantic_relevance": 0.08941805780879286,
         "keyword_relevance": 0.0,
-        "category_relevance": 0.8,
-        "recency": 0.0018287037037037037,
+        "category_relevance": 0.0,
+        "recency": 0.2187528935185185,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.2232092064169276,
+        "final_preselection_score": 0.16211341536580864,
         "explanation": "No configured positive profile terms matched."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2507.11983",
-        "version": 3,
-        "title": "Chiral edge-state signatures of Berry monopole merging and splitting in a bilayer photonic crystal slab with synthetic momentum",
+        "arxiv_id": "2610.08224",
+        "version": 1,
+        "title": "Radiating Bardeen Black-Hole as a dark matter candidate",
         "authors": [
-          "Ngoc Duc Le",
-          "D. -H. -Minh Nguyen",
-          "Dung Xuan Nguyen",
-          "Hai Son Nguyen",
-          "Dario Bercioux"
+          "Alan Sebastián Morales",
+          "Juan Ignacio Musmarra",
+          "Maurico Bellini"
         ],
-        "abstract": "Berry monopoles are point degeneracies in parameter space where the Berry curvature emanates radially, analogous to magnetic monopoles. Here, we report the adiabatic merging and splitting of Berry monopoles in a bilayer photonic crystal slab combining one genuine and one synthetic momentum. Two monopoles approach, merge, and split within this hybrid parameter space. The process is described by an effective coupled-mode model and confirmed by full-wave simulations. We further propose a scheme to experimentally probe the Berry monopole merging and splitting by monitoring the evolution of chiral edge states localized at the interface between two topological phases with inverted band structures.",
-        "primary_category": "physics.optics",
-        "categories": [
-          "physics.optics",
-          "cond-mat.mes-hall"
-        ],
-        "published_at": "2025-07-16T07:29:18Z",
-        "updated_at": "2026-09-29T04:16:27Z",
-        "abstract_url": "https://arxiv.org/abs/2507.11983v3",
-        "pdf_url": "https://arxiv.org/pdf/2507.11983v3",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.07120755704271206,
-        "keyword_relevance": 0.0,
-        "category_relevance": 0.5,
-        "recency": 0.2722612847222222,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20926952914144265,
-        "explanation": "No configured positive profile terms matched."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.12486",
-        "version": 2,
-        "title": "Magnetically charged spinning particles around a regular black hole: constraints on the monopole charge from quasi-periodic oscillations",
-        "authors": [
-          "Shokhzod Jumaniyozov",
-          "Javlon Rayimbaev",
-          "Chengxun Yuan",
-          "Ahmadjon Abdujabbarov",
-          "Faisal Javed",
-          "Satimbay Palvanov"
-        ],
-        "abstract": "We investigate the dynamics of magnetically charged spinning test particles in the spacetime of the Bardeen regular black hole, sourced by nonlinear electrodynamics and featuring a magnetic monopole charge parameter g. Using the Mathisson-Papapetrou-Dixon equations with the Tulczyjew spin condition, extended by the Coulomb-like force between the particle's magnetic charge and the monopole, we derive the effective potential for equatorial motion and analyze circular orbits, the innermost stable circular orbit (ISCO), superluminality constraints and high-energy collisions. Solving the ISCO conditions perturbatively around Schwarzschild, we obtain exact coefficients, r_{\\rm ISCO}, and show that the magnetic coupling λg shifts r_{\\rm ISCO} only at higher order while it changes the ISCO energy and angular momentum at first order. We compute radiative efficiencies (up to \\simeq 8\\% in the explored range, against 5.72\\% for Schwarzschild) and the orbital and radial epicyclic frequencies, including the ISCO and the 3:2 resonance, whose frequency at fixed mass is shifted by 5--11\\% for g/M=0.5--0.7.",
+        "abstract": "We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances $r<\\sqrt{3/λ_0}$, which are restricted by the vacuum energy density. The field $\\hat{A}^μ$ describes massive photons found in the vicinity of a BBH, forming a gravito-electromagnetic structure analogous to that of an atom, which could be a candidate for dark matter in the early universe.",
         "primary_category": "gr-qc",
         "categories": [
           "gr-qc"
         ],
-        "published_at": "2026-07-14T08:20:38Z",
-        "updated_at": "2026-10-02T16:41:10Z",
-        "abstract_url": "https://arxiv.org/abs/2607.12486v2",
-        "pdf_url": "https://arxiv.org/pdf/2607.12486v2",
+        "published_at": "2026-10-06T12:12:24Z",
+        "updated_at": "2026-10-06T12:12:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08224v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08224v1",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.06487964874714976,
+        "semantic_relevance": 0.045987797253758164,
         "keyword_relevance": 0.025,
         "category_relevance": 0.0,
-        "recency": 0.7119068287037037,
+        "recency": 0.3135763888888889,
         "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.20663652480658778,
+        "final_preselection_score": 0.15830214765308007,
         "explanation": "Strongest matched profile terms: magnetic monopole."
       }
     },
     {
       "paper": {
-        "arxiv_id": "2610.01011",
-        "version": 1,
-        "title": "Highly anisotropic collective modes of altermagnetic superconductors with Bogoliubov Fermi surfaces",
-        "authors": [
-          "Huaisong Zhao",
-          "Peng Zou",
-          "Xia-Ji Liu",
-          "Hui Hu"
-        ],
-        "abstract": "We investigate collective modes in charge-neutral altermagnetic superconductors with $d$-wave spin-split bands, focusing on the impact of emergent Bogoliubov Fermi surfaces. In the absence of a magnetic field, the BCS state supports collective modes that inherit the underlying $d$-wave symmetry, resulting in pronounced momentum-space anisotropy. The broken time-reversal symmetry further couples these modes to spin-density fluctuations, allowing their signatures to emerge in the spin dynamical structure factor. Upon applying a magnetic field, Bogoliubov Fermi surfaces emerge and qualitatively reshape the collective-mode dynamics through gapless particle-hole excitations and strongly anisotropic Landau damping. The damping is strongest along the momentum-space diagonal, where it can suppress the low-energy phonon mode at small momenta. Remarkably, the suppressed phonon is accompanied by the emergence of an in-gap structure in the Higgs mode and an associated pronounced enhancement of the spin response. These results establish Bogoliubov Fermi surfaces as a mechanism for generating highly anisotropic collective-mode dynamics and identify spin response as a sensitive probe of in-gap Higgs excitations in altermagnetic superconductors.",
-        "primary_category": "cond-mat.supr-con",
-        "categories": [
-          "cond-mat.supr-con",
-          "cond-mat.quant-gas"
-        ],
-        "published_at": "2026-10-01T03:56:38Z",
-        "updated_at": "2026-10-01T03:56:38Z",
-        "abstract_url": "https://arxiv.org/abs/2610.01011v1",
-        "pdf_url": "https://arxiv.org/pdf/2610.01011v1",
-        "doi": null,
-        "journal_reference": null
-      },
-      "score": {
-        "semantic_relevance": 0.08875409612035651,
-        "keyword_relevance": 0.02,
-        "category_relevance": 0.0,
-        "recency": 0.520541087962963,
-        "novelty": 1.0,
-        "feedback_affinity": 0.5,
-        "final_preselection_score": 0.19699345205045674,
-        "explanation": "Strongest matched profile terms: dynamical structure factor."
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2607.24989",
+        "arxiv_id": "2606.12874",
         "version": 2,
-        "title": "Cross-Correlations of Metric and Monopole Perturbations from Holographic Cosmology",
+        "title": "A simple solution to the monopole problem: SU(5) GUT with symmetry breaking into special subgroup",
         "authors": [
-          "Matheus Cravo",
-          "Juliana Z. Finotti",
-          "Horatiu Nastase"
+          "Yu Hamada",
+          "Naoki Yamatsu"
         ],
-        "abstract": "In this paper, we present the 1-loop calculation of the three-point function $\\langle TJJ \\rangle$ of the stress-energy tensor and two insertions of $SO(3)$ global currents, using a 3d toy model for holographic cosmology. By applying the holographic dictionary that relates these QFT $n$-point functions to cosmological correlators, together with the $Sl(2,\\mathbb{Z})$ duality that maps the electric Noether current to a magnetic vortex current dual to cosmological magnetic monopoles, we relate the $\\langle TJJ \\rangle$ correlator to the cross-correlations between metric perturbations and the bulk magnetic monopole field, specifically mapping to the non-Gaussianities $\\langle ξ\\tilde{A} \\tilde{A} \\rangle$ and $\\langle γ\\tilde{A} \\tilde{A} \\rangle$. We calculate the semi-local contact terms necessary to achieve the exact factorization of the cosmological correlators in the squeezed limit, $p_1 \\to 0$. Finally, we evaluate the effective non-linear parameters, showing that the scalar-monopole cross-correlation vanishes at leading order, $f_{NL}^{ξ\\tilde{A} \\tilde{A}} = 0$, while the tensor-monopole cross-correlation yields a non-zero $f_{NL}^{γ\\tilde A\\tilde A}$. These results respect the expected amplitude hierarchy of the non-Gaussian correlators, while pointing at new directions in which holographic cosmology can be tested experimentally.",
-        "primary_category": "hep-th",
+        "abstract": "Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and multiple singlet fermions. During this intermediate phase, the monopoles become connected to antimonopoles by cosmic strings, which enhances their pair annihilation and reduces their abundance. Subsequently, the symmetry is restored to the SM gauge group. The restoration transition can be either first-order or second-order, depending on the model parameters. In the case of a first-order phase transition, a stochastic gravitational-wave (GW) signal is generated. For a certain region of the parameter space, the resulting signal can lie within the sensitivity of future GW experiments.",
+        "primary_category": "hep-ph",
         "categories": [
-          "hep-th",
-          "gr-qc"
+          "hep-ph",
+          "astro-ph.CO"
         ],
-        "published_at": "2026-07-27T18:41:02Z",
-        "updated_at": "2026-09-28T16:09:28Z",
-        "abstract_url": "https://arxiv.org/abs/2607.24989v2",
-        "pdf_url": "https://arxiv.org/pdf/2607.24989v2",
+        "published_at": "2026-06-11T04:02:17Z",
+        "updated_at": "2026-10-07T05:50:51Z",
+        "abstract_url": "https://arxiv.org/abs/2606.12874v2",
+        "pdf_url": "https://arxiv.org/pdf/2606.12874v2",
         "doi": null,
         "journal_reference": null
       },
       "score": {
-        "semantic_relevance": 0.050181576571950666,
-        "keyword_relevance": 0.025,
+        "semantic_relevance": 0.033606045038895846,
+        "keyword_relevance": 0.0,
         "category_relevance": 0.0,
-        "recency": 0.2091550925925926,
-        "novelty": 0.5,
+        "recency": 0.40545572916666667,
+        "novelty": 1.0,
         "feedback_affinity": 0.5,
-        "final_preselection_score": 0.09974721871663707,
-        "explanation": "Strongest matched profile terms: magnetic monopole."
+        "final_preselection_score": 0.1556682931841698,
+        "explanation": "No configured positive profile terms matched."
       }
     }
   ]

@@ -1,0 +1,754 @@
+{
+  "schema_version": "1.0",
+  "run_id": "select-a622fa9bf3fc",
+  "title": "Personalized Weekly arXiv Reading List",
+  "generated_at": "2026-10-12T21:28:40.513727Z",
+  "timezone": "America/New_York",
+  "retrieval_window": {
+    "start": "2026-10-04T00:00:00Z",
+    "end": "2026-10-12T00:00:00Z"
+  },
+  "records_retrieved": 14,
+  "records_after_deduplication": 9,
+  "records_ranked": 9,
+  "records_selected": 9,
+  "summary_mode": "offline",
+  "summary_fallbacks": 0,
+  "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "profile_hash": "1ff5312fec72",
+  "recommendations": [
+    {
+      "paper": {
+        "arxiv_id": "2610.12294",
+        "version": 1,
+        "title": "Transducing quantum-spin-ice correlations into Weyl Fermi-arc transport at a synthetic Kondo lattice interface",
+        "authors": [
+          "Tsung-Chi Wu",
+          "Michael Terilli",
+          "Christian Zaprianov",
+          "Eun Sang Choi",
+          "David Graf",
+          "Qinghua Zhang",
+          "Lin Gu",
+          "Mikhail Kareev"
+        ],
+        "abstract": "Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical contrast shows that the same itinerant electronic channel acquires qualitatively different symmetry information when interacting with the quantum-fluctuating Tb moments, consistent with an interfacial coupling between the Weyl surface states and the transverse, multipolar degrees of freedom, in addition to the longitudinal, dipolar contribution. Our work establishes synthetic Kondo lattice interfaces as a route for transducing frustrated quantum magnetism with multipole correlations into distinct Weyl Fermi-arc transport responses.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-08T16:47:50Z",
+        "updated_at": "2026-10-08T16:47:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12294v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12294v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12688994147699909,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.5874855324074074,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.33727759833396176,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating.",
+        "brief_summary": "The abstract states: Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.337, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 1,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.08957",
+        "version": 1,
+        "title": "Probing magnetic interactions in real space via magnetic pair distribution function analysis",
+        "authors": [
+          "Edison P. Carlisle",
+          "Benjamin A. Frandsen"
+        ],
+        "abstract": "Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real space, is expected to be well suited for extracting exchange parameters from correlated paramagnets. Here, we demonstrate a robust mean-field theory approach incorporating the Onsager reaction field for determination of exchange parameters from the results of mPDF analysis. We successfully apply this approach to several relevant materials to recover exchange interaction values comparable to literature values.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-06T18:23:53Z",
+        "updated_at": "2026-10-06T18:23:53Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08957v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08957v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.18172677395662615,
+        "keyword_relevance": 0.05,
+        "category_relevance": 0.8,
+        "recency": 0.3458232060185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3088593688823337,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials.",
+        "brief_summary": "The abstract states: Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.309, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2503.13831",
+        "version": 3,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
+        "authors": [
+          "Josef Willsher",
+          "Johannes Knolle"
+        ],
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-10-05T10:08:25Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v3",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1564483005413837,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.17781394675925927,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2944331299195486,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations.",
+        "brief_summary": "The abstract states: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.294, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.815
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2603.08650",
+        "version": 3,
+        "title": "Revisiting the $J_1$-$J_2$ Heisenberg Model on a Triangular Lattice: Quasidegenerate Ground States and Phase Competition",
+        "authors": [
+          "Oleksandra Kovalska",
+          "Ester Pagès Fontanella",
+          "Benedikt Schneider",
+          "Hong-Hao Tu",
+          "Jan von Delft"
+        ],
+        "abstract": "It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-03-09T17:28:21Z",
+        "updated_at": "2026-10-07T07:47:38Z",
+        "abstract_url": "https://arxiv.org/abs/2603.08650v3",
+        "pdf_url": "https://arxiv.org/pdf/2603.08650v3",
+        "doi": "10.1103/cljk-jcq3",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07360856742322662,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.4155931712962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2746831724700816,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases.",
+        "brief_summary": "The abstract states: It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.275, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.str-el"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.555
+      },
+      "rank": 4,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.12557",
+        "version": 1,
+        "title": "Frustrated Topological Orbital Magnetism",
+        "authors": [
+          "Sergio Garrido Bourkhaeva",
+          "Claudio Castelnovo",
+          "Wojciech J. Jankowski"
+        ],
+        "abstract": "By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "quant-ph"
+        ],
+        "published_at": "2026-10-08T18:00:01Z",
+        "updated_at": "2026-10-08T18:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12557v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12557v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12226892660218298,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.5937514467592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26439616164690827,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin…",
+        "brief_summary": "The abstract states: By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mes-hall. Its preselection score was 0.264, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.mes-hall"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.56
+      },
+      "rank": 5,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2609.07634",
+        "version": 2,
+        "title": "Benchmarking dynamical-structure-factor protocols in programmable neutral-atom geometries",
+        "authors": [
+          "Matteo Grotti",
+          "Sergi Julià-Farré",
+          "Elisa Ercolessi",
+          "Alexandre Dauphin"
+        ],
+        "abstract": "The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral properties are difficult to access with classical numerical methods at large scales. We further analyze the robustness of the protocol under realistic experimental conditions, including finite simulation times, pulse modulation, positional disorder, and laser noise. Our results show that neutral-atom quantum simulators can provide a practical route to probing dynamical response functions in regimes where classical simulations become increasingly demanding, paving the way toward experimental implementation.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph"
+        ],
+        "published_at": "2026-09-07T15:28:35Z",
+        "updated_at": "2026-10-09T13:13:36Z",
+        "abstract_url": "https://arxiv.org/abs/2609.07634v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.07634v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11922252771652309,
+        "keyword_relevance": 0.08214285714285714,
+        "category_relevance": 0.0,
+        "recency": 0.6938888888888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24357474064703857,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials.",
+        "brief_summary": "The abstract states: The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, dynamical structure factor. Its preselection score was 0.244, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "dynamical structure factor"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 6,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.07150",
+        "version": 1,
+        "title": "Monopole Catalysis from Standard Model Anomalies",
+        "authors": [
+          "Nathaniel Craig",
+          "Dan Sehayek"
+        ],
+        "abstract": "We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "hep-th"
+        ],
+        "published_at": "2026-10-05T18:00:02Z",
+        "updated_at": "2026-10-05T18:00:02Z",
+        "abstract_url": "https://arxiv.org/abs/2610.07150v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.07150v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08941805780879286,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.2187528935185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16211341536580864,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles.",
+        "brief_summary": "The abstract states: We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.162, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.45
+      },
+      "rank": 7,
+      "recommendation_type": "wildcard"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.08224",
+        "version": 1,
+        "title": "Radiating Bardeen Black-Hole as a dark matter candidate",
+        "authors": [
+          "Alan Sebastián Morales",
+          "Juan Ignacio Musmarra",
+          "Maurico Bellini"
+        ],
+        "abstract": "We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances $r<\\sqrt{3/λ_0}$, which are restricted by the vacuum energy density. The field $\\hat{A}^μ$ describes massive photons found in the vicinity of a BBH, forming a gravito-electromagnetic structure analogous to that of an atom, which could be a candidate for dark matter in the early universe.",
+        "primary_category": "gr-qc",
+        "categories": [
+          "gr-qc"
+        ],
+        "published_at": "2026-10-06T12:12:24Z",
+        "updated_at": "2026-10-06T12:12:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08224v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08224v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.045987797253758164,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.3135763888888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15830214765308007,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action…",
+        "brief_summary": "The abstract states: We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.158, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "magnetic monopole"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.83
+      },
+      "rank": 8,
+      "recommendation_type": "wildcard"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2606.12874",
+        "version": 2,
+        "title": "A simple solution to the monopole problem: SU(5) GUT with symmetry breaking into special subgroup",
+        "authors": [
+          "Yu Hamada",
+          "Naoki Yamatsu"
+        ],
+        "abstract": "Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and multiple singlet fermions. During this intermediate phase, the monopoles become connected to antimonopoles by cosmic strings, which enhances their pair annihilation and reduces their abundance. Subsequently, the symmetry is restored to the SM gauge group. The restoration transition can be either first-order or second-order, depending on the model parameters. In the case of a first-order phase transition, a stochastic gravitational-wave (GW) signal is generated. For a certain region of the parameter space, the resulting signal can lie within the sensitivity of future GW experiments.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "astro-ph.CO"
+        ],
+        "published_at": "2026-06-11T04:02:17Z",
+        "updated_at": "2026-10-07T05:50:51Z",
+        "abstract_url": "https://arxiv.org/abs/2606.12874v2",
+        "pdf_url": "https://arxiv.org/pdf/2606.12874v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.033606045038895846,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.40545572916666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.1556682931841698,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance.",
+        "brief_summary": "The abstract states: Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.156, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 9,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [],
+  "ranked_candidates": [
+    {
+      "paper": {
+        "arxiv_id": "2610.12294",
+        "version": 1,
+        "title": "Transducing quantum-spin-ice correlations into Weyl Fermi-arc transport at a synthetic Kondo lattice interface",
+        "authors": [
+          "Tsung-Chi Wu",
+          "Michael Terilli",
+          "Christian Zaprianov",
+          "Eun Sang Choi",
+          "David Graf",
+          "Qinghua Zhang",
+          "Lin Gu",
+          "Mikhail Kareev"
+        ],
+        "abstract": "Quantum spin ice hosts collective excitations and quantum fluctuations that are largely electrically silent because the materials supporting them are insulating. Coupling this magnetic environment to surface-localized Weyl states offers a route to encode its correlations directly into Fermi-arc transport. Experimental access to this regime, however, has remained largely unexplored. Here, we realize a synthetic Kondo lattice interface between the Weyl semimetal $\\mathrm{Eu_2Ir_2O_7}$ and the quantum-spin-ice candidate $\\mathrm{Tb_2Ti_2O_7}$, and demonstrate that quantum-spin-ice correlations are imprinted on Weyl Fermi-arc transport. At ultra-low temperature, electronic transport evolves from a sixfold anisotropic response at low field into a twelvefold response over an intermediate field window, before entering a reentrant sixfold anisotropy at high field. No analogous twelvefold response occurs at the classical-spin-ice interface. The quantum--classical contrast shows that the same itinerant electronic channel acquires qualitatively different symmetry information when interacting with the quantum-fluctuating Tb moments, consistent with an interfacial coupling between the Weyl surface states and the transverse, multipolar degrees of freedom, in addition to the longitudinal, dipolar contribution. Our work establishes synthetic Kondo lattice interfaces as a route for transducing frustrated quantum magnetism with multipole correlations into distinct Weyl Fermi-arc transport responses.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-08T16:47:50Z",
+        "updated_at": "2026-10-08T16:47:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12294v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12294v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12688994147699909,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.5874855324074074,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.33727759833396176,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.08957",
+        "version": 1,
+        "title": "Probing magnetic interactions in real space via magnetic pair distribution function analysis",
+        "authors": [
+          "Edison P. Carlisle",
+          "Benjamin A. Frandsen"
+        ],
+        "abstract": "Determining magnetic exchange interactions is vital for understanding the magnetic behavior of materials. The standard method for exchange interaction determination involves performing inelastic neutron scattering experiments on single crystals to measure spin wave dispersions from a long-range-ordered magnetic ground state. However, the influence of exchange interactions is not limited exclusively to spin waves in ordered states, but also governs magnetic behavior in all magnetic states, including the short-range spin correlations that persist into the paramagnetic regime. Exchange parameters have been successfully recovered in the past from energy-integrated diffuse neutron scattering data from paramagnets, indicating that the diffuse scattering and underlying short-range magnetic correlations are rich in information. Consequently, magnetic pair distribution function (mPDF) analysis, which directly probes short-range magnetic correlations in real space, is expected to be well suited for extracting exchange parameters from correlated paramagnets. Here, we demonstrate a robust mean-field theory approach incorporating the Onsager reaction field for determination of exchange parameters from the results of mPDF analysis. We successfully apply this approach to several relevant materials to recover exchange interaction values comparable to literature values.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-06T18:23:53Z",
+        "updated_at": "2026-10-06T18:23:53Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08957v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08957v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.18172677395662615,
+        "keyword_relevance": 0.05,
+        "category_relevance": 0.8,
+        "recency": 0.3458232060185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3088593688823337,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2503.13831",
+        "version": 3,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
+        "authors": [
+          "Josef Willsher",
+          "Johannes Knolle"
+        ],
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-10-05T10:08:25Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v3",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1564483005413837,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.17781394675925927,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2944331299195486,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2603.08650",
+        "version": 3,
+        "title": "Revisiting the $J_1$-$J_2$ Heisenberg Model on a Triangular Lattice: Quasidegenerate Ground States and Phase Competition",
+        "authors": [
+          "Oleksandra Kovalska",
+          "Ester Pagès Fontanella",
+          "Benedikt Schneider",
+          "Hong-Hao Tu",
+          "Jan von Delft"
+        ],
+        "abstract": "It is generally believed that the spin-$\\tfrac{1}{2}$ triangular-lattice $J_1$-$J_2$ Heisenberg model hosts a quantum spin liquid in the intermediate regime between the $120^\\circ$ and stripe ordered phases. Density matrix renormalization group studies on cylinders have consistently found two nearly degenerate ground states, commonly interpreted as distinct topological sectors. Using state-of-the-art matrix product state simulations on YC6 cylinders, we compare the static and dynamical properties of these two sectors at $J_2/J_1 = 0.125$. Noticeable differences appear already in static correlations; moreover, high-resolution dynamical structure factors reveal qualitatively distinct low-energy excitations. These results suggest that the two ground states cannot be understood as merely topologically distinct sectors of a gapped $\\mathbb{Z}_2$ spin liquid.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-03-09T17:28:21Z",
+        "updated_at": "2026-10-07T07:47:38Z",
+        "abstract_url": "https://arxiv.org/abs/2603.08650v3",
+        "pdf_url": "https://arxiv.org/pdf/2603.08650v3",
+        "doi": "10.1103/cljk-jcq3",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07360856742322662,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.4155931712962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2746831724700816,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.12557",
+        "version": 1,
+        "title": "Frustrated Topological Orbital Magnetism",
+        "authors": [
+          "Sergio Garrido Bourkhaeva",
+          "Claudio Castelnovo",
+          "Wojciech J. Jankowski"
+        ],
+        "abstract": "By studying the interplay of geometric frustration with Aharonov-Bohm fluxes in three dimensions, we unveil a rich playground exhibiting topological semimetallic ground states with orbital magnetic dipole, quadrupole and ferrotoroidic orders, akin to spin patterns in classical spin ices - a class of phenomena which we dub frustrated topological orbital magnetism. We demonstrate that the ground-state toroidizations underpinned by non-Abelian topological nodal lines induce measurable current-induced Hall phenomena. We further find that distinct 2-in-2-out and 3-in-1-out frustrated orbital current patterns can be associated with topological Weyl node charges, and corresponding anisotropic linear and nonlinear Hall effects. We propose signatures for experimental validation of distinct frustrated topological orbital magnetic orders in candidate materials.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "quant-ph"
+        ],
+        "published_at": "2026-10-08T18:00:01Z",
+        "updated_at": "2026-10-08T18:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2610.12557v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.12557v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12226892660218298,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.5937514467592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26439616164690827,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2609.07634",
+        "version": 2,
+        "title": "Benchmarking dynamical-structure-factor protocols in programmable neutral-atom geometries",
+        "authors": [
+          "Matteo Grotti",
+          "Sergi Julià-Farré",
+          "Elisa Ercolessi",
+          "Alexandre Dauphin"
+        ],
+        "abstract": "The dynamical structure factor is a central observable in condensed-matter physics, providing direct insight into the excitation spectrum and dynamical response of quantum materials. While it is traditionally accessed in real materials through inelastic neutron scattering, recent works have shown that analogous information can be extracted in quantum simulators using suitable dynamical protocols. So far, these approaches have been demonstrated mainly in paradigmatic integrable one-dimensional models. In this work, we use numerical emulations of a neutral-atom quantum processing unit to assess the feasibility of measuring the dynamical structure factor in a broader class of Ising-like spin systems. Beyond the standard one-dimensional transverse-field Ising chain, we benchmark the protocol in chains with dimerized interactions and in the two-dimensional transverse-field Ising model, where spectral properties are difficult to access with classical numerical methods at large scales. We further analyze the robustness of the protocol under realistic experimental conditions, including finite simulation times, pulse modulation, positional disorder, and laser noise. Our results show that neutral-atom quantum simulators can provide a practical route to probing dynamical response functions in regimes where classical simulations become increasingly demanding, paving the way toward experimental implementation.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph"
+        ],
+        "published_at": "2026-09-07T15:28:35Z",
+        "updated_at": "2026-10-09T13:13:36Z",
+        "abstract_url": "https://arxiv.org/abs/2609.07634v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.07634v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11922252771652309,
+        "keyword_relevance": 0.08214285714285714,
+        "category_relevance": 0.0,
+        "recency": 0.6938888888888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24357474064703857,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.07150",
+        "version": 1,
+        "title": "Monopole Catalysis from Standard Model Anomalies",
+        "authors": [
+          "Nathaniel Craig",
+          "Dan Sehayek"
+        ],
+        "abstract": "We study the generalized symmetries associated with Standard Model flavor and their fate in the presence of magnetic monopoles. This illuminates a striking phenomenological consequence: even when baryon and lepton number are classically conserved, the electroweak anomaly induces $ΔB = ΔL \\in 3 \\mathbb{Z}$ in monopole-fermion scattering for any monopole activating the anomaly. We demonstrate this mechanism in Pati-Salam theory and trinification.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "hep-th"
+        ],
+        "published_at": "2026-10-05T18:00:02Z",
+        "updated_at": "2026-10-05T18:00:02Z",
+        "abstract_url": "https://arxiv.org/abs/2610.07150v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.07150v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08941805780879286,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.2187528935185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16211341536580864,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.08224",
+        "version": 1,
+        "title": "Radiating Bardeen Black-Hole as a dark matter candidate",
+        "authors": [
+          "Alan Sebastián Morales",
+          "Juan Ignacio Musmarra",
+          "Maurico Bellini"
+        ],
+        "abstract": "We consider a Bardeen black hole (BBH) with variable mass and magnetic charge within the framework of an extended model of gravity and electrodynamics, where the boundary terms in the varied action are treated as geometric quantum fluctuations of spacetime. We propose that the extended Riemann manifold is generated by a new connection, $\\hat{δΓ}^μ_{αβ}$. These connection components contain geometric information regarding both gravitational and electromagnetic fluctuations on the background curved metric described by a Riemann manifold. Furthermore, we calculate the expectation values for the magnetic field components using a nonlinear and non-commutative quantum algebra for the gravitational and electromagnetic potentials. Our results are consistent with a radiating massive magnetic monopole that produces a radial component of the magnetic field confined to distances $r<\\sqrt{3/λ_0}$, which are restricted by the vacuum energy density. The field $\\hat{A}^μ$ describes massive photons found in the vicinity of a BBH, forming a gravito-electromagnetic structure analogous to that of an atom, which could be a candidate for dark matter in the early universe.",
+        "primary_category": "gr-qc",
+        "categories": [
+          "gr-qc"
+        ],
+        "published_at": "2026-10-06T12:12:24Z",
+        "updated_at": "2026-10-06T12:12:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.08224v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.08224v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.045987797253758164,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.3135763888888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15830214765308007,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2606.12874",
+        "version": 2,
+        "title": "A simple solution to the monopole problem: SU(5) GUT with symmetry breaking into special subgroup",
+        "authors": [
+          "Yu Hamada",
+          "Naoki Yamatsu"
+        ],
+        "abstract": "Grand unified theories (GUTs) predict the overproduction of magnetic monopoles, leading to the so-called monopole problem, which is often addressed by cosmological inflation that dilutes their abundance. However, if inflation occurs before the GUT symmetry breaking, monopoles are produced afterwards and the problem persists. This motivates the exploration of alternative mechanisms. We propose a simple solution based on the Langacker--Pi mechanism within an $SU(5)$ GUT framework with symmetry breaking into its special subgroup. In particular, after the gauge symmetry is broken to the Standard Model (SM) gauge group $SU(3)_C\\times SU(2)_L\\times U(1)_Y$ by the vacuum expectation value of an adjoint scalar, it is further broken to $SO(3)_C\\times SO(2)_L$. This structure is naturally realized by introducing a symmetric tensor scalar, a singlet scalar, and multiple singlet fermions. During this intermediate phase, the monopoles become connected to antimonopoles by cosmic strings, which enhances their pair annihilation and reduces their abundance. Subsequently, the symmetry is restored to the SM gauge group. The restoration transition can be either first-order or second-order, depending on the model parameters. In the case of a first-order phase transition, a stochastic gravitational-wave (GW) signal is generated. For a certain region of the parameter space, the resulting signal can lie within the sensitivity of future GW experiments.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "astro-ph.CO"
+        ],
+        "published_at": "2026-06-11T04:02:17Z",
+        "updated_at": "2026-10-07T05:50:51Z",
+        "abstract_url": "https://arxiv.org/abs/2606.12874v2",
+        "pdf_url": "https://arxiv.org/pdf/2606.12874v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.033606045038895846,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.40545572916666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.1556682931841698,
+        "explanation": "No configured positive profile terms matched."
+      }
+    }
+  ]
+}
