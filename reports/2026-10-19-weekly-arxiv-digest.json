@@ -1,0 +1,1481 @@
+{
+  "schema_version": "1.0",
+  "run_id": "select-dd6d0e56387d",
+  "title": "Personalized Weekly arXiv Reading List",
+  "generated_at": "2026-10-19T18:54:39.473181Z",
+  "timezone": "America/New_York",
+  "retrieval_window": {
+    "start": "2026-10-11T00:00:00Z",
+    "end": "2026-10-19T00:00:00Z"
+  },
+  "records_retrieved": 34,
+  "records_after_deduplication": 21,
+  "records_ranked": 21,
+  "records_selected": 10,
+  "summary_mode": "offline",
+  "summary_fallbacks": 0,
+  "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "profile_hash": "1ff5312fec72",
+  "recommendations": [
+    {
+      "paper": {
+        "arxiv_id": "2610.21523",
+        "version": 1,
+        "title": "Non-equilibrium Muon Dynamics Imitating Fractional Spin Excitations in a Quantum Spin Chain",
+        "authors": [
+          "A. Hromov",
+          "A. Zorko",
+          "M. Gomilšek",
+          "P. J. Baker",
+          "A. Prokofiev",
+          "M. Pregelj"
+        ],
+        "abstract": "Fractional spin excitations in low-dimensional and frustrated magnets are commonly associated with sporadic spin fluctuations, as observed in quantum spin liquids, spin ices, and other complex magnetic states. In this study, we investigate the spin dynamics in the amplitude-modulated magnetic ground state of AgCuVO$_4$, a spin-1/2 chain compound with competing intrachain interactions, by muon spectroscopy. Our data reveal a Gaussian decay of muon polarization that remains remarkably resilient against applied magnetic fields---a behavior often interpreted as evidence of emergent sporadic spin dynamics. However, density functional theory calculations of muon stopping sites and their quadrupolar level-crossing resonance spectra suggest an alternative mechanism: a two-state model where the muon randomly hops between two nearby sites, eventually equilibrating across both on a microsecond timescale via quantum delocalization. These findings provide a microscopic explanation for the field-resilient muon polarization and indicate that such behavior may not always stem from intrinsic spin fluctuations, but can also arise from non-equilibrium muon dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-15T08:55:33Z",
+        "updated_at": "2026-10-15T08:55:33Z",
+        "abstract_url": "https://arxiv.org/abs/2610.21523v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.21523v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1908201861705457,
+        "keyword_relevance": 0.04,
+        "category_relevance": 1.0,
+        "recency": 0.5464887152777778,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.35051795530452334,
+        "explanation": "Strongest matched profile terms: spin dynamics."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Fractional spin excitations in low-dimensional and frustrated magnets are commonly associated with sporadic spin fluctuations, as observed in quantum spin liquids, spin ices, and other complex magnetic states.",
+        "brief_summary": "The abstract states: Fractional spin excitations in low-dimensional and frustrated magnets are commonly associated with sporadic spin fluctuations, as observed in quantum spin liquids, spin ices, and other complex magnetic states. In this study, we investigate the spin dynamics in the amplitude-modulated magnetic ground state of AgCuVO$_4$, a spin-1/2 chain compound with competing intrachain interactions, by muon spectroscopy. Our data reveal a Gaussian decay of muon polarization that remains remarkably resilient against applied magnetic fields---a behavior often interpreted as evidence of emergent sporadic spin dynamics. However, density functional theory calculations of muon stopping sites and their quadrupolar level-crossing resonance spectra suggest an alternative mechanism: a two-state model where the muon randomly hops between two nearby sites, eventually equilibrating across both on a microsecond timescale via…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin dynamics. Its preselection score was 0.351, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin dynamics"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.78
+      },
+      "rank": 1,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2609.12856",
+        "version": 2,
+        "title": "Chiral Valence-Bond Solid and Chiral Triplons",
+        "authors": [
+          "Shinnosuke Koyama",
+          "Kazumasa Hattori"
+        ],
+        "abstract": "We propose a chiral valence-bond solid (VBS) in which spin-singlet bond order itself spontaneously acquires handedness without magnetic order. Using a spin-lattice model on the diamond lattice, we demonstrate two enantiomorphic VBS states. In the presence of anisotropic spin interactions, this emergent handedness is inherited by chiral triplons with spin-split bands and spin textures that reverse between the two enantiomers. These textures generate a temperature-gradient-induced net spin response whose sign is set by the VBS handedness. The imaginary off-diagonal components of the dynamical spin structure factor encode the triplon polarization and change sign between the two enantiomers, enabling direct detection of chiral triplons and the selected handedness by polarized inelastic neutron scattering. Our results establish a direct connection between spontaneous chirality and magnetic excitations, opening avenues for exploring the interplay between quantum magnetism and chiral physics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-09-11T13:45:46Z",
+        "updated_at": "2026-10-16T16:43:15Z",
+        "abstract_url": "https://arxiv.org/abs/2609.12856v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.12856v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15252707090068734,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.7120876736111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.34609594926642046,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We propose a chiral valence-bond solid (VBS) in which spin-singlet bond order itself spontaneously acquires handedness without magnetic order.",
+        "brief_summary": "The abstract states: We propose a chiral valence-bond solid (VBS) in which spin-singlet bond order itself spontaneously acquires handedness without magnetic order. Using a spin-lattice model on the diamond lattice, we demonstrate two enantiomorphic VBS states. In the presence of anisotropic spin interactions, this emergent handedness is inherited by chiral triplons with spin-split bands and spin textures that reverse between the two enantiomers. These textures generate a temperature-gradient-induced net spin response whose sign is set by the VBS handedness. The imaginary off-diagonal components of the dynamical spin structure factor encode the triplon polarization and change sign between the two enantiomers, enabling direct detection of chiral triplons and the selected handedness by polarized inelastic neutron scattering. Our results establish a direct connection between spontaneous chirality and…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.346, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.68
+      },
+      "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2608.00469",
+        "version": 2,
+        "title": "Negative thermal expansion, lattice dynamics, and complex magnetism in TbFeO$_3$",
+        "authors": [
+          "Shubham Farswan",
+          "Reshma Kumawat",
+          "Dipankar Sarkar",
+          "Deeksha Singh",
+          "Md. Atif Hasan",
+          "Devajyoti Mukherjee",
+          "Kaushik Sen"
+        ],
+        "abstract": "We report a temperature-dependent investigation of orthoferrite TbFeO$_3$ using x-ray diffraction, DC magnetization, and Raman scattering, complemented by room-temperature x-ray photoelectron spectroscopy. X-ray diffraction reveals negative thermal expansion over 5-300 K, with a small but systematic increase in unit-cell volume upon cooling in the absence of any structural phase transition. Raman scattering measurements identify the Raman-active phonon modes and show clear deviations from the conventional Klemens anharmonic decay model, particularly in phonon frequencies, indicating the presence of spin-phonon coupling. Two modes of $A_g$ and $B_{1g}$ symmetry exhibit a crossover from Gaussian-dominated line shapes at low temperatures to mixed Gaussian-Lorentzian profiles at higher temperatures, reflecting a transition from inhomogeneous broadening to lifetime-driven dynamics. High-energy Raman spectra reveal two-magnon excitations associated with the Fe sublattice, consistent with linear spin-wave theory, whose spectral weight shows only weak temperature dependence. In addition, a broad Raman mode emerging below $\\sim 175$ K exhibits an order-parameter-like temperature evolution and coincides with the onset of phonon anomalies, while no corresponding strong anomaly is observed in the two-magnon response. Taken together, these results establish TbFeO$_3$ as a system with pronounced interplay among lattice dynamics, spin correlations, and emergent local magnetic-lattice anomalies.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-08-01T06:29:49Z",
+        "updated_at": "2026-10-16T09:31:01Z",
+        "abstract_url": "https://arxiv.org/abs/2608.00469v2",
+        "pdf_url": "https://arxiv.org/pdf/2608.00469v2",
+        "doi": "10.1103/dmqs-y92y",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12927859919701445,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.6745674189814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3306321115368047,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We report a temperature-dependent investigation of orthoferrite TbFeO$_3$ using x-ray diffraction, DC magnetization, and Raman scattering, complemented by room-temperature x-ray photoelectron spectroscopy.",
+        "brief_summary": "The abstract states: We report a temperature-dependent investigation of orthoferrite TbFeO$_3$ using x-ray diffraction, DC magnetization, and Raman scattering, complemented by room-temperature x-ray photoelectron spectroscopy. X-ray diffraction reveals negative thermal expansion over 5-300 K, with a small but systematic increase in unit-cell volume upon cooling in the absence of any structural phase transition. Raman scattering measurements identify the Raman-active phonon modes and show clear deviations from the conventional Klemens anharmonic decay model, particularly in phonon frequencies, indicating the presence of spin-phonon coupling. Two modes of $A_g$ and $B_{1g}$ symmetry exhibit a crossover from Gaussian-dominated line shapes at low temperatures to mixed Gaussian-Lorentzian profiles at higher temperatures, reflecting a transition from inhomogeneous broadening to lifetime-driven dynamics. High-energy Raman spectra reveal two-magnon excitations associated with the Fe…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.331, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "linear spin-wave theory"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.23015",
+        "version": 1,
+        "title": "Crystal Field-Phonon Coupling in ErFeO$_3$ Single Crystal Via Inelastic Neutron Scattering",
+        "authors": [
+          "Guochu Deng",
+          "Xiaoxuan Ma",
+          "Wanting Yang",
+          "Wei Ren",
+          "Shixun Cao",
+          "Zhenxiang Cheng",
+          "Garry J. McIntyre"
+        ],
+        "abstract": "Crystal-field (CF) excitations and their coupling to lattice vibrations were investigated in ErFeO$_3$ using inelastic neutron scattering. Pronounced modifications of the excitation spectra, including energy shifts, intensity redistribution, and linewidth changes, were observed as a consequence of CF-phonon coupling. Significant renormalization of the first and second CF excitations, located near 5 meV and 12 meV, respectively, was detected along both transverse and longitudinal directions in the vicinity of the reciprocal-space point Q = (2, 0, 4). The coupling effects become more prominent as the temperature increases from 300 K to 650 K, while a slight suppression is observed at 750 K. Remarkably, CF excitation peaks that are strongly weakened by thermal population effects re-emerge in specific momentum regions through interaction with phonon modes. The coupled excitations exhibit characteristic signatures of hybridization, including energy renormalization, intensity enhancement, and linewidth narrowing. Density-functional-theory-based phonon calculations further support the interpretation of CF-phonon coupling in ErFeO3. These results demonstrate that strong interactions between CF excitations and lattice vibrations can substantially modify the excitation spectra in rare-earth orthoferrites.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.other"
+        ],
+        "published_at": "2026-10-16T06:50:34Z",
+        "updated_at": "2026-10-16T06:50:34Z",
+        "abstract_url": "https://arxiv.org/abs/2610.23015v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.23015v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09533250082280934,
+        "keyword_relevance": 0.07142857142857142,
+        "category_relevance": 1.0,
+        "recency": 0.6606394675925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3268207149866663,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Crystal-field (CF) excitations and their coupling to lattice vibrations were investigated in ErFeO$_3$ using inelastic neutron scattering.",
+        "brief_summary": "The abstract states: Crystal-field (CF) excitations and their coupling to lattice vibrations were investigated in ErFeO$_3$ using inelastic neutron scattering. Pronounced modifications of the excitation spectra, including energy shifts, intensity redistribution, and linewidth changes, were observed as a consequence of CF-phonon coupling. Significant renormalization of the first and second CF excitations, located near 5 meV and 12 meV, respectively, was detected along both transverse and longitudinal directions in the vicinity of the reciprocal-space point Q = (2, 0, 4). The coupling effects become more prominent as the temperature increases from 300 K to 650 K, while a slight suppression is observed at 750 K. Remarkably, CF excitation peaks that are strongly weakened by thermal population effects re-emerge in specific momentum regions through interaction with phonon…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.327, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 4,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.21580",
+        "version": 1,
+        "title": "Flat-band ferrimagnetism in the edge-centered honeycomb antiferromagnet: From harmonic flat magnon to broad continuum",
+        "authors": [
+          "Sicheng He",
+          "Zhixuan Zhao",
+          "Hanxiang Di",
+          "Shuaihua Zhang",
+          "Yanling Wu",
+          "Jun Li"
+        ],
+        "abstract": "One of the most striking aspects of a flat band is not merely its lack of dispersion, but that it reduces the single-particle kinetic energy to a very small scale, allowing interaction effects to become the dominant energy scale in the low-energy physics. This picture has underpinned concepts such as flat-band ferromagnetism, flat-band superconductivity, and localized magnons. A more fundamental question, however, remains. Flat bands belong to the language of single-particle or linear-spin-wave physics; whether they survive as protected sharp excitations in a genuine many-body quantum magnet, or merely provide a skeleton of spectral weight left by the noninteracting picture, remains unclear. We study the spin-1/2 Heisenberg antiferromagnet on the edge-centered honeycomb lattice to examine this question. In contrast to flat bands in geometrically frustrated magnets such as kagome, this lattice has a 2:3 sublattice imbalance that renders the intersublattice coupling matrix rectangular, whose null space gives rise to a flat band at the single-particle level. The same imbalance stabilizes a ferrimagnetic ground state through the Lieb--Mattis theorem and leads to an edge-site-localized flat magnon in linear spin-wave theory. Combining linear spin-wave theory, sign-problem-free stochastic series expansion quantum Monte Carlo, and stochastic analytic continuation, we find that quantum fluctuations transform this harmonic flat mode into a broad continuum whose centroid is about 1.55J and nearly dispersionless along the high-symmetry path. Sublattice imbalance thus offers an unfrustrated route that unifies flat bands and ferrimagnetism, and suggests that flat-band geometry organizes many-body spectral weight rather than giving rise to a protected quasiparticle.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-15T09:29:00Z",
+        "updated_at": "2026-10-15T09:29:00Z",
+        "abstract_url": "https://arxiv.org/abs/2610.21580v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.21580v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10154814079606991,
+        "keyword_relevance": 0.04,
+        "category_relevance": 1.0,
+        "recency": 0.5493923611111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.31063589946934256,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: One of the most striking aspects of a flat band is not merely its lack of dispersion, but that it reduces the single-particle kinetic energy to a very small scale, allowing interaction…",
+        "brief_summary": "The abstract states: One of the most striking aspects of a flat band is not merely its lack of dispersion, but that it reduces the single-particle kinetic energy to a very small scale, allowing interaction effects to become the dominant energy scale in the low-energy physics. This picture has underpinned concepts such as flat-band ferromagnetism, flat-band superconductivity, and localized magnons. A more fundamental question, however, remains. Flat bands belong to the language of single-particle or linear-spin-wave physics; whether they survive as protected sharp excitations in a genuine many-body quantum magnet, or merely provide a skeleton of spectral weight left by the noninteracting picture, remains unclear. We study the spin-1/2 Heisenberg antiferromagnet on the edge-centered honeycomb lattice to examine this question. In contrast to flat bands…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.311, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "linear spin-wave theory"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 5,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2504.10274",
+        "version": 2,
+        "title": "Magneto-optical signatures of plateau states in the kagome spin-ice HoAgGe",
+        "authors": [
+          "F. Schilberth",
+          "L. DeFreitas",
+          "J. Guo",
+          "N. Herrmann",
+          "F. LeMardelé",
+          "I. Mohelsky",
+          "M. Orlita",
+          "U. Nagel",
+          "T. Rõõm",
+          "P. Gegenwart",
+          "H. Chen",
+          "K. Zhao",
+          "I. Kézsmárki",
+          "S. Bordács"
+        ],
+        "abstract": "Coupling of itinerant electrons to non-collinear spin structures in frustrated rare-earth magnets leads to unusual transport properties. While these complex magnetic orders are expected to modify the electronic structure, underlying microscopic mechanisms have been rarely identified. Using magnetoreflectance spectroscopy and \\textit{ab initio} calculations, we reveal reconstructions of the electronic structure across the magnetization plateaus of the kagome spin-ice HoAgGe. We find an unusual optical anisotropy: a larger conductivity perpendicular to the kagome planes originating from the hybridization of Ho $4f$ flat bands with conduction electrons. Moreover, these flat bands are also responsible for the pronounced magnetoreflectance observed at the metamagnetic transitions. Most importantly, the magnetoreflectance behaves completely differently for excitations near the Fermi level and higher-energy interband transitions. The former, expected to sensitively probe variations in band topology near the Fermi level, shows abrupt non-monotonous changes between the magnetic states, while the interband excitations mimic the field dependence of the magnetization. These observations imply that in HoAgGe, the unusual magnetotransport likely reflects variation of band topology between plateau states. More generally, our study shows that heavy-electron bands near the Fermi level offer an efficient way to control the band structure and thereby the transport and optical properties of non-collinear magnets.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-04-14T14:40:56Z",
+        "updated_at": "2026-10-14T04:03:32Z",
+        "abstract_url": "https://arxiv.org/abs/2504.10274v2",
+        "pdf_url": "https://arxiv.org/pdf/2504.10274v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10319016447155299,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.3961400462962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3074781500703999,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Coupling of itinerant electrons to non-collinear spin structures in frustrated rare-earth magnets leads to unusual transport properties.",
+        "brief_summary": "The abstract states: Coupling of itinerant electrons to non-collinear spin structures in frustrated rare-earth magnets leads to unusual transport properties. While these complex magnetic orders are expected to modify the electronic structure, underlying microscopic mechanisms have been rarely identified. Using magnetoreflectance spectroscopy and \\textit{ab initio} calculations, we reveal reconstructions of the electronic structure across the magnetization plateaus of the kagome spin-ice HoAgGe. We find an unusual optical anisotropy: a larger conductivity perpendicular to the kagome planes originating from the hybridization of Ho $4f$ flat bands with conduction electrons. Moreover, these flat bands are also responsible for the pronounced magnetoreflectance observed at the metamagnetic transitions. Most importantly, the magnetoreflectance behaves completely differently for excitations near the Fermi level and higher-energy interband transitions. The former, expected to…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.307, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.str-el"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 6,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19602",
+        "version": 1,
+        "title": "Seismology of Glasses",
+        "authors": [
+          "Zhiyu Cao",
+          "Peter G. Wolynes"
+        ],
+        "abstract": "Aging and relaxation of glasses proceed through localized rearrangements that also generate long-ranged mechanical responses in their surroundings. We develop a theory that treats these rearrangements as internal microseismic sources, and thereby separates the direct effects emerging from an event from the effects from the far-field displacements it generates. These far-field disturbances propagate and relax through the viscoelastic medium through which they move, producing a stochastic background of weak but numerous perturbations at any given location. Combining the description of local events from the Random First Order Transition theory with this propagating background, we derive a unified equation for the dynamical structure factor of a relaxing glass. The theory identifies a finite wave-vector and time window in which the growing viscoelastic far-field disturbances can produce compressed exponential relaxation, which has been observed using X-ray photon correlation spectroscopy. At higher wave vectors that resolve local jumps, heterogeneity of the local event dynamics instead produces stretched exponential relaxation. The crossover between these behaviors depends on the event statistics and the scattering phase accumulated across the region reached through viscoelastic propagation from the numerous distant sources.",
+        "primary_category": "cond-mat.dis-nn",
+        "categories": [
+          "cond-mat.dis-nn",
+          "cond-mat.mtrl-sci",
+          "cond-mat.stat-mech"
+        ],
+        "published_at": "2026-10-14T05:23:24Z",
+        "updated_at": "2026-10-14T05:23:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19602v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19602v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09208875654430018,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.40307291666666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2667472321116018,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Aging and relaxation of glasses proceed through localized rearrangements that also generate long-ranged mechanical responses in their surroundings.",
+        "brief_summary": "The abstract states: Aging and relaxation of glasses proceed through localized rearrangements that also generate long-ranged mechanical responses in their surroundings. We develop a theory that treats these rearrangements as internal microseismic sources, and thereby separates the direct effects emerging from an event from the effects from the far-field displacements it generates. These far-field disturbances propagate and relax through the viscoelastic medium through which they move, producing a stochastic background of weak but numerous perturbations at any given location. Combining the description of local events from the Random First Order Transition theory with this propagating background, we derive a unified equation for the dynamical structure factor of a relaxing glass. The theory identifies a finite wave-vector and time window in which the growing viscoelastic far-field…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through dynamical structure factor. Its preselection score was 0.267, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "dynamical structure factor"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 7,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19833",
+        "version": 1,
+        "title": "Magnetic field induced modulation of heat transport in CrPS$_4$ probed by TaIrTe$_4$ transverse Seebeck thermometry",
+        "authors": [
+          "Krishnaraajan Sundararajan",
+          "Sergio Alvarruiz",
+          "Cédric A. Cordero-Silis",
+          "Majid Ahmadi",
+          "Marcos H. D. Guimarães",
+          "Jagoda S\\lawińska",
+          "Joseph Barker",
+          "Bart J. van Wees"
+        ],
+        "abstract": "Understanding and controlling heat flow in low-dimensional magnetic materials is central to thermoelectrics and spin caloritronics. One of the challenges is the absence of sensitive probes of small, field-dependent modulations in thermal transport. Here we demonstrate transverse Seebeck thermometry using exfoliated TaIrTe$_4$ as a probe of thermal conductivity modulated by an external magnetic field on a van der Waals magnet, CrPS$_4$. With a temperature gradient oriented at $45^\\circ$ to its principal crystallographic axes, TaIrTe$_4$ exhibits a transverse thermopower exceeding $200~\\mathrm{μV\\,K^{-1}}$ for 900 nm wide and 30 $μ$m long electrodes, enabling precise detection of variations in the local temperature gradients. Exploiting this with CrPS$_4$ in a nonlocal geometry, we resolve distinct field dependent thermal conductivity changes associated with both the spin-flip and spin-flop magnetic transitions which we attribute to variations in the magnon$-$phonon coupling in CrPS$_4$. At 5 K, the transverse Seebeck response is modulated by more than 8$\\%$ by an external magnetic field, demonstrating strong magnetic control of heat transport in CrPS$_4$. This all van der Waals platform offers high sensitivity to modulations of thermal conductivity and a broad adaptability to a wide range of exfoliated magnetic systems.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-14T09:06:48Z",
+        "updated_at": "2026-10-14T09:06:48Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19833v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19833v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09530808218930725,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.42246527777777776,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26513516476296606,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Understanding and controlling heat flow in low-dimensional magnetic materials is central to thermoelectrics and spin caloritronics.",
+        "brief_summary": "The abstract states: Understanding and controlling heat flow in low-dimensional magnetic materials is central to thermoelectrics and spin caloritronics. One of the challenges is the absence of sensitive probes of small, field-dependent modulations in thermal transport. Here we demonstrate transverse Seebeck thermometry using exfoliated TaIrTe$_4$ as a probe of thermal conductivity modulated by an external magnetic field on a van der Waals magnet, CrPS$_4$. With a temperature gradient oriented at $45^\\circ$ to its principal crystallographic axes, TaIrTe$_4$ exhibits a transverse thermopower exceeding $200~\\mathrm{μV\\,K^{-1}}$ for 900 nm wide and 30 $μ$m long electrodes, enabling precise detection of variations in the local temperature gradients. Exploiting this with CrPS$_4$ in a nonlocal geometry, we resolve distinct field dependent thermal conductivity changes associated with both the spin-flip and spin-flop…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mes-hall. Its preselection score was 0.265, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.mes-hall"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 8,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19959",
+        "version": 1,
+        "title": "MoEDAL-MAPP: the first dedicated search experiment at the LHC",
+        "authors": [
+          "John R. Ellis",
+          "Nick E. Mavromatos",
+          "Vasiliki A. Mitsou",
+          "James L. Pinfold"
+        ],
+        "abstract": "This special issue brings together a collection of original research articles and review papers addressing topics directly related to the MoEDAL-MAPP experiment at the Large Hadron Collider (LHC). The experiment is designed to search for (meta-)stable, anomalously ionising particles predicted by theoretical extensions of the Standard Model. Several contributions explore the theoretical and phenomenological aspects of models of particular relevance to the experiment, including scenarios involving magnetic monopoles, highly electrically charged particles, and millicharged particles. Other contributions focus on experimental developments, highlighting novel detection techniques and technological advances aimed at identifying these unconventional signatures and probing new phenomena beyond the Standard Model.",
+        "primary_category": "hep-ex",
+        "categories": [
+          "hep-ex",
+          "hep-ph",
+          "hep-th",
+          "physics.ins-det"
+        ],
+        "published_at": "2026-10-14T10:45:21Z",
+        "updated_at": "2026-10-14T10:45:21Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19959v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19959v1",
+        "doi": "10.1140/epjs/s11734-026-02617-z",
+        "journal_reference": "Eur.Phys.J.ST 235 (2026) 25, 5353-5359"
+      },
+      "score": {
+        "semantic_relevance": 0.038319390299249016,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.43101996527777775,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21034572216243985,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: This special issue brings together a collection of original research articles and review papers addressing topics directly related to the MoEDAL-MAPP experiment at the Large Hadron Collider (LHC).",
+        "brief_summary": "The abstract states: This special issue brings together a collection of original research articles and review papers addressing topics directly related to the MoEDAL-MAPP experiment at the Large Hadron Collider (LHC). The experiment is designed to search for (meta-)stable, anomalously ionising particles predicted by theoretical extensions of the Standard Model. Several contributions explore the theoretical and phenomenological aspects of models of particular relevance to the experiment, including scenarios involving magnetic monopoles, highly electrically charged particles, and millicharged particles. Other contributions focus on experimental developments, highlighting novel detection techniques and technological advances aimed at identifying these unconventional signatures and probing new phenomena beyond the Standard Model.",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ex. Its preselection score was 0.210, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ex"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.51
+      },
+      "rank": 9,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2510.16838",
+        "version": 2,
+        "title": "Bayesian inference of the magnetic component of quark-gluon plasma",
+        "authors": [
+          "Yu Guo",
+          "Jinfeng Liao",
+          "Shuzhe Shi"
+        ],
+        "abstract": "The chromo-magnetic monopoles (CMM), emergent topological excitations of non-Abelian gauge fields carrying chromo-magnetic charge, have long been postulated to play an important role in the vacuum confinement of quantum chromodynamics (QCD), the deconfinement transition at temperature $T_c\\approx 160\\rm MeV$, as well as the strongly coupled nature of quark-gluon plasma (QGP). While such CMMs have been found to provide solutions for challenging puzzles from heavy-ion collision measurements, they were typically introduced as model assumptions in the past. Here we show how their very existence can be determined and their abundance extracted in a data-driven way for the first time. Using the \\textsc{cujet3} framework for calculations of jet energy loss and analyzing a comprehensive experimental data set for nuclear modification factor ($R_{\\mathrm{AA}}$) and elliptic flow ($v_2$) of high-transverse-momentum hadrons, the fraction of CMMs in the QGP is obtained by Bayesian inference and is found to be substantial in the $1\\sim 2 T_c$ region. The posterior CMM fraction is further validated by excellent agreement with additional data and is also shown to predict QGP transport properties quantitatively consistent with the state-of-the-art knowledge.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph"
+        ],
+        "published_at": "2025-10-19T13:57:29Z",
+        "updated_at": "2026-10-16T09:28:28Z",
+        "abstract_url": "https://arxiv.org/abs/2510.16838v2",
+        "pdf_url": "https://arxiv.org/pdf/2510.16838v2",
+        "doi": "10.1103/svh2-j38f",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.029307700505540428,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.6743460648148148,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18062307170897468,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: The chromo-magnetic monopoles (CMM), emergent topological excitations of non-Abelian gauge fields carrying chromo-magnetic charge, have long been postulated to play an important role in the vacuum confinement of quantum chromodynamics (QCD), the…",
+        "brief_summary": "The abstract states: The chromo-magnetic monopoles (CMM), emergent topological excitations of non-Abelian gauge fields carrying chromo-magnetic charge, have long been postulated to play an important role in the vacuum confinement of quantum chromodynamics (QCD), the deconfinement transition at temperature $T_c\\approx 160\\rm MeV$, as well as the strongly coupled nature of quark-gluon plasma (QGP). While such CMMs have been found to provide solutions for challenging puzzles from heavy-ion collision measurements, they were typically introduced as model assumptions in the past. Here we show how their very existence can be determined and their abundance extracted in a data-driven way for the first time. Using the \\textsc{cujet3} framework for calculations of jet energy loss and analyzing a comprehensive experimental data set for nuclear modification factor ($R_{\\mathrm{AA}}$) and elliptic…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.181, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 10,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [
+    {
+      "paper": {
+        "arxiv_id": "2610.16856",
+        "version": 1,
+        "title": "Magnetic properties and excitation spectrum of the S = 1/2 three-legged spin ladder, LiMoOP2O7",
+        "authors": [
+          "Aly H Abdeldaim",
+          "Alexander A. Tsirlin",
+          "Jacques Ollivier",
+          "Clemens Ritter",
+          "Robin S. Perry",
+          "Lucy Clark",
+          "Gøran J. Nilsen"
+        ],
+        "abstract": "We report a comprehensive experimental study including density functional theory calculations detailing the magnetic ground state of the $S = 1/2$ Mo$^{5+}$ pyrophosphate, LiMoOP2O7, and its magnetic excitations. Neutron powder diffraction measurements confirm the $P2_1/n$ structural model which is comprised of a three-legged ladder of distorted Mo$^{5+}$ octahedra. Magnetometry and specific heat reveal a long-range magnetic ordering transition at $T_\\textrm{N} = 3.5$~K and a field-induced transition at $μ_{0}$H$_\\textrm{c}$ = 1 T. This zero-field long-range magnetic order was determined to be a commensurate $κ= 0$ order with an ordered moment that is reduced from the full $S = 1/2$ magnetic moment by 30%. Through inelastic neutron scattering measurements and density functional theory calculations, we define the minimal microscopic model and resolve the spin Hamiltonian up to the seventh leading exchange parameter, resulting in a model with dominant antiferromagnetic leg interactions, weaker ferromagnetic rung interactions, and a significant interlayer ferromagnetic coupling.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-12T14:26:25Z",
+        "updated_at": "2026-10-12T14:26:25Z",
+        "abstract_url": "https://arxiv.org/abs/2610.16856v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.16856v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.13198827175528968,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.2002097800925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2856657002991396,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.16439",
+        "version": 1,
+        "title": "Thermally Enhanced Pseudo-Goldstone Spin Gap in the Isotropic Helimagnet ZnCr$_2$Se$_4$",
+        "authors": [
+          "N. D. Andriushin",
+          "A. Sanders",
+          "J. Reuther",
+          "D. C. Peets",
+          "P. Steffens",
+          "A. Hiess",
+          "J. Lass",
+          "L. Prodan",
+          "V. Tsurkan",
+          "V. Felea",
+          "D. S. Inosov"
+        ],
+        "abstract": "In magnetically ordered systems, the spin gap in the magnon spectrum is normally expected to decrease on warming and close at the transition out of the long-range order. The presence of a pseudo-Goldstone gap is commonly associated with nonlinear terms in spin-wave theory. However, its precise origin and detailed properties can vary and remain under debate. Here we show by means of inelastic neutron scattering that the pseudo-Goldstone gap in the Heisenberg helimagnet ZnCr$_2$Se$_4$ exhibits an atypical, nonmonotonic temperature dependence: the gap increases over much of the ordered phase before closing near $T_\\mathrm{N}$. These results align with recent spin-dynamic simulations based on an effective quartic potential in an isotropic system~[Phys. Rev. B \\textbf{113}, L220411 (2026)]. As the pseudo-Goldstone spin gap in ZnCr$_2$Se$_4$ is dominated by quantum effects at subkelvin temperatures, its characteristic growth on warming is caused by thermal fluctuations.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-12T09:04:25Z",
+        "updated_at": "2026-10-12T09:04:25Z",
+        "abstract_url": "https://arxiv.org/abs/2610.16439v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.16439v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10167894459881477,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.1722583912037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26923136418983706,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2604.24951",
+        "version": 3,
+        "title": "Crystal-Field Symmetry Constraints in Layered Honeycomb ErBr$_3$",
+        "authors": [
+          "Biaoyan Hu",
+          "Mingyuan Hu",
+          "Franz Demmel",
+          "Andrey A. Podlesnyak",
+          "Jiaqing He",
+          "Liusuo Wu"
+        ],
+        "abstract": "Crystal-field symmetry restricts the ground-state Kramers doublet of ErBr$_3$ to one of two classes. We show that the compressed octahedral environment selects the class with $\\langle ψ_\\pm | J^{\\pm} | ψ_\\mp \\rangle = 0$, suppressing the lowest-order $J^{\\pm}$-mediated exchange. Thermodynamic measurements reveal two zero-field anomalies at 0.375 and 0.200 K. Under an in-plane magnetic field, the thermodynamic response separates into a phase boundary and a broader crossover line. Inelastic neutron scattering measurements at 2 K reveal no well-defined low-energy dispersive magnetic modes. These results connect the ground-state symmetry with the field-dependent thermodynamic response of ErBr$_3$, providing a microscopic starting point for understanding its low-energy magnetic behavior.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-04-27T19:48:56Z",
+        "updated_at": "2026-10-13T09:22:29Z",
+        "abstract_url": "https://arxiv.org/abs/2604.24951v3",
+        "pdf_url": "https://arxiv.org/pdf/2604.24951v3",
+        "doi": "10.1103/7v1d-gc1p",
+        "journal_reference": "Phys. Rev. B 114, 194406 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.05701906766001712,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.2988266782407407,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2617912482710818,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.18750",
+        "version": 1,
+        "title": "Finite temperature Fredholm determinants for dynamical correlation functions",
+        "authors": [
+          "Oleksandr Gamayun"
+        ],
+        "abstract": "We study the long-time, large-distance asymptotics of finite-temperature dynamical Fredholm determinants using effective form factors. The method expresses these asymptotics as a functional of an effective phase shift. We determine its two branches on either side of a quadratic stationary point and the transition profile joining them. The profile is expressed through parabolic-cylinder functions. Its connection to the high-temperature Gaussian $β$ ensemble fixes the finite normalization, in agreement with an independent Riemann--Hilbert analysis. We also show that the leading exponential asymptotics suffice to recover the Euler-scale prediction of generalized hydrodynamics for the dynamical structure factor of hard rods.",
+        "primary_category": "math-ph",
+        "categories": [
+          "math-ph",
+          "cond-mat.stat-mech",
+          "hep-th"
+        ],
+        "published_at": "2026-10-13T17:15:50Z",
+        "updated_at": "2026-10-13T17:15:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.18750v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.18750v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07493286178508349,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.33991608796296297,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.25271139659958386,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.17315",
+        "version": 1,
+        "title": "Evidence of an anisotropic Griffiths phase in a two-dimensional van der Waals magnet",
+        "authors": [
+          "Anupam K. Singh",
+          "Dhananjay Nair",
+          "Holger Meyerheim",
+          "Stuart S. P. Parkin",
+          "Banabir Pal"
+        ],
+        "abstract": "Over the last decade, the emerging field of two-dimensional van der Waals magnetism has focused mainly on long-range-ordered magnetic phases. Disordered magnetic phases, however, remain largely unexplored. Here, we report a highly anisotropic Griffiths phase driven by self-intercalation in the van der Waals magnet Fe5GeTe2. We find evidence of short-range-ordered ferromagnetic clusters embedded in a paramagnetic matrix, which dominate the magnetic response between the Curie temperature and a higher characteristic Griffiths temperature. An anomalous power-law divergence in the magnetic susceptibility, universal Lee Yang scaling, and distinct entropy anomalies provide further evidence for this phase. Strikingly, the non-analytic Griffiths response emerges exclusively under in-plane magnetic fields, whereas out-of-plane fields abruptly alter this behavior. This directional dependence indicates that the local magnetic interactions within nanoscale clusters are closely coupled to the layered lattice geometry. Our findings establish a regime of dimensionally constrained, disorder-driven magnetism and identify self-intercalated van der Waals magnets as a platform for investigating the interplay between magnetic disorder, anisotropy, and reduced dimensionality.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-12T19:18:14Z",
+        "updated_at": "2026-10-12T19:18:14Z",
+        "abstract_url": "https://arxiv.org/abs/2610.17315v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.17315v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.049086891785569305,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.22554108796296296,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2246432100998025,
+        "explanation": "No configured positive profile terms matched."
+      }
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "paper": {
+        "arxiv_id": "2610.21523",
+        "version": 1,
+        "title": "Non-equilibrium Muon Dynamics Imitating Fractional Spin Excitations in a Quantum Spin Chain",
+        "authors": [
+          "A. Hromov",
+          "A. Zorko",
+          "M. Gomilšek",
+          "P. J. Baker",
+          "A. Prokofiev",
+          "M. Pregelj"
+        ],
+        "abstract": "Fractional spin excitations in low-dimensional and frustrated magnets are commonly associated with sporadic spin fluctuations, as observed in quantum spin liquids, spin ices, and other complex magnetic states. In this study, we investigate the spin dynamics in the amplitude-modulated magnetic ground state of AgCuVO$_4$, a spin-1/2 chain compound with competing intrachain interactions, by muon spectroscopy. Our data reveal a Gaussian decay of muon polarization that remains remarkably resilient against applied magnetic fields---a behavior often interpreted as evidence of emergent sporadic spin dynamics. However, density functional theory calculations of muon stopping sites and their quadrupolar level-crossing resonance spectra suggest an alternative mechanism: a two-state model where the muon randomly hops between two nearby sites, eventually equilibrating across both on a microsecond timescale via quantum delocalization. These findings provide a microscopic explanation for the field-resilient muon polarization and indicate that such behavior may not always stem from intrinsic spin fluctuations, but can also arise from non-equilibrium muon dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-15T08:55:33Z",
+        "updated_at": "2026-10-15T08:55:33Z",
+        "abstract_url": "https://arxiv.org/abs/2610.21523v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.21523v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1908201861705457,
+        "keyword_relevance": 0.04,
+        "category_relevance": 1.0,
+        "recency": 0.5464887152777778,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.35051795530452334,
+        "explanation": "Strongest matched profile terms: spin dynamics."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2609.12856",
+        "version": 2,
+        "title": "Chiral Valence-Bond Solid and Chiral Triplons",
+        "authors": [
+          "Shinnosuke Koyama",
+          "Kazumasa Hattori"
+        ],
+        "abstract": "We propose a chiral valence-bond solid (VBS) in which spin-singlet bond order itself spontaneously acquires handedness without magnetic order. Using a spin-lattice model on the diamond lattice, we demonstrate two enantiomorphic VBS states. In the presence of anisotropic spin interactions, this emergent handedness is inherited by chiral triplons with spin-split bands and spin textures that reverse between the two enantiomers. These textures generate a temperature-gradient-induced net spin response whose sign is set by the VBS handedness. The imaginary off-diagonal components of the dynamical spin structure factor encode the triplon polarization and change sign between the two enantiomers, enabling direct detection of chiral triplons and the selected handedness by polarized inelastic neutron scattering. Our results establish a direct connection between spontaneous chirality and magnetic excitations, opening avenues for exploring the interplay between quantum magnetism and chiral physics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-09-11T13:45:46Z",
+        "updated_at": "2026-10-16T16:43:15Z",
+        "abstract_url": "https://arxiv.org/abs/2609.12856v2",
+        "pdf_url": "https://arxiv.org/pdf/2609.12856v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15252707090068734,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.7120876736111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.34609594926642046,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2608.00469",
+        "version": 2,
+        "title": "Negative thermal expansion, lattice dynamics, and complex magnetism in TbFeO$_3$",
+        "authors": [
+          "Shubham Farswan",
+          "Reshma Kumawat",
+          "Dipankar Sarkar",
+          "Deeksha Singh",
+          "Md. Atif Hasan",
+          "Devajyoti Mukherjee",
+          "Kaushik Sen"
+        ],
+        "abstract": "We report a temperature-dependent investigation of orthoferrite TbFeO$_3$ using x-ray diffraction, DC magnetization, and Raman scattering, complemented by room-temperature x-ray photoelectron spectroscopy. X-ray diffraction reveals negative thermal expansion over 5-300 K, with a small but systematic increase in unit-cell volume upon cooling in the absence of any structural phase transition. Raman scattering measurements identify the Raman-active phonon modes and show clear deviations from the conventional Klemens anharmonic decay model, particularly in phonon frequencies, indicating the presence of spin-phonon coupling. Two modes of $A_g$ and $B_{1g}$ symmetry exhibit a crossover from Gaussian-dominated line shapes at low temperatures to mixed Gaussian-Lorentzian profiles at higher temperatures, reflecting a transition from inhomogeneous broadening to lifetime-driven dynamics. High-energy Raman spectra reveal two-magnon excitations associated with the Fe sublattice, consistent with linear spin-wave theory, whose spectral weight shows only weak temperature dependence. In addition, a broad Raman mode emerging below $\\sim 175$ K exhibits an order-parameter-like temperature evolution and coincides with the onset of phonon anomalies, while no corresponding strong anomaly is observed in the two-magnon response. Taken together, these results establish TbFeO$_3$ as a system with pronounced interplay among lattice dynamics, spin correlations, and emergent local magnetic-lattice anomalies.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-08-01T06:29:49Z",
+        "updated_at": "2026-10-16T09:31:01Z",
+        "abstract_url": "https://arxiv.org/abs/2608.00469v2",
+        "pdf_url": "https://arxiv.org/pdf/2608.00469v2",
+        "doi": "10.1103/dmqs-y92y",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12927859919701445,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.6745674189814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3306321115368047,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.23015",
+        "version": 1,
+        "title": "Crystal Field-Phonon Coupling in ErFeO$_3$ Single Crystal Via Inelastic Neutron Scattering",
+        "authors": [
+          "Guochu Deng",
+          "Xiaoxuan Ma",
+          "Wanting Yang",
+          "Wei Ren",
+          "Shixun Cao",
+          "Zhenxiang Cheng",
+          "Garry J. McIntyre"
+        ],
+        "abstract": "Crystal-field (CF) excitations and their coupling to lattice vibrations were investigated in ErFeO$_3$ using inelastic neutron scattering. Pronounced modifications of the excitation spectra, including energy shifts, intensity redistribution, and linewidth changes, were observed as a consequence of CF-phonon coupling. Significant renormalization of the first and second CF excitations, located near 5 meV and 12 meV, respectively, was detected along both transverse and longitudinal directions in the vicinity of the reciprocal-space point Q = (2, 0, 4). The coupling effects become more prominent as the temperature increases from 300 K to 650 K, while a slight suppression is observed at 750 K. Remarkably, CF excitation peaks that are strongly weakened by thermal population effects re-emerge in specific momentum regions through interaction with phonon modes. The coupled excitations exhibit characteristic signatures of hybridization, including energy renormalization, intensity enhancement, and linewidth narrowing. Density-functional-theory-based phonon calculations further support the interpretation of CF-phonon coupling in ErFeO3. These results demonstrate that strong interactions between CF excitations and lattice vibrations can substantially modify the excitation spectra in rare-earth orthoferrites.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.other"
+        ],
+        "published_at": "2026-10-16T06:50:34Z",
+        "updated_at": "2026-10-16T06:50:34Z",
+        "abstract_url": "https://arxiv.org/abs/2610.23015v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.23015v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09533250082280934,
+        "keyword_relevance": 0.07142857142857142,
+        "category_relevance": 1.0,
+        "recency": 0.6606394675925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3268207149866663,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.21580",
+        "version": 1,
+        "title": "Flat-band ferrimagnetism in the edge-centered honeycomb antiferromagnet: From harmonic flat magnon to broad continuum",
+        "authors": [
+          "Sicheng He",
+          "Zhixuan Zhao",
+          "Hanxiang Di",
+          "Shuaihua Zhang",
+          "Yanling Wu",
+          "Jun Li"
+        ],
+        "abstract": "One of the most striking aspects of a flat band is not merely its lack of dispersion, but that it reduces the single-particle kinetic energy to a very small scale, allowing interaction effects to become the dominant energy scale in the low-energy physics. This picture has underpinned concepts such as flat-band ferromagnetism, flat-band superconductivity, and localized magnons. A more fundamental question, however, remains. Flat bands belong to the language of single-particle or linear-spin-wave physics; whether they survive as protected sharp excitations in a genuine many-body quantum magnet, or merely provide a skeleton of spectral weight left by the noninteracting picture, remains unclear. We study the spin-1/2 Heisenberg antiferromagnet on the edge-centered honeycomb lattice to examine this question. In contrast to flat bands in geometrically frustrated magnets such as kagome, this lattice has a 2:3 sublattice imbalance that renders the intersublattice coupling matrix rectangular, whose null space gives rise to a flat band at the single-particle level. The same imbalance stabilizes a ferrimagnetic ground state through the Lieb--Mattis theorem and leads to an edge-site-localized flat magnon in linear spin-wave theory. Combining linear spin-wave theory, sign-problem-free stochastic series expansion quantum Monte Carlo, and stochastic analytic continuation, we find that quantum fluctuations transform this harmonic flat mode into a broad continuum whose centroid is about 1.55J and nearly dispersionless along the high-symmetry path. Sublattice imbalance thus offers an unfrustrated route that unifies flat bands and ferrimagnetism, and suggests that flat-band geometry organizes many-body spectral weight rather than giving rise to a protected quasiparticle.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-15T09:29:00Z",
+        "updated_at": "2026-10-15T09:29:00Z",
+        "abstract_url": "https://arxiv.org/abs/2610.21580v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.21580v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10154814079606991,
+        "keyword_relevance": 0.04,
+        "category_relevance": 1.0,
+        "recency": 0.5493923611111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.31063589946934256,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2504.10274",
+        "version": 2,
+        "title": "Magneto-optical signatures of plateau states in the kagome spin-ice HoAgGe",
+        "authors": [
+          "F. Schilberth",
+          "L. DeFreitas",
+          "J. Guo",
+          "N. Herrmann",
+          "F. LeMardelé",
+          "I. Mohelsky",
+          "M. Orlita",
+          "U. Nagel",
+          "T. Rõõm",
+          "P. Gegenwart",
+          "H. Chen",
+          "K. Zhao",
+          "I. Kézsmárki",
+          "S. Bordács"
+        ],
+        "abstract": "Coupling of itinerant electrons to non-collinear spin structures in frustrated rare-earth magnets leads to unusual transport properties. While these complex magnetic orders are expected to modify the electronic structure, underlying microscopic mechanisms have been rarely identified. Using magnetoreflectance spectroscopy and \\textit{ab initio} calculations, we reveal reconstructions of the electronic structure across the magnetization plateaus of the kagome spin-ice HoAgGe. We find an unusual optical anisotropy: a larger conductivity perpendicular to the kagome planes originating from the hybridization of Ho $4f$ flat bands with conduction electrons. Moreover, these flat bands are also responsible for the pronounced magnetoreflectance observed at the metamagnetic transitions. Most importantly, the magnetoreflectance behaves completely differently for excitations near the Fermi level and higher-energy interband transitions. The former, expected to sensitively probe variations in band topology near the Fermi level, shows abrupt non-monotonous changes between the magnetic states, while the interband excitations mimic the field dependence of the magnetization. These observations imply that in HoAgGe, the unusual magnetotransport likely reflects variation of band topology between plateau states. More generally, our study shows that heavy-electron bands near the Fermi level offer an efficient way to control the band structure and thereby the transport and optical properties of non-collinear magnets.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-04-14T14:40:56Z",
+        "updated_at": "2026-10-14T04:03:32Z",
+        "abstract_url": "https://arxiv.org/abs/2504.10274v2",
+        "pdf_url": "https://arxiv.org/pdf/2504.10274v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10319016447155299,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.3961400462962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3074781500703999,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.16856",
+        "version": 1,
+        "title": "Magnetic properties and excitation spectrum of the S = 1/2 three-legged spin ladder, LiMoOP2O7",
+        "authors": [
+          "Aly H Abdeldaim",
+          "Alexander A. Tsirlin",
+          "Jacques Ollivier",
+          "Clemens Ritter",
+          "Robin S. Perry",
+          "Lucy Clark",
+          "Gøran J. Nilsen"
+        ],
+        "abstract": "We report a comprehensive experimental study including density functional theory calculations detailing the magnetic ground state of the $S = 1/2$ Mo$^{5+}$ pyrophosphate, LiMoOP2O7, and its magnetic excitations. Neutron powder diffraction measurements confirm the $P2_1/n$ structural model which is comprised of a three-legged ladder of distorted Mo$^{5+}$ octahedra. Magnetometry and specific heat reveal a long-range magnetic ordering transition at $T_\\textrm{N} = 3.5$~K and a field-induced transition at $μ_{0}$H$_\\textrm{c}$ = 1 T. This zero-field long-range magnetic order was determined to be a commensurate $κ= 0$ order with an ordered moment that is reduced from the full $S = 1/2$ magnetic moment by 30%. Through inelastic neutron scattering measurements and density functional theory calculations, we define the minimal microscopic model and resolve the spin Hamiltonian up to the seventh leading exchange parameter, resulting in a model with dominant antiferromagnetic leg interactions, weaker ferromagnetic rung interactions, and a significant interlayer ferromagnetic coupling.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-12T14:26:25Z",
+        "updated_at": "2026-10-12T14:26:25Z",
+        "abstract_url": "https://arxiv.org/abs/2610.16856v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.16856v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.13198827175528968,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.2002097800925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2856657002991396,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.16439",
+        "version": 1,
+        "title": "Thermally Enhanced Pseudo-Goldstone Spin Gap in the Isotropic Helimagnet ZnCr$_2$Se$_4$",
+        "authors": [
+          "N. D. Andriushin",
+          "A. Sanders",
+          "J. Reuther",
+          "D. C. Peets",
+          "P. Steffens",
+          "A. Hiess",
+          "J. Lass",
+          "L. Prodan",
+          "V. Tsurkan",
+          "V. Felea",
+          "D. S. Inosov"
+        ],
+        "abstract": "In magnetically ordered systems, the spin gap in the magnon spectrum is normally expected to decrease on warming and close at the transition out of the long-range order. The presence of a pseudo-Goldstone gap is commonly associated with nonlinear terms in spin-wave theory. However, its precise origin and detailed properties can vary and remain under debate. Here we show by means of inelastic neutron scattering that the pseudo-Goldstone gap in the Heisenberg helimagnet ZnCr$_2$Se$_4$ exhibits an atypical, nonmonotonic temperature dependence: the gap increases over much of the ordered phase before closing near $T_\\mathrm{N}$. These results align with recent spin-dynamic simulations based on an effective quartic potential in an isotropic system~[Phys. Rev. B \\textbf{113}, L220411 (2026)]. As the pseudo-Goldstone spin gap in ZnCr$_2$Se$_4$ is dominated by quantum effects at subkelvin temperatures, its characteristic growth on warming is caused by thermal fluctuations.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-10-12T09:04:25Z",
+        "updated_at": "2026-10-12T09:04:25Z",
+        "abstract_url": "https://arxiv.org/abs/2610.16439v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.16439v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10167894459881477,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.1722583912037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26923136418983706,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19602",
+        "version": 1,
+        "title": "Seismology of Glasses",
+        "authors": [
+          "Zhiyu Cao",
+          "Peter G. Wolynes"
+        ],
+        "abstract": "Aging and relaxation of glasses proceed through localized rearrangements that also generate long-ranged mechanical responses in their surroundings. We develop a theory that treats these rearrangements as internal microseismic sources, and thereby separates the direct effects emerging from an event from the effects from the far-field displacements it generates. These far-field disturbances propagate and relax through the viscoelastic medium through which they move, producing a stochastic background of weak but numerous perturbations at any given location. Combining the description of local events from the Random First Order Transition theory with this propagating background, we derive a unified equation for the dynamical structure factor of a relaxing glass. The theory identifies a finite wave-vector and time window in which the growing viscoelastic far-field disturbances can produce compressed exponential relaxation, which has been observed using X-ray photon correlation spectroscopy. At higher wave vectors that resolve local jumps, heterogeneity of the local event dynamics instead produces stretched exponential relaxation. The crossover between these behaviors depends on the event statistics and the scattering phase accumulated across the region reached through viscoelastic propagation from the numerous distant sources.",
+        "primary_category": "cond-mat.dis-nn",
+        "categories": [
+          "cond-mat.dis-nn",
+          "cond-mat.mtrl-sci",
+          "cond-mat.stat-mech"
+        ],
+        "published_at": "2026-10-14T05:23:24Z",
+        "updated_at": "2026-10-14T05:23:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19602v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19602v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09208875654430018,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.40307291666666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2667472321116018,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19833",
+        "version": 1,
+        "title": "Magnetic field induced modulation of heat transport in CrPS$_4$ probed by TaIrTe$_4$ transverse Seebeck thermometry",
+        "authors": [
+          "Krishnaraajan Sundararajan",
+          "Sergio Alvarruiz",
+          "Cédric A. Cordero-Silis",
+          "Majid Ahmadi",
+          "Marcos H. D. Guimarães",
+          "Jagoda S\\lawińska",
+          "Joseph Barker",
+          "Bart J. van Wees"
+        ],
+        "abstract": "Understanding and controlling heat flow in low-dimensional magnetic materials is central to thermoelectrics and spin caloritronics. One of the challenges is the absence of sensitive probes of small, field-dependent modulations in thermal transport. Here we demonstrate transverse Seebeck thermometry using exfoliated TaIrTe$_4$ as a probe of thermal conductivity modulated by an external magnetic field on a van der Waals magnet, CrPS$_4$. With a temperature gradient oriented at $45^\\circ$ to its principal crystallographic axes, TaIrTe$_4$ exhibits a transverse thermopower exceeding $200~\\mathrm{μV\\,K^{-1}}$ for 900 nm wide and 30 $μ$m long electrodes, enabling precise detection of variations in the local temperature gradients. Exploiting this with CrPS$_4$ in a nonlocal geometry, we resolve distinct field dependent thermal conductivity changes associated with both the spin-flip and spin-flop magnetic transitions which we attribute to variations in the magnon$-$phonon coupling in CrPS$_4$. At 5 K, the transverse Seebeck response is modulated by more than 8$\\%$ by an external magnetic field, demonstrating strong magnetic control of heat transport in CrPS$_4$. This all van der Waals platform offers high sensitivity to modulations of thermal conductivity and a broad adaptability to a wide range of exfoliated magnetic systems.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-14T09:06:48Z",
+        "updated_at": "2026-10-14T09:06:48Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19833v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19833v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09530808218930725,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.42246527777777776,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26513516476296606,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2604.24951",
+        "version": 3,
+        "title": "Crystal-Field Symmetry Constraints in Layered Honeycomb ErBr$_3$",
+        "authors": [
+          "Biaoyan Hu",
+          "Mingyuan Hu",
+          "Franz Demmel",
+          "Andrey A. Podlesnyak",
+          "Jiaqing He",
+          "Liusuo Wu"
+        ],
+        "abstract": "Crystal-field symmetry restricts the ground-state Kramers doublet of ErBr$_3$ to one of two classes. We show that the compressed octahedral environment selects the class with $\\langle ψ_\\pm | J^{\\pm} | ψ_\\mp \\rangle = 0$, suppressing the lowest-order $J^{\\pm}$-mediated exchange. Thermodynamic measurements reveal two zero-field anomalies at 0.375 and 0.200 K. Under an in-plane magnetic field, the thermodynamic response separates into a phase boundary and a broader crossover line. Inelastic neutron scattering measurements at 2 K reveal no well-defined low-energy dispersive magnetic modes. These results connect the ground-state symmetry with the field-dependent thermodynamic response of ErBr$_3$, providing a microscopic starting point for understanding its low-energy magnetic behavior.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-04-27T19:48:56Z",
+        "updated_at": "2026-10-13T09:22:29Z",
+        "abstract_url": "https://arxiv.org/abs/2604.24951v3",
+        "pdf_url": "https://arxiv.org/pdf/2604.24951v3",
+        "doi": "10.1103/7v1d-gc1p",
+        "journal_reference": "Phys. Rev. B 114, 194406 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.05701906766001712,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.2988266782407407,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2617912482710818,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.18750",
+        "version": 1,
+        "title": "Finite temperature Fredholm determinants for dynamical correlation functions",
+        "authors": [
+          "Oleksandr Gamayun"
+        ],
+        "abstract": "We study the long-time, large-distance asymptotics of finite-temperature dynamical Fredholm determinants using effective form factors. The method expresses these asymptotics as a functional of an effective phase shift. We determine its two branches on either side of a quadratic stationary point and the transition profile joining them. The profile is expressed through parabolic-cylinder functions. Its connection to the high-temperature Gaussian $β$ ensemble fixes the finite normalization, in agreement with an independent Riemann--Hilbert analysis. We also show that the leading exponential asymptotics suffice to recover the Euler-scale prediction of generalized hydrodynamics for the dynamical structure factor of hard rods.",
+        "primary_category": "math-ph",
+        "categories": [
+          "math-ph",
+          "cond-mat.stat-mech",
+          "hep-th"
+        ],
+        "published_at": "2026-10-13T17:15:50Z",
+        "updated_at": "2026-10-13T17:15:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.18750v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.18750v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07493286178508349,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.33991608796296297,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.25271139659958386,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.17315",
+        "version": 1,
+        "title": "Evidence of an anisotropic Griffiths phase in a two-dimensional van der Waals magnet",
+        "authors": [
+          "Anupam K. Singh",
+          "Dhananjay Nair",
+          "Holger Meyerheim",
+          "Stuart S. P. Parkin",
+          "Banabir Pal"
+        ],
+        "abstract": "Over the last decade, the emerging field of two-dimensional van der Waals magnetism has focused mainly on long-range-ordered magnetic phases. Disordered magnetic phases, however, remain largely unexplored. Here, we report a highly anisotropic Griffiths phase driven by self-intercalation in the van der Waals magnet Fe5GeTe2. We find evidence of short-range-ordered ferromagnetic clusters embedded in a paramagnetic matrix, which dominate the magnetic response between the Curie temperature and a higher characteristic Griffiths temperature. An anomalous power-law divergence in the magnetic susceptibility, universal Lee Yang scaling, and distinct entropy anomalies provide further evidence for this phase. Strikingly, the non-analytic Griffiths response emerges exclusively under in-plane magnetic fields, whereas out-of-plane fields abruptly alter this behavior. This directional dependence indicates that the local magnetic interactions within nanoscale clusters are closely coupled to the layered lattice geometry. Our findings establish a regime of dimensionally constrained, disorder-driven magnetism and identify self-intercalated van der Waals magnets as a platform for investigating the interplay between magnetic disorder, anisotropy, and reduced dimensionality.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-12T19:18:14Z",
+        "updated_at": "2026-10-12T19:18:14Z",
+        "abstract_url": "https://arxiv.org/abs/2610.17315v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.17315v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.049086891785569305,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.22554108796296296,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2246432100998025,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.17193",
+        "version": 1,
+        "title": "Principles and Techniques for Agentic Research in Experimental Physics",
+        "authors": [
+          "Niko R. Reed",
+          "Declan M. Daly",
+          "Andrew J. Beling",
+          "Jordan D. Giandrea",
+          "Ronald L. Walsworth",
+          "John W. Blanchard",
+          "Daniel Ang"
+        ],
+        "abstract": "The use of artificial intelligence (AI) in physics research is increasingly common, yet few guidelines exist for its effective use. Starting with a principles-based approach, we outline a set of ten requirements for collaborative AI agents in experimental physics, spanning scientific norms, effective agent use, and domain expertise. We take a human-centered approach in which agents act as collaborators that amplify rather than replace the expertise of a human researcher (user) who directs the work and is responsible for its results. We then present a framework designed to enforce these requirements, detailing methods for improving off-the-shelf behavior of large language models (LLMs) with custom scaffolding and describing general-purpose scientific workflows and skills. In particular, we highlight the power of closed-loop campaigns where agents work iteratively toward a well-defined goal. We demonstrate the potential of this mode of research through six case studies in experimental physics, covering device design, hardware control, neural network optimization, physical model identification, and data analysis. All six case studies result in useful work products that add utility to our research, including a neural network architecture and solid-state quantum defect photodynamic model that substantially outperform our published work; a microwave waveguide design that extends a published design concept to a fabrication-ready device meeting our experimental constraints; a quantum control pulse sequence candidate that improves simulated performance by more than an order of magnitude; commissioning of an NMR spectrometer to $\\sim$1~Hz frequency precision on live hardware; and finally a data-fitting pipeline that achieves, to our knowledge, the first reconstruction of the Ising microstate of an artificial spin-ice array from diffraction-limited magnetic imaging.",
+        "primary_category": "physics.comp-ph",
+        "categories": [
+          "physics.comp-ph",
+          "quant-ph"
+        ],
+        "published_at": "2026-10-12T17:56:44Z",
+        "updated_at": "2026-10-12T17:56:44Z",
+        "abstract_url": "https://arxiv.org/abs/2610.17193v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.17193v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07400287959792179,
+        "keyword_relevance": 0.029999999999999995,
+        "category_relevance": 0.6,
+        "recency": 0.2184664351851852,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2226479393375833,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.15622",
+        "version": 1,
+        "title": "Enhancement of local magnetic ordering temperature due to non-magnetic disorder in anti-Heusler alloy Al$_2$MnCu",
+        "authors": [
+          "Soumya Bhowmik",
+          "Suvayan Saha",
+          "Saikat Debnath",
+          "Arka Patra",
+          "Biswarup Satpati",
+          "Maxim Avdeev",
+          "Shishir Kumar Pandey",
+          "Chandan Mazumdar"
+        ],
+        "abstract": "Structural disorder is generally regarded as detrimental to magnetism. Since magnetic properties are governed by both the arrangement of magnetic atoms and the crystal environment, including non-magnetic atoms that mediate exchange interactions, the distinct role of magnetic and non-magnetic disorder remains less understood. The recently reported anti-Heusler alloy, Al$_2$MnCu, forming with $\\sim$50\\% intra-symmetry site disorder (B2) involving the magnetic Mn atom and $\\sim$5\\% inter-symmetry site disorder associated with non-magnetic Al and Cu atoms, offers a good platform to disentangle the individual roles of magnetic and non-magnetic atomic disorder. Our magnetic critical analysis, in the vicinity of the Curie temperature ($T_{\\rm C}$), does not lead to any conventional single universality class expected for a standard ferromagnet; instead, the non-monotonic temperature dependence of effective critical exponents points towards more complex magnetic interactions, akin to inhomogeneous ferromagnets. Dc magnetometry complemented by higher-harmonic ac magnetic susceptibility data, further confirms the persistence of locally ordered magnetic clusters above $T_{\\rm C}$. Theoretical analysis establishes that the enhancement of the local magnetic ordering temperature arises directly from the strengthening of exchange interactions due to the small degree of non-magnetic disorder, whereas $T_{\\rm C}$ is hardly influenced by the much larger level of magnetic-atom disorder. The combined experimental and theoretical investigations on the anti-Heusler alloy Al$_2$MnCu reveal and explain the unusual observation of nonmagnetic disorder-induced elevation of $T_{\\rm C}$, providing a paradigm for the counterintuitive role of disorder in magnetic materials.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-10-11T13:48:11Z",
+        "updated_at": "2026-10-11T13:48:11Z",
+        "abstract_url": "https://arxiv.org/abs/2610.15622v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.15622v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.061865743067908416,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.07189091435185185,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21502867581574397,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19959",
+        "version": 1,
+        "title": "MoEDAL-MAPP: the first dedicated search experiment at the LHC",
+        "authors": [
+          "John R. Ellis",
+          "Nick E. Mavromatos",
+          "Vasiliki A. Mitsou",
+          "James L. Pinfold"
+        ],
+        "abstract": "This special issue brings together a collection of original research articles and review papers addressing topics directly related to the MoEDAL-MAPP experiment at the Large Hadron Collider (LHC). The experiment is designed to search for (meta-)stable, anomalously ionising particles predicted by theoretical extensions of the Standard Model. Several contributions explore the theoretical and phenomenological aspects of models of particular relevance to the experiment, including scenarios involving magnetic monopoles, highly electrically charged particles, and millicharged particles. Other contributions focus on experimental developments, highlighting novel detection techniques and technological advances aimed at identifying these unconventional signatures and probing new phenomena beyond the Standard Model.",
+        "primary_category": "hep-ex",
+        "categories": [
+          "hep-ex",
+          "hep-ph",
+          "hep-th",
+          "physics.ins-det"
+        ],
+        "published_at": "2026-10-14T10:45:21Z",
+        "updated_at": "2026-10-14T10:45:21Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19959v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19959v1",
+        "doi": "10.1140/epjs/s11734-026-02617-z",
+        "journal_reference": "Eur.Phys.J.ST 235 (2026) 25, 5353-5359"
+      },
+      "score": {
+        "semantic_relevance": 0.038319390299249016,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.5,
+        "recency": 0.43101996527777775,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21034572216243985,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.01568",
+        "version": 2,
+        "title": "A Validation Framework for Quantum Simulation of Spin Dynamics against Inelastic Neutron Scattering and Classical Simulation",
+        "authors": [
+          "Gilles Buchs",
+          "Elaine Wong",
+          "Anshumitra Baul",
+          "Kathleen E. Hamilton",
+          "Arnab Banerjee",
+          "Stephan Eidenbenz",
+          "Gábor B. Halász",
+          "Paul Kairys",
+          "Keerthi Kumaran",
+          "Thomas Maier",
+          "Thomas Naughton",
+          "Elijah Pelofske",
+          "Vincent Russo",
+          "Allen Scheie",
+          "Yigit Subasi",
+          "D. Alan Tennant",
+          "Akram Touil",
+          "Travis S. Humble",
+          "Andrew T. Sornborger"
+        ],
+        "abstract": "Establishing quantum simulations as reliable tools for materials research requires quantitative validation against experiments and, where available, classical many-body calculations. For dynamical spin response, such validation remains challenging because experiment, classical simulation, and quantum simulation do not produce the same native observables. This challenge is increasingly relevant as quantum simulation protocols for dynamical response progress from theory to hardware-level benchmarking against neutron scattering data. The longer-term goal is to extend validation to classically intractable regimes accessible through future fault-tolerant implementations. Here, we develop a cross-pipeline validation framework for quantum simulation of dynamical spin response, using inelastic neutron scattering and classical many-body simulation as complementary experimental and computational anchors. The framework brings these pipelines to common momentum- and energy-resolved comparison levels through explicit forward and inverse observable maps, propagates uncertainty via covariance matrices or resampling, tests robustness to structured distortion, and evaluates agreement using a hierarchy of complementary metric families. It distinguishes stochastic uncertainty from robustness-induced distortion, carries both through the comparison chain, and uses the resulting metric-level uncertainty and distortion information to support layered validation at the pipeline, solver, and model levels. We also introduce actuator-aware feedback logic to improve agreement without obscuring the physical origin of any remaining mismatch. We close by outlining future extensions of this methodology, including upstream uncertainty and distortion modeling, adaptive feedback, asymmetric validation beyond full classical benchmarking, fault-tolerant workflows, and community infrastructure for reproducible validation.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph"
+        ],
+        "published_at": "2026-07-02T00:56:36Z",
+        "updated_at": "2026-10-12T03:20:00Z",
+        "abstract_url": "https://arxiv.org/abs/2607.01568v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.01568v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.14085614898761603,
+        "keyword_relevance": 0.12857142857142856,
+        "category_relevance": 0.0,
+        "recency": 0.1423611111111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2097642352983955,
+        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2510.16838",
+        "version": 2,
+        "title": "Bayesian inference of the magnetic component of quark-gluon plasma",
+        "authors": [
+          "Yu Guo",
+          "Jinfeng Liao",
+          "Shuzhe Shi"
+        ],
+        "abstract": "The chromo-magnetic monopoles (CMM), emergent topological excitations of non-Abelian gauge fields carrying chromo-magnetic charge, have long been postulated to play an important role in the vacuum confinement of quantum chromodynamics (QCD), the deconfinement transition at temperature $T_c\\approx 160\\rm MeV$, as well as the strongly coupled nature of quark-gluon plasma (QGP). While such CMMs have been found to provide solutions for challenging puzzles from heavy-ion collision measurements, they were typically introduced as model assumptions in the past. Here we show how their very existence can be determined and their abundance extracted in a data-driven way for the first time. Using the \\textsc{cujet3} framework for calculations of jet energy loss and analyzing a comprehensive experimental data set for nuclear modification factor ($R_{\\mathrm{AA}}$) and elliptic flow ($v_2$) of high-transverse-momentum hadrons, the fraction of CMMs in the QGP is obtained by Bayesian inference and is found to be substantial in the $1\\sim 2 T_c$ region. The posterior CMM fraction is further validated by excellent agreement with additional data and is also shown to predict QGP transport properties quantitatively consistent with the state-of-the-art knowledge.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph"
+        ],
+        "published_at": "2025-10-19T13:57:29Z",
+        "updated_at": "2026-10-16T09:28:28Z",
+        "abstract_url": "https://arxiv.org/abs/2510.16838v2",
+        "pdf_url": "https://arxiv.org/pdf/2510.16838v2",
+        "doi": "10.1103/svh2-j38f",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.029307700505540428,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.6743460648148148,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18062307170897468,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19440",
+        "version": 1,
+        "title": "Magnetically Charged Black Holes from Grand Unified Theory",
+        "authors": [
+          "Tanmay Vachaspati",
+          "Anja Wachowitz"
+        ],
+        "abstract": "Grand Unified models of particle physics inevitably give rise to magnetic monopoles. Often the model will also contain a weakly broken discrete symmetry that leads to the formation of biased domain walls that survive for a limited period in cosmology. For a range of the discrete symmetry breaking parameter, domain walls can collapse to form magnetically charged extremal black holes lighter than $\\simeq 1\\, {\\rm kg}$ but these are not expected to survive until the present epoch due to Hawking evaporation and Schwinger pair production of monopoles. If the parameter is smaller still, the black holes may be astrophysical, with mass greater than $10^{15}\\, {\\rm g}$ and with sub-extremal magnetic charge: $Q \\simeq 10^8$ (for our canonical choice of parameters). The cosmological energy density in residual magnetic monopoles depends on the discrete symmetry breaking parameter and for sufficiently small values of the parameter, the magnetic monopole density can satisfy all observational constraints.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "astro-ph.CO",
+          "hep-th"
+        ],
+        "published_at": "2026-10-14T02:32:00Z",
+        "updated_at": "2026-10-14T02:32:00Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19440v1",
+        "pdf_url": "https://arxiv.org/pdf/2610.19440v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.04719669089627806,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.38819444444444445,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16630795534776957,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2604.07300",
+        "version": 2,
+        "title": "Constraining magnetic monopoles and multiply charged particles with diphoton events at the LHC",
+        "authors": [
+          "Vasiliki A. Mitsou",
+          "Emanuela Musumeci"
+        ],
+        "abstract": "The LHC is achieving energies never reached before, opening up possibilities for the discovery of exotic particles in the TeV mass range. Such states include magnetic monopoles, which can explain the electric charge quantisation and restore the symmetry in Maxwell's equations with respect to the magnetic and electric fields. Scenarios proposed to shed light to dark matter and neutrino masses introduce high-electric-charge objects (HECOs). The existence of both classes of particles can be probed in precision measurements in a manner complementary to direct searches. We focus on the contributions of such virtual particles to light-by-light scattering in the context of effective field theories and a Born-Infeld scenario. Specifically, measurements of central exclusive production of photon pairs with proton tagging carried out by the CMS-TOTEM Precision Proton Spectrometer with LHC Run 2 proton-proton collision data are used to constrain magnetic monopole and HECOs. Resummation techniques have been employed to deal with the large HECO-photon coupling. Masses of up to a few tens of TeV have been excluded for monopoles and HECOs of various spins and magnetic and electric charges, respectively.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "hep-ex"
+        ],
+        "published_at": "2026-04-08T17:09:25Z",
+        "updated_at": "2026-10-11T12:02:55Z",
+        "abstract_url": "https://arxiv.org/abs/2604.07300v2",
+        "pdf_url": "https://arxiv.org/pdf/2604.07300v2",
+        "doi": "10.1140/epjs/s11734-026-02550-1",
+        "journal_reference": "Eur.Phys.J.ST 235 (2026) 25, 5469-5480"
+      },
+      "score": {
+        "semantic_relevance": 0.06262836864024247,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.06275318287037036,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.14070808417514616,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.02869",
+        "version": 2,
+        "title": "Magnetic monopoles: from Dirac to the Large Hadron Collider",
+        "authors": [
+          "Vasiliki A. Mitsou"
+        ],
+        "abstract": "One of the basic properties of magnetism is that a magnet has always two poles, north and south, which cannot be separated into isolated poles, the magnetic monopoles. There are strong theoretical arguments in favour of monopoles' existence, but in spite of extensive searches they are yet to be found. In this review article, after highlighting briefly the theoretical foundations of monopoles, a historical overview of experimental endeavours to observe them is given, with emphasis on the state-of-the-art of searches in cosmic and collider experiments and in particular the Large Hadron Collider at CERN.",
+        "primary_category": "hep-ex",
+        "categories": [
+          "hep-ex",
+          "hep-ph"
+        ],
+        "published_at": "2026-05-04T17:44:06Z",
+        "updated_at": "2026-10-11T19:38:09Z",
+        "abstract_url": "https://arxiv.org/abs/2605.02869v2",
+        "pdf_url": "https://arxiv.org/pdf/2605.02869v2",
+        "doi": "10.1140/epjs/s11734-026-02463-z",
+        "journal_reference": "Eur.Phys.J.ST 235 (2026) 25, 5481-5521"
+      },
+      "score": {
+        "semantic_relevance": 0.041526006011401426,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.10226996527777778,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.12891369923290844,
+        "explanation": "No configured positive profile terms matched."
+      }
+    }
+  ]
+}
