@@ -1,0 +1,1226 @@
+{
+  "schema_version": "1.0",
+  "run_id": "select-8679ecdc7c61",
+  "title": "Personalized Weekly arXiv Reading List",
+  "generated_at": "2026-11-09T22:47:33.131358Z",
+  "timezone": "America/New_York",
+  "retrieval_window": {
+    "start": "2026-11-01T00:00:00Z",
+    "end": "2026-11-09T00:00:00Z"
+  },
+  "records_retrieved": 25,
+  "records_after_deduplication": 15,
+  "records_ranked": 15,
+  "records_selected": 10,
+  "summary_mode": "offline",
+  "summary_fallbacks": 0,
+  "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "profile_hash": "1ff5312fec72",
+  "recommendations": [
+    {
+      "paper": {
+        "arxiv_id": "2411.03547",
+        "version": 3,
+        "title": "An Atlas of Classical Pyrochlore Spin Liquids",
+        "authors": [
+          "Daniel Lozano-Gómez",
+          "Owen Benton",
+          "Michel J. P. Gingras",
+          "Han Yan"
+        ],
+        "abstract": "Frustrated magnetism in the pyrochlore lattice magnet has proven to be a most fruitful setting for the experimental and theoretical search for spin liquids. Besides the canonical case of spin ice, recent works have identified a variety of new classical and quantum spin liquids engendered by the generic nearest-neighbor anisotropic spin Hamiltonian for that lattice. However, a general framework for the thorough and systematic classification and characterization of these exotic states of matter has been lacking, as has an exhaustive list of all possible spin liquids that this model can support and, perhaps most interesting, what is the corresponding structure of their emergent field theory description. In this work, we develop such a theoretical framework to identify the interaction parameters stabilizing different classical spin liquids and derive their corresponding effective generalized Gauss's laws at low temperatures. Combining this with Monte Carlo simulations, we systematically identify all classical spin liquids for the general nearest-neighbor anisotropic spin Hamiltonian on the pyrochlore lattice. In doing so, we uncover new spin liquid models with exotic forms of generalized Gauss's law and multipole conservation laws. Our approach allows us to compile an atlas of all spin liquids realized in the phase diagram, providing a global picture of their mutual connections in parameter space and transitions between them. Our work will inform future theoretical and experimental studies of classical and quantum spin liquids on the pyrochlore lattice and help rationalize the exotic properties of pyrochlore magnets.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2024-11-05T22:54:41Z",
+        "updated_at": "2026-11-03T13:58:53Z",
+        "abstract_url": "https://arxiv.org/abs/2411.03547v3",
+        "pdf_url": "https://arxiv.org/pdf/2411.03547v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15282254947541818,
+        "keyword_relevance": 0.08714285714285713,
+        "category_relevance": 1.0,
+        "recency": 0.3228197337962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3228378349292821,
+        "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Frustrated magnetism in the pyrochlore lattice magnet has proven to be a most fruitful setting for the experimental and theoretical search for spin liquids.",
+        "brief_summary": "The abstract states: Frustrated magnetism in the pyrochlore lattice magnet has proven to be a most fruitful setting for the experimental and theoretical search for spin liquids. Besides the canonical case of spin ice, recent works have identified a variety of new classical and quantum spin liquids engendered by the generic nearest-neighbor anisotropic spin Hamiltonian for that lattice. However, a general framework for the thorough and systematic classification and characterization of these exotic states of matter has been lacking, as has an exhaustive list of all possible spin liquids that this model can support and, perhaps most interesting, what is the corresponding structure of their emergent field theory description. In this work, we develop such a theoretical framework to identify the interaction parameters stabilizing different…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, pyrochlore. Its preselection score was 0.323, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice",
+          "pyrochlore"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 1,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.07597",
+        "version": 1,
+        "title": "Negligible Kitaev interaction in the van der Waals antiferromagnet NiBr$_2$ revealed by neutron spectroscopy",
+        "authors": [
+          "Hao Xu",
+          "Shufan Cheng",
+          "Yanyan Shangguan",
+          "Song Bao",
+          "Junbo Liao",
+          "Bo Zhang",
+          "Zihang Song",
+          "Shuai Dong",
+          "Maofeng Wu",
+          "Shinichi Itoh",
+          "Daichi Ueta",
+          "Jinsheng Wen"
+        ],
+        "abstract": "Using time-of-flight neutron spectroscopy, we have mapped out the magnetic excitations in the van der Waals antiferromagnet NiBr$_2$ over a broad range of energies and momenta. The observed well-defined magnon dispersions are quantitatively reproduced by linear spin-wave theory based on a minimal bilinear Hamiltonian that includes Heisenberg exchange interactions up to third-nearest neighbors, interlayer couplings, and a single-ion anisotropy term, with no need to invoke a Kitaev interaction. This finding is consistent with the fact that bromine is lighter than iodine, leading to weaker ligand-mediated spin-orbit coupling in NiBr2 than in NiI2, and consequently a reduced Kitaev interaction. Our results establish NiBr$_2$ as a Heisenberg-dominated van der Waals antiferromagnet and support the view that the ligand spin-orbit coupling governs the strength of the bond-dependent interactions within the NiX$_2$ (X = halogen) family.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-05T07:45:18Z",
+        "updated_at": "2026-11-05T07:45:18Z",
+        "abstract_url": "https://arxiv.org/abs/2611.07597v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.07597v1",
+        "doi": "10.1103/xpcs-4726",
+        "journal_reference": "Phys. Rev. B 114, 264402 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.1240443352012803,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.540390625,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3148590133405762,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Using time-of-flight neutron spectroscopy, we have mapped out the magnetic excitations in the van der Waals antiferromagnet NiBr$_2$ over a broad range of energies and momenta.",
+        "brief_summary": "The abstract states: Using time-of-flight neutron spectroscopy, we have mapped out the magnetic excitations in the van der Waals antiferromagnet NiBr$_2$ over a broad range of energies and momenta. The observed well-defined magnon dispersions are quantitatively reproduced by linear spin-wave theory based on a minimal bilinear Hamiltonian that includes Heisenberg exchange interactions up to third-nearest neighbors, interlayer couplings, and a single-ion anisotropy term, with no need to invoke a Kitaev interaction. This finding is consistent with the fact that bromine is lighter than iodine, leading to weaker ligand-mediated spin-orbit coupling in NiBr2 than in NiI2, and consequently a reduced Kitaev interaction. Our results establish NiBr$_2$ as a Heisenberg-dominated van der Waals antiferromagnet and support the view that the ligand spin-orbit coupling governs the strength of…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.315, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "linear spin-wave theory"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.66
+      },
+      "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.07960",
+        "version": 1,
+        "title": "Monopoles, Scattering and Generalized Symmetries on a Quantum Computer",
+        "authors": [
+          "Oliver O'Brien",
+          "Atsushi Ueda",
+          "Etienne Granet",
+          "Henrik Dreyer",
+          "Frank Verstraete"
+        ],
+        "abstract": "Quantum computers have advanced to the stage that interesting many-body quantum phenomena can be observed. A striking example is the magnetic monopole paradox, a problem that was only solved recently using the language of generalized symmetries. Here we demonstrate a quantum spin chain analogue of magnetic monopole scattering on Quantinuum System Model H2. We implement a novel protocol for preparing a localized quasiparticle wavepacket on top of the ground state. By combining this protocol with time evolution across a duality defect, we efficiently convert local particles into non-local string-like excitations. We demonstrate this particle-to-string conversion in the transverse-field Ising model and a symmetry-protected topological (SPT) phase of the cluster model. Our results establish duality defects and generalized symmetries as practical resources for preparing and probing non-local excitations on quantum hardware.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph",
+          "cond-mat.str-el",
+          "hep-th"
+        ],
+        "published_at": "2026-11-05T12:57:06Z",
+        "updated_at": "2026-11-05T12:57:06Z",
+        "abstract_url": "https://arxiv.org/abs/2611.07960v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.07960v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1167396086482353,
+        "keyword_relevance": 0.05,
+        "category_relevance": 1.0,
+        "recency": 0.5674565972222222,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.32177848361392813,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum computers have advanced to the stage that interesting many-body quantum phenomena can be observed.",
+        "brief_summary": "The abstract states: Quantum computers have advanced to the stage that interesting many-body quantum phenomena can be observed. A striking example is the magnetic monopole paradox, a problem that was only solved recently using the language of generalized symmetries. Here we demonstrate a quantum spin chain analogue of magnetic monopole scattering on Quantinuum System Model H2. We implement a novel protocol for preparing a localized quasiparticle wavepacket on top of the ground state. By combining this protocol with time evolution across a duality defect, we efficiently convert local particles into non-local string-like excitations. We demonstrate this particle-to-string conversion in the transverse-field Ising model and a symmetry-protected topological (SPT) phase of the cluster model. Our results establish duality defects and generalized symmetries as practical resources for…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through magnetic monopole. Its preselection score was 0.322, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "magnetic monopole"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.65
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.03842",
+        "version": 1,
+        "title": "Possibility of Potts Spin-Ice in Rare Earth Twisted-Kagome Layers: an Example of DyAgGe",
+        "authors": [
+          "Gunnar F. Schwertfeger",
+          "Po-Hao Chang",
+          "Predrag Nikolic",
+          "Igor I. Mazin",
+          "Hari Bhandari",
+          "Nirmal J. Ghimire"
+        ],
+        "abstract": "Three-dimensional (3D) spin-ice compounds, predominantly based on the pyrochlore or spinel structure, have been attracting considerable interest in the last two decades. A two-dimensional (2D) analogue is the spin-ice consisting of kagome planes. So far, only Ising spin ice has been discovered in any material, and only one 2D material, the kagome compound HoAgGe, has been identified as a spin ice. In this Letter, we show that another rare-earth twisted Kagome magnetic compound, DyAgGe, is in fact a Potts spin ice (or color ice), where at each site not two but four spin directions are allowed. We argue that an 8-state spin ice may also exist in this class of systems. We present a first-principles calculation of magnetic interactions in DyAgGe, and confirm the 4-state Potts structure of this material by matching our model predictions with the available experimental data.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-02T19:14:12Z",
+        "updated_at": "2026-11-02T19:14:12Z",
+        "abstract_url": "https://arxiv.org/abs/2611.03842v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03842v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.16828309925166496,
+        "keyword_relevance": 0.1207142857142857,
+        "category_relevance": 0.8,
+        "recency": 0.22519097222222223,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30842506331404296,
+        "explanation": "Strongest matched profile terms: spin ice, pyrochlore, spinel."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Three-dimensional (3D) spin-ice compounds, predominantly based on the pyrochlore or spinel structure, have been attracting considerable interest in the last two decades.",
+        "brief_summary": "The abstract states: Three-dimensional (3D) spin-ice compounds, predominantly based on the pyrochlore or spinel structure, have been attracting considerable interest in the last two decades. A two-dimensional (2D) analogue is the spin-ice consisting of kagome planes. So far, only Ising spin ice has been discovered in any material, and only one 2D material, the kagome compound HoAgGe, has been identified as a spin ice. In this Letter, we show that another rare-earth twisted Kagome magnetic compound, DyAgGe, is in fact a Potts spin ice (or color ice), where at each site not two but four spin directions are allowed. We argue that an 8-state spin ice may also exist in this class of systems. We present a first-principles calculation of magnetic interactions in DyAgGe, and…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, pyrochlore, spinel. Its preselection score was 0.308, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice",
+          "pyrochlore",
+          "spinel"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.7
+      },
+      "rank": 4,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.06833",
+        "version": 1,
+        "title": "Quantum Spin Wave Theory with Multi-Spin Interactions for Magnetic Materials Modeling",
+        "authors": [
+          "Andrey Rybakov",
+          "Marco Marino",
+          "Yaroslav M. Blanter",
+          "Eugenio Coronado",
+          "Jaime Ferrer"
+        ],
+        "abstract": "In the field of magnetism within condensed matter physics, magnetic systems are microscopically described by a spin Hamiltonian. Its parameterization is accessible through both ab initio calculations and fits to experimental data. Frequently, this is achieved via multi-stage calculations that either relate the parameters to observable material properties or map a Kohn-Sham Hamiltonian onto an effective spin model. In this realm, accurate and flexible methods are essential for simulating the physical properties of the latter. The present study focuses on one such method: spin wave theory. The approach is applied to a new formulation of the spin Hamiltonian, named polynomial localized spin model (PLSM), which includes terms of arbitrary order in the spin operators. This enables the direct application of linear spin wave theory (LSWT) to the analysis of the energy landscape and spin-wave spectrum of arbitrary collinear and non-collinear phases in any realistic magnetic material. Moreover, the classical and quantum parts of the PLSM are cleanly separated. Finally, an open-source implementation of LSWT, named Magnopy, is presented. It interfaces with modern parameterization software, supports arbitrary collinear and non-collinear systems, and is designed for both scripting and standalone use.",
+        "primary_category": "cond-mat.other",
+        "categories": [
+          "cond-mat.other",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-04T17:49:20Z",
+        "updated_at": "2026-11-04T17:49:20Z",
+        "abstract_url": "https://arxiv.org/abs/2611.06833v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.06833v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.20080245188127746,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.6,
+        "recency": 0.46782407407407406,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30214351075398227,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: In the field of magnetism within condensed matter physics, magnetic systems are microscopically described by a spin Hamiltonian.",
+        "brief_summary": "The abstract states: In the field of magnetism within condensed matter physics, magnetic systems are microscopically described by a spin Hamiltonian. Its parameterization is accessible through both ab initio calculations and fits to experimental data. Frequently, this is achieved via multi-stage calculations that either relate the parameters to observable material properties or map a Kohn-Sham Hamiltonian onto an effective spin model. In this realm, accurate and flexible methods are essential for simulating the physical properties of the latter. The present study focuses on one such method: spin wave theory. The approach is applied to a new formulation of the spin Hamiltonian, named polynomial localized spin model (PLSM), which includes terms of arbitrary order in the spin operators. This enables the direct application of linear spin…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.other. Its preselection score was 0.302, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.other"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 5,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.29362",
+        "version": 2,
+        "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
+        "authors": [
+          "Valentin Munteanu",
+          "Alexander Hinderhofer",
+          "Dmitry Lapkin",
+          "Vladimir Starostin",
+          "Frank Schreiber"
+        ],
+        "abstract": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
+        "primary_category": "cs.LG",
+        "categories": [
+          "cs.LG",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-21T07:54:26Z",
+        "updated_at": "2026-11-02T10:23:14Z",
+        "abstract_url": "https://arxiv.org/abs/2610.29362v2",
+        "pdf_url": "https://arxiv.org/pdf/2610.29362v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.2566651861325673,
+        "keyword_relevance": 0.09642857142857143,
+        "category_relevance": 0.8,
+        "recency": 0.17910011574074075,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2875164881908722,
+        "explanation": "Strongest matched profile terms: neutron scattering, polarized neutron reflectometry, inverse problems."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science.",
+        "brief_summary": "The abstract states: X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, polarized neutron reflectometry, inverse problems. Its preselection score was 0.288, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "polarized neutron reflectometry",
+          "inverse problems"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 6,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2603.15035",
+        "version": 2,
+        "title": "Loss of altermagnetic order and smooth restoration of Kramers' spin degeneracy with increasing temperature in CrSb and MnTe",
+        "authors": [
+          "Christopher D. Woodgate",
+          "Nabil Menai",
+          "Arthur Ernst",
+          "Julie B. Staunton"
+        ],
+        "abstract": "We describe how thermally induced spin fluctuations modify the electronic structures of two prototypical altermagnets, CrSb and MnTe, via application of the disordered local moment picture. For both materials, our self-consistent, ab initio calculations demonstrate that local magnetic moments persist on Cr and Mn atoms in their paramagnetic states, necessitating a spin-polarised description of the electronic structure even above the Néel temperature, $T_\\mathrm{N}$. Moreover, Kramers' spin degeneracy, which is broken for both materials in their altermagnetic ground states, is shown to be smoothly restored - on the average - as the local moments thermally disorder. In metallic CrSb, this occurs at temperatures well below $T_\\mathrm{N}$ and the signature effects of its altermagnetism are lost as the magnetic disorder induces heavy smearing of strongly dispersive electronic states around the Fermi energy. By contrast, in semiconducting MnTe, with its band gap largely unaffected by magnetic disorder, the spin degeneracy only returns at temperatures close to and above $T_\\mathrm{N}$. We quantify the temperature dependence of the altermagnetic order parameter and the underlying electronic structures of both materials, with implications for their spin transport and spectroscopic properties.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-03-16T09:38:23Z",
+        "updated_at": "2026-11-03T15:37:49Z",
+        "abstract_url": "https://arxiv.org/abs/2603.15035v2",
+        "pdf_url": "https://arxiv.org/pdf/2603.15035v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09747417797857212,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.33140769675925924,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2770041497662834,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We describe how thermally induced spin fluctuations modify the electronic structures of two prototypical altermagnets, CrSb and MnTe, via application of the disordered local moment picture.",
+        "brief_summary": "The abstract states: We describe how thermally induced spin fluctuations modify the electronic structures of two prototypical altermagnets, CrSb and MnTe, via application of the disordered local moment picture. For both materials, our self-consistent, ab initio calculations demonstrate that local magnetic moments persist on Cr and Mn atoms in their paramagnetic states, necessitating a spin-polarised description of the electronic structure even above the Néel temperature, $T_\\mathrm{N}$. Moreover, Kramers' spin degeneracy, which is broken for both materials in their altermagnetic ground states, is shown to be smoothly restored - on the average - as the local moments thermally disorder. In metallic CrSb, this occurs at temperatures well below $T_\\mathrm{N}$ and the signature effects of its altermagnetism are lost as the magnetic disorder induces heavy smearing of…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mtrl-sci. Its preselection score was 0.277, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.mtrl-sci"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 7,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.02841",
+        "version": 1,
+        "title": "Superinsulation, electric confinement in condensed matter",
+        "authors": [
+          "M. Cristina Diamantini",
+          "Carlo A. Trugenberger"
+        ],
+        "abstract": "Superinsulation is the confining phase of condensed matter systems. It is a genuine quantum state of matter, dual to superconductivity, just as confinement in particle physics is dual to the Higgs phase. In contrast to hadron physics, the gauge field that becomes confining is not colour SU(3) but the conventional U(1) electromagnetic field. Superinsulation arises in superconductors with an emergent granular condensate when core-less XY vortices between condensate grains become tensionless, unobservable Dirac strings and magnetic monopoles are liberated and condense. This magnetic condensate confines electric fields into flux tubes, strings that generate a linear potential between Cooper pairs. These dual Abrikosov flux tubes give rise to infinite electrical resistance, persisting up to a finite deconfinement temperature. We shall review the theoretical framework of superinsulation together with its experimental validation, including the direct observation of the linear confining potential and we shall stress how phase-only approaches and disorder-based ideas for the phases around the superconductor-to-insulator transition are hard to reconcile with recent experimental observations.",
+        "primary_category": "cond-mat.supr-con",
+        "categories": [
+          "cond-mat.supr-con",
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el",
+          "hep-th"
+        ],
+        "published_at": "2026-11-02T09:44:15Z",
+        "updated_at": "2026-11-02T09:44:15Z",
+        "abstract_url": "https://arxiv.org/abs/2611.02841v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.02841v1",
+        "doi": null,
+        "journal_reference": "Int. J. Mod. Phys. B, 2630014 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.07160752064591004,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.17571614583333334,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24979499887399287,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Superinsulation is the confining phase of condensed matter systems.",
+        "brief_summary": "The abstract states: Superinsulation is the confining phase of condensed matter systems. It is a genuine quantum state of matter, dual to superconductivity, just as confinement in particle physics is dual to the Higgs phase. In contrast to hadron physics, the gauge field that becomes confining is not colour SU(3) but the conventional U(1) electromagnetic field. Superinsulation arises in superconductors with an emergent granular condensate when core-less XY vortices between condensate grains become tensionless, unobservable Dirac strings and magnetic monopoles are liberated and condense. This magnetic condensate confines electric fields into flux tubes, strings that generate a linear potential between Cooper pairs. These dual Abrikosov flux tubes give rise to infinite electrical resistance, persisting up to a finite deconfinement temperature. We shall review the theoretical…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.supr-con. Its preselection score was 0.250, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.supr-con"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.82
+      },
+      "rank": 8,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2410.11256",
+        "version": 5,
+        "title": "Impact of electron--spin coupling on exchange coupling parameters: a nonperturbative approach",
+        "authors": [
+          "Tomonori Tanaka",
+          "Yoshihiro Gohda"
+        ],
+        "abstract": "Exchange coupling parameters $J_{ij}$ in the Heisenberg model are crucial for describing magnetic behavior at the atomic level. In magnetic materials, spin fluctuations can be accompanied by a self-consistent electronic response, i.e., electron--spin coupling in the sense of electronic feedback to finite spin rotations. However, the quantitative importance of this coupling in extracting reliable $J_{ij}$ has not been fully clarified. Here, using fully self-consistent, nonperturbative evaluations, we show that finite-angle spin rotations induce such electronic feedback and quantify how strongly it renormalizes the extracted $J_{ij}$. We examine systems of both fundamental and practical interest, including perovskite SrMnO$_3$, Nd-based permanent-magnet compounds (Nd$_2$Fe$_{14}$B and Nd$_2$Co$_{14}$B), and elemental 3$d$ transition metals. The nonperturbative approach yields exchange couplings that remain consistent over a wide range of rotation angles. Moreover, when the sampled configurations represent the magnetic disorder near the transition, spin models parameterized in this way give reasonable agreement with experimental magnetic phase-transition temperatures. Overall, our results demonstrate the quantitative impact of electron--spin coupling on the exchange coupling parameters $J_{ij}$ and provide a nonperturbative route to effective $J_{ij}$ for a specified regime of magnetic disorder.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2024-10-15T04:26:42Z",
+        "updated_at": "2026-11-03T10:17:37Z",
+        "abstract_url": "https://arxiv.org/abs/2410.11256v5",
+        "pdf_url": "https://arxiv.org/pdf/2410.11256v5",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08136680012320809,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.3036125578703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2469763158424807,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Exchange coupling parameters $J_{ij}$ in the Heisenberg model are crucial for describing magnetic behavior at the atomic level.",
+        "brief_summary": "The abstract states: Exchange coupling parameters $J_{ij}$ in the Heisenberg model are crucial for describing magnetic behavior at the atomic level. In magnetic materials, spin fluctuations can be accompanied by a self-consistent electronic response, i.e., electron--spin coupling in the sense of electronic feedback to finite spin rotations. However, the quantitative importance of this coupling in extracting reliable $J_{ij}$ has not been fully clarified. Here, using fully self-consistent, nonperturbative evaluations, we show that finite-angle spin rotations induce such electronic feedback and quantify how strongly it renormalizes the extracted $J_{ij}$. We examine systems of both fundamental and practical interest, including perovskite SrMnO$_3$, Nd-based permanent-magnet compounds (Nd$_2$Fe$_{14}$B and Nd$_2$Co$_{14}$B), and elemental 3$d$ transition metals. The nonperturbative approach yields exchange couplings that remain consistent over a wide range of…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.mtrl-sci. Its preselection score was 0.247, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.mtrl-sci"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 9,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.05190",
+        "version": 1,
+        "title": "Cosmological evolution and late-time attractors in axion-monopole interacting dark energy",
+        "authors": [
+          "Emmanuel N. Saridakis"
+        ],
+        "abstract": "We investigate the cosmological dynamics of axion-monopole interacting dark energy, examining whether a microscopically motivated dark-sector interaction can sustain stable late-time acceleration. In particular, magnetic monopoles constitute dark matter and an ultralight axion contributes to dark energy, with their interaction arising from the Witten effect through field-dependent dyon masses. We formulate the autonomous system, classify its critical points and stability, and investigate the evolution analytically and numerically. We find that stable de Sitter attractors at finite positive Hubble parameter require a positive cosmological constant and correspond to axion-potential minima, whereas those at maxima are unstable. Nevertheless, transient axion-driven acceleration remains possible without an explicit cosmological constant. Furthermore, the interaction induces matter-era tracking, namely an attracting slow-drift regime rather than an exact critical point. The interaction-effective dark-energy equation of state can cross the phantom divide, although the physical equation of state remains non-phantom. Extending the analysis to the full Bogomol'nyi-Prasad-Sommerfield dyon mass, we find that the main dynamical features persist, while the field evolution and interaction strength depend on the microscopic dyon properties. Our results demonstrate how a microscopically motivated dark-sector interaction can give rise to distinctive cosmological evolution and effective dark-energy behavior.",
+        "primary_category": "astro-ph.CO",
+        "categories": [
+          "astro-ph.CO",
+          "gr-qc",
+          "hep-th"
+        ],
+        "published_at": "2026-11-03T16:44:50Z",
+        "updated_at": "2026-11-03T16:44:50Z",
+        "abstract_url": "https://arxiv.org/abs/2611.05190v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.05190v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.05021760575621842,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.33722511574074077,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15632043416437236,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We investigate the cosmological dynamics of axion-monopole interacting dark energy, examining whether a microscopically motivated dark-sector interaction can sustain stable late-time acceleration.",
+        "brief_summary": "The abstract states: We investigate the cosmological dynamics of axion-monopole interacting dark energy, examining whether a microscopically motivated dark-sector interaction can sustain stable late-time acceleration. In particular, magnetic monopoles constitute dark matter and an ultralight axion contributes to dark energy, with their interaction arising from the Witten effect through field-dependent dyon masses. We formulate the autonomous system, classify its critical points and stability, and investigate the evolution analytically and numerically. We find that stable de Sitter attractors at finite positive Hubble parameter require a positive cosmological constant and correspond to axion-potential minima, whereas those at maxima are unstable. Nevertheless, transient axion-driven acceleration remains possible without an explicit cosmological constant. Furthermore, the interaction induces matter-era tracking, namely an attracting slow-drift regime rather than an exact critical…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through astro-ph.CO. Its preselection score was 0.156, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "astro-ph.CO"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 10,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [
+    {
+      "paper": {
+        "arxiv_id": "2611.08065",
+        "version": 1,
+        "title": "Key role of orbital exchange in CoO magnetism",
+        "authors": [
+          "Leonid V. Pourovskii",
+          "Yuriy Mokrousov"
+        ],
+        "abstract": "Co ions in the antiferromagnetic phase of CoO are known to possess a substantial orbital moment, making this material promising for orbitronic applications. However, intersite exchange interactions involving these orbital degrees of freedom remain poorly quantified, and their role in CoO magnetism is unclear. Here, we derive a full low-energy effective Hamiltonian for CoO, including orbital exchange terms, using an ab initio force-theorem approach based on DFT+dynamical mean-field theory. We find sizable orbital interactions, with quadrupolar orbital exchange emerging as the dominant nearest-neighbor term. The collinear antiferromagnetic order obtained from the effective Hamiltonian features magnetic moments tilted away from the pseudocubic <001> direction and an orbital contribution amounting to about one-third of the total moment, in agreement with experimental estimates. We show that the moment tilting originates from the combined effect of orbital and spin-orbital exchange interactions. The same interactions also produce a prominent splitting of the lowest excitation band. By directly modeling the inelastic neutron scattering (INS) intensity, we further show that the characteristic column-like structures previously observed in CoO INS provide a clear fingerprint of orbital exchange. We also discuss possible impact of our findings for further advances in the field of complex collective excitations, their transport properties and applications in the realm of orbitronics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-05T14:17:24Z",
+        "updated_at": "2026-11-05T14:17:24Z",
+        "abstract_url": "https://arxiv.org/abs/2611.08065v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.08065v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09015588036485432,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.5744270833333334,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3042628544975178,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 1,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-01T01:05:48Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09285078231118293,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.005711805555555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21378260402415933,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.27053",
+        "version": 3,
+        "title": "A phase space electronic structure theory beyond Born-Oppenheimer: Geometric forces and Moody-Shapere-Wilczek revisited",
+        "authors": [
+          "Mansi Bhati",
+          "D. Vale Cofer-Shabica",
+          "Jonathan I. Rawlinson",
+          "Robert G. Littlejohn",
+          "Joseph Subotnik",
+          "Nadine C. Bradbury"
+        ],
+        "abstract": "We revisit the three-body problem in quantum mechanics in two and three dimensions, generating both exact eigenvalues and eigenvectors of the Hamiltonian and a series of approximate solutions as calculated with a variety of different schemes to separate heavy (\"nuclear\") and light (\"electronic\") particles. We show that, with minimal extra cost, one can go beyond the Born-Oppenheimer approximation by performing electronic structure calculations parameterized by both the nuclear position (${\\mathbf X})$ and the nuclear momentum ($\\mathbf{P}$), a so-called phase space theory of electronic structure. In particular, we demonstrate that such phase space electronic structure calculations correctly incorporate the non-inertial Coriolis and centrifugal forces felt by electrons in a moving nuclear frame, thus leading to far more accurate eigenenergies and electronic angular momenta than has been possible before. We also demonstrate that our approach naturally incorporates and generalizes the Moody-Shapere-Wilczek magnetic monopole for the non-abelian Berry curvature (now allowing for vibrational motion rather than a diatomic of fixed length). We argue that the resulting approach should be extremely useful for propagating dynamics where angular momentum flows between nuclei and electrons; in particular, if extended to include spin degrees of freedom, the present approach will offer a practical means to study chiral induced spin selectivity through the lens of chiral phonons and coupled nuclear-electronic motion.",
+        "primary_category": "physics.chem-ph",
+        "categories": [
+          "physics.chem-ph"
+        ],
+        "published_at": "2026-05-26T14:07:42Z",
+        "updated_at": "2026-11-06T14:05:57Z",
+        "abstract_url": "https://arxiv.org/abs/2605.27053v3",
+        "pdf_url": "https://arxiv.org/pdf/2605.27053v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08157576373735059,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.6984331597222222,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21280240965403,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.03616",
+        "version": 1,
+        "title": "Inhomogeneous Synthetic Fluxes in Optical Lattices",
+        "authors": [
+          "Soujanya Datta",
+          "Kush Saha",
+          "Krishanu Roychowdhury"
+        ],
+        "abstract": "Synthetic gauge fields in optical lattices are usually engineered to realize a uniform magnetic flux. Here, we propose a scheme to generate spatially inhomogeneous fluxes and demonstrate how such fluxes reshape the single-particle spectrum. Within Wannier--Stark-assisted tunneling, onsite modulation produces a plaquette flux that depends on the orientation of the static tilt, whereas laser-assisted tunneling (LAT) does not. Using LAT, two coherent Raman processes with different momentum transfers imprint a dimerized Peierls phase that alternates the flux between neighboring plaquettes of a square lattice while keeping the mean flux fixed. A bond-selective Raman phase extends the scheme to the kagome lattice, where a parameter $ξ$ redistributes the flux between triangles and hexagons at fixed flux per unit cell. The Hofstadter--Rammal spectrum of the bipartite square lattice retains chiral symmetry for all $ξ$, whereas the kagome lattice lacks this symmetry, and its flux periodicity and reflection symmetries survive only at special values of $ξ$. As $ξ$ is reduced, the anomalous Landau levels of the kagome singular flat band are compressed toward the flat-band energy and evolve into a degenerate zero-energy manifold at $ξ=0$ with compactly localized states. The dynamical structure factor, accessible through Bragg scattering, resolves this evolution as a Rydberg-like series of peaks whose spectral span tracks the width of the anomalous-level tower and vanishes as $ξ\\to0$. We discuss the frequency resolution and temperature required for its observation.",
+        "primary_category": "cond-mat.quant-gas",
+        "categories": [
+          "cond-mat.quant-gas",
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-02T18:50:49Z",
+        "updated_at": "2026-11-02T18:50:49Z",
+        "abstract_url": "https://arxiv.org/abs/2611.03616v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03616v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.0517468322246433,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.5,
+        "recency": 0.22316116898148147,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.20060219139923763,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.04613",
+        "version": 1,
+        "title": "An Excursion into Grassmannian Spectra",
+        "authors": [
+          "Dmitri Bykov",
+          "Viacheslav Krivorol"
+        ],
+        "abstract": "We revisit the classical spectral problem for the Laplace-Beltrami and Laplace-Bochner operators on complex Grassmannians. After reviewing the standard approach based on non-commutative harmonic analysis, we develop two complementary methods originating from the quantization of the corresponding one-dimensional sigma model, both with and without a magnetic monopole field. The first is based on $\\mathbf{SU}(n)$-equivariant first-order GLSM formulation and gives explicit eigenfunctions in terms of projectors and Plücker coordinates. The second uses a spin-chain realization of free particles on manifolds and describes the space of square-integrable functions, or sections in the magnetic case, through limiting tensor products of long rectangular $\\mathbf{SU}(n)$ representations. Together, these approaches provide a more explicit picture of the spectral geometry of Grassmannians and clarify the relation between harmonics, Young diagrams, magnetic bundles, and Laplacian spectra.",
+        "primary_category": "math-ph",
+        "categories": [
+          "math-ph",
+          "hep-th",
+          "quant-ph"
+        ],
+        "published_at": "2026-11-03T10:04:14Z",
+        "updated_at": "2026-11-03T10:04:14Z",
+        "abstract_url": "https://arxiv.org/abs/2611.04613v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.04613v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.056197411463404734,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.30245081018518516,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16178391617705065,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "paper": {
+        "arxiv_id": "2411.03547",
+        "version": 3,
+        "title": "An Atlas of Classical Pyrochlore Spin Liquids",
+        "authors": [
+          "Daniel Lozano-Gómez",
+          "Owen Benton",
+          "Michel J. P. Gingras",
+          "Han Yan"
+        ],
+        "abstract": "Frustrated magnetism in the pyrochlore lattice magnet has proven to be a most fruitful setting for the experimental and theoretical search for spin liquids. Besides the canonical case of spin ice, recent works have identified a variety of new classical and quantum spin liquids engendered by the generic nearest-neighbor anisotropic spin Hamiltonian for that lattice. However, a general framework for the thorough and systematic classification and characterization of these exotic states of matter has been lacking, as has an exhaustive list of all possible spin liquids that this model can support and, perhaps most interesting, what is the corresponding structure of their emergent field theory description. In this work, we develop such a theoretical framework to identify the interaction parameters stabilizing different classical spin liquids and derive their corresponding effective generalized Gauss's laws at low temperatures. Combining this with Monte Carlo simulations, we systematically identify all classical spin liquids for the general nearest-neighbor anisotropic spin Hamiltonian on the pyrochlore lattice. In doing so, we uncover new spin liquid models with exotic forms of generalized Gauss's law and multipole conservation laws. Our approach allows us to compile an atlas of all spin liquids realized in the phase diagram, providing a global picture of their mutual connections in parameter space and transitions between them. Our work will inform future theoretical and experimental studies of classical and quantum spin liquids on the pyrochlore lattice and help rationalize the exotic properties of pyrochlore magnets.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2024-11-05T22:54:41Z",
+        "updated_at": "2026-11-03T13:58:53Z",
+        "abstract_url": "https://arxiv.org/abs/2411.03547v3",
+        "pdf_url": "https://arxiv.org/pdf/2411.03547v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15282254947541818,
+        "keyword_relevance": 0.08714285714285713,
+        "category_relevance": 1.0,
+        "recency": 0.3228197337962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3228378349292821,
+        "explanation": "Strongest matched profile terms: pyrochlore, spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.07960",
+        "version": 1,
+        "title": "Monopoles, Scattering and Generalized Symmetries on a Quantum Computer",
+        "authors": [
+          "Oliver O'Brien",
+          "Atsushi Ueda",
+          "Etienne Granet",
+          "Henrik Dreyer",
+          "Frank Verstraete"
+        ],
+        "abstract": "Quantum computers have advanced to the stage that interesting many-body quantum phenomena can be observed. A striking example is the magnetic monopole paradox, a problem that was only solved recently using the language of generalized symmetries. Here we demonstrate a quantum spin chain analogue of magnetic monopole scattering on Quantinuum System Model H2. We implement a novel protocol for preparing a localized quasiparticle wavepacket on top of the ground state. By combining this protocol with time evolution across a duality defect, we efficiently convert local particles into non-local string-like excitations. We demonstrate this particle-to-string conversion in the transverse-field Ising model and a symmetry-protected topological (SPT) phase of the cluster model. Our results establish duality defects and generalized symmetries as practical resources for preparing and probing non-local excitations on quantum hardware.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph",
+          "cond-mat.str-el",
+          "hep-th"
+        ],
+        "published_at": "2026-11-05T12:57:06Z",
+        "updated_at": "2026-11-05T12:57:06Z",
+        "abstract_url": "https://arxiv.org/abs/2611.07960v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.07960v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1167396086482353,
+        "keyword_relevance": 0.05,
+        "category_relevance": 1.0,
+        "recency": 0.5674565972222222,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.32177848361392813,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.07597",
+        "version": 1,
+        "title": "Negligible Kitaev interaction in the van der Waals antiferromagnet NiBr$_2$ revealed by neutron spectroscopy",
+        "authors": [
+          "Hao Xu",
+          "Shufan Cheng",
+          "Yanyan Shangguan",
+          "Song Bao",
+          "Junbo Liao",
+          "Bo Zhang",
+          "Zihang Song",
+          "Shuai Dong",
+          "Maofeng Wu",
+          "Shinichi Itoh",
+          "Daichi Ueta",
+          "Jinsheng Wen"
+        ],
+        "abstract": "Using time-of-flight neutron spectroscopy, we have mapped out the magnetic excitations in the van der Waals antiferromagnet NiBr$_2$ over a broad range of energies and momenta. The observed well-defined magnon dispersions are quantitatively reproduced by linear spin-wave theory based on a minimal bilinear Hamiltonian that includes Heisenberg exchange interactions up to third-nearest neighbors, interlayer couplings, and a single-ion anisotropy term, with no need to invoke a Kitaev interaction. This finding is consistent with the fact that bromine is lighter than iodine, leading to weaker ligand-mediated spin-orbit coupling in NiBr2 than in NiI2, and consequently a reduced Kitaev interaction. Our results establish NiBr$_2$ as a Heisenberg-dominated van der Waals antiferromagnet and support the view that the ligand spin-orbit coupling governs the strength of the bond-dependent interactions within the NiX$_2$ (X = halogen) family.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-05T07:45:18Z",
+        "updated_at": "2026-11-05T07:45:18Z",
+        "abstract_url": "https://arxiv.org/abs/2611.07597v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.07597v1",
+        "doi": "10.1103/xpcs-4726",
+        "journal_reference": "Phys. Rev. B 114, 264402 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.1240443352012803,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.540390625,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3148590133405762,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.03842",
+        "version": 1,
+        "title": "Possibility of Potts Spin-Ice in Rare Earth Twisted-Kagome Layers: an Example of DyAgGe",
+        "authors": [
+          "Gunnar F. Schwertfeger",
+          "Po-Hao Chang",
+          "Predrag Nikolic",
+          "Igor I. Mazin",
+          "Hari Bhandari",
+          "Nirmal J. Ghimire"
+        ],
+        "abstract": "Three-dimensional (3D) spin-ice compounds, predominantly based on the pyrochlore or spinel structure, have been attracting considerable interest in the last two decades. A two-dimensional (2D) analogue is the spin-ice consisting of kagome planes. So far, only Ising spin ice has been discovered in any material, and only one 2D material, the kagome compound HoAgGe, has been identified as a spin ice. In this Letter, we show that another rare-earth twisted Kagome magnetic compound, DyAgGe, is in fact a Potts spin ice (or color ice), where at each site not two but four spin directions are allowed. We argue that an 8-state spin ice may also exist in this class of systems. We present a first-principles calculation of magnetic interactions in DyAgGe, and confirm the 4-state Potts structure of this material by matching our model predictions with the available experimental data.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-02T19:14:12Z",
+        "updated_at": "2026-11-02T19:14:12Z",
+        "abstract_url": "https://arxiv.org/abs/2611.03842v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03842v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.16828309925166496,
+        "keyword_relevance": 0.1207142857142857,
+        "category_relevance": 0.8,
+        "recency": 0.22519097222222223,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30842506331404296,
+        "explanation": "Strongest matched profile terms: spin ice, pyrochlore, spinel."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.08065",
+        "version": 1,
+        "title": "Key role of orbital exchange in CoO magnetism",
+        "authors": [
+          "Leonid V. Pourovskii",
+          "Yuriy Mokrousov"
+        ],
+        "abstract": "Co ions in the antiferromagnetic phase of CoO are known to possess a substantial orbital moment, making this material promising for orbitronic applications. However, intersite exchange interactions involving these orbital degrees of freedom remain poorly quantified, and their role in CoO magnetism is unclear. Here, we derive a full low-energy effective Hamiltonian for CoO, including orbital exchange terms, using an ab initio force-theorem approach based on DFT+dynamical mean-field theory. We find sizable orbital interactions, with quadrupolar orbital exchange emerging as the dominant nearest-neighbor term. The collinear antiferromagnetic order obtained from the effective Hamiltonian features magnetic moments tilted away from the pseudocubic <001> direction and an orbital contribution amounting to about one-third of the total moment, in agreement with experimental estimates. We show that the moment tilting originates from the combined effect of orbital and spin-orbital exchange interactions. The same interactions also produce a prominent splitting of the lowest excitation band. By directly modeling the inelastic neutron scattering (INS) intensity, we further show that the characteristic column-like structures previously observed in CoO INS provide a clear fingerprint of orbital exchange. We also discuss possible impact of our findings for further advances in the field of complex collective excitations, their transport properties and applications in the realm of orbitronics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-05T14:17:24Z",
+        "updated_at": "2026-11-05T14:17:24Z",
+        "abstract_url": "https://arxiv.org/abs/2611.08065v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.08065v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09015588036485432,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.5744270833333334,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3042628544975178,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.06833",
+        "version": 1,
+        "title": "Quantum Spin Wave Theory with Multi-Spin Interactions for Magnetic Materials Modeling",
+        "authors": [
+          "Andrey Rybakov",
+          "Marco Marino",
+          "Yaroslav M. Blanter",
+          "Eugenio Coronado",
+          "Jaime Ferrer"
+        ],
+        "abstract": "In the field of magnetism within condensed matter physics, magnetic systems are microscopically described by a spin Hamiltonian. Its parameterization is accessible through both ab initio calculations and fits to experimental data. Frequently, this is achieved via multi-stage calculations that either relate the parameters to observable material properties or map a Kohn-Sham Hamiltonian onto an effective spin model. In this realm, accurate and flexible methods are essential for simulating the physical properties of the latter. The present study focuses on one such method: spin wave theory. The approach is applied to a new formulation of the spin Hamiltonian, named polynomial localized spin model (PLSM), which includes terms of arbitrary order in the spin operators. This enables the direct application of linear spin wave theory (LSWT) to the analysis of the energy landscape and spin-wave spectrum of arbitrary collinear and non-collinear phases in any realistic magnetic material. Moreover, the classical and quantum parts of the PLSM are cleanly separated. Finally, an open-source implementation of LSWT, named Magnopy, is presented. It interfaces with modern parameterization software, supports arbitrary collinear and non-collinear systems, and is designed for both scripting and standalone use.",
+        "primary_category": "cond-mat.other",
+        "categories": [
+          "cond-mat.other",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-04T17:49:20Z",
+        "updated_at": "2026-11-04T17:49:20Z",
+        "abstract_url": "https://arxiv.org/abs/2611.06833v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.06833v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.20080245188127746,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.6,
+        "recency": 0.46782407407407406,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30214351075398227,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.29362",
+        "version": 2,
+        "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
+        "authors": [
+          "Valentin Munteanu",
+          "Alexander Hinderhofer",
+          "Dmitry Lapkin",
+          "Vladimir Starostin",
+          "Frank Schreiber"
+        ],
+        "abstract": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
+        "primary_category": "cs.LG",
+        "categories": [
+          "cs.LG",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-21T07:54:26Z",
+        "updated_at": "2026-11-02T10:23:14Z",
+        "abstract_url": "https://arxiv.org/abs/2610.29362v2",
+        "pdf_url": "https://arxiv.org/pdf/2610.29362v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.2566651861325673,
+        "keyword_relevance": 0.09642857142857143,
+        "category_relevance": 0.8,
+        "recency": 0.17910011574074075,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2875164881908722,
+        "explanation": "Strongest matched profile terms: neutron scattering, polarized neutron reflectometry, inverse problems."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2603.15035",
+        "version": 2,
+        "title": "Loss of altermagnetic order and smooth restoration of Kramers' spin degeneracy with increasing temperature in CrSb and MnTe",
+        "authors": [
+          "Christopher D. Woodgate",
+          "Nabil Menai",
+          "Arthur Ernst",
+          "Julie B. Staunton"
+        ],
+        "abstract": "We describe how thermally induced spin fluctuations modify the electronic structures of two prototypical altermagnets, CrSb and MnTe, via application of the disordered local moment picture. For both materials, our self-consistent, ab initio calculations demonstrate that local magnetic moments persist on Cr and Mn atoms in their paramagnetic states, necessitating a spin-polarised description of the electronic structure even above the Néel temperature, $T_\\mathrm{N}$. Moreover, Kramers' spin degeneracy, which is broken for both materials in their altermagnetic ground states, is shown to be smoothly restored - on the average - as the local moments thermally disorder. In metallic CrSb, this occurs at temperatures well below $T_\\mathrm{N}$ and the signature effects of its altermagnetism are lost as the magnetic disorder induces heavy smearing of strongly dispersive electronic states around the Fermi energy. By contrast, in semiconducting MnTe, with its band gap largely unaffected by magnetic disorder, the spin degeneracy only returns at temperatures close to and above $T_\\mathrm{N}$. We quantify the temperature dependence of the altermagnetic order parameter and the underlying electronic structures of both materials, with implications for their spin transport and spectroscopic properties.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-03-16T09:38:23Z",
+        "updated_at": "2026-11-03T15:37:49Z",
+        "abstract_url": "https://arxiv.org/abs/2603.15035v2",
+        "pdf_url": "https://arxiv.org/pdf/2603.15035v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09747417797857212,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.33140769675925924,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2770041497662834,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.02841",
+        "version": 1,
+        "title": "Superinsulation, electric confinement in condensed matter",
+        "authors": [
+          "M. Cristina Diamantini",
+          "Carlo A. Trugenberger"
+        ],
+        "abstract": "Superinsulation is the confining phase of condensed matter systems. It is a genuine quantum state of matter, dual to superconductivity, just as confinement in particle physics is dual to the Higgs phase. In contrast to hadron physics, the gauge field that becomes confining is not colour SU(3) but the conventional U(1) electromagnetic field. Superinsulation arises in superconductors with an emergent granular condensate when core-less XY vortices between condensate grains become tensionless, unobservable Dirac strings and magnetic monopoles are liberated and condense. This magnetic condensate confines electric fields into flux tubes, strings that generate a linear potential between Cooper pairs. These dual Abrikosov flux tubes give rise to infinite electrical resistance, persisting up to a finite deconfinement temperature. We shall review the theoretical framework of superinsulation together with its experimental validation, including the direct observation of the linear confining potential and we shall stress how phase-only approaches and disorder-based ideas for the phases around the superconductor-to-insulator transition are hard to reconcile with recent experimental observations.",
+        "primary_category": "cond-mat.supr-con",
+        "categories": [
+          "cond-mat.supr-con",
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el",
+          "hep-th"
+        ],
+        "published_at": "2026-11-02T09:44:15Z",
+        "updated_at": "2026-11-02T09:44:15Z",
+        "abstract_url": "https://arxiv.org/abs/2611.02841v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.02841v1",
+        "doi": null,
+        "journal_reference": "Int. J. Mod. Phys. B, 2630014 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.07160752064591004,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.17571614583333334,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24979499887399287,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2410.11256",
+        "version": 5,
+        "title": "Impact of electron--spin coupling on exchange coupling parameters: a nonperturbative approach",
+        "authors": [
+          "Tomonori Tanaka",
+          "Yoshihiro Gohda"
+        ],
+        "abstract": "Exchange coupling parameters $J_{ij}$ in the Heisenberg model are crucial for describing magnetic behavior at the atomic level. In magnetic materials, spin fluctuations can be accompanied by a self-consistent electronic response, i.e., electron--spin coupling in the sense of electronic feedback to finite spin rotations. However, the quantitative importance of this coupling in extracting reliable $J_{ij}$ has not been fully clarified. Here, using fully self-consistent, nonperturbative evaluations, we show that finite-angle spin rotations induce such electronic feedback and quantify how strongly it renormalizes the extracted $J_{ij}$. We examine systems of both fundamental and practical interest, including perovskite SrMnO$_3$, Nd-based permanent-magnet compounds (Nd$_2$Fe$_{14}$B and Nd$_2$Co$_{14}$B), and elemental 3$d$ transition metals. The nonperturbative approach yields exchange couplings that remain consistent over a wide range of rotation angles. Moreover, when the sampled configurations represent the magnetic disorder near the transition, spin models parameterized in this way give reasonable agreement with experimental magnetic phase-transition temperatures. Overall, our results demonstrate the quantitative impact of electron--spin coupling on the exchange coupling parameters $J_{ij}$ and provide a nonperturbative route to effective $J_{ij}$ for a specified regime of magnetic disorder.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2024-10-15T04:26:42Z",
+        "updated_at": "2026-11-03T10:17:37Z",
+        "abstract_url": "https://arxiv.org/abs/2410.11256v5",
+        "pdf_url": "https://arxiv.org/pdf/2410.11256v5",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08136680012320809,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.3036125578703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2469763158424807,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 1,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-01T01:05:48Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09285078231118293,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.005711805555555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21378260402415933,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.27053",
+        "version": 3,
+        "title": "A phase space electronic structure theory beyond Born-Oppenheimer: Geometric forces and Moody-Shapere-Wilczek revisited",
+        "authors": [
+          "Mansi Bhati",
+          "D. Vale Cofer-Shabica",
+          "Jonathan I. Rawlinson",
+          "Robert G. Littlejohn",
+          "Joseph Subotnik",
+          "Nadine C. Bradbury"
+        ],
+        "abstract": "We revisit the three-body problem in quantum mechanics in two and three dimensions, generating both exact eigenvalues and eigenvectors of the Hamiltonian and a series of approximate solutions as calculated with a variety of different schemes to separate heavy (\"nuclear\") and light (\"electronic\") particles. We show that, with minimal extra cost, one can go beyond the Born-Oppenheimer approximation by performing electronic structure calculations parameterized by both the nuclear position (${\\mathbf X})$ and the nuclear momentum ($\\mathbf{P}$), a so-called phase space theory of electronic structure. In particular, we demonstrate that such phase space electronic structure calculations correctly incorporate the non-inertial Coriolis and centrifugal forces felt by electrons in a moving nuclear frame, thus leading to far more accurate eigenenergies and electronic angular momenta than has been possible before. We also demonstrate that our approach naturally incorporates and generalizes the Moody-Shapere-Wilczek magnetic monopole for the non-abelian Berry curvature (now allowing for vibrational motion rather than a diatomic of fixed length). We argue that the resulting approach should be extremely useful for propagating dynamics where angular momentum flows between nuclei and electrons; in particular, if extended to include spin degrees of freedom, the present approach will offer a practical means to study chiral induced spin selectivity through the lens of chiral phonons and coupled nuclear-electronic motion.",
+        "primary_category": "physics.chem-ph",
+        "categories": [
+          "physics.chem-ph"
+        ],
+        "published_at": "2026-05-26T14:07:42Z",
+        "updated_at": "2026-11-06T14:05:57Z",
+        "abstract_url": "https://arxiv.org/abs/2605.27053v3",
+        "pdf_url": "https://arxiv.org/pdf/2605.27053v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08157576373735059,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.6984331597222222,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21280240965403,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.03616",
+        "version": 1,
+        "title": "Inhomogeneous Synthetic Fluxes in Optical Lattices",
+        "authors": [
+          "Soujanya Datta",
+          "Kush Saha",
+          "Krishanu Roychowdhury"
+        ],
+        "abstract": "Synthetic gauge fields in optical lattices are usually engineered to realize a uniform magnetic flux. Here, we propose a scheme to generate spatially inhomogeneous fluxes and demonstrate how such fluxes reshape the single-particle spectrum. Within Wannier--Stark-assisted tunneling, onsite modulation produces a plaquette flux that depends on the orientation of the static tilt, whereas laser-assisted tunneling (LAT) does not. Using LAT, two coherent Raman processes with different momentum transfers imprint a dimerized Peierls phase that alternates the flux between neighboring plaquettes of a square lattice while keeping the mean flux fixed. A bond-selective Raman phase extends the scheme to the kagome lattice, where a parameter $ξ$ redistributes the flux between triangles and hexagons at fixed flux per unit cell. The Hofstadter--Rammal spectrum of the bipartite square lattice retains chiral symmetry for all $ξ$, whereas the kagome lattice lacks this symmetry, and its flux periodicity and reflection symmetries survive only at special values of $ξ$. As $ξ$ is reduced, the anomalous Landau levels of the kagome singular flat band are compressed toward the flat-band energy and evolve into a degenerate zero-energy manifold at $ξ=0$ with compactly localized states. The dynamical structure factor, accessible through Bragg scattering, resolves this evolution as a Rydberg-like series of peaks whose spectral span tracks the width of the anomalous-level tower and vanishes as $ξ\\to0$. We discuss the frequency resolution and temperature required for its observation.",
+        "primary_category": "cond-mat.quant-gas",
+        "categories": [
+          "cond-mat.quant-gas",
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-02T18:50:49Z",
+        "updated_at": "2026-11-02T18:50:49Z",
+        "abstract_url": "https://arxiv.org/abs/2611.03616v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.03616v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.0517468322246433,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.5,
+        "recency": 0.22316116898148147,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.20060219139923763,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.04613",
+        "version": 1,
+        "title": "An Excursion into Grassmannian Spectra",
+        "authors": [
+          "Dmitri Bykov",
+          "Viacheslav Krivorol"
+        ],
+        "abstract": "We revisit the classical spectral problem for the Laplace-Beltrami and Laplace-Bochner operators on complex Grassmannians. After reviewing the standard approach based on non-commutative harmonic analysis, we develop two complementary methods originating from the quantization of the corresponding one-dimensional sigma model, both with and without a magnetic monopole field. The first is based on $\\mathbf{SU}(n)$-equivariant first-order GLSM formulation and gives explicit eigenfunctions in terms of projectors and Plücker coordinates. The second uses a spin-chain realization of free particles on manifolds and describes the space of square-integrable functions, or sections in the magnetic case, through limiting tensor products of long rectangular $\\mathbf{SU}(n)$ representations. Together, these approaches provide a more explicit picture of the spectral geometry of Grassmannians and clarify the relation between harmonics, Young diagrams, magnetic bundles, and Laplacian spectra.",
+        "primary_category": "math-ph",
+        "categories": [
+          "math-ph",
+          "hep-th",
+          "quant-ph"
+        ],
+        "published_at": "2026-11-03T10:04:14Z",
+        "updated_at": "2026-11-03T10:04:14Z",
+        "abstract_url": "https://arxiv.org/abs/2611.04613v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.04613v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.056197411463404734,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.30245081018518516,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.16178391617705065,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.05190",
+        "version": 1,
+        "title": "Cosmological evolution and late-time attractors in axion-monopole interacting dark energy",
+        "authors": [
+          "Emmanuel N. Saridakis"
+        ],
+        "abstract": "We investigate the cosmological dynamics of axion-monopole interacting dark energy, examining whether a microscopically motivated dark-sector interaction can sustain stable late-time acceleration. In particular, magnetic monopoles constitute dark matter and an ultralight axion contributes to dark energy, with their interaction arising from the Witten effect through field-dependent dyon masses. We formulate the autonomous system, classify its critical points and stability, and investigate the evolution analytically and numerically. We find that stable de Sitter attractors at finite positive Hubble parameter require a positive cosmological constant and correspond to axion-potential minima, whereas those at maxima are unstable. Nevertheless, transient axion-driven acceleration remains possible without an explicit cosmological constant. Furthermore, the interaction induces matter-era tracking, namely an attracting slow-drift regime rather than an exact critical point. The interaction-effective dark-energy equation of state can cross the phantom divide, although the physical equation of state remains non-phantom. Extending the analysis to the full Bogomol'nyi-Prasad-Sommerfield dyon mass, we find that the main dynamical features persist, while the field evolution and interaction strength depend on the microscopic dyon properties. Our results demonstrate how a microscopically motivated dark-sector interaction can give rise to distinctive cosmological evolution and effective dark-energy behavior.",
+        "primary_category": "astro-ph.CO",
+        "categories": [
+          "astro-ph.CO",
+          "gr-qc",
+          "hep-th"
+        ],
+        "published_at": "2026-11-03T16:44:50Z",
+        "updated_at": "2026-11-03T16:44:50Z",
+        "abstract_url": "https://arxiv.org/abs/2611.05190v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.05190v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.05021760575621842,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.33722511574074077,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15632043416437236,
+        "explanation": "No configured positive profile terms matched."
+      }
+    }
+  ]
+}
