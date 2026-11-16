@@ -1,0 +1,1322 @@
+{
+  "schema_version": "1.0",
+  "run_id": "select-0c0026f86251",
+  "title": "Personalized Weekly arXiv Reading List",
+  "generated_at": "2026-11-16T22:38:49.211963Z",
+  "timezone": "America/New_York",
+  "retrieval_window": {
+    "start": "2026-11-08T00:00:00Z",
+    "end": "2026-11-16T00:00:00Z"
+  },
+  "records_retrieved": 27,
+  "records_after_deduplication": 17,
+  "records_ranked": 17,
+  "records_selected": 10,
+  "summary_mode": "offline",
+  "summary_fallbacks": 0,
+  "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "profile_hash": "1ff5312fec72",
+  "recommendations": [
+    {
+      "paper": {
+        "arxiv_id": "2611.18182",
+        "version": 1,
+        "title": "Controlled Magnon Chirality and Its Reversal by Anisotropy in Altermagnetic FeF$_2$",
+        "authors": [
+          "E. M. Smith",
+          "V. O. Garlea",
+          "D. Lederman",
+          "J. M. Tranquada",
+          "I. A. Zaliznyak",
+          "J. Sears"
+        ],
+        "abstract": "In altermagnets, the exchange symmetry of two mutually compensating magnetic sublattices permits spin-polarized electronic bands and chirality-split magnon bands. Because these effects have opposite signs in domains related by time reversal, magnetic-domain control is essential for their observation and utilization. Using half-polarized neutron diffraction, we demonstrate that we can control magnetic domain imbalance in a single crystal of FeF$_2$ by field cooling, and we relate this response to the established piezomagnetism in this material. Our half-polarized inelastic neutron scattering measurements directly resolve the altermagnetic splitting of chiral magnon bands. Strikingly, we observe a clear reversal of chirality near $\\mathbf{Q}=(0.5,0.5,1)$, where the altermagnetic exchange splitting vanishes and no chirality is expected in a nonrelativistic exchange model. This reversal of the chirality is well explained by the presence of a transverse component of the single-ion anisotropy tensor, which rotates between Fe sublattices related by the crystal's altermagnetic $4_2$ screw symmetry. These results allow us to resolve fine features of the spin Hamiltonian for FeF$_2$ and show how symmetry-governed relativistic anisotropy can reshape altermagnetic spin dynamics, as well as providing an avenue for control of magnetic domains and the net chiral response.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-13T13:51:18Z",
+        "updated_at": "2026-11-13T13:51:18Z",
+        "abstract_url": "https://arxiv.org/abs/2611.18182v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.18182v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12041039783434382,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.6971614583333333,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3351508248587881,
+        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: In altermagnets, the exchange symmetry of two mutually compensating magnetic sublattices permits spin-polarized electronic bands and chirality-split magnon bands.",
+        "brief_summary": "The abstract states: In altermagnets, the exchange symmetry of two mutually compensating magnetic sublattices permits spin-polarized electronic bands and chirality-split magnon bands. Because these effects have opposite signs in domains related by time reversal, magnetic-domain control is essential for their observation and utilization. Using half-polarized neutron diffraction, we demonstrate that we can control magnetic domain imbalance in a single crystal of FeF$_2$ by field cooling, and we relate this response to the established piezomagnetism in this material. Our half-polarized inelastic neutron scattering measurements directly resolve the altermagnetic splitting of chiral magnon bands. Strikingly, we observe a clear reversal of chirality near $\\mathbf{Q}=(0.5,0.5,1)$, where the altermagnetic exchange splitting vanishes and no chirality is expected in a nonrelativistic exchange model. This reversal of the chirality is well…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, spin dynamics. Its preselection score was 0.335, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "spin dynamics"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 1,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.15859",
+        "version": 1,
+        "title": "Learning Quantum Hamiltonians from the Dynamical Structure Factor",
+        "authors": [
+          "Nisarga Paul",
+          "Thomas Schuster",
+          "Jason Alicea"
+        ],
+        "abstract": "Identifying the microscopic interactions governing a quantum system is essential for developing predictive theories of materials and validating quantum technologies. Despite considerable progress, learning Hamiltonians from realistic experimental data remains a challenge. Motivated by neutron scattering and quantum simulations, we study the problem of learning a quantum Hamiltonian from the dynamical structure factor (DSF), which captures two-point correlation data in quantum magnets. We show that the DSF encodes sufficient information to efficiently reconstruct broad classes of quantum Hamiltonians. Our approach exploits simple relations between low-order spectral moments of the DSF and microscopic couplings, giving rise to three complementary Hamiltonian tomography protocols based on the high-temperature expansion, strong-field polarization, and the fluctuation-dissipation theorem, respectively. The framework we introduce establishes practical and robust Hamiltonian learning from common experimental data, with potentially immediate application to neutron scattering experiments.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "quant-ph"
+        ],
+        "published_at": "2026-11-11T19:00:01Z",
+        "updated_at": "2026-11-11T19:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2611.15859v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.15859v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12379468136578746,
+        "keyword_relevance": 0.10714285714285714,
+        "category_relevance": 1.0,
+        "recency": 0.4739597800925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.32988929890957797,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Identifying the microscopic interactions governing a quantum system is essential for developing predictive theories of materials and validating quantum technologies.",
+        "brief_summary": "The abstract states: Identifying the microscopic interactions governing a quantum system is essential for developing predictive theories of materials and validating quantum technologies. Despite considerable progress, learning Hamiltonians from realistic experimental data remains a challenge. Motivated by neutron scattering and quantum simulations, we study the problem of learning a quantum Hamiltonian from the dynamical structure factor (DSF), which captures two-point correlation data in quantum magnets. We show that the DSF encodes sufficient information to efficiently reconstruct broad classes of quantum Hamiltonians. Our approach exploits simple relations between low-order spectral moments of the DSF and microscopic couplings, giving rise to three complementary Hamiltonian tomography protocols based on the high-temperature expansion, strong-field polarization, and the fluctuation-dissipation theorem, respectively. The framework we introduce establishes practical and robust Hamiltonian…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, dynamical structure factor. Its preselection score was 0.330, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "dynamical structure factor"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.675
+      },
+      "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.25993",
+        "version": 2,
+        "title": "Demagnetization effect on magnetic noise measurements in spin ice materials",
+        "authors": [
+          "F. Morineau",
+          "C. Paulsen",
+          "G. Balakrishnan",
+          "D. Prabhakaran",
+          "K. Matsuhira",
+          "S. R. Giblin",
+          "E. Lhotel"
+        ],
+        "abstract": "Magnetic noise spectroscopy provides direct access to spontaneous time-dependent magnetization fluctuations in correlated magnetic systems, including spin liquids, spin ices, and spin glasses. Here we investigate how demagnetizing fields shape the magnetic noise spectra measured in spin ice. By combining magnetic noise and ac susceptibility measurements on single-crystal spin ice samples with different sizes and shapes, we show that magnetic noise, like linear response, is strongly renormalized by sample geometry. As a consequence, measured noise spectra do not directly yield the intrinsic fluctuation spectrum, and demagnetization corrections cannot in general be determined from noise data alone. Instead, sample geometry must be treated as a central experimental control parameter for accessing intrinsic dynamics. These results establish the role of boundary conditions in fluctuation spectroscopy and provide a framework for quantitatively comparing noise measurements with microscopic theories of spin dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-05-25T16:12:58Z",
+        "updated_at": "2026-11-09T15:50:06Z",
+        "abstract_url": "https://arxiv.org/abs/2605.25993v2",
+        "pdf_url": "https://arxiv.org/pdf/2605.25993v2",
+        "doi": null,
+        "journal_reference": "Phys. Rev. B 114, 094433 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.19017319514412234,
+        "keyword_relevance": 0.10571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.20747395833333335,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.33275390507675984,
+        "explanation": "Strongest matched profile terms: spin ice, spin dynamics."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Magnetic noise spectroscopy provides direct access to spontaneous time-dependent magnetization fluctuations in correlated magnetic systems, including spin liquids, spin ices, and spin glasses.",
+        "brief_summary": "The abstract states: Magnetic noise spectroscopy provides direct access to spontaneous time-dependent magnetization fluctuations in correlated magnetic systems, including spin liquids, spin ices, and spin glasses. Here we investigate how demagnetizing fields shape the magnetic noise spectra measured in spin ice. By combining magnetic noise and ac susceptibility measurements on single-crystal spin ice samples with different sizes and shapes, we show that magnetic noise, like linear response, is strongly renormalized by sample geometry. As a consequence, measured noise spectra do not directly yield the intrinsic fluctuation spectrum, and demagnetization corrections cannot in general be determined from noise data alone. Instead, sample geometry must be treated as a central experimental control parameter for accessing intrinsic dynamics. These results establish the role of boundary conditions in fluctuation…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, spin dynamics. Its preselection score was 0.333, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice",
+          "spin dynamics"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.69
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.12277",
+        "version": 1,
+        "title": "Positronium resonance of electric monopoles in quantum spin ice",
+        "authors": [
+          "José Maria Cruz",
+          "Hidemaro Suwa",
+          "Masafumi Udagawa"
+        ],
+        "abstract": "Quantum spin ice attracts considerable attention due to its remarkable low-energy properties, described by the effective gauge theory, which mimics the quantum electrodynamics (QED). The ``effective\" QED in quantum spin ice is beyond the ``real\" QED in our universe in many respects. Above all, the effective QED hosts two kinds of gapped particles, the electric monopole, in addition to the magnetic monopole. Among the two monopoles, the electric monopole is of purely quantum origin, and its character has not been well resolved. In this work, we focus on the Rokhsar Kivelson point of the quantum dimer model, as the low-energy description of the quantum XXZ model on a pyrochlore lattice, and address the excitation spectrum of the electric monopoles, by combining the quantum Monte Carlo simulation with the stochastic analytical continuation. Most strikingly, the electric monopole spectrum exhibits clear double-peak structure, corresponding to the bound states and scattering states of electric monopoles. The lower-energy peak is attributed to the exciton-like bound state of an electric monopole pair, a signal of positronium in quantum spin ice. We found that the flippable loop operator serves as a local physical observable to excite a pair of electric monopoles, implying that monopoles can be detected through lattice or optical response.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-09T12:06:44Z",
+        "updated_at": "2026-11-09T12:06:44Z",
+        "abstract_url": "https://arxiv.org/abs/2611.12277v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12277v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1377857019207816,
+        "keyword_relevance": 0.13071428571428573,
+        "category_relevance": 1.0,
+        "recency": 0.18808449074074074,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3134905863669972,
+        "explanation": "Strongest matched profile terms: spin ice, magnetic monopole, pyrochlore."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum spin ice attracts considerable attention due to its remarkable low-energy properties, described by the effective gauge theory, which mimics the quantum electrodynamics (QED).",
+        "brief_summary": "The abstract states: Quantum spin ice attracts considerable attention due to its remarkable low-energy properties, described by the effective gauge theory, which mimics the quantum electrodynamics (QED). The ``effective\" QED in quantum spin ice is beyond the ``real\" QED in our universe in many respects. Above all, the effective QED hosts two kinds of gapped particles, the electric monopole, in addition to the magnetic monopole. Among the two monopoles, the electric monopole is of purely quantum origin, and its character has not been well resolved. In this work, we focus on the Rokhsar Kivelson point of the quantum dimer model, as the low-energy description of the quantum XXZ model on a pyrochlore lattice, and address the excitation spectrum of the electric monopoles, by combining the…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice, magnetic monopole, pyrochlore. Its preselection score was 0.313, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice",
+          "magnetic monopole",
+          "pyrochlore"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 4,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.13500",
+        "version": 1,
+        "title": "Facilitated Relaxation Overrides Energetic Pathways in a Multiphase Square-Kagome Artificial Spin Ice",
+        "authors": [
+          "Wen-Cheng Yue",
+          "Zixiong Yuan",
+          "Peiyuan Huang",
+          "Ziao Wang",
+          "Hangyu Liu",
+          "Tianyu Li",
+          "Nuo-Zhou Yang",
+          "Jingyue Gao",
+          "Chen Ku",
+          "Shuo Song",
+          "Jiyao Shang",
+          "Yang-Yang Lyu",
+          "Yihuang Xiong",
+          "Xuecou Tu",
+          "Liang He",
+          "Xun Cao",
+          "Ying Dong",
+          "Huabing Wang",
+          "Peiheng Wu",
+          "Cristiano Nisoli",
+          "Yong-Lei Wang"
+        ],
+        "abstract": "Relaxation in interacting many-body systems is typically assumed to follow energy minimization, yet local dynamical rules can determine which microscopic pathways are accessible. In facilitated relaxation, these pathways are enabled or blocked by neighboring configurations. However, isolating such rules in natural materials is difficult because energetics, disorder and dynamics are usually entangled. Here we realize a geometrically tunable square-kagome artificial spin ice-a lithographic nanomagnet array-that provides a clean, designable platform for facilitated relaxation. The array hosts two tunable nearest-neighbor interactions and supports multiple low-energy phases: spin crystal, spin liquid and spin foam. In the spin-foam phase, abundant facilitator configurations allow relaxation to follow Boltzmann statistics. In the spin-crystal phase, by contrast, domain-wall excitations are trapped in non-Boltzmann distributions, although energetically preferred relaxation channels exist. The ordered crystal background lacks the facilitators needed to connect topologically distinct domain-wall classes. These classes are therefore kinetically isolated, as observed in both experiment and Monte Carlo simulation. Our results show that transition-network topology can override energetic relaxation, establishing artificial spin ice as a programmable platform for constrained dynamics and nonergodic relaxation.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci",
+          "cond-mat.stat-mech"
+        ],
+        "published_at": "2026-11-10T03:12:51Z",
+        "updated_at": "2026-11-10T03:12:51Z",
+        "abstract_url": "https://arxiv.org/abs/2611.13500v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.13500v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15348825222982448,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.8,
+        "recency": 0.2667404513888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2971723300708814,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Relaxation in interacting many-body systems is typically assumed to follow energy minimization, yet local dynamical rules can determine which microscopic pathways are accessible.",
+        "brief_summary": "The abstract states: Relaxation in interacting many-body systems is typically assumed to follow energy minimization, yet local dynamical rules can determine which microscopic pathways are accessible. In facilitated relaxation, these pathways are enabled or blocked by neighboring configurations. However, isolating such rules in natural materials is difficult because energetics, disorder and dynamics are usually entangled. Here we realize a geometrically tunable square-kagome artificial spin ice-a lithographic nanomagnet array-that provides a clean, designable platform for facilitated relaxation. The array hosts two tunable nearest-neighbor interactions and supports multiple low-energy phases: spin crystal, spin liquid and spin foam. In the spin-foam phase, abundant facilitator configurations allow relaxation to follow Boltzmann statistics. In the spin-crystal phase, by contrast, domain-wall excitations are trapped in non-Boltzmann distributions, although energetically preferred relaxation…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.297, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 5,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20029",
+        "version": 2,
+        "title": "Vortex order in magnetic frustrated GeNi$_2$O$_4$ and GeCo$_2$O$_4$ spinels",
+        "authors": [
+          "K. Beauvois",
+          "J. Robert",
+          "M. Songvilay",
+          "J. Ollivier",
+          "B. Fåk",
+          "E. Ressouche",
+          "N. Qureshi",
+          "R. Ballou",
+          "S. Petit",
+          "S. Lenne",
+          "P. Manuel",
+          "S. DeBrion",
+          "P. Strobel",
+          "V. Simonet"
+        ],
+        "abstract": "In the search for new spin textures based on singular magnetic objects like Bloch-points or vortices, spinel compounds emerge as an interesting playground due to the interplay between magnetic anisotropy and complex interactions that extend well beyond first neighbors on a pyrochlore lattice. Based on an exploration of the exchange interaction phase diagrams of members of the Ge$B_2$O$_4$ family with $B$=Co and Ni, we show, using simultaneous modeling of inelastic neutron scattering measurements and single-crystal neutron diffraction data, that a 2-$k$ magnetic structure may be stabilized in these compounds. This leads to a short period spin vortex crystal, a variant induced by the magnetic anisotropy of the 3-$k$ Bloch-point structure predicted for isotropic spins. Our study rationalizes the formation of these multi-$k$ spin textures in frustrated antiferromagnets, as well as their anisotropy-dependent evolution.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-05-19T15:52:36Z",
+        "updated_at": "2026-11-09T15:15:34Z",
+        "abstract_url": "https://arxiv.org/abs/2605.20029v2",
+        "pdf_url": "https://arxiv.org/pdf/2605.20029v2",
+        "doi": "10.1103/ywbl-flp1",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.17885347904755206,
+        "keyword_relevance": 0.05999999999999999,
+        "category_relevance": 1.0,
+        "recency": 0.20447627314814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.31593169288621326,
+        "explanation": "Strongest matched profile terms: neutron scattering, pyrochlore, spinel."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: In the search for new spin textures based on singular magnetic objects like Bloch-points or vortices, spinel compounds emerge as an interesting playground due to the interplay between magnetic anisotropy and complex…",
+        "brief_summary": "The abstract states: In the search for new spin textures based on singular magnetic objects like Bloch-points or vortices, spinel compounds emerge as an interesting playground due to the interplay between magnetic anisotropy and complex interactions that extend well beyond first neighbors on a pyrochlore lattice. Based on an exploration of the exchange interaction phase diagrams of members of the Ge$B_2$O$_4$ family with $B$=Co and Ni, we show, using simultaneous modeling of inelastic neutron scattering measurements and single-crystal neutron diffraction data, that a 2-$k$ magnetic structure may be stabilized in these compounds. This leads to a short period spin vortex crystal, a variant induced by the magnetic anisotropy of the 3-$k$ Bloch-point structure predicted for isotropic spins. Our study rationalizes the formation of these multi-$k$…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, pyrochlore, spinel. Its preselection score was 0.316, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "pyrochlore",
+          "spinel"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.665
+      },
+      "rank": 6,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.16121",
+        "version": 1,
+        "title": "A thermodynamically consistent, fully compressible, fluctuating hydrodynamics model of a Cahn Hilliard binary fluid mixture",
+        "authors": [
+          "Anuj Chaudhri"
+        ],
+        "abstract": "We derive, from first principles, a thermodynamically consistent set of fully compressible fluctuating hydrodynamic equations for a Cahn-Hilliard binary fluid mixture, in isothermal and non-isothermal form and for symmetric and non-symmetric mixtures. The derivation uses the GENERIC formalism, with the friction operator constructed from flux fluctuations following Jelic and Ottinger, so that deterministic and stochastic fluxes derive from the same operator and correlation matrix and the fluctuation-dissipation theorem holds by construction. We show that the momentum equation must use the total mass density, that the Cahn-Hilliard variable is the mass fraction, and that the diffusion flux must be driven by the specific, not the volumetric, exchange potential. We derive a generalized Korteweg tensor for square-gradient energies in density and composition, and show that the reversible pressure tensor of the non-isothermal model is fixed by the degeneracy condition, producing a thermal capillary stress when the interfacial free energy has an entropic part. Thermodynamic consistency is proved in full: Jacobi identity, positivity and degeneracy, local energy conservation with interstitial-working fluxes, a local entropy balance, Soret-Dufour reciprocity, and Einstein statistics of the linearized equations. The final equations are written in conservative form for finite-volume discretization, and closed-form static and dynamic structure factors are given for all models as analytic benchmarks. An appendix shows that the same models follow from classical irreversible thermodynamics with the Helmholtz or Gibbs free energy; this route is unique for isothermal flows and has a gauge freedom in the non-isothermal case that GENERIC removes.",
+        "primary_category": "physics.flu-dyn",
+        "categories": [
+          "physics.flu-dyn",
+          "cond-mat.stat-mech",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-12T00:16:42Z",
+        "updated_at": "2026-11-12T00:16:42Z",
+        "abstract_url": "https://arxiv.org/abs/2611.16121v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.16121v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.05166024012612108,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.5014496527777778,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2533920733345323,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We derive, from first principles, a thermodynamically consistent set of fully compressible fluctuating hydrodynamic equations for a Cahn-Hilliard binary fluid mixture, in isothermal and non-isothermal form and for symmetric and non-symmetric mixtures.",
+        "brief_summary": "The abstract states: We derive, from first principles, a thermodynamically consistent set of fully compressible fluctuating hydrodynamic equations for a Cahn-Hilliard binary fluid mixture, in isothermal and non-isothermal form and for symmetric and non-symmetric mixtures. The derivation uses the GENERIC formalism, with the friction operator constructed from flux fluctuations following Jelic and Ottinger, so that deterministic and stochastic fluxes derive from the same operator and correlation matrix and the fluctuation-dissipation theorem holds by construction. We show that the momentum equation must use the total mass density, that the Cahn-Hilliard variable is the mass fraction, and that the diffusion flux must be driven by the specific, not the volumetric, exchange potential. We derive a generalized Korteweg tensor for square-gradient energies in density and composition, and show…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through physics.flu-dyn. Its preselection score was 0.253, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "physics.flu-dyn"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 7,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.15141",
+        "version": 1,
+        "title": "Magnetism on emergent molecular-orbital lattices",
+        "authors": [
+          "Zhan Liu",
+          "Chenrui Wang",
+          "Chen Fang"
+        ],
+        "abstract": "In solids, strong hybridization between nearby atomic orbitals forms molecular orbitals (MOs), the range of which covers a cluster of atoms. The centers of molecular orbitals form an emergent lattice generally different from the atomic lattice. For partially filled MOs, electron interaction may induce a new type of magnetism on this emergent lattice where the local moments come from the molecular orbitals instead of single atoms. In this work, we show in a ruby-lattice tight-binding Hubbard model that frustrated and unfrustrated antiferromagnetism may appear on the same atomic lattice and at the same filling, as the emergent molecular-orbital lattice changes from triangular to honeycomb upon changing the hopping parameters. Moreover, we show that general molecular orbital magnetism may be experimentally verified in the low-energy dynamic structure factor: the molecular form factors, as the Fourier transforms of the molecular spin-density, modulate the low-energy dynamic structure factor across different Brillouin zones. Zeros of these form factors suppress low energy spectral weight irrespective of the magnetic order formed by the molecular moments. This is exemplified by random phase approximation calculations for the ruby-lattice model: the structure factor integrated over low energies exhibits minima around molecular form-factor zeros, while its ratios between selected equivalent momenta in different Brillouin zones agree with ratios of squared form factors.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-11T07:30:33Z",
+        "updated_at": "2026-11-11T07:30:33Z",
+        "abstract_url": "https://arxiv.org/abs/2611.15141v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.15141v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.0732504156709598,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.41411024305555555,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27437371135748745,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: In solids, strong hybridization between nearby atomic orbitals forms molecular orbitals (MOs), the range of which covers a cluster of atoms.",
+        "brief_summary": "The abstract states: In solids, strong hybridization between nearby atomic orbitals forms molecular orbitals (MOs), the range of which covers a cluster of atoms. The centers of molecular orbitals form an emergent lattice generally different from the atomic lattice. For partially filled MOs, electron interaction may induce a new type of magnetism on this emergent lattice where the local moments come from the molecular orbitals instead of single atoms. In this work, we show in a ruby-lattice tight-binding Hubbard model that frustrated and unfrustrated antiferromagnetism may appear on the same atomic lattice and at the same filling, as the emergent molecular-orbital lattice changes from triangular to honeycomb upon changing the hopping parameters. Moreover, we show that general molecular orbital magnetism may be experimentally verified in…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.274, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.str-el"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 8,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2512.08234",
+        "version": 2,
+        "title": "New Type of Monopoles in QCD and Standard Model",
+        "authors": [
+          "Liping Zou",
+          "Pengming Zhang",
+          "Y. M. Cho"
+        ],
+        "abstract": "We present the new monopole solutions in QCD, the Georgi-Glashow model, and the standard model. QCD has a new monopole, the Wu-Yang monopole which has the chromon dressing. The Georgi-Glashow model has a new monopole, the Wu-Yang monopole which has the W boson dressing, in addition to the well-known 'tHooft-Polyakov monopole. Moreover, the standard model has two types of monopoles, the well known Cho-Maison type monopoles which carry the magnetic charge $4π/e$ and the electromagnetically neutral type of magnetic monopoles (the naked one and the one with the W boson dressing) which carry the neutral magnetic charge $4π/\\bae$, where $\\bae$ is the neutral charge. We show how to construct the new monopole solutions and clarify the topological origin of the new monopoles. The new monopoles could have deep implications not just in high energy physics but also in condensed matter physics.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph"
+        ],
+        "published_at": "2025-12-09T04:20:41Z",
+        "updated_at": "2026-11-12T01:38:07Z",
+        "abstract_url": "https://arxiv.org/abs/2512.08234v2",
+        "pdf_url": "https://arxiv.org/pdf/2512.08234v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08010978915896538,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.5085170717592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18690111229746037,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We present the new monopole solutions in QCD, the Georgi-Glashow model, and the standard model.",
+        "brief_summary": "The abstract states: We present the new monopole solutions in QCD, the Georgi-Glashow model, and the standard model. QCD has a new monopole, the Wu-Yang monopole which has the chromon dressing. The Georgi-Glashow model has a new monopole, the Wu-Yang monopole which has the W boson dressing, in addition to the well-known 'tHooft-Polyakov monopole. Moreover, the standard model has two types of monopoles, the well known Cho-Maison type monopoles which carry the magnetic charge $4π/e$ and the electromagnetically neutral type of magnetic monopoles (the naked one and the one with the W boson dressing) which carry the neutral magnetic charge $4π/\\bae$, where $\\bae$ is the neutral charge. We show how to construct the new monopole solutions and clarify the topological origin of the new monopoles…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-ph. Its preselection score was 0.187, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.705
+      },
+      "rank": 9,
+      "recommendation_type": "wildcard"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.17416",
+        "version": 1,
+        "title": "What Comes Out Of Monopole-Fermion Scattering?",
+        "authors": [
+          "David Tong"
+        ],
+        "abstract": "We describe what happens when chiral fermions scatter off magnetic monopoles. It has long been known that, in many situations, the outgoing state cannot be constructed from any finite number of excitations. In the language of 2d CFT, it lives in a twisted sector of the Hilbert space. Here we explain what this means from the perspective of a d=3+1 observer. We show that an ingoing one-particle excitation is scattered into an outgoing state surrounded by a soft cloud which consists of an infinite number of low energy particle-anti-particle pairs. We compute energy and charge correlators, showing that this cloud fragments in any measurement. A detector will register one or more hard particles which leave tracks and carry standard quantum numbers. The remaining exotic quantum numbers live in the soft cloud, and are characterised by large charge fluctuations in the detector",
+        "primary_category": "hep-th",
+        "categories": [
+          "hep-th",
+          "hep-ph"
+        ],
+        "published_at": "2026-11-12T19:00:04Z",
+        "updated_at": "2026-11-12T19:00:04Z",
+        "abstract_url": "https://arxiv.org/abs/2611.17416v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.17416v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.04741782031295294,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.5989641203703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18123443117786586,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We describe what happens when chiral fermions scatter off magnetic monopoles.",
+        "brief_summary": "The abstract states: We describe what happens when chiral fermions scatter off magnetic monopoles. It has long been known that, in many situations, the outgoing state cannot be constructed from any finite number of excitations. In the language of 2d CFT, it lives in a twisted sector of the Hilbert space. Here we explain what this means from the perspective of a d=3+1 observer. We show that an ingoing one-particle excitation is scattered into an outgoing state surrounded by a soft cloud which consists of an infinite number of low energy particle-anti-particle pairs. We compute energy and charge correlators, showing that this cloud fragments in any measurement. A detector will register one or more hard particles which leave tracks and carry standard quantum numbers. The…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through hep-th. Its preselection score was 0.181, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "hep-th"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.705
+      },
+      "rank": 10,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [
+    {
+      "paper": {
+        "arxiv_id": "2607.23490",
+        "version": 3,
+        "title": "Coupled Magnetic and Lattice Excitations in Multiferroic Ba3HoRu2O9: Insights from Neutron Scattering, Raman Spectroscopy, and Machine-Learned Phonon Calculations",
+        "authors": [
+          "Ekta Kushwaha",
+          "Sayan Ghosh",
+          "Gourab Roy",
+          "Mohit Kumar",
+          "Manh Duc Le",
+          "Jhuma Shannigrahi",
+          "Som Datta Kaushik",
+          "Devashibhai T. Adroja",
+          "Tathamay Basu"
+        ],
+        "abstract": "Inelastic neutron scattering (INS) spectra of correlated 4d-4f multiferroic oxides are difficult to interpret because magnetic, crystal-field, and lattice excitations frequently overlap in energy. The hexagonal 6H perovskite Ba3HoRu2O9 provides an ideal platform to investigate this interplay owing to the coexistence of Ru2O9 molecular units and localized Ho3+ moments. To identify the contributions from these different excitations, we combine INS with linear spin-wave calculations, crystal field analysis, Raman spectroscopy, and machine-learned force field (MLFF) phonon calculations. A magnetic excitation below 6.2 meV, observed only in the low-temperature magnetic phase, is reproduced by linear spin-wave theory with intradimer Ru-Ru and Ru-Ho exchange of comparable size and a Ho single-ion anisotropy, and is therefore consistent with a collective spin-wave excitation of the coupled Ru-Ho magnetic network. At higher energies, broad excitations centered near 20, 39, 70, and 90 meV are observed that persist far above the magnetic ordering temperatures. The magnetic part of the 39 meV excitation, isolated by subtracting the Bose-corrected high-temperature data, follows the Ho3+ magnetic form factor. Crystal-field calculations based on the Stevens formalism place a group of strong Ho3+ transitions in this energy range, while Raman spectroscopy and MLFF phonon calculations identify optical phonons with comparable energies. Together, these complementary results show that the broad INS feature near 39 meV arises from overlapping Ho3+ crystal-field excitations and lattice vibrations. These findings establish a microscopic framework for understanding the interplay between spin, crystal-field, and lattice degrees of freedom in this multiferroic 4d-4f compound",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-26T06:32:14Z",
+        "updated_at": "2026-11-09T13:41:33Z",
+        "abstract_url": "https://arxiv.org/abs/2607.23490v3",
+        "pdf_url": "https://arxiv.org/pdf/2607.23490v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.17399480747391752,
+        "keyword_relevance": 0.09142857142857143,
+        "category_relevance": 1.0,
+        "recency": 0.19631510416666667,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2707863166370724,
+        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2511.09097",
+        "version": 4,
+        "title": "Spontaneous breaking of a continuous symmetry at a non-conformal quantum critical point in one dimension",
+        "authors": [
+          "R. Flores-Calderón",
+          "M. Zündel"
+        ],
+        "abstract": "In this work, we present numerical evidence for the spontaneous breaking of a continuous $U(1)$ symmetry in a nearest-neighbor interacting spin-1 chain at a quantum critical point separating two XY quasi-long-range ordered phases distinguished by a spontaneously broken $\\mathbb{Z}_2$ symmetry. Remarkably, the continuous symmetry breaking emerges precisely at the critical point of the discrete order parameter, suggesting a novel mechanism beyond currently established scenarios. At criticality, the XY correlations develop true long-range order, accompanied by a finite perpendicular magnetization, a zero-frequency Bragg peak in the transverse dynamical structure factor, and sharp gapless collective excitations. From complementary static and dynamical observables, we quantitatively determine the critical exponents, obtaining a dynamical exponent $z=1.50\\pm0.04$ and an anomalous dimension $η=1.04\\pm0.03$. We further show that the non-interacting continuum limit is equivalent to the recently introduced transverse quantum fluid, displaying their off-diagonal long-ranged order in one dimension. Complementing the numerical study, we derive the renormalization-group flow equations of the continuum theory to second order in the $\\varepsilon$ expansion. We identify an interacting fixed point whose critical behavior differs from the Ising universality class already at two-loop order, although the perturbative exponents remain far from the numerical values.",
+        "primary_category": "cond-mat.stat-mech",
+        "categories": [
+          "cond-mat.stat-mech",
+          "cond-mat.quant-gas",
+          "cond-mat.str-el",
+          "math-ph"
+        ],
+        "published_at": "2025-11-12T08:11:39Z",
+        "updated_at": "2026-11-10T18:45:01Z",
+        "abstract_url": "https://arxiv.org/abs/2511.09097v4",
+        "pdf_url": "https://arxiv.org/pdf/2511.09097v4",
+        "doi": "10.1103/yhpf-7451",
+        "journal_reference": "Phys. Rev. Research 8, 043001, 1 October, 2026"
+      },
+      "score": {
+        "semantic_relevance": 0.05901133554716856,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.3476576967592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2663208706721518,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.12566",
+        "version": 1,
+        "title": "Quantum benchmarks for magnetic energies and transition temperatures",
+        "authors": [
+          "Mojtaba Alaei",
+          "Ilia Mikhailov",
+          "Alireza Qaiumzadeh",
+          "Artem Oganov"
+        ],
+        "abstract": "Predicting magnetic ordering temperatures requires accurate exchange interactions and an appropriate treatment of spin thermodynamics. Here we assess these requirements through complementary quantum Monte Carlo benchmarks. For five insulating antiferromagnets, we compare ferromagnetic-antiferromagnetic energy differences from diffusion Monte Carlo (DMC) and density functional theory with references reconstructed from inelastic neutron scattering (INS) exchanges. DMC underestimates these references but achieves a mean absolute error comparable to the best-performing functionals tested. Separately, we directly test the previously proposed (S+1)/S rescaling of classical Monte Carlo temperatures against quantum stochastic series expansion simulations for 17 compounds using corresponding INS-derived Heisenberg Hamiltonians. Rescaling reduces the mean absolute classical-quantum temperature difference from 81.7 to 8.2 K, with a mean absolute percentage difference of 5.9 %. These results establish a direct quantum benchmark for the rescaling within the tested models and emphasize that improvements in electronic magnetic energy scales should be accompanied by attention to quantum spin thermodynamics.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-09T15:29:13Z",
+        "updated_at": "2026-11-09T15:29:13Z",
+        "abstract_url": "https://arxiv.org/abs/2611.12566v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12566v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12356993225506427,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.8,
+        "recency": 0.20566116898148148,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26242258641292704,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 2,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-10T12:49:50Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v2",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10059344471811635,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.3168258101851852,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24837820257024232,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2312.12047",
+        "version": 5,
+        "title": "A Jordan Algebraic Approach to the Landau Problem with a Non-commutative Parameter: From Non-commutativity to Non-associativity",
+        "authors": [
+          "Tekin Dereli",
+          "Ekin Sıla Yörük"
+        ],
+        "abstract": "Non-associative structures arise naturally in several areas of fundamental physics, including the quantum mechanics of charged particles in magnetic monopole backgrounds, or non-geometric flux compactifications in string theory. A key observation motivating the present work is that the non-commutativity of spatial coordinates can be recast as the non-associativity of observables within a Jordan algebraic framework. This paper provides a comprehensive review of the Jordan algebraic, non-associative formulation of quantum mechanics and demonstrates this passage from non-commutativity to non-associativity concretely through the non-commutative Landau problem coupled to a harmonic potential. We begin with a self-contained account of the operator algebra background, covering $C^*$-algebras, von Neumann algebras, and Jordan--Banach ($JB$) and Jordan--von Neumann ($JBW$) algebras, and present the axiomatic formulation of quantum mechanics in terms of the Jordan algebra of observables. We then develop an alternative Hilbert space construction based on 3-cyclic traces, extending the work of Schupp and Szabo to infinite dimensional Jordan algebras. A central result of this work is that the non-commutative parameter $θ$ can be expressed entirely in terms of an associator in the Jordan algebraic setting. Pure product states and density matrices arising from this construction are characterized within the JBW-algebra framework. A key advantage of our approach is the \\emph{explicit} construction of split operators for the non-commutative Landau Hamiltonian, turning an abstract existence result into a concrete decomposition. This leads to the Jordan--Schrödinger time-evolution equation for state vectors, whose exact closed-form solution is presented.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph",
+          "math-ph"
+        ],
+        "published_at": "2023-12-19T11:01:19Z",
+        "updated_at": "2026-11-11T07:49:03Z",
+        "abstract_url": "https://arxiv.org/abs/2312.12047v5",
+        "pdf_url": "https://arxiv.org/pdf/2312.12047v5",
+        "doi": null,
+        "journal_reference": "Journal of Mathematical Physics, 2026"
+      },
+      "score": {
+        "semantic_relevance": 0.022419105687009555,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.41571614583333333,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15791021214248763,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "paper": {
+        "arxiv_id": "2611.18182",
+        "version": 1,
+        "title": "Controlled Magnon Chirality and Its Reversal by Anisotropy in Altermagnetic FeF$_2$",
+        "authors": [
+          "E. M. Smith",
+          "V. O. Garlea",
+          "D. Lederman",
+          "J. M. Tranquada",
+          "I. A. Zaliznyak",
+          "J. Sears"
+        ],
+        "abstract": "In altermagnets, the exchange symmetry of two mutually compensating magnetic sublattices permits spin-polarized electronic bands and chirality-split magnon bands. Because these effects have opposite signs in domains related by time reversal, magnetic-domain control is essential for their observation and utilization. Using half-polarized neutron diffraction, we demonstrate that we can control magnetic domain imbalance in a single crystal of FeF$_2$ by field cooling, and we relate this response to the established piezomagnetism in this material. Our half-polarized inelastic neutron scattering measurements directly resolve the altermagnetic splitting of chiral magnon bands. Strikingly, we observe a clear reversal of chirality near $\\mathbf{Q}=(0.5,0.5,1)$, where the altermagnetic exchange splitting vanishes and no chirality is expected in a nonrelativistic exchange model. This reversal of the chirality is well explained by the presence of a transverse component of the single-ion anisotropy tensor, which rotates between Fe sublattices related by the crystal's altermagnetic $4_2$ screw symmetry. These results allow us to resolve fine features of the spin Hamiltonian for FeF$_2$ and show how symmetry-governed relativistic anisotropy can reshape altermagnetic spin dynamics, as well as providing an avenue for control of magnetic domains and the net chiral response.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-13T13:51:18Z",
+        "updated_at": "2026-11-13T13:51:18Z",
+        "abstract_url": "https://arxiv.org/abs/2611.18182v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.18182v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12041039783434382,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.6971614583333333,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3351508248587881,
+        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.25993",
+        "version": 2,
+        "title": "Demagnetization effect on magnetic noise measurements in spin ice materials",
+        "authors": [
+          "F. Morineau",
+          "C. Paulsen",
+          "G. Balakrishnan",
+          "D. Prabhakaran",
+          "K. Matsuhira",
+          "S. R. Giblin",
+          "E. Lhotel"
+        ],
+        "abstract": "Magnetic noise spectroscopy provides direct access to spontaneous time-dependent magnetization fluctuations in correlated magnetic systems, including spin liquids, spin ices, and spin glasses. Here we investigate how demagnetizing fields shape the magnetic noise spectra measured in spin ice. By combining magnetic noise and ac susceptibility measurements on single-crystal spin ice samples with different sizes and shapes, we show that magnetic noise, like linear response, is strongly renormalized by sample geometry. As a consequence, measured noise spectra do not directly yield the intrinsic fluctuation spectrum, and demagnetization corrections cannot in general be determined from noise data alone. Instead, sample geometry must be treated as a central experimental control parameter for accessing intrinsic dynamics. These results establish the role of boundary conditions in fluctuation spectroscopy and provide a framework for quantitatively comparing noise measurements with microscopic theories of spin dynamics.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-05-25T16:12:58Z",
+        "updated_at": "2026-11-09T15:50:06Z",
+        "abstract_url": "https://arxiv.org/abs/2605.25993v2",
+        "pdf_url": "https://arxiv.org/pdf/2605.25993v2",
+        "doi": null,
+        "journal_reference": "Phys. Rev. B 114, 094433 (2026)"
+      },
+      "score": {
+        "semantic_relevance": 0.19017319514412234,
+        "keyword_relevance": 0.10571428571428572,
+        "category_relevance": 1.0,
+        "recency": 0.20747395833333335,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.33275390507675984,
+        "explanation": "Strongest matched profile terms: spin ice, spin dynamics."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.15859",
+        "version": 1,
+        "title": "Learning Quantum Hamiltonians from the Dynamical Structure Factor",
+        "authors": [
+          "Nisarga Paul",
+          "Thomas Schuster",
+          "Jason Alicea"
+        ],
+        "abstract": "Identifying the microscopic interactions governing a quantum system is essential for developing predictive theories of materials and validating quantum technologies. Despite considerable progress, learning Hamiltonians from realistic experimental data remains a challenge. Motivated by neutron scattering and quantum simulations, we study the problem of learning a quantum Hamiltonian from the dynamical structure factor (DSF), which captures two-point correlation data in quantum magnets. We show that the DSF encodes sufficient information to efficiently reconstruct broad classes of quantum Hamiltonians. Our approach exploits simple relations between low-order spectral moments of the DSF and microscopic couplings, giving rise to three complementary Hamiltonian tomography protocols based on the high-temperature expansion, strong-field polarization, and the fluctuation-dissipation theorem, respectively. The framework we introduce establishes practical and robust Hamiltonian learning from common experimental data, with potentially immediate application to neutron scattering experiments.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "quant-ph"
+        ],
+        "published_at": "2026-11-11T19:00:01Z",
+        "updated_at": "2026-11-11T19:00:01Z",
+        "abstract_url": "https://arxiv.org/abs/2611.15859v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.15859v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12379468136578746,
+        "keyword_relevance": 0.10714285714285714,
+        "category_relevance": 1.0,
+        "recency": 0.4739597800925926,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.32988929890957797,
+        "explanation": "Strongest matched profile terms: dynamical structure factor, neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20029",
+        "version": 2,
+        "title": "Vortex order in magnetic frustrated GeNi$_2$O$_4$ and GeCo$_2$O$_4$ spinels",
+        "authors": [
+          "K. Beauvois",
+          "J. Robert",
+          "M. Songvilay",
+          "J. Ollivier",
+          "B. Fåk",
+          "E. Ressouche",
+          "N. Qureshi",
+          "R. Ballou",
+          "S. Petit",
+          "S. Lenne",
+          "P. Manuel",
+          "S. DeBrion",
+          "P. Strobel",
+          "V. Simonet"
+        ],
+        "abstract": "In the search for new spin textures based on singular magnetic objects like Bloch-points or vortices, spinel compounds emerge as an interesting playground due to the interplay between magnetic anisotropy and complex interactions that extend well beyond first neighbors on a pyrochlore lattice. Based on an exploration of the exchange interaction phase diagrams of members of the Ge$B_2$O$_4$ family with $B$=Co and Ni, we show, using simultaneous modeling of inelastic neutron scattering measurements and single-crystal neutron diffraction data, that a 2-$k$ magnetic structure may be stabilized in these compounds. This leads to a short period spin vortex crystal, a variant induced by the magnetic anisotropy of the 3-$k$ Bloch-point structure predicted for isotropic spins. Our study rationalizes the formation of these multi-$k$ spin textures in frustrated antiferromagnets, as well as their anisotropy-dependent evolution.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-05-19T15:52:36Z",
+        "updated_at": "2026-11-09T15:15:34Z",
+        "abstract_url": "https://arxiv.org/abs/2605.20029v2",
+        "pdf_url": "https://arxiv.org/pdf/2605.20029v2",
+        "doi": "10.1103/ywbl-flp1",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.17885347904755206,
+        "keyword_relevance": 0.05999999999999999,
+        "category_relevance": 1.0,
+        "recency": 0.20447627314814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.31593169288621326,
+        "explanation": "Strongest matched profile terms: neutron scattering, pyrochlore, spinel."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.12277",
+        "version": 1,
+        "title": "Positronium resonance of electric monopoles in quantum spin ice",
+        "authors": [
+          "José Maria Cruz",
+          "Hidemaro Suwa",
+          "Masafumi Udagawa"
+        ],
+        "abstract": "Quantum spin ice attracts considerable attention due to its remarkable low-energy properties, described by the effective gauge theory, which mimics the quantum electrodynamics (QED). The ``effective\" QED in quantum spin ice is beyond the ``real\" QED in our universe in many respects. Above all, the effective QED hosts two kinds of gapped particles, the electric monopole, in addition to the magnetic monopole. Among the two monopoles, the electric monopole is of purely quantum origin, and its character has not been well resolved. In this work, we focus on the Rokhsar Kivelson point of the quantum dimer model, as the low-energy description of the quantum XXZ model on a pyrochlore lattice, and address the excitation spectrum of the electric monopoles, by combining the quantum Monte Carlo simulation with the stochastic analytical continuation. Most strikingly, the electric monopole spectrum exhibits clear double-peak structure, corresponding to the bound states and scattering states of electric monopoles. The lower-energy peak is attributed to the exciton-like bound state of an electric monopole pair, a signal of positronium in quantum spin ice. We found that the flippable loop operator serves as a local physical observable to excite a pair of electric monopoles, implying that monopoles can be detected through lattice or optical response.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-09T12:06:44Z",
+        "updated_at": "2026-11-09T12:06:44Z",
+        "abstract_url": "https://arxiv.org/abs/2611.12277v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12277v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1377857019207816,
+        "keyword_relevance": 0.13071428571428573,
+        "category_relevance": 1.0,
+        "recency": 0.18808449074074074,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3134905863669972,
+        "explanation": "Strongest matched profile terms: spin ice, magnetic monopole, pyrochlore."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.13500",
+        "version": 1,
+        "title": "Facilitated Relaxation Overrides Energetic Pathways in a Multiphase Square-Kagome Artificial Spin Ice",
+        "authors": [
+          "Wen-Cheng Yue",
+          "Zixiong Yuan",
+          "Peiyuan Huang",
+          "Ziao Wang",
+          "Hangyu Liu",
+          "Tianyu Li",
+          "Nuo-Zhou Yang",
+          "Jingyue Gao",
+          "Chen Ku",
+          "Shuo Song",
+          "Jiyao Shang",
+          "Yang-Yang Lyu",
+          "Yihuang Xiong",
+          "Xuecou Tu",
+          "Liang He",
+          "Xun Cao",
+          "Ying Dong",
+          "Huabing Wang",
+          "Peiheng Wu",
+          "Cristiano Nisoli",
+          "Yong-Lei Wang"
+        ],
+        "abstract": "Relaxation in interacting many-body systems is typically assumed to follow energy minimization, yet local dynamical rules can determine which microscopic pathways are accessible. In facilitated relaxation, these pathways are enabled or blocked by neighboring configurations. However, isolating such rules in natural materials is difficult because energetics, disorder and dynamics are usually entangled. Here we realize a geometrically tunable square-kagome artificial spin ice-a lithographic nanomagnet array-that provides a clean, designable platform for facilitated relaxation. The array hosts two tunable nearest-neighbor interactions and supports multiple low-energy phases: spin crystal, spin liquid and spin foam. In the spin-foam phase, abundant facilitator configurations allow relaxation to follow Boltzmann statistics. In the spin-crystal phase, by contrast, domain-wall excitations are trapped in non-Boltzmann distributions, although energetically preferred relaxation channels exist. The ordered crystal background lacks the facilitators needed to connect topologically distinct domain-wall classes. These classes are therefore kinetically isolated, as observed in both experiment and Monte Carlo simulation. Our results show that transition-network topology can override energetic relaxation, establishing artificial spin ice as a programmable platform for constrained dynamics and nonergodic relaxation.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci",
+          "cond-mat.stat-mech"
+        ],
+        "published_at": "2026-11-10T03:12:51Z",
+        "updated_at": "2026-11-10T03:12:51Z",
+        "abstract_url": "https://arxiv.org/abs/2611.13500v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.13500v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.15348825222982448,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.8,
+        "recency": 0.2667404513888889,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2971723300708814,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.15141",
+        "version": 1,
+        "title": "Magnetism on emergent molecular-orbital lattices",
+        "authors": [
+          "Zhan Liu",
+          "Chenrui Wang",
+          "Chen Fang"
+        ],
+        "abstract": "In solids, strong hybridization between nearby atomic orbitals forms molecular orbitals (MOs), the range of which covers a cluster of atoms. The centers of molecular orbitals form an emergent lattice generally different from the atomic lattice. For partially filled MOs, electron interaction may induce a new type of magnetism on this emergent lattice where the local moments come from the molecular orbitals instead of single atoms. In this work, we show in a ruby-lattice tight-binding Hubbard model that frustrated and unfrustrated antiferromagnetism may appear on the same atomic lattice and at the same filling, as the emergent molecular-orbital lattice changes from triangular to honeycomb upon changing the hopping parameters. Moreover, we show that general molecular orbital magnetism may be experimentally verified in the low-energy dynamic structure factor: the molecular form factors, as the Fourier transforms of the molecular spin-density, modulate the low-energy dynamic structure factor across different Brillouin zones. Zeros of these form factors suppress low energy spectral weight irrespective of the magnetic order formed by the molecular moments. This is exemplified by random phase approximation calculations for the ruby-lattice model: the structure factor integrated over low energies exhibits minima around molecular form-factor zeros, while its ratios between selected equivalent momenta in different Brillouin zones agree with ratios of squared form factors.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-11T07:30:33Z",
+        "updated_at": "2026-11-11T07:30:33Z",
+        "abstract_url": "https://arxiv.org/abs/2611.15141v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.15141v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.0732504156709598,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.41411024305555555,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27437371135748745,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.23490",
+        "version": 3,
+        "title": "Coupled Magnetic and Lattice Excitations in Multiferroic Ba3HoRu2O9: Insights from Neutron Scattering, Raman Spectroscopy, and Machine-Learned Phonon Calculations",
+        "authors": [
+          "Ekta Kushwaha",
+          "Sayan Ghosh",
+          "Gourab Roy",
+          "Mohit Kumar",
+          "Manh Duc Le",
+          "Jhuma Shannigrahi",
+          "Som Datta Kaushik",
+          "Devashibhai T. Adroja",
+          "Tathamay Basu"
+        ],
+        "abstract": "Inelastic neutron scattering (INS) spectra of correlated 4d-4f multiferroic oxides are difficult to interpret because magnetic, crystal-field, and lattice excitations frequently overlap in energy. The hexagonal 6H perovskite Ba3HoRu2O9 provides an ideal platform to investigate this interplay owing to the coexistence of Ru2O9 molecular units and localized Ho3+ moments. To identify the contributions from these different excitations, we combine INS with linear spin-wave calculations, crystal field analysis, Raman spectroscopy, and machine-learned force field (MLFF) phonon calculations. A magnetic excitation below 6.2 meV, observed only in the low-temperature magnetic phase, is reproduced by linear spin-wave theory with intradimer Ru-Ru and Ru-Ho exchange of comparable size and a Ho single-ion anisotropy, and is therefore consistent with a collective spin-wave excitation of the coupled Ru-Ho magnetic network. At higher energies, broad excitations centered near 20, 39, 70, and 90 meV are observed that persist far above the magnetic ordering temperatures. The magnetic part of the 39 meV excitation, isolated by subtracting the Bose-corrected high-temperature data, follows the Ho3+ magnetic form factor. Crystal-field calculations based on the Stevens formalism place a group of strong Ho3+ transitions in this energy range, while Raman spectroscopy and MLFF phonon calculations identify optical phonons with comparable energies. Together, these complementary results show that the broad INS feature near 39 meV arises from overlapping Ho3+ crystal-field excitations and lattice vibrations. These findings establish a microscopic framework for understanding the interplay between spin, crystal-field, and lattice degrees of freedom in this multiferroic 4d-4f compound",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-07-26T06:32:14Z",
+        "updated_at": "2026-11-09T13:41:33Z",
+        "abstract_url": "https://arxiv.org/abs/2607.23490v3",
+        "pdf_url": "https://arxiv.org/pdf/2607.23490v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.17399480747391752,
+        "keyword_relevance": 0.09142857142857143,
+        "category_relevance": 1.0,
+        "recency": 0.19631510416666667,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2707863166370724,
+        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2511.09097",
+        "version": 4,
+        "title": "Spontaneous breaking of a continuous symmetry at a non-conformal quantum critical point in one dimension",
+        "authors": [
+          "R. Flores-Calderón",
+          "M. Zündel"
+        ],
+        "abstract": "In this work, we present numerical evidence for the spontaneous breaking of a continuous $U(1)$ symmetry in a nearest-neighbor interacting spin-1 chain at a quantum critical point separating two XY quasi-long-range ordered phases distinguished by a spontaneously broken $\\mathbb{Z}_2$ symmetry. Remarkably, the continuous symmetry breaking emerges precisely at the critical point of the discrete order parameter, suggesting a novel mechanism beyond currently established scenarios. At criticality, the XY correlations develop true long-range order, accompanied by a finite perpendicular magnetization, a zero-frequency Bragg peak in the transverse dynamical structure factor, and sharp gapless collective excitations. From complementary static and dynamical observables, we quantitatively determine the critical exponents, obtaining a dynamical exponent $z=1.50\\pm0.04$ and an anomalous dimension $η=1.04\\pm0.03$. We further show that the non-interacting continuum limit is equivalent to the recently introduced transverse quantum fluid, displaying their off-diagonal long-ranged order in one dimension. Complementing the numerical study, we derive the renormalization-group flow equations of the continuum theory to second order in the $\\varepsilon$ expansion. We identify an interacting fixed point whose critical behavior differs from the Ising universality class already at two-loop order, although the perturbative exponents remain far from the numerical values.",
+        "primary_category": "cond-mat.stat-mech",
+        "categories": [
+          "cond-mat.stat-mech",
+          "cond-mat.quant-gas",
+          "cond-mat.str-el",
+          "math-ph"
+        ],
+        "published_at": "2025-11-12T08:11:39Z",
+        "updated_at": "2026-11-10T18:45:01Z",
+        "abstract_url": "https://arxiv.org/abs/2511.09097v4",
+        "pdf_url": "https://arxiv.org/pdf/2511.09097v4",
+        "doi": "10.1103/yhpf-7451",
+        "journal_reference": "Phys. Rev. Research 8, 043001, 1 October, 2026"
+      },
+      "score": {
+        "semantic_relevance": 0.05901133554716856,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.3476576967592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2663208706721518,
+        "explanation": "Strongest matched profile terms: dynamical structure factor."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.12566",
+        "version": 1,
+        "title": "Quantum benchmarks for magnetic energies and transition temperatures",
+        "authors": [
+          "Mojtaba Alaei",
+          "Ilia Mikhailov",
+          "Alireza Qaiumzadeh",
+          "Artem Oganov"
+        ],
+        "abstract": "Predicting magnetic ordering temperatures requires accurate exchange interactions and an appropriate treatment of spin thermodynamics. Here we assess these requirements through complementary quantum Monte Carlo benchmarks. For five insulating antiferromagnets, we compare ferromagnetic-antiferromagnetic energy differences from diffusion Monte Carlo (DMC) and density functional theory with references reconstructed from inelastic neutron scattering (INS) exchanges. DMC underestimates these references but achieves a mean absolute error comparable to the best-performing functionals tested. Separately, we directly test the previously proposed (S+1)/S rescaling of classical Monte Carlo temperatures against quantum stochastic series expansion simulations for 17 compounds using corresponding INS-derived Heisenberg Hamiltonians. Rescaling reduces the mean absolute classical-quantum temperature difference from 81.7 to 8.2 K, with a mean absolute percentage difference of 5.9 %. These results establish a direct quantum benchmark for the rescaling within the tested models and emphasize that improvements in electronic magnetic energy scales should be accompanied by attention to quantum spin thermodynamics.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-09T15:29:13Z",
+        "updated_at": "2026-11-09T15:29:13Z",
+        "abstract_url": "https://arxiv.org/abs/2611.12566v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12566v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12356993225506427,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.8,
+        "recency": 0.20566116898148148,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.26242258641292704,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.16121",
+        "version": 1,
+        "title": "A thermodynamically consistent, fully compressible, fluctuating hydrodynamics model of a Cahn Hilliard binary fluid mixture",
+        "authors": [
+          "Anuj Chaudhri"
+        ],
+        "abstract": "We derive, from first principles, a thermodynamically consistent set of fully compressible fluctuating hydrodynamic equations for a Cahn-Hilliard binary fluid mixture, in isothermal and non-isothermal form and for symmetric and non-symmetric mixtures. The derivation uses the GENERIC formalism, with the friction operator constructed from flux fluctuations following Jelic and Ottinger, so that deterministic and stochastic fluxes derive from the same operator and correlation matrix and the fluctuation-dissipation theorem holds by construction. We show that the momentum equation must use the total mass density, that the Cahn-Hilliard variable is the mass fraction, and that the diffusion flux must be driven by the specific, not the volumetric, exchange potential. We derive a generalized Korteweg tensor for square-gradient energies in density and composition, and show that the reversible pressure tensor of the non-isothermal model is fixed by the degeneracy condition, producing a thermal capillary stress when the interfacial free energy has an entropic part. Thermodynamic consistency is proved in full: Jacobi identity, positivity and degeneracy, local energy conservation with interstitial-working fluxes, a local entropy balance, Soret-Dufour reciprocity, and Einstein statistics of the linearized equations. The final equations are written in conservative form for finite-volume discretization, and closed-form static and dynamic structure factors are given for all models as analytic benchmarks. An appendix shows that the same models follow from classical irreversible thermodynamics with the Helmholtz or Gibbs free energy; this route is unique for isothermal flows and has a gauge freedom in the non-isothermal case that GENERIC removes.",
+        "primary_category": "physics.flu-dyn",
+        "categories": [
+          "physics.flu-dyn",
+          "cond-mat.stat-mech",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-12T00:16:42Z",
+        "updated_at": "2026-11-12T00:16:42Z",
+        "abstract_url": "https://arxiv.org/abs/2611.16121v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.16121v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.05166024012612108,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.5014496527777778,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2533920733345323,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 2,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-10T12:49:50Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v2",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.10059344471811635,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.3168258101851852,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.24837820257024232,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2512.08234",
+        "version": 2,
+        "title": "New Type of Monopoles in QCD and Standard Model",
+        "authors": [
+          "Liping Zou",
+          "Pengming Zhang",
+          "Y. M. Cho"
+        ],
+        "abstract": "We present the new monopole solutions in QCD, the Georgi-Glashow model, and the standard model. QCD has a new monopole, the Wu-Yang monopole which has the chromon dressing. The Georgi-Glashow model has a new monopole, the Wu-Yang monopole which has the W boson dressing, in addition to the well-known 'tHooft-Polyakov monopole. Moreover, the standard model has two types of monopoles, the well known Cho-Maison type monopoles which carry the magnetic charge $4π/e$ and the electromagnetically neutral type of magnetic monopoles (the naked one and the one with the W boson dressing) which carry the neutral magnetic charge $4π/\\bae$, where $\\bae$ is the neutral charge. We show how to construct the new monopole solutions and clarify the topological origin of the new monopoles. The new monopoles could have deep implications not just in high energy physics but also in condensed matter physics.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph"
+        ],
+        "published_at": "2025-12-09T04:20:41Z",
+        "updated_at": "2026-11-12T01:38:07Z",
+        "abstract_url": "https://arxiv.org/abs/2512.08234v2",
+        "pdf_url": "https://arxiv.org/pdf/2512.08234v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08010978915896538,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.5085170717592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18690111229746037,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.17416",
+        "version": 1,
+        "title": "What Comes Out Of Monopole-Fermion Scattering?",
+        "authors": [
+          "David Tong"
+        ],
+        "abstract": "We describe what happens when chiral fermions scatter off magnetic monopoles. It has long been known that, in many situations, the outgoing state cannot be constructed from any finite number of excitations. In the language of 2d CFT, it lives in a twisted sector of the Hilbert space. Here we explain what this means from the perspective of a d=3+1 observer. We show that an ingoing one-particle excitation is scattered into an outgoing state surrounded by a soft cloud which consists of an infinite number of low energy particle-anti-particle pairs. We compute energy and charge correlators, showing that this cloud fragments in any measurement. A detector will register one or more hard particles which leave tracks and carry standard quantum numbers. The remaining exotic quantum numbers live in the soft cloud, and are characterised by large charge fluctuations in the detector",
+        "primary_category": "hep-th",
+        "categories": [
+          "hep-th",
+          "hep-ph"
+        ],
+        "published_at": "2026-11-12T19:00:04Z",
+        "updated_at": "2026-11-12T19:00:04Z",
+        "abstract_url": "https://arxiv.org/abs/2611.17416v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.17416v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.04741782031295294,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.5989641203703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.18123443117786586,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2312.12047",
+        "version": 5,
+        "title": "A Jordan Algebraic Approach to the Landau Problem with a Non-commutative Parameter: From Non-commutativity to Non-associativity",
+        "authors": [
+          "Tekin Dereli",
+          "Ekin Sıla Yörük"
+        ],
+        "abstract": "Non-associative structures arise naturally in several areas of fundamental physics, including the quantum mechanics of charged particles in magnetic monopole backgrounds, or non-geometric flux compactifications in string theory. A key observation motivating the present work is that the non-commutativity of spatial coordinates can be recast as the non-associativity of observables within a Jordan algebraic framework. This paper provides a comprehensive review of the Jordan algebraic, non-associative formulation of quantum mechanics and demonstrates this passage from non-commutativity to non-associativity concretely through the non-commutative Landau problem coupled to a harmonic potential. We begin with a self-contained account of the operator algebra background, covering $C^*$-algebras, von Neumann algebras, and Jordan--Banach ($JB$) and Jordan--von Neumann ($JBW$) algebras, and present the axiomatic formulation of quantum mechanics in terms of the Jordan algebra of observables. We then develop an alternative Hilbert space construction based on 3-cyclic traces, extending the work of Schupp and Szabo to infinite dimensional Jordan algebras. A central result of this work is that the non-commutative parameter $θ$ can be expressed entirely in terms of an associator in the Jordan algebraic setting. Pure product states and density matrices arising from this construction are characterized within the JBW-algebra framework. A key advantage of our approach is the \\emph{explicit} construction of split operators for the non-commutative Landau Hamiltonian, turning an abstract existence result into a concrete decomposition. This leads to the Jordan--Schrödinger time-evolution equation for state vectors, whose exact closed-form solution is presented.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph",
+          "math-ph"
+        ],
+        "published_at": "2023-12-19T11:01:19Z",
+        "updated_at": "2026-11-11T07:49:03Z",
+        "abstract_url": "https://arxiv.org/abs/2312.12047v5",
+        "pdf_url": "https://arxiv.org/pdf/2312.12047v5",
+        "doi": null,
+        "journal_reference": "Journal of Mathematical Physics, 2026"
+      },
+      "score": {
+        "semantic_relevance": 0.022419105687009555,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.41571614583333333,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15791021214248763,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.12359",
+        "version": 1,
+        "title": "Numerical and analytical strategies to propagate correlated uncertainties through the discrete Fourier transform",
+        "authors": [
+          "Tuguldur Zolzaya",
+          "Andrew R. McCluskey"
+        ],
+        "abstract": "The Fourier transform underpins a range of comparisons between atomistic simulations and scattering measurements, yet uncertainty propagation through it is seldom discussed, and correlations between data points are usually ignored. Here, we give a pedagogical account of uncertainty propagation through the discrete Fourier transform, including the full covariance matrix. Two routes are described: a numerical scheme that samples from the multivariate normal distribution describing the data, and an analytical scheme that treats the transform as a change of basis. We discuss the scaling behaviour of these methods and demonstrate their utility on problems that link simulation to scattering: the Faber--Ziman partial structure factors of liquid water, and the dynamic structure factor obtained from a rotational autocorrelation function.",
+        "primary_category": "stat.AP",
+        "categories": [
+          "stat.AP",
+          "stat.CO"
+        ],
+        "published_at": "2026-11-09T13:09:10Z",
+        "updated_at": "2026-11-09T13:09:10Z",
+        "abstract_url": "https://arxiv.org/abs/2611.12359v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.12359v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.06574449247839731,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.19350405092592593,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.14893542670787138,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.25684",
+        "version": 2,
+        "title": "Landau Levels on the Surface of a Cube",
+        "authors": [
+          "Almila Kura",
+          "Bayram Tekin",
+          "Mehmet Özgür Oktel"
+        ],
+        "abstract": "We study the quantum mechanics of a charged particle confined to the surface of a cube enclosing a magnetic monopole. The magnetic field is chosen to have a constant magnitude on each face and to point along the outward normal, preserving the rotational symmetry of the cube. We formulate the continuum problem using two gauge patches on the cube surface and show that consistency of the wavefunction gives the Dirac quantization condition. Since an explicit vector potential does not remain invariant under ordinary rotations, we construct gauge-modified rotation operators and use them to classify the eigenstates. Even monopole charges are described by the irreducible representations of the cubic rotation group O, while odd monopole charges require the spinorial representations of the binary octahedral group 2O. We compute the spectrum with a gauge-covariant finite-difference discretization and find Landau-level-like manifolds whose degeneracies are split by the discrete cubic symmetry. We also study the corresponding tight-binding Hofstadter problem on the discretized cube. The resulting spectrum contains the usual magnetic subband structure together with additional gap states localized near the cube corners.",
+        "primary_category": "quant-ph",
+        "categories": [
+          "quant-ph",
+          "cond-mat.quant-gas",
+          "hep-th"
+        ],
+        "published_at": "2026-07-28T13:00:22Z",
+        "updated_at": "2026-11-09T11:17:57Z",
+        "abstract_url": "https://arxiv.org/abs/2607.25684v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.25684v2",
+        "doi": "10.1103/j2tl-p8y1",
+        "journal_reference": "Kura, Almila, Bayram Tekin, and Mehmet Özgür Oktel. \"Landau levels on the surface of a cube.\" APS Open Science 1 (2026): 000198"
+      },
+      "score": {
+        "semantic_relevance": 0.04313885981090258,
+        "keyword_relevance": 0.025,
+        "category_relevance": 0.0,
+        "recency": 0.1838498263888889,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.09404746955379506,
+        "explanation": "Strongest matched profile terms: magnetic monopole."
+      }
+    }
+  ]
+}
