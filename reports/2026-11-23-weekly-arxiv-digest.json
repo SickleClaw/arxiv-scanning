@@ -1,0 +1,1343 @@
+{
+  "schema_version": "1.0",
+  "run_id": "select-d40a63e8cdce",
+  "title": "Personalized Weekly arXiv Reading List",
+  "generated_at": "2026-11-24T00:29:03.579113Z",
+  "timezone": "America/New_York",
+  "retrieval_window": {
+    "start": "2026-11-16T00:00:00Z",
+    "end": "2026-11-24T00:00:00Z"
+  },
+  "records_retrieved": 28,
+  "records_after_deduplication": 17,
+  "records_ranked": 17,
+  "records_selected": 10,
+  "summary_mode": "offline",
+  "summary_fallbacks": 0,
+  "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+  "profile_name": "frustrated-magnetism-weekly",
+  "profile_version": "1.0",
+  "profile_hash": "1ff5312fec72",
+  "recommendations": [
+    {
+      "paper": {
+        "arxiv_id": "2611.25321",
+        "version": 1,
+        "title": "Learning Spin Hamiltonians from Interacting Magnon Spectra",
+        "authors": [
+          "Ang-Kun Wu",
+          "David A. Dahlbom",
+          "Kipton Barros",
+          "Cristian D. Batista",
+          "Hao Zhang"
+        ],
+        "abstract": "A neural network that learns an inverse map inherits the approximations of the forward solver used to generate its training data. We demonstrate this in the inference of spin Hamiltonians from synthetic neutron-scattering spectra and show how a fast many-body solver can overcome the limitation of linear spin-wave theory (LSWT). We consider a family of anisotropic triangular-lattice spin Hamiltonians at fields just above saturation, where magnon interactions shift and broaden the spectrum in ways that LSWT cannot capture. Using the truncated Hilbert-space ladder (THL) method, we compute the dynamical spin structure factor (DSSF) nonperturbatively within the one- and two-magnon space. THL is fast enough to generate large training sets of DSSF spectra, enabling us to train neural networks that accurately predict Hamiltonian parameters. By empirically benchmarking several neural-network architectures, we find that a one-dimensional convolutional network performs best. A learned forward decoder then reconstructs the DSSF from the predicted parameters, providing a rapid self-consistency check and a visualization of the predicted response. When interactions are strong, networks trained on LSWT and THL spectra infer markedly different parameters. Analysis of the Fisher information matrix shows that the measurement protocol, including which spin-correlation components are resolved and the momentum cut, determines which couplings can be identified. Combining machine learning with fast many- body theory is therefore essential for quantitative Hamiltonian inference from scattering data.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-19T00:48:42Z",
+        "updated_at": "2026-11-19T00:48:42Z",
+        "abstract_url": "https://arxiv.org/abs/2611.25321v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.25321v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12310062918920456,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.3792274305555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3045680261906976,
+        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: A neural network that learns an inverse map inherits the approximations of the forward solver used to generate its training data.",
+        "brief_summary": "The abstract states: A neural network that learns an inverse map inherits the approximations of the forward solver used to generate its training data. We demonstrate this in the inference of spin Hamiltonians from synthetic neutron-scattering spectra and show how a fast many-body solver can overcome the limitation of linear spin-wave theory (LSWT). We consider a family of anisotropic triangular-lattice spin Hamiltonians at fields just above saturation, where magnon interactions shift and broaden the spectrum in ways that LSWT cannot capture. Using the truncated Hilbert-space ladder (THL) method, we compute the dynamical spin structure factor (DSSF) nonperturbatively within the one- and two-magnon space. THL is fast enough to generate large training sets of DSSF spectra, enabling us to train neural networks that accurately predict Hamiltonian…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.305, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "linear spin-wave theory"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 1,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.10045",
+        "version": 2,
+        "title": "Flux Jamming and Bimodal Dynamics in Bounded Spin Networks",
+        "authors": [
+          "Paula Mellado",
+          "Hanu Arava"
+        ],
+        "abstract": "Finite-sized frustrated magnetic networks relax through pathways that are strongly shaped by their boundaries; yet, whether their kinetic barriers can be predicted from geometry alone has remained unclear. Here, we present a transfer matrix framework for finite artificial square ice that links local coordination to the effective energy landscape and the temperature-dependent barriers governing magnetic flux transport. By combining nonhomogeneous transfer matrices with the local coordination hierarchy, we identify the geometric bottlenecks that govern the relaxation dynamics, and show that the leading steady-state weight falls on charge-neutral, ice-rule configurations, which are thermodynamically preferred due to their reduced electrostatic energy and greater configurational multiplicity. The resulting two time-scale structure suggests bimodal behavior: (1) long intervals of trapping in charge-compensated manifolds are interrupted by (2) sudden avalanche-like relaxation events. Applied to Husimi-tree representations, the framework yields a low-temperature initial arrest probability that collapses across forty generations onto a common scaling function of $g-ξ(T)$, with a crossover length $ξ\\sim T^{-ν}$ and $ν=1$. These results show that boundary geometry alone can produce kinetic arrest and suggest intermittent transport, even in the absence of quenched disorder, reminiscent of athermal granular jamming. More broadly, our framework connects the coordination landscape, equilibrium energetics, and nonequilibrium relaxation in finite frustrated magnets and provides a route to understanding boundary-controlled dynamics in artificial spin ice.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-07-10T23:52:55Z",
+        "updated_at": "2026-11-19T23:32:04Z",
+        "abstract_url": "https://arxiv.org/abs/2607.10045v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.10045v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1261648819537134,
+        "keyword_relevance": 0.029999999999999995,
+        "category_relevance": 0.8,
+        "recency": 0.4975752314814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2940317200273192,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Finite-sized frustrated magnetic networks relax through pathways that are strongly shaped by their boundaries; yet, whether their kinetic barriers can be predicted from geometry alone has remained unclear.",
+        "brief_summary": "The abstract states: Finite-sized frustrated magnetic networks relax through pathways that are strongly shaped by their boundaries; yet, whether their kinetic barriers can be predicted from geometry alone has remained unclear. Here, we present a transfer matrix framework for finite artificial square ice that links local coordination to the effective energy landscape and the temperature-dependent barriers governing magnetic flux transport. By combining nonhomogeneous transfer matrices with the local coordination hierarchy, we identify the geometric bottlenecks that govern the relaxation dynamics, and show that the leading steady-state weight falls on charge-neutral, ice-rule configurations, which are thermodynamically preferred due to their reduced electrostatic energy and greater configurational multiplicity. The resulting two time-scale structure suggests bimodal behavior: (1) long intervals of trapping in charge-compensated manifolds are interrupted by…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.294, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 2,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2512.00747",
+        "version": 3,
+        "title": "Evidence for itinerant electron-local moment interaction in Li-doped $α$-MnTe",
+        "authors": [
+          "Tingjun Zhang",
+          "Steven J. Gomez Alvarado",
+          "Sijie Xu",
+          "Thomas A. Hulse",
+          "Yucheng Guo",
+          "Shuting Peng",
+          "Travis J. Williams",
+          "Xiaoping Wang",
+          "Junhong He",
+          "Matthew B. Stone",
+          "Colin Sarkis",
+          "Feng Ye",
+          "Aaron Bostwick",
+          "Christopher Jozwiak",
+          "Eli Rotenberg",
+          "Zhaoyu Liu",
+          "Jinyulin Li",
+          "Aparna Jayakumar",
+          "Zehao Wang",
+          "Yaofeng Xie",
+          "Yiheng Wang",
+          "Ching-Wu Chu",
+          "Liangzi Deng",
+          "Emilia Morosan",
+          "Robert J. Birgeneau",
+          "Ming Yi",
+          "Pengcheng Dai"
+        ],
+        "abstract": "We use inelastic neutron scattering (INS) and angle-resolved photoemission spectroscopy (ARPES) to study the impact of Li doping on the semiconducting altermagnet $α$-MnTe. Introducing Li reorients the ordered moment direction from in-plane to out-of-plane and increases the density of itinerant carriers. While our ARPES measurements do not indicate any notable doping-induced changes in the electronic band structure or the magnitude of the altermagnetic band splitting, our INS measurements reveal an abrupt doping-induced decrease in the spin-wave lifetime near the zone boundary at high energies. This finding is consistent with a new magnon decay channel driven by subtle, doping-induced changes in the band structure and enhanced interactions between Mn$^{2+}$ local moments and itinerant electrons. By extracting the local dynamic susceptibility from INS spectra and applying the total moment sum rule, we find that both undoped and Li-doped $α$-MnTe exhibit a nearly full expected Mn$^{2+}$ local moment of $\\approx5.9~μ_\\mathrm{B}$ with $S=5/2$. These findings suggest that $α$-MnTe hosts robust local-moment altermagnetism which shows a breakdown at high energies upon addition of itinerant carriers, highlighting the importance of carrier-spin coupling in magneto-transport and spin dynamics of altermagnets, even in the dilute-carrier limit.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-11-30T05:53:02Z",
+        "updated_at": "2026-11-20T18:11:01Z",
+        "abstract_url": "https://arxiv.org/abs/2512.00747v3",
+        "pdf_url": "https://arxiv.org/pdf/2512.00747v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07231721916622652,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.5947063078703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.303263379411839,
+        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: We use inelastic neutron scattering (INS) and angle-resolved photoemission spectroscopy (ARPES) to study the impact of Li doping on the semiconducting altermagnet $α$-MnTe.",
+        "brief_summary": "The abstract states: We use inelastic neutron scattering (INS) and angle-resolved photoemission spectroscopy (ARPES) to study the impact of Li doping on the semiconducting altermagnet $α$-MnTe. Introducing Li reorients the ordered moment direction from in-plane to out-of-plane and increases the density of itinerant carriers. While our ARPES measurements do not indicate any notable doping-induced changes in the electronic band structure or the magnitude of the altermagnetic band splitting, our INS measurements reveal an abrupt doping-induced decrease in the spin-wave lifetime near the zone boundary at high energies. This finding is consistent with a new magnon decay channel driven by subtle, doping-induced changes in the band structure and enhanced interactions between Mn$^{2+}$ local moments and itinerant electrons. By extracting the local dynamic susceptibility from INS spectra…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, spin dynamics. Its preselection score was 0.303, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "spin dynamics"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 3,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.27247",
+        "version": 1,
+        "title": "Nonmonotonic Magnetic Correlations in Decorated Lieb-Lattice Anderson Models",
+        "authors": [
+          "Raymond Hmuifoo",
+          "Edwin W. Huang",
+          "Annabelle Ancheta",
+          "Richard T. Scalettar"
+        ],
+        "abstract": "The interplay between electronic correlations and lattice geometry can strongly modify the competition between magnetic correlations and local singlet formation in multiorbital Hamiltonians. Here we use determinant quantum Monte Carlo simulations to investigate two periodic Anderson-like models constructed by selectively hybridizing localized orbitals to the inequivalent sites of a Lieb lattice. The resulting geometries possess partially filled flat bands and different sublattice imbalances. We examine the evolution of local spin correlations and orbital-resolved magnetic structure factors as the hybridization is increased. Although correlations between hybridized orbitals evolve relatively smoothly toward local singlet formation, the longer-range magnetic correlations exhibit a striking nonmonotonic dependence on hybridization. In particular, we observe a pronounced suppression at intermediate hybridization followed by a substantial recovery on undecorated lattice sites. We discuss these results in relation to earlier studies of depleted periodic Anderson models and the constraints imposed by Lieb's theorem. Our findings illustrate how selective hybridization and flat-band structure can produce unusual redistributions of magnetic correlations in strongly interacting multiorbital systems.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-20T07:53:57Z",
+        "updated_at": "2026-11-20T07:53:57Z",
+        "abstract_url": "https://arxiv.org/abs/2611.27247v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.27247v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.06471369225735465,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.5411414930555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.28323531082136516,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: The interplay between electronic correlations and lattice geometry can strongly modify the competition between magnetic correlations and local singlet formation in multiorbital Hamiltonians.",
+        "brief_summary": "The abstract states: The interplay between electronic correlations and lattice geometry can strongly modify the competition between magnetic correlations and local singlet formation in multiorbital Hamiltonians. Here we use determinant quantum Monte Carlo simulations to investigate two periodic Anderson-like models constructed by selectively hybridizing localized orbitals to the inequivalent sites of a Lieb lattice. The resulting geometries possess partially filled flat bands and different sublattice imbalances. We examine the evolution of local spin correlations and orbital-resolved magnetic structure factors as the hybridization is increased. Although correlations between hybridized orbitals evolve relatively smoothly toward local singlet formation, the longer-range magnetic correlations exhibit a striking nonmonotonic dependence on hybridization. In particular, we observe a pronounced suppression at intermediate hybridization followed by a substantial recovery on undecorated lattice…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through cond-mat.str-el. Its preselection score was 0.283, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "cond-mat.str-el"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.825
+      },
+      "rank": 4,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.22912",
+        "version": 1,
+        "title": "Electrical addressing of compensated magnetic order in artificial spin ice",
+        "authors": [
+          "Stéphane Nilsson",
+          "Lauren J. Riddiford",
+          "Emily Darwin",
+          "Hans J. Hug",
+          "Aleš Hrabec",
+          "Laura J. Heyderman"
+        ],
+        "abstract": "Compensated magnetic systems, such as antiferromagnets, hold immense potential for spintronic devices thanks to vanishing stray fields, robustness to perturbations, and ultrafast dynamics. Yet, electrical writing and reading of their order remains a major challenge. Here we use artificial spin ice as a mesoscale platform in which compensated order can be engineered, directly imaged, and electrically controlled. Specifically, we demonstrate combined electrical writing and reading of a compensated state in a triangular artificial spin ice. Exploiting the orientation dependence of the spin-orbit torque switching current, we independently switch three nanomagnet sublattices through a single current channel, with the planar Hall effect providing sublattice-resolved readout. This grants access to all eight magnetization states of the triangular plaquette, including its fully compensated state, yielding a nonlinear, history-dependent electrical response. Our results establish an approach to electrically programmable compensated magnetic systems and provide an important foundation for reconfigurable magnetic devices and unconventional computing.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-17T15:14:46Z",
+        "updated_at": "2026-11-17T15:14:46Z",
+        "abstract_url": "https://arxiv.org/abs/2611.22912v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.22912v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1431338010444601,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.8,
+        "recency": 0.2044068287037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2862794647689489,
+        "explanation": "Strongest matched profile terms: spin ice."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Compensated magnetic systems, such as antiferromagnets, hold immense potential for spintronic devices thanks to vanishing stray fields, robustness to perturbations, and ultrafast dynamics.",
+        "brief_summary": "The abstract states: Compensated magnetic systems, such as antiferromagnets, hold immense potential for spintronic devices thanks to vanishing stray fields, robustness to perturbations, and ultrafast dynamics. Yet, electrical writing and reading of their order remains a major challenge. Here we use artificial spin ice as a mesoscale platform in which compensated order can be engineered, directly imaged, and electrically controlled. Specifically, we demonstrate combined electrical writing and reading of a compensated state in a triangular artificial spin ice. Exploiting the orientation dependence of the spin-orbit torque switching current, we independently switch three nanomagnet sublattices through a single current channel, with the planar Hall effect providing sublattice-resolved readout. This grants access to all eight magnetization states of the triangular plaquette, including its fully compensated state, yielding…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through spin ice. Its preselection score was 0.286, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "spin ice"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.75
+      },
+      "rank": 5,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.23500",
+        "version": 1,
+        "title": "Synthesis-route-dependent state selection in the frustrated spinel ZnV$_2$O$_4$",
+        "authors": [
+          "Jem Pitcairn",
+          "Jennifer N. Graham",
+          "Jacob L. Brownlee",
+          "Shruti Chakravarty",
+          "Joya A. Cooley",
+          "Giorgia Confalonieri",
+          "A. Dominic Fortes",
+          "David W. Tam",
+          "J. Ross Stewart",
+          "Lucy Clark"
+        ],
+        "abstract": "The emergent properties of strongly correlated materials can be highly sensitive to how they are made, yet synthesis pathway is rarely treated as a fundamental variable governing their ground states. The spinel ZnV$_2$O$_4$ provides a model system in which to test this idea: its pyrochlore lattice of antiferromagnetically coupled V$^{3+}$ $S=1$ moments hosts competing spin and orbital degeneracies, while different synthesis routes yield markedly different low-temperature behaviour. Here, we show that changing the solid-state synthesis pathway reproducibly selects a distinct structural and magnetic ground state. Microwave-assisted solid-state synthesis (MASS) stabilises the cubic spinel structure to low temperature, suppressing the conventional cubic-to-tetragonal transition and preserving the highly frustrated $S=1$ pyrochlore lattice. Combining high-resolution diffraction, magnetometry and inelastic neutron scattering, we find a magnetic ground state exhibiting persistent spin-liquid-like dynamics together with partial spin freezing. Our results establish synthesis pathway as an experimental variable for selecting between competing emergent states in strongly correlated materials, revealing a route to accessing ground states not realised by conventional synthesis.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-17T20:50:45Z",
+        "updated_at": "2026-11-17T20:50:45Z",
+        "abstract_url": "https://arxiv.org/abs/2611.23500v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.23500v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11743107590267765,
+        "keyword_relevance": 0.10785714285714286,
+        "category_relevance": 1.0,
+        "recency": 0.2335720486111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30316547473160177,
+        "explanation": "Strongest matched profile terms: spinel, pyrochlore, neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: The emergent properties of strongly correlated materials can be highly sensitive to how they are made, yet synthesis pathway is rarely treated as a fundamental variable governing their ground states.",
+        "brief_summary": "The abstract states: The emergent properties of strongly correlated materials can be highly sensitive to how they are made, yet synthesis pathway is rarely treated as a fundamental variable governing their ground states. The spinel ZnV$_2$O$_4$ provides a model system in which to test this idea: its pyrochlore lattice of antiferromagnetically coupled V$^{3+}$ $S=1$ moments hosts competing spin and orbital degeneracies, while different synthesis routes yield markedly different low-temperature behaviour. Here, we show that changing the solid-state synthesis pathway reproducibly selects a distinct structural and magnetic ground state. Microwave-assisted solid-state synthesis (MASS) stabilises the cubic spinel structure to low temperature, suppressing the conventional cubic-to-tetragonal transition and preserving the highly frustrated $S=1$ pyrochlore lattice. Combining high-resolution diffraction, magnetometry and inelastic neutron scattering, we find a magnetic…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, pyrochlore, spinel. Its preselection score was 0.303, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "pyrochlore",
+          "spinel"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.82
+      },
+      "rank": 6,
+      "recommendation_type": "direct"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.27384",
+        "version": 1,
+        "title": "Frustration-Stabilized Hexamerons and Their Topological Magnons in Janus MXene",
+        "authors": [
+          "C. B. Subba",
+          "Z. Pachuau",
+          "Samy Brahimi",
+          "Samir Lounis",
+          "D. P. Rai"
+        ],
+        "abstract": "Frustrated magnets on triangular lattices favour noncollinear order, and when inversion symmetry is broken they can host localized topological textures on top of that order. Here we show that the Janus MXene MnHf2C2FI is such a system. Combining first-principles calculations with atomistic spin simulations, we find that magnetism is confined to the Mn layer, where a strong antiferromagnetic nearest-neighbor exchange together with a sizable Dzyaloshinskii-Moriya interaction stabilizes a frustrated 120 Neel ground state. On top of this ground state we identify a metastable hexameron: a composite of six merons and antimerons, one vortex-antivortex pair on each of the three sublattices, whose sublattice-resolved topological charges compensate. Linear spin-wave theory confirms that the hexameron is a local energy minimum, and its noncoplanar cores act as potential wells that bind discrete in-gap magnon modes below the bulk continuum. In a periodic hexameron array the magnon bands carry nonzero Chern numbers, and the resulting Berry curvature produces a magnon thermal Hall response whose sign depends on which of the two time-reversal partners of the hexameron is realized. Our results establish Janus MXenes as a two-dimensional platform in which frustration, broken inversion symmetry, and spin-orbit coupling combine to produce metastable antiferromagnetic solitons with distinct spectroscopic and transport fingerprints.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-20T09:48:03Z",
+        "updated_at": "2026-11-20T09:48:03Z",
+        "abstract_url": "https://arxiv.org/abs/2611.27384v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.27384v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08452043574401252,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.5510460069444445,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27813879677925013,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Frustrated magnets on triangular lattices favour noncollinear order, and when inversion symmetry is broken they can host localized topological textures on top of that order.",
+        "brief_summary": "The abstract states: Frustrated magnets on triangular lattices favour noncollinear order, and when inversion symmetry is broken they can host localized topological textures on top of that order. Here we show that the Janus MXene MnHf2C2FI is such a system. Combining first-principles calculations with atomistic spin simulations, we find that magnetism is confined to the Mn layer, where a strong antiferromagnetic nearest-neighbor exchange together with a sizable Dzyaloshinskii-Moriya interaction stabilizes a frustrated 120 Neel ground state. On top of this ground state we identify a metastable hexameron: a composite of six merons and antimerons, one vortex-antivortex pair on each of the three sublattices, whose sublattice-resolved topological charges compensate. Linear spin-wave theory confirms that the hexameron is a local energy minimum, and its noncoplanar cores act…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through linear spin-wave theory. Its preselection score was 0.278, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "linear spin-wave theory"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 7,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2503.13831",
+        "version": 4,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
+        "authors": [
+          "Josef Willsher",
+          "Johannes Knolle"
+        ],
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-11-20T13:39:17Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v4",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v4",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12953479395651296,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.5711183449074074,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27165249177117157,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations.",
+        "brief_summary": "The abstract states: Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering. Its preselection score was 0.272, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.815
+      },
+      "rank": 8,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.29362",
+        "version": 3,
+        "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
+        "authors": [
+          "Valentin Munteanu",
+          "Alexander Hinderhofer",
+          "Dmitry Lapkin",
+          "Vladimir Starostin",
+          "Frank Schreiber"
+        ],
+        "abstract": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
+        "primary_category": "cs.LG",
+        "categories": [
+          "cs.LG",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-21T07:54:26Z",
+        "updated_at": "2026-11-17T06:57:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.29362v3",
+        "pdf_url": "https://arxiv.org/pdf/2610.29362v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1876519152540323,
+        "keyword_relevance": 0.09642857142857143,
+        "category_relevance": 0.8,
+        "recency": 0.16127025462962963,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.25467753018442035,
+        "explanation": "Strongest matched profile terms: neutron scattering, polarized neutron reflectometry, inverse problems."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science.",
+        "brief_summary": "The abstract states: X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through neutron scattering, polarized neutron reflectometry, inverse problems. Its preselection score was 0.255, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "neutron scattering",
+          "polarized neutron reflectometry",
+          "inverse problems"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 9,
+      "recommendation_type": "adjacent"
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.25234",
+        "version": 1,
+        "title": "A new efficient and accurate approximation for the dielectric function of the weakly coupled electron gas",
+        "authors": [
+          "Dave Chapman"
+        ],
+        "abstract": "An accurate analytic approximation is developed for the real boundary component of a regularised, causal complex auxiliary function describing the random phase approximation dielectric response of the weakly coupled electron gas across classical to strongly degenerate conditions. Its collisionless imaginary boundary component is known exactly from the Fermi--Dirac occupation logarithm. Following an assessment of existing approximations and the establishment of a high-precision numerical benchmark, a two-regime representation is constructed: a $6/7$ rational function at weak and moderate degeneracy and a composite polynomial approximation at strong degeneracy. Exact asymptotic constraints determine the rational denominator algebraically, leaving six independent state functions. Branch-locked optimisation, Chebyshev parametrisation and Bernstein-basis constraints provide accurate, smooth and numerically pole-free behaviour. In the strongly degenerate regime, the logarithmic Kohn contribution is isolated explicitly, with its regular remainder represented by analytically integrable polynomial expansions. The approximation achieves a maximum relative error of approximately $0.11\\%$ in the real dielectric integral across the investigated domain, accurately reproduces its scaled derivative and is substantially faster than numerical quadrature. Validation using the electron--electron dynamic structure factor and imaginary-time correlation function yields maximum plasmon peak-amplitude errors of approximately $1.04\\%$ and maximum pointwise correlation-function errors below $0.166\\%$. Comparisons with established approximations demonstrate substantial improvements, particularly for weakly damped collective excitations. The resulting model provides an accurate, computationally efficient foundation for electronic screening, dynamic dielectric calculations and X-ray Thomson scattering analysis.",
+        "primary_category": "physics.plasm-ph",
+        "categories": [
+          "physics.plasm-ph"
+        ],
+        "published_at": "2026-11-18T22:08:46Z",
+        "updated_at": "2026-11-18T22:08:46Z",
+        "abstract_url": "https://arxiv.org/abs/2611.25234v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.25234v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.03663882003696857,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.3653443287037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15302190188700623,
+        "explanation": "No configured positive profile terms matched."
+      },
+      "summary": {
+        "one_sentence_takeaway": "The abstract reports: An accurate analytic approximation is developed for the real boundary component of a regularised, causal complex auxiliary function describing the random phase approximation dielectric response of the weakly coupled electron gas across…",
+        "brief_summary": "The abstract states: An accurate analytic approximation is developed for the real boundary component of a regularised, causal complex auxiliary function describing the random phase approximation dielectric response of the weakly coupled electron gas across classical to strongly degenerate conditions. Its collisionless imaginary boundary component is known exactly from the Fermi--Dirac occupation logarithm. Following an assessment of existing approximations and the establishment of a high-precision numerical benchmark, a two-regime representation is constructed: a $6/7$ rational function at weak and moderate degeneracy and a composite polynomial approximation at strong degeneracy. Exact asymptotic constraints determine the rational denominator algebraically, leaving six independent state functions. Branch-locked optimisation, Chebyshev parametrisation and Bernstein-basis constraints provide accurate, smooth and numerically pole-free behaviour. In the strongly degenerate regime, the logarithmic Kohn contribution…",
+        "why_relevant": "This paper was selected because its metadata and abstract overlap with the configured profile through physics.plasm-ph. Its preselection score was 0.153, so the relevance claim reflects only the available abstract and ranking signals.",
+        "methods_or_systems": [
+          "physics.plasm-ph"
+        ],
+        "limitations": "The abstract and metadata do not provide enough information to assess the full derivation, experimental details, figures, or robustness of the reported results.",
+        "summary_basis": "Based only on the title, abstract, and arXiv metadata; the full paper was not read.",
+        "confidence": 0.85
+      },
+      "rank": 10,
+      "recommendation_type": "wildcard"
+    }
+  ],
+  "near_misses": [
+    {
+      "paper": {
+        "arxiv_id": "2511.16086",
+        "version": 3,
+        "title": "Coherent high-velocity chiral magnons in the metallic altermagnet CrSb",
+        "authors": [
+          "Ashutosh K. Singh",
+          "Niclas Heinsdorf",
+          "Abraham A. Mancilla",
+          "Jörn Bannies",
+          "Avishek Maity",
+          "Alexander I. Kolesnikov",
+          "Masaaki Matsuda",
+          "Matthew B. Stone",
+          "Marcel Franz",
+          "Jonathan Gaudet",
+          "Alannah M. Hallas"
+        ],
+        "abstract": "Altermagnets combine the zero net magnetization of antiferromagnets with momentum-dependent spin splitting, creating new opportunities for spintronic and magnonic technologies. The full realization of this promise necessitates a material that is simultaneously metallic and altermagnetic, yet preserves the long magnon lifetimes more often seen in insulators. Here, we use polarized neutron diffraction and inelastic neutron scattering to determine the magnetic structure and spin dynamics of the metallic altermagnet CrSb. We confirm a fully compensated, collinear magnetic structure with localized Cr moments and establish the microscopic spin Hamiltonian governing its excitations. Despite its metallicity, CrSb hosts remarkably coherent magnons across its 230 meV bandwidth, with group velocities approaching 60 km/s. Along low-symmetry momentum directions, we resolve chiral magnon splitting generated by higher-order, symmetry-inequivalent exchange interactions, providing the first experimental observation of this phenomenon in a metallic altermagnet. These results reveal a nearly complete separation between magnetic and electronic degrees of freedom in CrSb and demonstrate that metallic transport, room-temperature altermagnetic order, fast coherent magnons, and chiral spin dynamics can coexist in a single material, positioning CrSb as a compelling platform for spintronic applications.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-11-20T06:24:10Z",
+        "updated_at": "2026-11-16T23:46:21Z",
+        "abstract_url": "https://arxiv.org/abs/2511.16086v3",
+        "pdf_url": "https://arxiv.org/pdf/2511.16086v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11913040695898836,
+        "keyword_relevance": 0.065,
+        "category_relevance": 1.0,
+        "recency": 0.12381510416666666,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2822401935482114,
+        "explanation": "Strongest matched profile terms: spin dynamics, neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.21610",
+        "version": 1,
+        "title": "Hyperkagome antiferromagnetism in the iron garnet Almandine Fe$_3$Al$_2$Si$_3$O$_{12}$",
+        "authors": [
+          "Minnong Zhang",
+          "Harald O. Jeschke",
+          "Daniel Guterding"
+        ],
+        "abstract": "Antiferromagnets on the hyperkagome lattice provide a three-dimensional route to strong magnetic frustration, but experimentally accessible realizations with well-established microscopic Hamiltonians remain scarce. Garnets are a broad family of materials in which magnetic ions can form two interpenetrating hyperkagome lattices, giving rise to spin glass, spin-liquid and hidden-order physics. Here we identify the iron aluminosilicate garnet almandine, Fe$_3$Al$_2$Si$_3$O$_{12}$, as a spin-$2$ hyperkagome antiferromagnet. Using density functional theory energy mapping, we determine a Heisenberg Hamiltonian for the high-spin Fe$^{2+}$ moments and find dominant nearest-neighbor antiferromagnetic exchange, as well as significant longer-range interactions. Classical Monte Carlo simulations of this Hamiltonian, combined with quantum-to-classical rescaling of the spin length, show a transition to antiferromagnetic order at $T_{\\rm N}\\approx9.8$K, in excellent agreement with specific heat experiments. The resulting non-collinear magnetic state is naturally described by magnetic toroidal octupolar order, which we connect to known results for the highly frustrated hyperkagome antiferromagnet gadolinium gallium garnet, Gd$_3$Ga$_5$O$_{12}$. We also calculate magnetic neutron diffraction amplitudes as well as static and dynamic structure factors using semiclassical dynamics, providing quantitative predictions for future neutron scattering experiments. Our results establish almandine as a chemically accessible realization of frustrated hyperkagome magnetism in the garnet family.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-16T18:59:56Z",
+        "updated_at": "2026-11-16T18:59:56Z",
+        "abstract_url": "https://arxiv.org/abs/2611.21610v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.21610v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12144384696299454,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.0989525462962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27079498576297717,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.22462",
+        "version": 1,
+        "title": "Orbital differentiation in a rare earth ion near half filling",
+        "authors": [
+          "D. W. Tam",
+          "Ø. S. Fjellvåg",
+          "B. Gonano",
+          "E. X. M. Trewick",
+          "M. Månsson"
+        ],
+        "abstract": "In the electronic structure of rare earth ions, details can be crucial for understanding the origin of correlated states. Currently, state-of-the-art wavefunction-based methods (e.g. CASSCF) can capture single-ion properties of molecular magnets and some band insulating systems, but are expensive to perform, and cannot be applied to metallic systems. Here, we carry out full multiplet calculations for SmN with the cubic rock-salt structure using the crystal field software Quanty. The calculated experimental observables from our model agree precisely with magnetic susceptibility and inelastic neutron scattering experiments, and the spatially resolved spin density also agrees with DFT predictions. By tuning the crystal field parameters, our full multiplet-derived wavefunctions reveal the presence of orbital differentiation of the ground $J=\\frac{5}{2}$ manifold into two groups, which are distinct subspaces with different orbital stiffness. This violation of Hund's rule, observed with a fast and inexpensive calculation tool, represents a step forward for microscopic models of rare earth materials, and may provide support for the claim of unconventional triplet superconductivity in SmN.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci",
+          "cond-mat.supr-con",
+          "physics.chem-ph",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-17T09:23:36Z",
+        "updated_at": "2026-11-17T09:23:36Z",
+        "abstract_url": "https://arxiv.org/abs/2611.22462v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.22462v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08830700390803756,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.1739236111111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.263380512869728,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.21066",
+        "version": 1,
+        "title": "Large pseudo-orbital magnetic moment of magnons in CrI$_3$ nanotubes",
+        "authors": [
+          "David Sanz",
+          "J. Fernández-Rossier"
+        ],
+        "abstract": "Recently discovered CrI$_3$ nanotubes are expected to host unusual radial magnetic order states, on account of the strong out-of-plane magnetic anisotropy of the two-dimensional parent material. The detection of these peculiar magnetic states is challenging, and motivates the quest for unique features that can be probed experimentally. Using linear spin-wave theory, we show that an axial magnetic field tilts the radial phase into a conical one that threads the tube with an Aharonov-Bohm flux for magnons. This flux endows magnons with a pseudo-orbital magnetic moment, reaching approximately six Bohr magnetons, three times conventional magnon spin moment, and therefore detectable through magnon spectroscopy, providing a smoking gun for the radial and conical magnetic order in CrI$_3$ nanotubes.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-16T13:18:09Z",
+        "updated_at": "2026-11-16T13:18:09Z",
+        "abstract_url": "https://arxiv.org/abs/2611.21066v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.21066v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09877751923166816,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.06928385416666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2563782690709173,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 3,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-17T11:51:52Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v3",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09682396086644617,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.1867939814814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.23367875196662036,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    }
+  ],
+  "ranked_candidates": [
+    {
+      "paper": {
+        "arxiv_id": "2611.25321",
+        "version": 1,
+        "title": "Learning Spin Hamiltonians from Interacting Magnon Spectra",
+        "authors": [
+          "Ang-Kun Wu",
+          "David A. Dahlbom",
+          "Kipton Barros",
+          "Cristian D. Batista",
+          "Hao Zhang"
+        ],
+        "abstract": "A neural network that learns an inverse map inherits the approximations of the forward solver used to generate its training data. We demonstrate this in the inference of spin Hamiltonians from synthetic neutron-scattering spectra and show how a fast many-body solver can overcome the limitation of linear spin-wave theory (LSWT). We consider a family of anisotropic triangular-lattice spin Hamiltonians at fields just above saturation, where magnon interactions shift and broaden the spectrum in ways that LSWT cannot capture. Using the truncated Hilbert-space ladder (THL) method, we compute the dynamical spin structure factor (DSSF) nonperturbatively within the one- and two-magnon space. THL is fast enough to generate large training sets of DSSF spectra, enabling us to train neural networks that accurately predict Hamiltonian parameters. By empirically benchmarking several neural-network architectures, we find that a one-dimensional convolutional network performs best. A learned forward decoder then reconstructs the DSSF from the predicted parameters, providing a rapid self-consistency check and a visualization of the predicted response. When interactions are strong, networks trained on LSWT and THL spectra infer markedly different parameters. Analysis of the Fisher information matrix shows that the measurement protocol, including which spin-correlation components are resolved and the momentum cut, determines which couplings can be identified. Combining machine learning with fast many- body theory is therefore essential for quantitative Hamiltonian inference from scattering data.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-19T00:48:42Z",
+        "updated_at": "2026-11-19T00:48:42Z",
+        "abstract_url": "https://arxiv.org/abs/2611.25321v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.25321v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12310062918920456,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.3792274305555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.3045680261906976,
+        "explanation": "Strongest matched profile terms: neutron scattering, linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2512.00747",
+        "version": 3,
+        "title": "Evidence for itinerant electron-local moment interaction in Li-doped $α$-MnTe",
+        "authors": [
+          "Tingjun Zhang",
+          "Steven J. Gomez Alvarado",
+          "Sijie Xu",
+          "Thomas A. Hulse",
+          "Yucheng Guo",
+          "Shuting Peng",
+          "Travis J. Williams",
+          "Xiaoping Wang",
+          "Junhong He",
+          "Matthew B. Stone",
+          "Colin Sarkis",
+          "Feng Ye",
+          "Aaron Bostwick",
+          "Christopher Jozwiak",
+          "Eli Rotenberg",
+          "Zhaoyu Liu",
+          "Jinyulin Li",
+          "Aparna Jayakumar",
+          "Zehao Wang",
+          "Yaofeng Xie",
+          "Yiheng Wang",
+          "Ching-Wu Chu",
+          "Liangzi Deng",
+          "Emilia Morosan",
+          "Robert J. Birgeneau",
+          "Ming Yi",
+          "Pengcheng Dai"
+        ],
+        "abstract": "We use inelastic neutron scattering (INS) and angle-resolved photoemission spectroscopy (ARPES) to study the impact of Li doping on the semiconducting altermagnet $α$-MnTe. Introducing Li reorients the ordered moment direction from in-plane to out-of-plane and increases the density of itinerant carriers. While our ARPES measurements do not indicate any notable doping-induced changes in the electronic band structure or the magnitude of the altermagnetic band splitting, our INS measurements reveal an abrupt doping-induced decrease in the spin-wave lifetime near the zone boundary at high energies. This finding is consistent with a new magnon decay channel driven by subtle, doping-induced changes in the band structure and enhanced interactions between Mn$^{2+}$ local moments and itinerant electrons. By extracting the local dynamic susceptibility from INS spectra and applying the total moment sum rule, we find that both undoped and Li-doped $α$-MnTe exhibit a nearly full expected Mn$^{2+}$ local moment of $\\approx5.9~μ_\\mathrm{B}$ with $S=5/2$. These findings suggest that $α$-MnTe hosts robust local-moment altermagnetism which shows a breakdown at high energies upon addition of itinerant carriers, highlighting the importance of carrier-spin coupling in magneto-transport and spin dynamics of altermagnets, even in the dilute-carrier limit.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-11-30T05:53:02Z",
+        "updated_at": "2026-11-20T18:11:01Z",
+        "abstract_url": "https://arxiv.org/abs/2512.00747v3",
+        "pdf_url": "https://arxiv.org/pdf/2512.00747v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.07231721916622652,
+        "keyword_relevance": 0.045,
+        "category_relevance": 1.0,
+        "recency": 0.5947063078703704,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.303263379411839,
+        "explanation": "Strongest matched profile terms: neutron scattering, spin dynamics."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.23500",
+        "version": 1,
+        "title": "Synthesis-route-dependent state selection in the frustrated spinel ZnV$_2$O$_4$",
+        "authors": [
+          "Jem Pitcairn",
+          "Jennifer N. Graham",
+          "Jacob L. Brownlee",
+          "Shruti Chakravarty",
+          "Joya A. Cooley",
+          "Giorgia Confalonieri",
+          "A. Dominic Fortes",
+          "David W. Tam",
+          "J. Ross Stewart",
+          "Lucy Clark"
+        ],
+        "abstract": "The emergent properties of strongly correlated materials can be highly sensitive to how they are made, yet synthesis pathway is rarely treated as a fundamental variable governing their ground states. The spinel ZnV$_2$O$_4$ provides a model system in which to test this idea: its pyrochlore lattice of antiferromagnetically coupled V$^{3+}$ $S=1$ moments hosts competing spin and orbital degeneracies, while different synthesis routes yield markedly different low-temperature behaviour. Here, we show that changing the solid-state synthesis pathway reproducibly selects a distinct structural and magnetic ground state. Microwave-assisted solid-state synthesis (MASS) stabilises the cubic spinel structure to low temperature, suppressing the conventional cubic-to-tetragonal transition and preserving the highly frustrated $S=1$ pyrochlore lattice. Combining high-resolution diffraction, magnetometry and inelastic neutron scattering, we find a magnetic ground state exhibiting persistent spin-liquid-like dynamics together with partial spin freezing. Our results establish synthesis pathway as an experimental variable for selecting between competing emergent states in strongly correlated materials, revealing a route to accessing ground states not realised by conventional synthesis.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-17T20:50:45Z",
+        "updated_at": "2026-11-17T20:50:45Z",
+        "abstract_url": "https://arxiv.org/abs/2611.23500v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.23500v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11743107590267765,
+        "keyword_relevance": 0.10785714285714286,
+        "category_relevance": 1.0,
+        "recency": 0.2335720486111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.30316547473160177,
+        "explanation": "Strongest matched profile terms: spinel, pyrochlore, neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2607.10045",
+        "version": 2,
+        "title": "Flux Jamming and Bimodal Dynamics in Bounded Spin Networks",
+        "authors": [
+          "Paula Mellado",
+          "Hanu Arava"
+        ],
+        "abstract": "Finite-sized frustrated magnetic networks relax through pathways that are strongly shaped by their boundaries; yet, whether their kinetic barriers can be predicted from geometry alone has remained unclear. Here, we present a transfer matrix framework for finite artificial square ice that links local coordination to the effective energy landscape and the temperature-dependent barriers governing magnetic flux transport. By combining nonhomogeneous transfer matrices with the local coordination hierarchy, we identify the geometric bottlenecks that govern the relaxation dynamics, and show that the leading steady-state weight falls on charge-neutral, ice-rule configurations, which are thermodynamically preferred due to their reduced electrostatic energy and greater configurational multiplicity. The resulting two time-scale structure suggests bimodal behavior: (1) long intervals of trapping in charge-compensated manifolds are interrupted by (2) sudden avalanche-like relaxation events. Applied to Husimi-tree representations, the framework yields a low-temperature initial arrest probability that collapses across forty generations onto a common scaling function of $g-ξ(T)$, with a crossover length $ξ\\sim T^{-ν}$ and $ν=1$. These results show that boundary geometry alone can produce kinetic arrest and suggest intermittent transport, even in the absence of quenched disorder, reminiscent of athermal granular jamming. More broadly, our framework connects the coordination landscape, equilibrium energetics, and nonequilibrium relaxation in finite frustrated magnets and provides a route to understanding boundary-controlled dynamics in artificial spin ice.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-07-10T23:52:55Z",
+        "updated_at": "2026-11-19T23:32:04Z",
+        "abstract_url": "https://arxiv.org/abs/2607.10045v2",
+        "pdf_url": "https://arxiv.org/pdf/2607.10045v2",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1261648819537134,
+        "keyword_relevance": 0.029999999999999995,
+        "category_relevance": 0.8,
+        "recency": 0.4975752314814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2940317200273192,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.22912",
+        "version": 1,
+        "title": "Electrical addressing of compensated magnetic order in artificial spin ice",
+        "authors": [
+          "Stéphane Nilsson",
+          "Lauren J. Riddiford",
+          "Emily Darwin",
+          "Hans J. Hug",
+          "Aleš Hrabec",
+          "Laura J. Heyderman"
+        ],
+        "abstract": "Compensated magnetic systems, such as antiferromagnets, hold immense potential for spintronic devices thanks to vanishing stray fields, robustness to perturbations, and ultrafast dynamics. Yet, electrical writing and reading of their order remains a major challenge. Here we use artificial spin ice as a mesoscale platform in which compensated order can be engineered, directly imaged, and electrically controlled. Specifically, we demonstrate combined electrical writing and reading of a compensated state in a triangular artificial spin ice. Exploiting the orientation dependence of the spin-orbit torque switching current, we independently switch three nanomagnet sublattices through a single current channel, with the planar Hall effect providing sublattice-resolved readout. This grants access to all eight magnetization states of the triangular plaquette, including its fully compensated state, yielding a nonlinear, history-dependent electrical response. Our results establish an approach to electrically programmable compensated magnetic systems and provide an important foundation for reconfigurable magnetic devices and unconventional computing.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-17T15:14:46Z",
+        "updated_at": "2026-11-17T15:14:46Z",
+        "abstract_url": "https://arxiv.org/abs/2611.22912v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.22912v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1431338010444601,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.8,
+        "recency": 0.2044068287037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2862794647689489,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.27247",
+        "version": 1,
+        "title": "Nonmonotonic Magnetic Correlations in Decorated Lieb-Lattice Anderson Models",
+        "authors": [
+          "Raymond Hmuifoo",
+          "Edwin W. Huang",
+          "Annabelle Ancheta",
+          "Richard T. Scalettar"
+        ],
+        "abstract": "The interplay between electronic correlations and lattice geometry can strongly modify the competition between magnetic correlations and local singlet formation in multiorbital Hamiltonians. Here we use determinant quantum Monte Carlo simulations to investigate two periodic Anderson-like models constructed by selectively hybridizing localized orbitals to the inequivalent sites of a Lieb lattice. The resulting geometries possess partially filled flat bands and different sublattice imbalances. We examine the evolution of local spin correlations and orbital-resolved magnetic structure factors as the hybridization is increased. Although correlations between hybridized orbitals evolve relatively smoothly toward local singlet formation, the longer-range magnetic correlations exhibit a striking nonmonotonic dependence on hybridization. In particular, we observe a pronounced suppression at intermediate hybridization followed by a substantial recovery on undecorated lattice sites. We discuss these results in relation to earlier studies of depleted periodic Anderson models and the constraints imposed by Lieb's theorem. Our findings illustrate how selective hybridization and flat-band structure can produce unusual redistributions of magnetic correlations in strongly interacting multiorbital systems.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-20T07:53:57Z",
+        "updated_at": "2026-11-20T07:53:57Z",
+        "abstract_url": "https://arxiv.org/abs/2611.27247v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.27247v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.06471369225735465,
+        "keyword_relevance": 0.0,
+        "category_relevance": 1.0,
+        "recency": 0.5411414930555556,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.28323531082136516,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2511.16086",
+        "version": 3,
+        "title": "Coherent high-velocity chiral magnons in the metallic altermagnet CrSb",
+        "authors": [
+          "Ashutosh K. Singh",
+          "Niclas Heinsdorf",
+          "Abraham A. Mancilla",
+          "Jörn Bannies",
+          "Avishek Maity",
+          "Alexander I. Kolesnikov",
+          "Masaaki Matsuda",
+          "Matthew B. Stone",
+          "Marcel Franz",
+          "Jonathan Gaudet",
+          "Alannah M. Hallas"
+        ],
+        "abstract": "Altermagnets combine the zero net magnetization of antiferromagnets with momentum-dependent spin splitting, creating new opportunities for spintronic and magnonic technologies. The full realization of this promise necessitates a material that is simultaneously metallic and altermagnetic, yet preserves the long magnon lifetimes more often seen in insulators. Here, we use polarized neutron diffraction and inelastic neutron scattering to determine the magnetic structure and spin dynamics of the metallic altermagnet CrSb. We confirm a fully compensated, collinear magnetic structure with localized Cr moments and establish the microscopic spin Hamiltonian governing its excitations. Despite its metallicity, CrSb hosts remarkably coherent magnons across its 230 meV bandwidth, with group velocities approaching 60 km/s. Along low-symmetry momentum directions, we resolve chiral magnon splitting generated by higher-order, symmetry-inequivalent exchange interactions, providing the first experimental observation of this phenomenon in a metallic altermagnet. These results reveal a nearly complete separation between magnetic and electronic degrees of freedom in CrSb and demonstrate that metallic transport, room-temperature altermagnetic order, fast coherent magnons, and chiral spin dynamics can coexist in a single material, positioning CrSb as a compelling platform for spintronic applications.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-11-20T06:24:10Z",
+        "updated_at": "2026-11-16T23:46:21Z",
+        "abstract_url": "https://arxiv.org/abs/2511.16086v3",
+        "pdf_url": "https://arxiv.org/pdf/2511.16086v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.11913040695898836,
+        "keyword_relevance": 0.065,
+        "category_relevance": 1.0,
+        "recency": 0.12381510416666666,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2822401935482114,
+        "explanation": "Strongest matched profile terms: spin dynamics, neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.27384",
+        "version": 1,
+        "title": "Frustration-Stabilized Hexamerons and Their Topological Magnons in Janus MXene",
+        "authors": [
+          "C. B. Subba",
+          "Z. Pachuau",
+          "Samy Brahimi",
+          "Samir Lounis",
+          "D. P. Rai"
+        ],
+        "abstract": "Frustrated magnets on triangular lattices favour noncollinear order, and when inversion symmetry is broken they can host localized topological textures on top of that order. Here we show that the Janus MXene MnHf2C2FI is such a system. Combining first-principles calculations with atomistic spin simulations, we find that magnetism is confined to the Mn layer, where a strong antiferromagnetic nearest-neighbor exchange together with a sizable Dzyaloshinskii-Moriya interaction stabilizes a frustrated 120 Neel ground state. On top of this ground state we identify a metastable hexameron: a composite of six merons and antimerons, one vortex-antivortex pair on each of the three sublattices, whose sublattice-resolved topological charges compensate. Linear spin-wave theory confirms that the hexameron is a local energy minimum, and its noncoplanar cores act as potential wells that bind discrete in-gap magnon modes below the bulk continuum. In a periodic hexameron array the magnon bands carry nonzero Chern numbers, and the resulting Berry curvature produces a magnon thermal Hall response whose sign depends on which of the two time-reversal partners of the hexameron is realized. Our results establish Janus MXenes as a two-dimensional platform in which frustration, broken inversion symmetry, and spin-orbit coupling combine to produce metastable antiferromagnetic solitons with distinct spectroscopic and transport fingerprints.",
+        "primary_category": "cond-mat.mtrl-sci",
+        "categories": [
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-20T09:48:03Z",
+        "updated_at": "2026-11-20T09:48:03Z",
+        "abstract_url": "https://arxiv.org/abs/2611.27384v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.27384v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08452043574401252,
+        "keyword_relevance": 0.02,
+        "category_relevance": 0.8,
+        "recency": 0.5510460069444445,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27813879677925013,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2503.13831",
+        "version": 4,
+        "title": "Dynamics and stability of U(1) spin liquids beyond mean-field theory: Triangular-lattice $J_1$-$J_2$ Heisenberg model",
+        "authors": [
+          "Josef Willsher",
+          "Johannes Knolle"
+        ],
+        "abstract": "Quantum spin liquids (QSLs) are long-range entangled phases of frustrated magnets exhibiting fractionalised spin excitations. In two dimensions, there is limited analytical understanding of their excitation spectra beyond parton mean-field theories, which fail to capture many features of the finite frequency dynamical response. We use a self-consistent mean-field theory combined with the random phase approximation (RPA) for the $J_1$-$J_2$ Heisenberg model on the triangular lattice to describe the strong spinon-spinon interactions of the U(1) Dirac QSL. We obtain quantitative results for the dynamical spin structure factor and phase diagram compatible with comprehensive numerical efforts. We show the continuum response at the Brillouin zone corners is described by a spinon-exciton hybridised with monopole gauge excitations. We further show that the transition from the QSL to 120-degree coplanar order is in the QED$_3$ O(3)-GN universality class. We extend the method to chiral QSLs and XXZ anisotropy, and discuss its broad range of applicability to other models and for describing inelastic neutron scattering experiments in KYbSe$_2$.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el"
+        ],
+        "published_at": "2025-03-18T02:12:34Z",
+        "updated_at": "2026-11-20T13:39:17Z",
+        "abstract_url": "https://arxiv.org/abs/2503.13831v4",
+        "pdf_url": "https://arxiv.org/pdf/2503.13831v4",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12953479395651296,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.5711183449074074,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27165249177117157,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.21610",
+        "version": 1,
+        "title": "Hyperkagome antiferromagnetism in the iron garnet Almandine Fe$_3$Al$_2$Si$_3$O$_{12}$",
+        "authors": [
+          "Minnong Zhang",
+          "Harald O. Jeschke",
+          "Daniel Guterding"
+        ],
+        "abstract": "Antiferromagnets on the hyperkagome lattice provide a three-dimensional route to strong magnetic frustration, but experimentally accessible realizations with well-established microscopic Hamiltonians remain scarce. Garnets are a broad family of materials in which magnetic ions can form two interpenetrating hyperkagome lattices, giving rise to spin glass, spin-liquid and hidden-order physics. Here we identify the iron aluminosilicate garnet almandine, Fe$_3$Al$_2$Si$_3$O$_{12}$, as a spin-$2$ hyperkagome antiferromagnet. Using density functional theory energy mapping, we determine a Heisenberg Hamiltonian for the high-spin Fe$^{2+}$ moments and find dominant nearest-neighbor antiferromagnetic exchange, as well as significant longer-range interactions. Classical Monte Carlo simulations of this Hamiltonian, combined with quantum-to-classical rescaling of the spin length, show a transition to antiferromagnetic order at $T_{\\rm N}\\approx9.8$K, in excellent agreement with specific heat experiments. The resulting non-collinear magnetic state is naturally described by magnetic toroidal octupolar order, which we connect to known results for the highly frustrated hyperkagome antiferromagnet gadolinium gallium garnet, Gd$_3$Ga$_5$O$_{12}$. We also calculate magnetic neutron diffraction amplitudes as well as static and dynamic structure factors using semiclassical dynamics, providing quantitative predictions for future neutron scattering experiments. Our results establish almandine as a chemically accessible realization of frustrated hyperkagome magnetism in the garnet family.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci"
+        ],
+        "published_at": "2026-11-16T18:59:56Z",
+        "updated_at": "2026-11-16T18:59:56Z",
+        "abstract_url": "https://arxiv.org/abs/2611.21610v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.21610v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.12144384696299454,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.0989525462962963,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.27079498576297717,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.22462",
+        "version": 1,
+        "title": "Orbital differentiation in a rare earth ion near half filling",
+        "authors": [
+          "D. W. Tam",
+          "Ø. S. Fjellvåg",
+          "B. Gonano",
+          "E. X. M. Trewick",
+          "M. Månsson"
+        ],
+        "abstract": "In the electronic structure of rare earth ions, details can be crucial for understanding the origin of correlated states. Currently, state-of-the-art wavefunction-based methods (e.g. CASSCF) can capture single-ion properties of molecular magnets and some band insulating systems, but are expensive to perform, and cannot be applied to metallic systems. Here, we carry out full multiplet calculations for SmN with the cubic rock-salt structure using the crystal field software Quanty. The calculated experimental observables from our model agree precisely with magnetic susceptibility and inelastic neutron scattering experiments, and the spatially resolved spin density also agrees with DFT predictions. By tuning the crystal field parameters, our full multiplet-derived wavefunctions reveal the presence of orbital differentiation of the ground $J=\\frac{5}{2}$ manifold into two groups, which are distinct subspaces with different orbital stiffness. This violation of Hund's rule, observed with a fast and inexpensive calculation tool, represents a step forward for microscopic models of rare earth materials, and may provide support for the claim of unconventional triplet superconductivity in SmN.",
+        "primary_category": "cond-mat.str-el",
+        "categories": [
+          "cond-mat.str-el",
+          "cond-mat.mtrl-sci",
+          "cond-mat.supr-con",
+          "physics.chem-ph",
+          "physics.comp-ph"
+        ],
+        "published_at": "2026-11-17T09:23:36Z",
+        "updated_at": "2026-11-17T09:23:36Z",
+        "abstract_url": "https://arxiv.org/abs/2611.22462v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.22462v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08830700390803756,
+        "keyword_relevance": 0.025,
+        "category_relevance": 1.0,
+        "recency": 0.1739236111111111,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.263380512869728,
+        "explanation": "Strongest matched profile terms: neutron scattering."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.21066",
+        "version": 1,
+        "title": "Large pseudo-orbital magnetic moment of magnons in CrI$_3$ nanotubes",
+        "authors": [
+          "David Sanz",
+          "J. Fernández-Rossier"
+        ],
+        "abstract": "Recently discovered CrI$_3$ nanotubes are expected to host unusual radial magnetic order states, on account of the strong out-of-plane magnetic anisotropy of the two-dimensional parent material. The detection of these peculiar magnetic states is challenging, and motivates the quest for unique features that can be probed experimentally. Using linear spin-wave theory, we show that an axial magnetic field tilts the radial phase into a conical one that threads the tube with an Aharonov-Bohm flux for magnons. This flux endows magnons with a pseudo-orbital magnetic moment, reaching approximately six Bohr magnetons, three times conventional magnon spin moment, and therefore detectable through magnon spectroscopy, providing a smoking gun for the radial and conical magnetic order in CrI$_3$ nanotubes.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.str-el"
+        ],
+        "published_at": "2026-11-16T13:18:09Z",
+        "updated_at": "2026-11-16T13:18:09Z",
+        "abstract_url": "https://arxiv.org/abs/2611.21066v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.21066v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09877751923166816,
+        "keyword_relevance": 0.02,
+        "category_relevance": 1.0,
+        "recency": 0.06928385416666667,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.2563782690709173,
+        "explanation": "Strongest matched profile terms: linear spin-wave theory."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.29362",
+        "version": 3,
+        "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
+        "authors": [
+          "Valentin Munteanu",
+          "Alexander Hinderhofer",
+          "Dmitry Lapkin",
+          "Vladimir Starostin",
+          "Frank Schreiber"
+        ],
+        "abstract": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
+        "primary_category": "cs.LG",
+        "categories": [
+          "cs.LG",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-21T07:54:26Z",
+        "updated_at": "2026-11-17T06:57:50Z",
+        "abstract_url": "https://arxiv.org/abs/2610.29362v3",
+        "pdf_url": "https://arxiv.org/pdf/2610.29362v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.1876519152540323,
+        "keyword_relevance": 0.09642857142857143,
+        "category_relevance": 0.8,
+        "recency": 0.16127025462962963,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.25467753018442035,
+        "explanation": "Strongest matched profile terms: neutron scattering, polarized neutron reflectometry, inverse problems."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.01397",
+        "version": 3,
+        "title": "Artificial spin ice on the CaVO lattice: a tricritical bridge from square to kagome",
+        "authors": [
+          "F. Museur",
+          "G. M. Macauley",
+          "S. Nilsson",
+          "V. Scagnoli",
+          "P. M. Derlet",
+          "L. J. Heyderman"
+        ],
+        "abstract": "Artificial spin ices (ASIs) are arrays of interacting nanomagnets in which phase transitions can be imaged and controlled. Studies of the thermodynamic have focused mainly on the square and kagome lattices, and on their variants. Here we study artificial spin ice on the CaVO lattice, formed of squares and octagons. At fixed lattice constant, the ratio $r$ of the square and octagon link lengths tunes the interactions strongly while changing the geometry only slightly. Magnetic force microscopy and Monte Carlo simulations show a continuous bridge from square-ice-like to kagome-like behavior. At small $r$ the system has a single ordering transition, whereas at large $r$ it passes from a correlated paramagnet to charge order and then long-range order. The two regimes meet in a multicritical region, accurately modeled by a Blume-Capel model of the octagon toroidal moments. From this picture, we design a comparative magnetometry protocol that unambiguously separates interaction effects from single-nanomagnet effects in thermally active samples. Finally, the charge-ordered region maps onto a tunable dimer model, with a Coulomb phase and pinch points along the line between two ordered dimer phases. The CaVO ASI thus provides access to a rich phase diagram only through geometric tuning, without requiring extreme experimental conditions.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall"
+        ],
+        "published_at": "2026-11-01T01:05:48Z",
+        "updated_at": "2026-11-17T11:51:52Z",
+        "abstract_url": "https://arxiv.org/abs/2611.01397v3",
+        "pdf_url": "https://arxiv.org/pdf/2611.01397v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.09682396086644617,
+        "keyword_relevance": 0.08571428571428572,
+        "category_relevance": 0.5,
+        "recency": 0.1867939814814815,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.23367875196662036,
+        "explanation": "Strongest matched profile terms: spin ice."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.19833",
+        "version": 3,
+        "title": "Magnetic field induced modulation of heat transport in CrPS$_4$ probed by TaIrTe$_4$ transverse Seebeck thermometry",
+        "authors": [
+          "Krishnaraajan Sundararajan",
+          "Sergio Alvarruiz",
+          "Cédric A. Cordero-Silis",
+          "Majid Ahmadi",
+          "Marcos H. D. Guimarães",
+          "Jagoda Slawinska",
+          "Joseph Barker",
+          "Bart J. van Wees"
+        ],
+        "abstract": "Understanding and controlling heat flow in low-dimensional magnetic materials is central to thermoelectrics and spin caloritronics. One of the challenges is the absence of sensitive probes of small, field-dependent modulations in thermal transport. Here we demonstrate transverse Seebeck thermometry using exfoliated TaIrTe$_4$ as a probe of thermal conductivity modulated by an external magnetic field on a van der Waals magnet, CrPS$_4$. With a temperature gradient oriented at $45^\\circ$ to its principal crystallographic axes, TaIrTe$_4$ exhibits a transverse thermopower exceeding $200~\\mathrm{μV\\,K^{-1}}$ for 900 nm wide and 30 $μ$m long electrodes, enabling precise detection of variations in the local temperature gradients. Exploiting this with CrPS$_4$ in a nonlocal geometry, we resolve distinct field dependent thermal conductivity changes associated with both the spin-flip and spin-flop magnetic transitions which we attribute to variations in the magnon$-$phonon coupling in CrPS$_4$. At 5 K, the transverse Seebeck response is modulated by more than 8$\\%$ by an external magnetic field, demonstrating strong magnetic control of heat transport in CrPS$_4$. This all van der Waals platform offers high sensitivity to modulations of thermal conductivity and a broad adaptability to a wide range of exfoliated magnetic systems.",
+        "primary_category": "cond-mat.mes-hall",
+        "categories": [
+          "cond-mat.mes-hall",
+          "cond-mat.mtrl-sci",
+          "physics.app-ph"
+        ],
+        "published_at": "2026-10-14T09:06:48Z",
+        "updated_at": "2026-11-19T17:11:18Z",
+        "abstract_url": "https://arxiv.org/abs/2610.19833v3",
+        "pdf_url": "https://arxiv.org/pdf/2610.19833v3",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08490108770678106,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.8,
+        "recency": 0.4645225694444444,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.21465774641249596,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2611.25234",
+        "version": 1,
+        "title": "A new efficient and accurate approximation for the dielectric function of the weakly coupled electron gas",
+        "authors": [
+          "Dave Chapman"
+        ],
+        "abstract": "An accurate analytic approximation is developed for the real boundary component of a regularised, causal complex auxiliary function describing the random phase approximation dielectric response of the weakly coupled electron gas across classical to strongly degenerate conditions. Its collisionless imaginary boundary component is known exactly from the Fermi--Dirac occupation logarithm. Following an assessment of existing approximations and the establishment of a high-precision numerical benchmark, a two-regime representation is constructed: a $6/7$ rational function at weak and moderate degeneracy and a composite polynomial approximation at strong degeneracy. Exact asymptotic constraints determine the rational denominator algebraically, leaving six independent state functions. Branch-locked optimisation, Chebyshev parametrisation and Bernstein-basis constraints provide accurate, smooth and numerically pole-free behaviour. In the strongly degenerate regime, the logarithmic Kohn contribution is isolated explicitly, with its regular remainder represented by analytically integrable polynomial expansions. The approximation achieves a maximum relative error of approximately $0.11\\%$ in the real dielectric integral across the investigated domain, accurately reproduces its scaled derivative and is substantially faster than numerical quadrature. Validation using the electron--electron dynamic structure factor and imaginary-time correlation function yields maximum plasmon peak-amplitude errors of approximately $1.04\\%$ and maximum pointwise correlation-function errors below $0.166\\%$. Comparisons with established approximations demonstrate substantial improvements, particularly for weakly damped collective excitations. The resulting model provides an accurate, computationally efficient foundation for electronic screening, dynamic dielectric calculations and X-ray Thomson scattering analysis.",
+        "primary_category": "physics.plasm-ph",
+        "categories": [
+          "physics.plasm-ph"
+        ],
+        "published_at": "2026-11-18T22:08:46Z",
+        "updated_at": "2026-11-18T22:08:46Z",
+        "abstract_url": "https://arxiv.org/abs/2611.25234v1",
+        "pdf_url": "https://arxiv.org/pdf/2611.25234v1",
+        "doi": null,
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.03663882003696857,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.3653443287037037,
+        "novelty": 1.0,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.15302190188700623,
+        "explanation": "No configured positive profile terms matched."
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2610.37198",
+        "version": 2,
+        "title": "Searches for new particle physics by methods of classical and neutrino astronomy",
+        "authors": [
+          "Sergey Troitsky"
+        ],
+        "abstract": "Selected astrophysical methods for testing particle-physics models are reviewed. Stellar structure and evolution constrain additional channels of energy loss and transport; high-energy photon propagation probes photon mixing with new particles and modifications of electron-positron pair production; large-volume neutrino telescopes are used to search for magnetic monopoles, neutrinos from superheavy dark-matter decay, and non-standard neutrino propagation. Recent applications of these methods are discussed, involving the tip of the red-giant branch in the color-luminosity diagram, gamma-ray burst 221009A, and data from the Baikal Gigaton Volume Detector (Baikal-GVD) and the IceCube experiment. In each case, particle-physics parameters are inferred through a forward model that accounts for the response to new physics, propagation, detection, and nuisance parameters.",
+        "primary_category": "hep-ph",
+        "categories": [
+          "hep-ph",
+          "astro-ph.HE",
+          "astro-ph.SR"
+        ],
+        "published_at": "2026-10-27T13:19:58Z",
+        "updated_at": "2026-11-18T04:07:24Z",
+        "abstract_url": "https://arxiv.org/abs/2610.37198v2",
+        "pdf_url": "https://arxiv.org/pdf/2610.37198v2",
+        "doi": "10.3367/UFNe.2026.09.040238",
+        "journal_reference": null
+      },
+      "score": {
+        "semantic_relevance": 0.08223886349500095,
+        "keyword_relevance": 0.0,
+        "category_relevance": 0.0,
+        "recency": 0.27147569444444447,
+        "novelty": 0.5,
+        "feedback_affinity": 0.5,
+        "final_preselection_score": 0.11415505801719487,
+        "explanation": "No configured positive profile terms matched."
+      }
+    }
+  ]
+}
